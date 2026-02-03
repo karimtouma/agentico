@@ -1,0 +1,8 @@
+## AI Contribution Disclosure
+- Tool used: GitHub Copilot Enterprise v1.2.3
+- Percentage of code AI-generated: ~40%
+- Security scan result: PASSED (0 critical, 0 high, 2 medium findings)
+- Medium findings addressed: [link to fixes]
+- Human reviewer: @senior-dev-name
+- Compliance reviewer: @compliance-team-lead (for level 3 only)
+- Audit trail ID: AUD-2026-00123

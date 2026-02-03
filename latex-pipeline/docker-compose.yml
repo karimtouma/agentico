@@ -1,0 +1,18 @@
+services:
+  book:
+    build: .
+    entrypoint: []
+    volumes:
+      - ../ingenieria_agentica:/book/content:ro
+      - ./Makefile:/book/Makefile:ro
+      - ./cls:/book/cls:ro
+      - ./sty:/book/sty:ro
+      - ./filters:/book/filters:ro
+      - ./templates:/book/templates:ro
+      - ./illustrations:/book/illustrations:ro
+      - ./config.yml:/book/config.yml:ro
+      - ./fonts:/book/fonts:ro
+      - ./scripts:/book/scripts:ro
+      - ./output:/book/output
+    environment:
+      - TEXMFHOME=/book/cls

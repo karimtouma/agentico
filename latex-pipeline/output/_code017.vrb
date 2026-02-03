@@ -1,0 +1,9 @@
+Agentes Activos Simultáneos = (Horas de Orquestador × Factor de Productividad) / Horas de Supervisión por Agente
+
+Donde:
+- Horas de Orquestador = 6-7 hrs/día efectivas (no 8, porque hay meetings, breaks)
+- Factor de Productividad = 0.7-0.8 (no es 100% eficiente)
+- Horas de Supervisión por Agente = ~1.5-2 hrs/día (review de trabajo, clarificaciones, resolución de bloqueos)
+
+Ejemplo:
+= (7 × 0.75) / 1.75 ≈ 3 agentes activos simultáneos

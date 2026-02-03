@@ -1,0 +1,4 @@
+// Pseudocódigo en FORTRAN
+DO 10 I = 1, 100
+   SUM = SUM + A(I)
+10 CONTINUE

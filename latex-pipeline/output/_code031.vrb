@@ -1,0 +1,8 @@
+IA AGÉNTICA = Agentes autónomos que:
+• Generan código de producción
+• Escriben tests automáticamente
+• Documentan sistemas
+• Optimizan performance
+
+NO ES: GitHub Copilot (solo auto-complete)
+SÍ ES: Agentes que completan tareas end-to-end con supervisión humana

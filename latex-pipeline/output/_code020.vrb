@@ -1,0 +1,18 @@
+🤖 AI Changelog - Abril 2026
+
+Nuevos agentes/capacidades:
+✅ Agente de Documentación ahora genera diagramas automáticamente
+✅ Prompts optimizados para React reducen errores 30%
+
+Métricas del mes:
+📊 Velocity: 32 story points (vs. 28 en marzo)
+📊 Bugs críticos: 1 (vs. 2 en marzo)
+📊 Costo de IA: $4,800 (vs. presupuesto $5,000)
+
+Fails del mes (lecciones):
+⚠️ Agente de Refactoring creó bug en módulo de pagos
+   → Aprendizaje: Código de pagos ahora requiere 2 reviewers humanos
+
+Próximos experimentos:
+🔬 Testing de fine-tuned model en nuestro codebase (Q2)
+🔬 Integración con Figma para auto-generar componentes UI (Q3)

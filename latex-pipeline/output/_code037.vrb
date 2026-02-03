@@ -1,0 +1,13 @@
+RIESGOS PRINCIPALES:
+
+1. Código de IA con bugs críticos
+   → MITIGACIÓN: Code review 100% por humanos
+
+2. Data leakage (código sensible a APIs públicas)
+   → MITIGACIÓN: Self-hosted models para código crítico
+
+3. Resistencia cultural del equipo
+   → MITIGACIÓN: Change management, re-skilling, comunicación
+
+4. ROI no se materializa
+   → MITIGACIÓN: Pilotos pequeños, métricas claras, GO/NO-GO en Mes 9

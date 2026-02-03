@@ -1,0 +1,3 @@
+@AgenteCodificador - Falta validación de permisos en línea 45.
+Antes de generar el CSV, verifica que user.hasAccessTo(campaign.id).
+Refiere a permissions.ts:checkCampaignAccess() para implementación.

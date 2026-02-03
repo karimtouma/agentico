@@ -1,0 +1,8 @@
+// Pseudocódigo declarativo
+function UserList({ users }) {
+    return (
+        <ul>
+            {users.map(user => <li>{user.name}</li>)}
+        </ul>
+    );
+}

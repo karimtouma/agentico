@@ -1,0 +1,22 @@
+Tú en Copilot Workspace:
+"Fix bug #1234: Users can't upload files > 10MB"
+
+Copilot Workspace responde:
+"Análisis del bug:
+1. Frontend validation limit está hardcoded a 10MB
+2. Backend también tiene limit de 10MB
+3. Nginx config tiene limit de 5MB (esto es el problema real!)
+
+Plan de fix:
+1. Update nginx.conf: client_max_body_size 50M
+2. Update frontend validation to 50MB
+3. Update backend validation to 50MB
+4. Add test for 20MB upload
+
+¿Procedo?"
+
+Tú: "Sí"
+
+[Copilot Workspace implementa los 4 cambios, luego:]
+
+"Implementación completa. Tests pasan. ¿Crear PR?"

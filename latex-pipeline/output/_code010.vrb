@@ -1,0 +1,7 @@
+Tú: [Escribes comment] // Function to fetch user data
+Copilot: [Sugiere código]
+Tú: [Presionas Tab para aceptar]
+Tú: [Escribes siguiente comment] // Function to validate user
+Copilot: [Sugiere código]
+Tú: [Presionas Tab]
+... [Repite 10 veces para completar feature]

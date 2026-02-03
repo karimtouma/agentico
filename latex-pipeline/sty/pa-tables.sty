@@ -1,0 +1,54 @@
+% =============================================================================
+% pa-tables.sty — Professional table styling for El Paradigma Agentico
+% Uses tabularray for modern table rendering with auto-width support.
+% =============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Booktabs defaults (used by tabularray's booktabs library) ---
+\setlength{\heavyrulewidth}{0.10em}
+\setlength{\lightrulewidth}{0.04em}
+\setlength{\cmidrulewidth}{0.03em}
+\setlength{\abovetopsep}{0pt}
+\setlength{\belowbottomsep}{0pt}
+\setlength{\aboverulesep}{0.6ex}
+\setlength{\belowrulesep}{0.6ex}
+
+% --- tabularray themes (3 tiers by column count) ---
+
+% pa-narrow: 2-4 columns, \small font
+\NewTblrTheme{pa-narrow}{
+  \SetTblrStyle{firsthead}{font=\small\sffamily\bfseries}
+  \SetTblrStyle{head}{font=\small\sffamily\bfseries}
+  \SetTblrStyle{body}{font=\small\sffamily}
+  \SetTblrStyle{foot}{font=\small\sffamily}
+}
+
+% pa-wide: 5-7 columns, \footnotesize font
+\NewTblrTheme{pa-wide}{
+  \SetTblrStyle{firsthead}{font=\footnotesize\sffamily\bfseries}
+  \SetTblrStyle{head}{font=\footnotesize\sffamily\bfseries}
+  \SetTblrStyle{body}{font=\footnotesize\sffamily}
+  \SetTblrStyle{foot}{font=\footnotesize\sffamily}
+}
+
+% pa-verywide: 8+ columns, \scriptsize font
+\NewTblrTheme{pa-verywide}{
+  \SetTblrStyle{firsthead}{font=\scriptsize\sffamily\bfseries}
+  \SetTblrStyle{head}{font=\scriptsize\sffamily\bfseries}
+  \SetTblrStyle{body}{font=\scriptsize\sffamily}
+  \SetTblrStyle{foot}{font=\scriptsize\sffamily}
+}
+
+% --- Column types for legacy tabularx references ---
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+% --- Fallback: keep longtable styling for any non-transformed tables ---
+\AtBeginEnvironment{longtable}{\small\sffamily\rowcolors{2}{pa-tablealt}{white}}
+
+% --- Row stretch ---
+\renewcommand{\arraystretch}{1.35}
+
+\endinput

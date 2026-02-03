@@ -1,0 +1,326 @@
+% =============================================================================
+% pa-callouts.sty — Callout environments for El Paradigma Agentico
+% =============================================================================
+% 14 environments mapped to 3 visual families:
+%   Accent (Navy)  — executive/important content
+%   Neutral (Gray) — notes/examples/info
+%   Alert (Warm)   — warnings/errors
+% Plus 1 special: cita-directa (decorative quote style)
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Base tcolorbox style ---
+\tcbset{
+  pa-base/.style={
+    enhanced,
+    breakable,
+    arc=0pt,
+    boxrule=0pt,
+    left=12pt,
+    right=12pt,
+    top=10pt,
+    bottom=10pt,
+    before skip=12pt,
+    after skip=12pt,
+    fonttitle=\sffamily\bfseries,
+    fontupper=\small,
+  }
+}
+
+% =============================================================================
+% Family 1: ACCENT (Navy) — executive/important content
+% Environments: resumen-ejecutivo, reunion-liderazgo, argumento-board,
+%               dato-clave, caso-real
+% =============================================================================
+
+% 1. Resumen Ejecutivo
+\newtcolorbox{resumen-ejecutivo}[1][]{
+  pa-base,
+  colback=pa-callout-accent-bg,
+  colframe=pa-callout-accent-bg,
+  borderline west={3pt}{0pt}{pa-callout-accent-border},
+  title={\faClipboardList\quad Resumen Ejecutivo},
+  coltitle=pa-callout-accent-border,
+  colbacktitle=pa-callout-accent-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-accent-bg,
+    colframe=pa-callout-accent-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 2. Para tu proxima reunion de liderazgo
+\newtcolorbox{reunion-liderazgo}[1][]{
+  pa-base,
+  colback=pa-callout-accent-bg,
+  colframe=pa-callout-accent-bg,
+  borderline west={3pt}{0pt}{pa-callout-accent-border},
+  title={\faUsers\quad Para tu pr\'{o}xima reuni\'{o}n de liderazgo},
+  coltitle=pa-callout-accent-border,
+  colbacktitle=pa-callout-accent-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-accent-bg,
+    colframe=pa-callout-accent-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 4. Argumento para el Board
+\newtcolorbox{argumento-board}[1][]{
+  pa-base,
+  colback=pa-callout-accent-bg,
+  colframe=pa-callout-accent-bg,
+  borderline west={3pt}{0pt}{pa-callout-accent-border},
+  title={\faBriefcase\quad Argumento para el Board},
+  coltitle=pa-callout-accent-border,
+  colbacktitle=pa-callout-accent-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-accent-bg,
+    colframe=pa-callout-accent-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 13. Dato clave
+\newtcolorbox{dato-clave}[1][]{
+  pa-base,
+  colback=pa-callout-accent-bg,
+  colframe=pa-callout-accent-bg,
+  borderline west={3pt}{0pt}{pa-callout-accent-border},
+  title={\faChartBar\quad Dato clave},
+  coltitle=pa-callout-accent-border,
+  colbacktitle=pa-callout-accent-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-accent-bg,
+    colframe=pa-callout-accent-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 15. Caso Real Documentado
+\newtcolorbox{caso-real}[1][]{
+  pa-base,
+  colback=pa-callout-accent-bg,
+  colframe=pa-callout-accent-bg,
+  borderline west={3pt}{0pt}{pa-callout-accent-border},
+  title={\faCheckCircle\quad Caso Real Documentado},
+  coltitle=pa-callout-accent-border,
+  colbacktitle=pa-callout-accent-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-accent-bg,
+    colframe=pa-callout-accent-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% =============================================================================
+% Family 2: NEUTRAL (Gray) — notes/examples/info
+% Environments: nota-lideres, ejemplo-practico, lectura-ejecutiva,
+%               implicacion-talento, tendencia-clave, checklist-box,
+%               caso-ficticio, callout-generico
+% =============================================================================
+
+% 5. Nota para lideres
+\newtcolorbox{nota-lideres}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faStickyNote\quad Nota para l\'{i}deres},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 6. Tendencia clave
+\newtcolorbox{tendencia-clave}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faChartLine\quad Tendencia clave},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 8. Ejemplo practico
+\newtcolorbox{ejemplo-practico}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faLightbulb\quad Ejemplo pr\'{a}ctico},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 9. Lectura ejecutiva
+\newtcolorbox{lectura-ejecutiva}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faBookOpen\quad Lectura ejecutiva},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 10. Implicacion para lideres de talento
+\newtcolorbox{implicacion-talento}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faBullseye\quad Implicaci\'{o}n para l\'{i}deres},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 12. Checklist
+\newtcolorbox{checklist-box}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faCheckSquare\quad Checklist},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 16. Caso Ficticio Basado en Patrones Reales
+\newtcolorbox{caso-ficticio}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  title={\faInfoCircle\quad Caso Ficticio Basado en Patrones Reales},
+  coltitle=pa-callout-neutral-border,
+  colbacktitle=pa-callout-neutral-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-neutral-bg,
+    colframe=pa-callout-neutral-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 14. Generico (fallback)
+\newtcolorbox{callout-generico}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  #1
+}
+
+% =============================================================================
+% Family 3: ALERT (Warm) — warnings/errors
+% Environments: errores-comunes, punto-critico
+% =============================================================================
+
+% 3. Errores comunes de lideres
+\newtcolorbox{errores-comunes}[1][]{
+  pa-base,
+  colback=pa-callout-alert-bg,
+  colframe=pa-callout-alert-bg,
+  borderline west={3pt}{0pt}{pa-callout-alert-border},
+  title={\faExclamationTriangle\quad Errores comunes de l\'{i}deres},
+  coltitle=pa-callout-alert-border,
+  colbacktitle=pa-callout-alert-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-alert-bg,
+    colframe=pa-callout-alert-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% 7. Punto critico
+\newtcolorbox{punto-critico}[1][]{
+  pa-base,
+  colback=pa-callout-alert-bg,
+  colframe=pa-callout-alert-bg,
+  borderline west={3pt}{0pt}{pa-callout-alert-border},
+  title={\faExclamationCircle\quad Punto cr\'{i}tico},
+  coltitle=pa-callout-alert-border,
+  colbacktitle=pa-callout-alert-bg,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    colback=pa-callout-alert-bg,
+    colframe=pa-callout-alert-bg,
+    sharp corners,
+  },
+  #1
+}
+
+% =============================================================================
+% Special: CITA DIRECTA — decorative quote style
+% =============================================================================
+
+% 11. Cita directa
+\newtcolorbox{cita-directa}[1][]{
+  pa-base,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  borderline west={3pt}{0pt}{pa-callout-neutral-border},
+  before upper={\begin{center}\Large\color{pa-midgray}\faQuoteLeft\end{center}\itshape},
+  after upper={\begin{center}\Large\color{pa-midgray}\faQuoteRight\end{center}},
+  left=20pt,
+  right=20pt,
+  #1
+}
+
+\endinput

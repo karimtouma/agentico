@@ -1,0 +1,16 @@
+output/*.pdf
+output/*.epub
+output/*.tex
+output/*.log
+output/*.aux
+output/*.toc
+output/*.out
+output/*.fdb_latexmk
+output/*.fls
+output/*.synctex.gz
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls

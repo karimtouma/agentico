@@ -1,0 +1,5 @@
+✓ Permitir: Código generado con review humana
+✓ Permitir: Dependencias con licencias permisivas (MIT, Apache, BSD)
+✗ Prohibir: Código GPL/AGPL sin aprobación legal
+✗ Prohibir: Código de competidores conocidos
+⚠ Revisar: Algoritmos patentables (consultar con IP counsel)

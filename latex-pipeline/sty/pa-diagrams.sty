@@ -1,0 +1,126 @@
+% =============================================================================
+% pa-diagrams.sty — TikZ styles for professional diagrams
+% Uses the existing pa-colors palette. 0 new colors.
+% =============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Base TikZ styles for all diagrams ---
+
+% Agent box: used in ecosystem diagrams for individual agent nodes
+\tikzstyle{agentbox} = [
+  draw=pa-lightgray,
+  fill=pa-light,
+  rounded corners=2pt,
+  text width=2.6cm,
+  minimum height=2.2cm,
+  font=\scriptsize\sffamily,
+  inner sep=5pt,
+  align=left
+]
+
+% Wide agent box: for 4-agent ecosystems (slightly wider)
+\tikzstyle{agentbox-wide} = [
+  draw=pa-lightgray,
+  fill=pa-light,
+  rounded corners=2pt,
+  text width=3.0cm,
+  minimum height=2.2cm,
+  font=\scriptsize\sffamily,
+  inner sep=5pt,
+  align=left
+]
+
+% Orchestrator/coordinator box: central decision node
+\tikzstyle{orchbox} = [
+  draw=pa-primary,
+  fill=pa-tablehead,
+  rounded corners=2pt,
+  text width=5.5cm,
+  font=\scriptsize\sffamily,
+  inner sep=6pt,
+  align=left
+]
+
+% Human oversight box: bottom of hierarchy
+\tikzstyle{humanbox} = [
+  draw=pa-callout-neutral-border,
+  fill=pa-callout-neutral-bg,
+  rounded corners=2pt,
+  text width=5.5cm,
+  font=\scriptsize\sffamily,
+  inner sep=6pt,
+  align=left
+]
+
+% Flowchart process box
+\tikzstyle{processbox} = [
+  draw=pa-lightgray,
+  fill=pa-light,
+  rounded corners=2pt,
+  text width=7cm,
+  font=\small\sffamily,
+  inner sep=6pt,
+  align=left
+]
+
+% Flowchart decision diamond
+\tikzstyle{decisionbox} = [
+  draw=pa-primary,
+  fill=pa-tablehead,
+  diamond,
+  aspect=2.5,
+  font=\scriptsize\sffamily,
+  inner sep=2pt,
+  align=center
+]
+
+% Quadrant axis style
+\tikzstyle{quadaxis} = [
+  -{Stealth[length=5pt]},
+  line width=0.6pt,
+  color=pa-darktext
+]
+
+% Quadrant cell
+\tikzstyle{quadcell} = [
+  text width=4.2cm,
+  font=\scriptsize\sffamily,
+  inner sep=6pt,
+  align=left
+]
+
+% Layer box for architecture diagrams
+\tikzstyle{layerbox} = [
+  draw=pa-lightgray,
+  fill=pa-light,
+  rounded corners=2pt,
+  text width=2.8cm,
+  minimum height=1.8cm,
+  font=\scriptsize\sffamily,
+  inner sep=5pt,
+  align=left
+]
+
+% Layer title bar
+\tikzstyle{layertitle} = [
+  fill=pa-tablehead,
+  text=white,
+  font=\scriptsize\sffamily\bfseries,
+  inner sep=4pt,
+  minimum width=\textwidth,
+  minimum height=0.5cm,
+  align=center
+]
+
+% Box title (bold name inside agent/orch boxes)
+\newcommand{\boxtitle}[1]{{\bfseries\color{pa-primary}#1}\par\smallskip}
+
+% Standard arrow for diagrams
+\tikzstyle{diagramarrow} = [
+  -{Stealth[length=5pt]},
+  line width=0.7pt,
+  color=pa-primary
+]
+
+\endinput

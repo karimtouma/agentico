@@ -1,0 +1,150 @@
+% =============================================================================
+% book.tex — Pandoc template for "El Paradigma Agéntico"
+% =============================================================================
+\documentclass[$if(classoption)$$for(classoption)$$classoption$$sep$,$endfor$$endif$]{paradigma-agentico}
+
+% Load additional style packages (found via TEXINPUTS)
+\input{pa-colors.sty}
+\input{pa-callouts.sty}
+\input{pa-tables.sty}
+\input{pa-codeblocks.sty}
+\input{pa-diagrams.sty}
+\input{pa-typography.sty}
+
+% Metadata
+\title{El Paradigma Agéntico}
+\author{Karim Touma}
+\date{$book.date$}
+
+% Language is set via babel in the .cls file
+
+\begin{document}
+
+% =============================================================================
+% FRONTMATTER
+% =============================================================================
+\frontmatter
+\pagestyle{empty}
+
+% --- Half title page ---
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28}{34}\selectfont\sffamily\bfseries\color{pa-primary}El Paradigma Agéntico}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+% --- Full title page ---
+\vspace*{0.18\textheight}
+\begin{center}
+  {\fontsize{13}{16}\selectfont\sffamily\color{pa-midgray}\MakeUppercase{El Paradigma}}\\[0.8em]
+  {\fontsize{34}{40}\selectfont\sffamily\bfseries\color{pa-primary}Agéntico}\\[1.2em]
+  {\color{pa-primary}\rule{0.45\textwidth}{2pt}}\\[1.2em]
+  {\fontsize{16}{20}\selectfont\sffamily\color{pa-darktext}Una Nueva Era en la\\[0.3em]Ingeniería de Software}\\[2.5em]
+  {\fontsize{13}{16}\selectfont\sffamily\color{pa-midgray}Karim Touma}\\[0.6em]
+  {\fontsize{10}{13}\selectfont\sffamily\color{pa-midgray}\href{mailto:karim@touma.io}{karim@touma.io}\enspace\textbar\enspace\href{https://karim.touma.io}{karim.touma.io}}\\[0.8em]
+  {\fontsize{11}{14}\selectfont\sffamily\color{pa-midgray}$book.date$}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+% --- Copyright page ---
+\vspace*{\fill}
+\begin{flushleft}
+  \small\sffamily\color{pa-darktext}
+  \textbf{El Paradigma Agéntico: Una Nueva Era en la Ingeniería de Software}\\[12pt]
+  Copyright \textcopyright{} $book.date$ Karim Touma\\[6pt]
+  \href{mailto:karim@touma.io}{karim@touma.io}\enspace\textbar\enspace\href{https://karim.touma.io}{karim.touma.io}\\[6pt]
+  Todos los derechos reservados.\\[12pt]
+  Ninguna parte de esta publicación puede ser reproducida, almacenada en un sistema
+  de recuperación, o transmitida en cualquier forma o por cualquier medio ---electrónico,
+  mecánico, fotocopia, grabación, u otro--- sin el permiso previo por escrito del autor,
+  excepto en el caso de citas breves para reseñas.\\[12pt]
+  Las opiniones expresadas en este libro son responsabilidad exclusiva del autor y no
+  representan necesariamente las posiciones de las organizaciones mencionadas.\\[12pt]
+  Los casos de estudio ficticios (Capítulos 9, 10 y 11) son creaciones del autor
+  basadas en patrones reales de la industria. Cualquier semejanza con empresas
+  específicas es coincidencia.\\[18pt]
+  ISBN: [pendiente]\\[18pt]
+  \textbf{Primera edición}, $book.date$\\[6pt]
+  Diseñado y compuesto con \LaTeX{}
+\end{flushleft}
+\clearpage
+
+% --- Table of Contents ---
+\pagestyle{paradigma-plain}
+{
+  \hypersetup{linkcolor=pa-darktext}
+  \setcounter{tocdepth}{2}
+  \tableofcontents*
+}
+\clearpage
+
+% =============================================================================
+% MAINMATTER
+% =============================================================================
+\mainmatter
+\pagestyle{paradigma-page}
+
+% Part dividers are inserted automatically by part-dividers.lua filter
+% based on chapter numbering (Parts I-VI)
+
+$body$
+
+% =============================================================================
+% BACKMATTER
+% =============================================================================
+\backmatter
+
+% --- Sobre el Autor ---
+\clearpage
+\pagestyle{paradigma-plain}
+\vspace*{1cm}
+{\centering\fontsize{22}{26}\selectfont\sffamily\bfseries\color{pa-primary}Sobre el Autor\par}
+\vspace{1.5cm}
+
+\noindent\color{pa-darktext}
+\textbf{Karim Touma} empez\'{o} a construir sistemas de inteligencia artificial
+antes de que la industria supiera c\'{o}mo llamarlos. Como investigador en la
+Universidad de Santiago de Chile, dise\~{n}\'{o} modelos de data mining y optimizaci\'{o}n
+cuando el machine learning a\'{u}n era territorio acad\'{e}mico. Esa experiencia
+fundacional ---la de quien entiende la IA desde sus fundamentos, no desde
+sus titulares--- es la que atraviesa cada p\'{a}gina de este libro.
+
+\vspace{0.8em}
+\noindent Desde entonces, su carrera ha seguido una trayectoria poco com\'{u}n:
+la del l\'{i}der ejecutivo que nunca dej\'{o} de escribir c\'{o}digo. En Telef\'{o}nica
+Chile construy\'{o} desde cero la primera capacidad de Big Data Analytics de una
+telco en Latinoam\'{e}rica. En Falabella, como Chief Data \& Analytics Officer,
+lider\'{o} la estrategia de datos para uno de los ecosistemas de e-commerce m\'{a}s
+grandes de la regi\'{o}n. En LATAM Airlines, despleg\'{o} modelos de personalizaci\'{o}n
+en tiempo real para millones de pasajeros. En el camino, fund\'{o} una startup
+de datos y lider\'{o} equipos de m\'{a}s de cien ingenieros en seis pa\'{i}ses.
+
+\vspace{0.8em}
+\noindent Hoy, como Group Chief Digital \& Data Officer de Grupo DEACERO, lidera
+la transformaci\'{o}n de una de las mayores manufactureras de acero de M\'{e}xico
+hacia una operaci\'{o}n AI-native, arquitectando personalmente la plataforma de
+GenAI, datos y digital del grupo. Construye sistemas RAG, hace fine-tuning de
+modelos LLM y los despliega a escala en producci\'{o}n ---no como ejercicio
+te\'{o}rico, sino como parte de su trabajo diario.
+
+\vspace{0.8em}
+\noindent Es graduado del \emph{Stanford Executive Program} en Stanford Graduate
+School of Business y tiene un grado en Ciencias de la Computaci\'{o}n de la
+Universidad de Santiago de Chile.
+
+\vspace{0.8em}
+\noindent Este libro nace de esa intersecci\'{o}n: la visi\'{o}n de quien toma
+decisiones estrat\'{e}gicas en la mesa directiva y, al mismo tiempo, entiende
+qu\'{e} sucede dentro del modelo. Es una perspectiva que pocos ofrecen, y que
+este tema demanda.
+
+\vspace{1.5em}
+\noindent\small\sffamily
+\textbf{Contacto:}\\
+\href{mailto:karim@touma.io}{karim@touma.io}\\
+\href{https://karim.touma.io}{karim.touma.io}\\
+\href{https://www.linkedin.com/in/katouma}{linkedin.com/in/katouma}
+
+\end{document}

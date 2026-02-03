@@ -1,0 +1,18 @@
+Feature: Sistema de Recomendaciones de Producto
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HUMANO (Arquitecto):
+✅ Responsable de: Diseño de algoritmo, decisiones de performance
+❌ NO responsable de: Implementación línea por línea
+
+AGENTE DE IA (Codificador):
+✅ Responsable de: Generar código según especificaciones
+❌ NO responsable de: Decisiones de negocio o arquitectura
+
+HUMANO (Revisor):
+✅ Responsable de: Validar que código cumple requisitos y estándares
+❌ NO responsable de: Re-escribir código (si está mal, agente lo corrige)
+
+OWNERSHIP FINAL:
+→ Éxito: Crédito compartido equipo (humanos + IA como herramienta)
+→ Fracaso: Humano es accountable (eligió usar IA, supervisó el proceso)

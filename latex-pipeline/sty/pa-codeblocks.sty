@@ -1,0 +1,64 @@
+% =============================================================================
+% pa-codeblocks.sty — Differentiated code block environments
+% =============================================================================
+% 3 visual categories beyond the existing pa-codeblock:
+%   pa-template-block — business templates, prompts, slides, dialogues
+%   pa-diagram-block  — ASCII art diagrams with box-drawing characters
+%   \paformula{}      — centered formula/slogan text (no box)
+%
+% Colors reuse the existing palette — 0 new color definitions.
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Global verbatim settings: enable line breaking for long lines ---
+\RequirePackage{fvextra}
+\fvset{breaklines=true, breakanywhere=true}
+
+% --- pa-template-block: templates, prompts, policies, slides, dialogues ---
+% Gray left bar, neutral background, monospace, NO line numbers
+\newtcolorbox{pa-template-block}{
+  enhanced,
+  breakable,
+  arc=0pt,
+  boxrule=0pt,
+  colback=pa-callout-neutral-bg,
+  colframe=pa-callout-neutral-bg,
+  coltext=pa-darktext,
+  borderline west={2pt}{0pt}{pa-callout-neutral-border},
+  left=10pt,
+  right=10pt,
+  top=8pt,
+  bottom=8pt,
+  before skip=10pt,
+  after skip=10pt,
+}
+
+% --- pa-diagram-block: ASCII art diagrams ---
+% Subtle border, light background, centered monospace, NO line numbers
+\newtcolorbox{pa-diagram-block}{
+  enhanced,
+  breakable,
+  arc=2pt,
+  colback=pa-light,
+  colframe=pa-lightgray,
+  coltext=pa-darktext,
+  boxrule=0.4pt,
+  left=6pt,
+  right=6pt,
+  top=10pt,
+  bottom=10pt,
+  before skip=10pt,
+  after skip=10pt,
+}
+
+% --- \paformula — centered formula/slogan text ---
+% No box, large sans-serif, used for 1-3 line equations/slogans
+\newcommand{\paformula}[1]{%
+  \begin{center}%
+  \vspace{6pt}%
+  {\large\sffamily\color{pa-darktext}#1}%
+  \vspace{6pt}%
+  \end{center}%
+}
+
+\endinput

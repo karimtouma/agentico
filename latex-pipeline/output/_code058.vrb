@@ -1,0 +1,22 @@
+## Risk Appetite para IA Agéntica
+
+<<EMPRESA>> acepta los siguientes niveles de riesgo en adopción de IA:
+
+### Riesgos ACEPTABLES:
+✓ Errores menores en código no-crítico (detectables en QA)
+✓ Dependencia de vendors con track record comprobado (GitHub, etc.)
+✓ Uso de modelos públicos para código no-confidencial
+✓ Inversión en training de equipo (hasta <<PRESUPUESTO_PERSONA_ANO>> por persona/año)
+
+### Riesgos NO ACEPTABLES:
+✗ Vulnerabilidades de seguridad en producción
+✗ Data leakage de información confidencial
+✗ Violaciones de compliance (GDPR, SOC2, etc.)
+✗ IP infringement que resulte en litigation
+✗ Bias discriminatorio en sistemas customer-facing
+
+### Umbrales Cuantitativos:
+- Incidents de seguridad por código de IA: 0 tolerados/año
+- False positive rate en code review: < 15%
+- Developer satisfaction con herramientas: > 70%
+- ROI de inversión en IA: > 200% a 12 meses

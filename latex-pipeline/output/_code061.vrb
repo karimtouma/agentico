@@ -1,0 +1,54 @@
+┌─────────────────────────────────────────────┐
+│ INCIDENT DETECTADO                          │
+│ (ej. vulnerabilidad en código de IA)       │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│ FASE 1: CONTENCIÓN (0-2 horas)              │
+├─────────────────────────────────────────────┤
+│ • Hotfix o rollback inmediato               │
+│ • Disable feature si es necesario           │
+│ • Notificar a stakeholders afectados        │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│ FASE 2: INVESTIGACIÓN (2-24 horas)          │
+├─────────────────────────────────────────────┤
+│ • Root cause analysis                       │
+│ • ¿Código fue generado o humano?            │
+│ • ¿Falla de herramienta o de review?        │
+│ • Scope: ¿Hay código similar en codebase?   │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│ FASE 3: REMEDIACIÓN (1-5 días)              │
+├─────────────────────────────────────────────┤
+│ • Fix permanente implementado               │
+│ • Testing exhaustivo                        │
+│ • Scan de codebase para issues similares    │
+│ • Deploy a producción                       │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│ FASE 4: POST-MORTEM (1 semana)              │
+├─────────────────────────────────────────────┤
+│ • Documentar timeline y root cause          │
+│ • Identificar gaps en controles             │
+│ • Action items para prevenir recurrencia    │
+│ • Comunicación a org (lessons learned)      │
+│ • Actualizar políticas si necesario         │
+└──────────┬──────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────┐
+│ FASE 5: PREVENCIÓN (ongoing)                │
+├─────────────────────────────────────────────┤
+│ • Implementar action items                  │
+│ • Training adicional si fue human error     │
+│ • Ajuste de herramientas si fue tool issue  │
+│ • Monitoreo de efectividad de mitigaciones  │
+└─────────────────────────────────────────────┘

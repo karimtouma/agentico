@@ -1,0 +1,29 @@
+book:
+  title: "El Paradigma Agéntico"
+  subtitle: "Una Nueva Era en la Ingeniería de Software"
+  author: "Karim Touma"
+  lang: es
+  date: "2026"
+
+theme: modern_blue          # modern_blue | corporate_gray | warm_terracotta
+page_size: letter           # letter | a4 | a5
+mode: print                 # print | digital
+
+fonts:
+  body: LibertinusSerif
+  heading: LibertinusSans
+  mono: FiraMono
+  size: 11pt
+
+layout:
+  margin_inner: 3cm
+  margin_outer: 2.5cm
+  margin_top: 2.5cm
+  margin_bottom: 3cm
+
+features:
+  illustrations: true
+  drop_caps: true
+  pull_quotes: true
+  colored_tables: true
+  chapter_thumbs: false

@@ -1,0 +1,15 @@
+// Desarrollador en VSCode
+function calculateTax(price) {
+  // ???
+}
+
+// Desarrollador copia esto a ChatGPT y pregunta:
+// "Implementa esta función para calcular 16% de IVA"
+
+// ChatGPT responde:
+function calculateTax(price) {
+  const taxRate = 0.16;
+  return price * taxRate;
+}
+
+// Desarrollador copia de vuelta a VSCode

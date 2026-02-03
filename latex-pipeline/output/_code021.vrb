@@ -1,0 +1,70 @@
+Performance Review - Q2 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ingeniero: Carolina Ramírez
+Rol: Staff Engineer (AI-Augmented Team)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+IMPACTO DE NEGOCIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Lideró diseño de nueva feature de checkout
+   → Aumentó conversión 12% (+$200K revenue/mes)
+
+✅ Redujo time-to-market de features de pagos
+   → De 6 semanas → 3 semanas promedio
+
+✅ Resolvió 8 bugs críticos del backlog
+   → CSAT de clientes enterprise subió de 7.2 → 8.1
+
+Rating: ⭐⭐⭐⭐⭐ Exceeds Expectations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CALIDAD DE DECISIONES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Diseñó arquitectura de microservicios para pagos
+   → 0 cambios arquitectónicos requeridos post-launch
+
+⚠️ Estimación de migration a OAuth fue optimista
+   → Tomó 5 semanas vs. 3 estimadas
+   → Aprendizaje: Agregar buffer 40% en migrations
+
+Rating: ⭐⭐⭐⭐ Meets Expectations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ORQUESTACIÓN DE IA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Supervisó 3 agentes de IA efectivamente
+   → Tasa de error de agentes: 8% (objetivo <15%)
+
+✅ Optimizó prompts de generación de tests
+   → Redujo tokens usados 35% ($600/mes de ahorro)
+
+✅ Code reviews de IA: Promedio 22 min/PR
+   → Objetivo <30 min ✅
+
+Rating: ⭐⭐⭐⭐⭐ Exceeds Expectations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EVOLUCIÓN Y APRENDIZAJE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Completó certificación de Prompt Engineering (Anthropic)
+
+✅ Dio charla interna: "Arquitectura con IA: Lecciones Q1-Q2"
+   → 25 asistentes, NPS +9
+
+✅ Experimentó con fine-tuning de modelos en nuestro codebase
+   → Resultados preliminares prometedores
+
+Rating: ⭐⭐⭐⭐⭐ Exceeds Expectations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RATING GENERAL: ⭐⭐⭐⭐⭐ Exceeds Expectations
+
+Próximos pasos:
+• Promoción a Principal Engineer bajo consideración (Q4)
+• Liderar iniciativa de AI Governance en la org
+• Mentorar a 2 Senior Engineers en transición a roles AI-augmented
+
+Compensación:
+• Aumento salarial: 18% (reconocimiento de impacto excepcional)
+• Bonus de Q2: 120% de target

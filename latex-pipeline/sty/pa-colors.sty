@@ -1,0 +1,65 @@
+% =============================================================================
+% pa-colors.sty — Color themes for El Paradigma Agéntico
+% =============================================================================
+% Professional Grayscale + Navy Accent palette.
+% Base colors are defined in the .cls file (paradigma-agentico.cls).
+% This file provides theme switching commands and callout colors.
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Theme: Professional Navy (default — defined in .cls) ---
+% pa-primary:    #1A5276 (dark navy — sole accent color)
+% pa-secondary:  #5D6D7E (muted blue-gray)
+% pa-accent:     #D35400 (warm rust — alerts only)
+% pa-light:      #F4F6F6 (neutral light gray)
+% pa-tablehead:  #E8EAED (cool light gray)
+% pa-tablealt:   #F8F9FA (warm near-white)
+
+% --- Theme switcher commands ---
+\newcommand{\setthemecorporategray}{%
+  \definecolor{pa-primary}{HTML}{2C3E50}%
+  \definecolor{pa-secondary}{HTML}{7F8C8D}%
+  \definecolor{pa-accent}{HTML}{E67E22}%
+  \definecolor{pa-light}{HTML}{F2F3F4}%
+  \definecolor{pa-tablehead}{HTML}{D5D8DC}%
+  \definecolor{pa-tablealt}{HTML}{FAFAFA}%
+  \definecolor{pa-darktext}{HTML}{1B2631}%
+  \definecolor{pa-midgray}{HTML}{566573}%
+  \definecolor{pa-lightgray}{HTML}{EAECEE}%
+  \definecolor{pa-success}{HTML}{1E8449}%
+  \definecolor{pa-warning}{HTML}{D68910}%
+  \definecolor{pa-danger}{HTML}{C0392B}%
+}
+
+\newcommand{\setthemewarmterracotta}{%
+  \definecolor{pa-primary}{HTML}{A0522D}%
+  \definecolor{pa-secondary}{HTML}{CD853F}%
+  \definecolor{pa-accent}{HTML}{8B4513}%
+  \definecolor{pa-light}{HTML}{FDF5E6}%
+  \definecolor{pa-tablehead}{HTML}{FFE4C4}%
+  \definecolor{pa-tablealt}{HTML}{FFFAF5}%
+  \definecolor{pa-darktext}{HTML}{3E2723}%
+  \definecolor{pa-midgray}{HTML}{795548}%
+  \definecolor{pa-lightgray}{HTML}{EFEBE9}%
+  \definecolor{pa-success}{HTML}{2E7D32}%
+  \definecolor{pa-warning}{HTML}{E65100}%
+  \definecolor{pa-danger}{HTML}{B71C1C}%
+}
+
+% =============================================================================
+% Callout colors — 3 families (reduced from 12)
+% =============================================================================
+
+% Family 1: Accent (Navy) — executive/important content
+\definecolor{pa-callout-accent-bg}{HTML}{EDF0F2}
+\definecolor{pa-callout-accent-border}{HTML}{1A5276}
+
+% Family 2: Neutral (Gray) — notes/examples/info
+\definecolor{pa-callout-neutral-bg}{HTML}{F4F5F5}
+\definecolor{pa-callout-neutral-border}{HTML}{7F8C8D}
+
+% Family 3: Alert (Warm) — warnings/errors
+\definecolor{pa-callout-alert-bg}{HTML}{FDF2E9}
+\definecolor{pa-callout-alert-border}{HTML}{D35400}
+
+\endinput

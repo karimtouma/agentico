@@ -1,0 +1,49 @@
+% =============================================================================
+% pa-typography.sty — Typography enhancements for El Paradigma Agéntico
+% =============================================================================
+
+\NeedsTeXFormat{LaTeX2e}
+
+% --- Paragraph settings ---
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt plus 1pt}
+
+% --- Hyphenation and line-breaking (canonical location — overrides .cls values) ---
+\hyphenpenalty=800
+\exhyphenpenalty=400
+\tolerance=800
+\hbadness=1000
+\emergencystretch=2em
+\hfuzz=0.5pt
+\vfuzz=\hfuzz
+
+% --- French spacing (no extra space after periods) ---
+\frenchspacing
+
+% --- Superscript footnote markers in text ---
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+% --- Smart quotes and punctuation (LuaLaTeX handles this via fontspec) ---
+
+% --- Prevent floating figures from jumping ahead of sections ---
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.70}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.66}
+
+% --- Ensure all pages have content at bottom (prevent stretching) ---
+% Already set in .cls with \raggedbottom
+
+% --- URL breaking ---
+\PassOptionsToPackage{hyphens}{url}
+
+% --- Caption styling ---
+\captionnamefont{\small\sffamily\bfseries\color{pa-primary}}
+\captiontitlefont{\small\sffamily}
+\captiondelim{\quad}
+
+% --- Blockquote (epigraph) default styling ---
+\setlength{\epigraphwidth}{0.75\textwidth}
+\setlength{\epigraphrule}{0pt}
+
+\endinput
