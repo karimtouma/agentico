@@ -10,7 +10,9 @@
       "Grep",
       "Bash(mkdir*)",
       "Bash(ls*)",
-      "Bash(wc*)"
+      "Bash(wc*)",
+      "Bash(cd latex-pipeline && docker compose*)",
+      "Bash(docker compose*)"
     ]
   }
 }

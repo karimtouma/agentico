@@ -1,5 +1,0 @@
-✓ Permitir: Código generado en sandbox/dev environment
-✗ Prohibir: Código generado directo a producción sin audit
-✗ Prohibir: Uso de APIs externas para código confidencial
-✓ Requerir: Self-hosted models para componentes críticos
-✓ Requerir: Full traceability de origen de código

@@ -13,28 +13,15 @@ Thumbs.db
 *.tmp
 *.bak
 
-# LaTeX build artifacts
-latex-pipeline/output/*.pdf
-latex-pipeline/output/*.tex
-latex-pipeline/output/*.aux
-latex-pipeline/output/*.log
-latex-pipeline/output/*.toc
-latex-pipeline/output/*.out
-latex-pipeline/output/*.idx
-latex-pipeline/output/*.ilg
-latex-pipeline/output/*.ind
-latex-pipeline/output/*.vrb
-latex-pipeline/output/*.fls
-latex-pipeline/output/*.fdb_latexmk
-latex-pipeline/output/*.synctex.gz
+# LaTeX build artifacts (entire output dir is generated)
+latex-pipeline/output/
 
 # Generated figure PDFs (built from tikz/svg sources)
 ingenieria_agentica/figuras/pdf/
 latex-pipeline/illustrations/*.pdf
 latex-pipeline/illustrations/.cache/
 
-# MCP and tool logs
-mcp_sharepoint.log
+# Logs
 *.log
 
 # Claude plans (ephemeral)

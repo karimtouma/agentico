@@ -1,2 +1,0 @@
-SELECT * FROM customers
-WHERE city = 'New York' AND age > 25;

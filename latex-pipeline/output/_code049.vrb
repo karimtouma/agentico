@@ -1,6 +1,0 @@
-⚠ CUIDADO:
-"Todo código generado es propiedad compartida de vendor y usuario."
-
-✓ MEJOR:
-"Usuario retiene ownership completo del output generado.
-Vendor puede usar metadata agregada y anonimizada."

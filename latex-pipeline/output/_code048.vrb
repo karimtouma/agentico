@@ -1,7 +1,0 @@
-⚠ CUIDADO - Cláusula típica de vendor:
-"No garantizamos que el output no viole IP de terceros.
-Usuario es responsable de validar código generado."
-
-✓ MEJOR - Cláusula negociada:
-"Vendor indemnizará contra demandas de IP si el código fue
-generado usando configuración default y mejores prácticas."

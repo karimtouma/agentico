@@ -1,7 +1,0 @@
-// Pseudocódigo imperativo
-function updateUserList(users) {
-    $("#user-list").empty();
-    for (user in users) {
-        $("#user-list").append("<li>" + user.name + "</li>");
-    }
-}

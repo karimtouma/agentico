@@ -1,7 +1,7 @@
 # Proyecto: Libro "Agéntico por Diseño, Tomo I: Tecnologías de la Información"
 
 ## Contexto
-Estamos construyendo un libro de 300+ páginas sobre ingeniería de software para la era de los agentes.
+Libro de ~570 páginas (134K palabras) sobre ingeniería de software para la era de los agentes.
 El libro es fundacional: cómo diseñar organizaciones y equipos de desarrollo que operan con agentes autónomos.
 Este es el **Tomo I** de la serie, enfocado en **Tecnologías de la Información**.
 - **Audiencia**: Gerentes y líderes técnicos (VP Eng, CTO, Tech Leads)
@@ -79,16 +79,10 @@ Cada caso debe incluir:
 4. **Los Resultados** - Métricas antes/después, ROI
 5. **Lecciones para Líderes** - Qué harían diferente
 
-## MCPs Disponibles para Investigación
-- `WebSearch` - Datos de mercado, declaraciones de líderes
-- `browsermcp` - Navegación de sitios específicos
-- `Apify` - Búsqueda de perfiles profesionales
-
 ## Comandos Útiles (Skills)
 
 ### Escritura
 - `/expand [capitulo]` - Expandir un capítulo existente
-- `/case-study [real|ficticio] [tema]` - Generar caso de estudio
 - `/research [tema]` - Investigar datos actualizados
 - `/chapter-outline [numero]` - Generar outline expandido
 
@@ -97,7 +91,6 @@ Cada caso debe incluir:
 - `/xref` - Validación exhaustiva de referencias cruzadas
 - `/roi-check` - Consistencia de cifras ROI, métricas y cost coverage
 - `/lint` - Verificación rápida: word count, placeholders, datos verificados
-- `/freshness` - ¿Está BOOK_FINAL.md sincronizado?
 - `/redundancy` - Detectar stats, citas y secciones repetidas entre capítulos
 - `/shelf-life` - Identificar contenido efímero (precios, versiones, predicciones)
 - `/depth-check` - Verificar profundidad de conceptos clave

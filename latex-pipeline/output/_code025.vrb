@@ -1,8 +1,0 @@
-Genera tests unitarios completos para esta función:
-[pega el código aquí]
-
-Requisitos:
-- Framework: [Jest/Pytest/etc]
-- Cubre: Happy path, errores, edge cases
-- Al menos 80% code coverage
-- Nombres de tests descriptivos

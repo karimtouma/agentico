@@ -1,2 +1,0 @@
-Tú: "Implementa feature de fetch y validación de usuarios con estos requisitos: [paste spec]"
-Agente: [10 minutos después] "Feature implementada. 8 archivos modificados, tests pasan. ¿Quieres que haga commit?"

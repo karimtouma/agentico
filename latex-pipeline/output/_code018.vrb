@@ -1,4 +1,0 @@
-Requerimientos de compliance bancaria:
-- Toda transacción debe logearse con timestamp, user_id, y monto
-- Datos sensibles deben enmascararse en logs (tarjetas, cuentas)
-- Excepciones deben escalarse a sistema de alertas
