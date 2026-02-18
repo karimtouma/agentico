@@ -24,7 +24,7 @@
   "kv_namespaces": [
     {
       "binding": "BOOK_KV",
-      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+      "id": "4405cb4f8f274dbcb850a395f8f1a9fe"
     }
   ],
 
@@ -32,7 +32,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_classes": ["BookMCP"]
+      "new_sqlite_classes": ["BookMCP"]
     }
   ]
 }
