@@ -26,3 +26,6 @@ latex-pipeline/illustrations/.cache/
 
 # Claude plans (ephemeral)
 .claude/plans/
+
+# Env
+.env
