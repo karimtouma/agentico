@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# build.sh — Main build script for El Paradigma Agéntico
+# build.sh — Main build script for Agéntico por Diseño
 # =============================================================================
 # Usage:
 #   ./scripts/build.sh              # Full PDF build
@@ -58,7 +58,7 @@ run_make() {
 show_status() {
     echo ""
     echo "══════════════════════════════════════════════"
-    echo "  El Paradigma Agéntico — Pipeline Status"
+    echo "  Agéntico por Diseño — Pipeline Status"
     echo "══════════════════════════════════════════════"
     echo ""
 
@@ -103,7 +103,7 @@ show_status() {
 
 # Analyze build log for issues
 analyze_log() {
-    local logfile="$OUTPUT_DIR/el-paradigma-agentico.log"
+    local logfile="$OUTPUT_DIR/agentico-por-diseno.log"
     if [ ! -f "$logfile" ]; then
         return
     fi

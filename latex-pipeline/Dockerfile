@@ -9,13 +9,15 @@ RUN apk add --no-cache \
     python3 \
     py3-yaml \
     fontconfig \
-    curl
+    curl \
+    librsvg
 
 # Install missing TeX Live packages
 RUN tlmgr install wrapfig lettrine epigraph pdfcol framed fvextra \
     && tlmgr install babel-spanish hyphen-spanish \
     && tlmgr install tools amsfonts newunicodechar truncate \
-    && tlmgr install tabularray ninecolors
+    && tlmgr install tabularray ninecolors \
+    && tlmgr install imakeidx marginnote
 
 # Install custom fonts
 COPY fonts/ /usr/share/fonts/custom/

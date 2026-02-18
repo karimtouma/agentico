@@ -1,4 +1,4 @@
-El Paradigma Agéntico: Una Nueva Era en la Ingeniería de Software
+Agéntico por Diseño, Tomo I: Tecnologías de la Información
 
 Introducción
 
@@ -67,7 +67,7 @@ Cabe mencionar que, junto con los avances en agentes de propósito general, los 
 
 En resumen, la evolución reciente nos llevó de herramientas aisladas a compañeros de código integrados, y de allí a agentes autónomos que pueden encargarse de tareas completas. Cada ola se construyó sobre la anterior: una vez que los modelos aprendieron a completar código localmente (segunda ola), la siguiente lógica fue darles más contexto y capacidades para que completaran proyectos enteros (tercera ola). Hoy, a finales de 2025, ya contamos con ejemplos funcionales de estos agentes en entornos reales, y todo indica que su adopción seguirá creciendo. A continuación, exploraremos en detalle algunas de las herramientas y plataformas agénticas más destacadas que han emergido, para entender cómo se utilizan en la práctica y qué posibilidades abren para desarrolladores y empresas.
 
-Capítulo 4: Herramientas y Plataformas Agénticas en la Actualidad
+Capítulo 8: Herramientas y Plataformas Agénticas en la Actualidad
 
 El ecosistema de herramientas construidas alrededor de la IA agéntica ha crecido rápidamente. En este capítulo presentaremos algunas de las principales plataformas, asistentes y frameworks que están marcando la pauta en esta nueva era de desarrollo de software. Desde asistentes de código integrados en editores hasta sofisticados orquestadores de agentes en la nube, veremos cómo se materializa la colaboración entre humanos y “colaboradores” de silicio.
 
@@ -83,7 +83,7 @@ El ecosistema de herramientas construidas alrededor de la IA agéntica ha crecid
 
 Con este panorama de herramientas y plataformas, podemos apreciar que la IA agéntica está aterrizando en productos concretos que desarrolladores y empresas pueden utilizar hoy. Desde la comodidad del editor con Cursor o Copilot, hasta la construcción de agentes empresariales a medida con frameworks especializados, las posibilidades son amplias. Pero más allá de las herramientas, lo que verdaderamente está cambiando es cómo trabajamos los ingenieros de software. En el siguiente capítulo analizaremos esa nueva forma de trabajar: cuáles son las nuevas capacidades de abstracción que nos permiten estos agentes y cómo el rol del desarrollador evoluciona en consecuencia.
 
-Capítulo 5: Nuevas Capacidades de Abstracción en la Ingeniería de Software
+Capítulo 9: Nuevas Capacidades de Abstracción en la Ingeniería de Software
 
 La introducción de agentes inteligentes en el proceso de desarrollo ha traído consigo un cambio fundamental en la abstracción con la que operan los ingenieros de software. En términos simples, el nivel al que un desarrollador puede trabajar se ha elevado: ahora es posible pensar en problemas y soluciones en un nivel más alto (el del qué se quiere lograr), delegando a la máquina gran parte de la labor de traducir eso al nivel bajo (el cómo se implementa en código concreto). Esta sección explora esas nuevas capacidades de abstracción y cómo están redefiniendo el trabajo del programador.
 
@@ -127,7 +127,7 @@ Finalmente, está el desafío de la caja negra ￼. Cuanto más nos alejamos del
 
 En conclusión, las nuevas abstracciones elevadas por la IA agéntica liberan al ingeniero de muchas tareas rutinarias, permitiéndole enfocarse en el diseño de alto nivel y en la validación. Esto tiene el potencial de aumentar enormemente la productividad y de hacer el desarrollo más accesible (menos detalles agobiantes) pero también exige responsabilidad: el ingeniero se vuelve la última línea de defensa para la calidad y corrección del software. Como bien se ha dicho, “La IA pone la potencia, pero el humano sigue poniendo el propósito” ￼. En el próximo capítulo, examinaremos cómo está siendo la adopción de este paradigma en la industria, tanto globalmente como en el contexto de América Latina, así como los impactos tangibles que ya se observan.
 
-Capítulo 6: Adopción en la Industria y el Caso de América Latina
+Capítulo 10: Adopción en la Industria y el Caso de América Latina
 
 El cambio de paradigma agéntico no es solo un concepto teórico o algo confinado a proyectos de laboratorio; ya está en marcha en la industria del software a nivel global. En este capítulo analizaremos cómo empresas y sectores están incorporando (o no) a los agentes de IA en sus procesos de desarrollo y operaciones, ofreciendo datos reales sobre su adopción. Prestaremos especial atención a la situación en América Latina, una región que, si bien muestra entusiasmo discursivo por la IA agéntica, enfrenta retos particulares para implementarla.
 
@@ -177,7 +177,7 @@ Un factor alentador es que varios países de la región cuentan con talento téc
 
 En síntesis, la adopción industrial del paradigma agéntico está en marcha, liderada por gigantes tecnológicos y extendiéndose gradualmente a otros sectores. Los beneficios en productividad y eficiencia están probados en los pioneros, aunque la generalización requiere superar desafíos de preparación interna y confianza. En América Latina, el interés es alto pero la implementación todavía incipiente, marcando una tarea pendiente para los próximos años. En el siguiente capítulo, discutiremos con mayor detalle algunos de esos desafíos y riesgos que enfrentan las organizaciones y los profesionales al incorporar agentes de IA, así como consideraciones para manejarlos adecuadamente.
 
-Capítulo 7: Desafíos y Riesgos del Paradigma Agéntico
+Capítulo 5: Desafíos y Riesgos del Paradigma Agéntico
 
 Si bien la IA agéntica ofrece promesas emocionantes, también acarrea una serie de desafíos, riesgos y consideraciones éticas que no podemos soslayar. Adoptar este paradigma implica enfrentar aspectos técnicos, organizativos y sociales que surgen de delegar más responsabilidad a sistemas autónomos. En este capítulo, examinaremos algunos de los principales retos y cómo encararlos:
 
@@ -239,7 +239,7 @@ A pesar de estas limitaciones, la tendencia es a mejoría continua. Nuevos model
 
 En resumen, el camino hacia la adopción plena de la IA agéntica tiene obstáculos que hay que navegar con cuidado. Confiabilidad, seguridad, ética, adaptación humana, aspectos legales y limitaciones técnicas forman un conjunto complejo de factores a gestionar. No obstante, ninguno de ellos es insuperable, y con las estrategias adecuadas es posible mitigarlos en gran medida. La clave está en adoptar una postura de optimismo cauteloso: aprovechar las ventajas enormes de esta tecnología, pero con los controles y salvaguardas necesarios. Con esto en mente, pasemos al capítulo final, donde vislumbraremos el futuro próximo de la ingeniería de software en esta era agéntica, sintetizando conclusiones y reflexionando sobre hacia dónde nos dirigimos.
 
-Capítulo 8: Conclusiones y Visión a Futuro
+Capítulo 6: Conclusiones y Visión a Futuro
 
 Nos encontramos en un momento bisagra para la ingeniería de software. El paradigma agéntico ha pasado en pocos años de ser una idea futurista a una realidad tangible que comienza a permear la industria. A lo largo de este libro hemos explorado sus fundamentos, sus manifestaciones actuales, los cambios en la forma de trabajar y los retos que conlleva. Para concluir, recapitulemos los puntos clave y proyectemos qué podemos esperar en el futuro inmediato y a mediano plazo:
 

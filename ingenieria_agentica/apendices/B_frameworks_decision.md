@@ -2,7 +2,21 @@
 
 > **Extensión objetivo:** 10 páginas | **Audiencia:** Gerentes y líderes técnicos
 
+> **Nota para el lector:** Este apéndice consolida los frameworks de decisión principales del libro. En varios capítulos encontrarás versiones simplificadas o adaptadas a contextos específicos (startups, enterprise, banca). **Cuando necesites tomar una decisión real, usa las versiones completas de este apéndice.** Las versiones en los capítulos son resúmenes orientativos.
+
 Este apéndice consolida los principales frameworks, matrices y herramientas de decisión presentados a lo largo del libro. Cada framework incluye instrucciones de uso, contexto de aplicación y templates listos para utilizar en reuniones de liderazgo.
+
+### ¿Por Dónde Empezar? Los 3 Frameworks Esenciales por Contexto
+
+No necesitas los 12 frameworks desde el inicio. Selecciona según tu situación:
+
+| Tu contexto | Empieza con estos 3 | Por qué |
+|-------------|---------------------|---------|
+| **Empezando** (primer piloto) | #1 Madurez + #5 Crawl/Walk/Run + #2 Readiness | Ubica tu estado actual, diseña la ruta y verifica que tienes los prerrequisitos |
+| **Escalando** (de piloto a producción) | #4 ROI vs. Riesgo + #6 Autonomía + #3 Scorecard | Prioriza casos de uso, define niveles de governance y selecciona herramientas con criterio |
+| **Regulados** (banca, salud, gobierno) | #7 Gobernanza en 3 Niveles + #10 Clasificación de Riesgo + #11 Incident Response | Establece controles antes de escalar; tu regulador lo exigirá |
+
+Los 12 frameworks restantes están disponibles como biblioteca de referencia conforme avances en madurez.
 
 ---
 
@@ -29,7 +43,7 @@ Este apéndice consolida los principales frameworks, matrices y herramientas de 
 
 Para cada dimensión, marque el nivel actual de su organización (0-5):
 
-| Dimensión | Nivel Actual | Nivel Objetivo (12 meses) | Gap |
+| Dimensión | Nivel Actual | Nivel Objetivo (12 meses) | Brecha |
 |-----------|:------------:|:--------------------------:|:---:|
 | Herramientas de código | ___ | ___ | ___ |
 | Automatización de pruebas | ___ | ___ | ___ |
@@ -37,10 +51,10 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 | Revisión de código | ___ | ___ | ___ |
 | Atención a usuarios internos | ___ | ___ | ___ |
 | Gestión de incidentes | ___ | ___ | ___ |
-| CI/CD y deployment | ___ | ___ | ___ |
+| CI/CD y despliegue | ___ | ___ | ___ |
 | Seguridad y compliance | ___ | ___ | ___ |
 
-**Instrucciones:** Sume los niveles y divida entre 8 para obtener su nivel promedio de madurez. Un gap mayor a 2 niveles entre la dimensión más avanzada y la más rezagada indica necesidad de alineamiento antes de escalar.
+**Instrucciones:** Sume los niveles y divida entre 8 para obtener su nivel promedio de madurez. Una brecha mayor a 2 niveles entre la dimensión más avanzada y la más rezagada indica necesidad de alineamiento antes de escalar.
 
 ---
 
@@ -48,7 +62,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Antes de iniciar cualquier piloto. Identifica brechas críticas que deben cerrarse antes de invertir en herramientas.
 
-**Referencia:** Capítulo 13
+**Referencia:** Capítulo 12
 
 ### Las 4 Dimensiones de Readiness
 
@@ -96,18 +110,18 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Al seleccionar herramientas de IA para desarrollo. Estructura la comparación y reduce el sesgo hacia la herramienta "más nueva" o "más popular".
 
-**Referencia:** Capítulo 5, 13
+**Referencia:** Capítulo 8, 13
 
 ### Criterios y Pesos
 
 | Criterio | Peso | Preguntas Clave para Evaluar |
 |----------|:----:|------------------------------|
-| Capacidad técnica | 25% | ¿Resuelve nuestros 3 casos de uso prioritarios? ¿Calidad del output? |
+| Capacidad técnica | 25% | ¿Resuelve nuestros 3 casos de uso prioritarios? ¿Calidad del resultado? |
 | Seguridad y compliance | 20% | ¿SOC 2? ¿Datos en reposo y tránsito cifrados? ¿Self-hosted disponible? |
 | Integración con stack | 20% | ¿Se integra con nuestro IDE, CI/CD, SCM? ¿APIs disponibles? |
 | Costo total (TCO) | 15% | ¿Costo por usuario/mes? ¿Costos de API a escala? ¿Costos ocultos? |
 | Soporte y comunidad | 10% | ¿SLA de soporte? ¿Documentación? ¿Comunidad activa? |
-| Roadmap del vendor | 10% | ¿Visión clara? ¿Track record de entregas? ¿Estabilidad financiera? |
+| Hoja de ruta del vendor | 10% | ¿Visión clara? ¿Track record de entregas? ¿Estabilidad financiera? |
 
 ### Template de Evaluación Comparativa
 
@@ -118,7 +132,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 | Integración (/10) | ___ | ___ | ___ |
 | Costo TCO (/10) | ___ | ___ | ___ |
 | Soporte (/10) | ___ | ___ | ___ |
-| Roadmap (/10) | ___ | ___ | ___ |
+| Hoja de ruta (/10) | ___ | ___ | ___ |
 | **Score ponderado** | ___ | ___ | ___ |
 | **Prueba piloto (2 sem)** | Sí/No | Sí/No | Sí/No |
 
@@ -130,7 +144,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Para priorizar qué casos de uso de IA agéntica implementar primero. Evita el error común de empezar por el caso más complejo.
 
-**Referencia:** Capítulo 13
+**Referencia:** Capítulo 12
 
 ### Matriz de Decisión
 
@@ -166,7 +180,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
         \textbullet\ Generación de boilerplate\\
         \textbullet\ Búsqueda};
   \node[cell] at (-2.3,-1.8) {{\bfseries\color{pa-callout-neutral-border}EVITAR O MITIGAR}\\
-        \textbullet\ Deploy autónomo\\
+        \textbullet\ Despliegue autónomo\\
         \textbullet\ Acceso a producción};
 \end{tikzpicture}
 \end{center}
@@ -177,7 +191,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 1. Lista los 10 casos de uso candidatos
 2. Para cada uno, evalúa beneficio (1-10) y riesgo (1-10)
 3. Ubícalos en la matriz
-4. Comienza con Quick Wins (bajo riesgo, beneficio moderado) para generar momentum
+4. Comienza con quick wins (bajo riesgo, beneficio moderado) para generar momentum
 5. Avanza hacia "Priorizar Primero" una vez que el equipo tenga experiencia
 6. "Evaluar con Cuidado" solo después de 6+ meses de madurez
 7. "Evitar" hasta tener gobernanza robusta establecida
@@ -188,7 +202,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Como hoja de ruta de adopción a 18 meses. Proporciona estructura y milestones claros para el proceso de escalamiento.
 
-**Referencia:** Capítulo 13
+**Referencia:** Capítulo 12
 
 ### Resumen Ejecutivo
 
@@ -206,7 +220,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 - Implementar 1-2 herramientas de code completion
 - Establecer métricas baseline antes de empezar
 - Documentar aprendizajes semanalmente
-- **Gate de salida:** Mejora medible en al menos 1 métrica + feedback positivo del 70%+ del equipo
+- **Gate de salida:** Mejora medible en al menos 1 métrica + retroalimentación positiva del 70%+ del equipo
 
 **WALK (Mes 4-9): Expansión Controlada**
 
@@ -238,7 +252,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 ## 6. Niveles de Autonomía de IA
 
-**Cuándo usarlo:** Para definir políticas de governance por tipo de tarea. No todos los tasks requieren el mismo nivel de supervisión humana.
+**Cuándo usarlo:** Para definir políticas de governance por tipo de tarea. No todas las tareas requieren el mismo nivel de supervisión humana.
 
 **Referencia:** Capítulos 12, 14
 
@@ -258,8 +272,8 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 | Revisión de código (linting) | 2 | Bajo | Reglas determinísticas, bajo riesgo |
 | Refactoring de código | 1 | Medio | Cambios funcionales requieren review |
 | Generación de documentación | 2 | Bajo | Impacto limitado si hay error |
-| Deployment a staging | 1 | Medio | Entorno no productivo pero visible |
-| Deployment a producción | 0 | Alto | Siempre requiere aprobación humana |
+| Despliegue a staging | 1 | Medio | Entorno no productivo pero visible |
+| Despliegue a producción | 0 | Alto | Siempre requiere aprobación humana |
 | Acceso a datos de clientes | 0 | Alto | Regulaciones de privacidad aplican |
 | Gestión de incidentes | 1-2 | Alto | Requiere juicio sobre severidad |
 | Comunicación con usuarios | 0-1 | Alto | Riesgo reputacional |
@@ -270,11 +284,11 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Para estructurar la governance de IA en la organización. Define quién decide qué a cada nivel.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 11
 
 ### Nivel Estratégico: Board / C-Suite
 
-| Responsabilidad | Frecuencia | Output |
+| Responsabilidad | Frecuencia | Resultado |
 |-----------------|:----------:|--------|
 | Aprobar presupuesto de IA | Trimestral | Presupuesto aprobado |
 | Definir apetito de riesgo | Semestral | Política de riesgo |
@@ -284,7 +298,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 ### Nivel Táctico: VPs / Directors de Ingeniería
 
-| Responsabilidad | Frecuencia | Output |
+| Responsabilidad | Frecuencia | Resultado |
 |-----------------|:----------:|--------|
 | Seleccionar herramientas y vendors | Según necesidad | Scorecard + recomendación |
 | Definir niveles de autonomía por equipo | Trimestral | Matriz de autonomía |
@@ -292,9 +306,9 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 | Revisar incidentes y post-mortems | Según ocurrencia | Post-mortem + acciones |
 | Medir ROI por equipo | Trimestral | Informe de ROI |
 
-### Nivel Operativo: Engineers / Security Team
+### Nivel Operativo: Ingenieros / Equipo de Seguridad
 
-| Responsabilidad | Frecuencia | Output |
+| Responsabilidad | Frecuencia | Resultado |
 |-----------------|:----------:|--------|
 | Configurar y mantener herramientas | Continuo | Herramientas operativas |
 | Ejecutar auditorías de código generado | Semanal | Informe de auditoría |
@@ -308,7 +322,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Para evaluar qué tan madura es la governance de IA en su organización y definir el próximo nivel objetivo.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 11
 
 | Nivel | Nombre | Características | Indicadores |
 |:-----:|--------|-----------------|-------------|
@@ -316,7 +330,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 | 1 | **Inicial** | Políticas básicas escritas, enforcement inconsistente | Documento de políticas existe pero no se sigue consistentemente |
 | 2 | **Definido** | Procesos estandarizados, roles asignados | Comité de governance activo, auditorías trimestrales |
 | 3 | **Gestionado** | Métricas de governance, mejora continua | Dashboard de compliance, KPIs de governance medidos |
-| 4 | **Optimizado** | Governance automatizada, proactiva y adaptativa | Alertas automáticas, políticas ajustadas por datos, benchmarking |
+| 4 | **Optimizado** | Governance automatizada, proactiva y adaptativa | Alertas automáticas, políticas ajustadas por datos, comparación con la industria |
 
 ### Auto-Assessment (marque lo que aplica)
 
@@ -342,7 +356,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 - [ ] Kill switches automáticos operativos y testeados
 - [ ] Políticas se actualizan basadas en datos y tendencias
-- [ ] Benchmarking con industria para mejora continua
+- [ ] Comparación con la industria para mejora continua
 
 ---
 
@@ -350,7 +364,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Evaluación trimestral del progreso de equipos en su adopción de IA agéntica. Útil para comparar equipos y identificar áreas de mejora.
 
-**Referencia:** Capítulo 12
+**Referencia:** Capítulo 11
 
 ### Las 8 Dimensiones
 
@@ -359,7 +373,7 @@ Evalúe cada dimensión de 1 (inicial) a 5 (avanzado):
 | # | Dimensión | 1 | 2 | 3 | 4 | 5 | Score |
 |---|-----------|---|---|---|---|---|:-----:|
 | 1 | **Skills técnicos de IA** | Nadie sabe usar | Algunos experimentan | Mayoría competente | Todos competentes | Equipo innova | ___ |
-| 2 | **Adopción de herramientas** | Sin herramientas | Uso esporádico | Uso diario | Integrado en workflow | Múltiples agentes | ___ |
+| 2 | **Adopción de herramientas** | Sin herramientas | Uso esporádico | Uso diario | Integrado en flujo de trabajo | Múltiples agentes | ___ |
 | 3 | **Roles especializados** | Sin roles | 1 champion informal | Champion formal | Roles definidos | Equipo de IA dedicado | ___ |
 | 4 | **Métricas de impacto** | Sin métricas | Métricas ad-hoc | Dashboard básico | Métricas integradas | ROI demostrado | ___ |
 | 5 | **Cultura de experimentación** | Resistencia | Tolerancia | Curiosidad | Entusiasmo | IA-first mindset | ___ |
@@ -381,13 +395,13 @@ Evalúe cada dimensión de 1 (inicial) a 5 (avanzado):
 
 **Cuándo usarlo:** Para definir qué nivel de supervisión requiere cada tipo de tarea cuando es ejecutada por un agente de IA.
 
-**Referencia:** Capítulo 12
+**Referencia:** Capítulo 11
 
 | Nivel de Riesgo | Criterio | Supervisión Requerida | Ejemplos |
 |:---------------:|----------|----------------------|----------|
 | **Bajo** | Sin acceso a producción, sin datos sensibles, cambios reversibles | Revisión asíncrona | Formateo, linting, generación de tests, documentación |
 | **Medio** | Acceso limitado, sin datos PII, cambios en staging | Revisión antes de merge | Refactoring, nuevas features en branches, code review |
-| **Alto** | Acceso a producción, datos sensibles, cambios irreversibles | Aprobación dual (IA + humano senior) | Deploy, cambios en DB, acceso a datos de clientes |
+| **Alto** | Acceso a producción, datos sensibles, cambios irreversibles | Aprobación dual (IA + humano senior) | Despliegue, cambios en DB, acceso a datos de clientes |
 | **Crítico** | Sistemas financieros, datos regulados, decisiones de negocio | Solo humano (IA asiste pero no ejecuta) | Transacciones financieras, compliance, cambios de seguridad |
 
 ### Protocolo de Kill Switch
@@ -408,7 +422,7 @@ Activar detención automática del agente cuando:
 
 **Cuándo usarlo:** Cuando ocurre un incidente relacionado con código o decisiones generados por IA. Proporciona un proceso estructurado para contención y aprendizaje.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 11
 
 ### Las 5 Fases
 
@@ -417,12 +431,12 @@ Activar detención automática del agente cuando:
 - [ ] Identificar alcance del incidente
 - [ ] Activar kill switch si el agente sigue activo
 - [ ] Aislar sistemas afectados
-- [ ] Notificar a stakeholders inmediatos
+- [ ] Notificar a las partes interesadas inmediatas
 - [ ] Asignar incident commander
 
 **Fase 2: Investigación (2-24 horas)**
 
-- [ ] Recopilar logs del agente (prompts, outputs, acciones)
+- [ ] Recopilar logs del agente (prompts, resultados, acciones)
 - [ ] Identificar causa raíz (alucinación, prompt injection, error de configuración)
 - [ ] Evaluar impacto en datos, sistemas y usuarios
 - [ ] Documentar timeline del incidente
@@ -434,7 +448,7 @@ Activar detención automática del agente cuando:
 - [ ] Revertir cambios si es necesario
 - [ ] Validar la corrección en entorno de staging
 - [ ] Restaurar servicio normal
-- [ ] Comunicar resolución a stakeholders
+- [ ] Comunicar resolución a las partes interesadas
 
 **Fase 4: Post-Mortem (dentro de 1 semana)**
 
@@ -458,7 +472,7 @@ Activar detención automática del agente cuando:
 
 **Cuándo usarlo:** Para construir el business case ante el CFO o board. Incluye tanto beneficios tangibles como costos frecuentemente subestimados.
 
-**Referencia:** Capítulo 13
+**Referencia:** Capítulo 12
 
 ### Variables de Costo
 
@@ -477,7 +491,7 @@ Activar detención automática del agente cuando:
 |-----------|-------------------|----------------|
 | **Productividad** | +30-55% en velocity | Equivalente a 6-11 devs adicionales |
 | **Calidad** | -20-40% en defect rate | Ahorro en costo de bugs en producción |
-| **Time-to-market** | -30-60% en delivery time | Ventaja competitiva cuantificable |
+| ***time-to-market*** | -30-60% en delivery time | Ventaja competitiva cuantificable |
 | **Onboarding** | -50-70% en ramp-up time | Ahorro en costo de contratación |
 | **Retención** | +15-25% en developer NPS | Reducción en costo de rotación |
 
@@ -485,7 +499,7 @@ Activar detención automática del agente cuando:
 
 **ROI (18 meses)** = (Beneficios Acumulados - Costos Totales) / Costos Totales × 100
 
-**Ejemplo documentado (Cap. 13):**
+**Ejemplo documentado (Cap. 12):**
 
 | Concepto | Monto |
 |----------|-------|
@@ -493,7 +507,7 @@ Activar detención automática del agente cuando:
 | Beneficios cuantificados | ~$1,340,000 |
 | **ROI** | **645%** |
 
-**Nota:** El ROI de 645% documentado en el Cap. 13 asume implementación bien ejecutada con el framework Crawl/Walk/Run. Implementaciones apresuradas o sin governance adecuada típicamente logran ROI del 100-200%, y en los peores casos pueden ser negativas.
+**Nota:** El ROI de 645% documentado en el Cap. 12 asume implementación bien ejecutada con el framework Crawl/Walk/Run. Implementaciones apresuradas o sin governance adecuada típicamente logran ROI del 100-200%, y en los peores casos pueden ser negativas.
 
 ---
 
@@ -514,4 +528,4 @@ Imprime los frameworks #1 (Madurez), #2 (Readiness) y #4 (ROI vs Riesgo) para un
 
 ---
 
-*Frameworks consolidados de los 15 capítulos de "El Paradigma Agéntico". Templates listos para usar en reuniones ejecutivas. Última actualización: Enero 2026.*
+*Frameworks consolidados de los 16 capítulos de "Agéntico por Diseño, Tomo I". Templates listos para usar en reuniones ejecutivas. Última actualización: Febrero 2026.*

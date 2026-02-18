@@ -1,0 +1,91 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{fontspec}
+\setmainfont{LibertinusSerif}[
+  Path = /book/fonts/,
+  Extension = .otf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
+\setsansfont{LibertinusSans}[
+  Path = /book/fonts/,
+  Extension = .otf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+]
+
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+% Load project colors
+\definecolor{pa-primary}{HTML}{1A5276}
+\definecolor{pa-secondary}{HTML}{5D6D7E}
+\definecolor{pa-accent}{HTML}{D35400}
+\definecolor{pa-light}{HTML}{F4F6F6}
+\definecolor{pa-darktext}{HTML}{1B2631}
+\definecolor{pa-midgray}{HTML}{566573}
+\definecolor{pa-lightgray}{HTML}{EAECEE}
+\definecolor{pa-tablehead}{HTML}{E8EAED}
+\definecolor{pa-tablealt}{HTML}{F8F9FA}
+\definecolor{pa-success}{HTML}{1E8449}
+\definecolor{pa-warning}{HTML}{D35400}
+\definecolor{pa-danger}{HTML}{922B21}
+
+% Callout colors
+\definecolor{pa-callout-accent-bg}{HTML}{EDF0F2}
+\definecolor{pa-callout-accent-border}{HTML}{1A5276}
+\definecolor{pa-callout-neutral-bg}{HTML}{F4F5F5}
+\definecolor{pa-callout-neutral-border}{HTML}{7F8C8D}
+\definecolor{pa-callout-alert-bg}{HTML}{FDF2E9}
+\definecolor{pa-callout-alert-border}{HTML}{D35400}
+
+% TikZ libraries
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, calc, decorations.pathreplacing}
+
+% Load project diagram styles
+\tikzstyle{agentbox} = [
+  draw=pa-lightgray, fill=pa-light, rounded corners=2pt,
+  text width=2.6cm, minimum height=2.2cm,
+  font=\scriptsize\sffamily, inner sep=5pt, align=left
+]
+\tikzstyle{agentbox-wide} = [
+  draw=pa-lightgray, fill=pa-light, rounded corners=2pt,
+  text width=3.0cm, minimum height=2.2cm,
+  font=\scriptsize\sffamily, inner sep=5pt, align=left
+]
+\tikzstyle{orchbox} = [
+  draw=pa-primary, fill=pa-tablehead, rounded corners=2pt,
+  text width=5.5cm, font=\scriptsize\sffamily, inner sep=6pt, align=left
+]
+\tikzstyle{humanbox} = [
+  draw=pa-callout-neutral-border, fill=pa-callout-neutral-bg,
+  rounded corners=2pt, text width=5.5cm,
+  font=\scriptsize\sffamily, inner sep=6pt, align=left
+]
+\tikzstyle{processbox} = [
+  draw=pa-lightgray, fill=pa-light, rounded corners=2pt,
+  text width=7cm, font=\small\sffamily, inner sep=6pt, align=left
+]
+\tikzstyle{decisionbox} = [
+  draw=pa-primary, fill=pa-tablehead, diamond, aspect=2.5,
+  font=\scriptsize\sffamily, inner sep=2pt, align=center
+]
+\tikzstyle{layerbox} = [
+  draw=pa-lightgray, fill=pa-light, rounded corners=2pt,
+  text width=2.8cm, minimum height=1.8cm,
+  font=\scriptsize\sffamily, inner sep=5pt, align=left
+]
+\tikzstyle{diagramarrow} = [
+  -{Stealth[length=5pt]}, line width=0.7pt, color=pa-primary
+]
+\tikzstyle{quadaxis} = [
+  -{Stealth[length=5pt]}, line width=0.6pt, color=pa-darktext
+]
+
+\newcommand{\boxtitle}[1]{{\bfseries\color{pa-primary}#1}\par\smallskip}
+
+\begin{document}
+\input{FIGURE_FILE}
+\end{document}

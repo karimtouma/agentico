@@ -1,0 +1,984 @@
+# ============================================================================
+# MANIFEST DE FIGURAS — Agentico por Diseno, Tomo I
+# ============================================================================
+#
+# Registro central de todas las ilustraciones del libro.
+# Cada figura tiene un ciclo de vida: placeholder -> draft -> final
+#
+# Campos:
+#   source:     Ruta relativa al archivo fuente (tikz/*.tex o svg/*.svg). null si placeholder.
+#   status:     final | draft | placeholder
+#   caption:    Pie de figura (espanol)
+#   label:      Para cross-references (fig:id)
+#   chapter:    Capitulo donde aparece (para validacion)
+#   width:      Ancho LaTeX (default: \textwidth)
+#   tier:       Prioridad: 1 (imprescindible), 2 (alto valor), 3 (complementaria)
+#   complexity: low | medium | high
+#   todo:       (solo placeholders) Descripcion detallada para implementacion agentica
+#
+# Sintaxis en markdown: ![fig:id]
+# ============================================================================
+
+figures:
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 00 — Prefacio
+  # ──────────────────────────────────────────────────────────────────────────
+
+  evolucion-codigo-ia:
+    source: null
+    status: placeholder
+    caption: "Evolucion del porcentaje de codigo generado por IA (2022-2025)"
+    label: fig:evolucion-codigo-ia
+    chapter: "00"
+    width: "0.75\\textwidth"
+    tier: 3
+    complexity: low
+    todo: |
+      Grafica de barras verticales con 4 barras:
+      - 2022: ~0% (gris claro)
+      - 2023: ~8% (gris)
+      - 2024: ~18% (azul claro)
+      - 2025: ~30% (navy)
+      Fuente al pie: GitHub Copilot Research, Gartner 2025
+      Estilo: limpio, sin grid, labels encima de cada barra
+
+  timeline-gartner:
+    source: null
+    status: placeholder
+    caption: "Timeline de adopcion de IA agentica (Gartner 2025-2029)"
+    label: fig:timeline-gartner
+    chapter: "00"
+    width: "\\textwidth"
+    tier: 3
+    complexity: medium
+    todo: |
+      Linea horizontal 2025 -> 2029 con 5 hitos:
+      - 2025: Early adopters (10-15%)
+      - 2026: Mainstream tools (30%)
+      - 2027: Enterprise standard (50%)
+      - 2028: AI-native teams (65%)
+      - 2029: Autonomous workflows (80%)
+      Iconos FontAwesome por milestone. Colores degradando de gris a navy.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 00a — Executive Brief
+  # ──────────────────────────────────────────────────────────────────────────
+
+  ia-tradicional-vs-agentica:
+    source: null
+    status: placeholder
+    caption: "IA Tradicional vs. IA Agentica"
+    label: fig:ia-tradicional-vs-agentica
+    chapter: 00a
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: low
+    todo: |
+      2 columnas lado a lado:
+      Izquierda - "IA Tradicional": Input -> Modelo -> Output (lineal, 3 bloques)
+      Derecha - "IA Agentica": Loop con Percepcion, Razonamiento, Accion, Tools
+      Flechas simples. Colores: gris para tradicional, navy para agentica.
+
+  roadmap-cwk-exec:
+    source: null
+    status: placeholder
+    caption: "Hoja de Ruta Crawl / Walk / Run para Ejecutivos"
+    label: fig:roadmap-cwk-exec
+    chapter: 00a
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Version simplificada del roadmap de 18 meses:
+      3 bloques horizontales coloreados (gris -> azul -> navy)
+      - Crawl (0-3m): "Piloto con 1 equipo"
+      - Walk (3-9m): "Expansion a 3 equipos"
+      - Run (9-18m): "Escala organizacional"
+      1 KPI por fase. Sin detalles de budget.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 01 — El Nuevo Paradigma
+  # ──────────────────────────────────────────────────────────────────────────
+
+  tres-revoluciones:
+    source: null
+    status: placeholder
+    caption: "Las Tres Revoluciones de la Ingenieria de Software"
+    label: fig:tres-revoluciones
+    chapter: "01"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Timeline horizontal con 3 eras:
+      - 1960s: Mainframes + lenguajes compilados (icono: computadora grande)
+      - 2000s: Agile + Cloud + Open Source (icono: nube)
+      - 2020s: IA Agentica (icono: robot/cerebro)
+      Flecha de tiempo de izq a der. Cada era con breve descripcion (1 linea).
+
+  que-significa-30pct:
+    source: null
+    status: placeholder
+    caption: "Que cubre el 30 porciento de codigo generado por IA"
+    label: fig:que-significa-30pct
+    chapter: "01"
+    width: "0.65\\textwidth"
+    tier: 3
+    complexity: low
+    todo: |
+      Grafica de dona (donut chart):
+      - Tests unitarios: 35%
+      - Boilerplate/CRUD: 25%
+      - Documentacion: 15%
+      - Refactoring: 15%
+      - Otro: 10%
+      Colores: gradiente de navy a gris claro. Label al centro: "30%"
+
+  matriz-decision-adopcion:
+    source: null
+    status: placeholder
+    caption: "Matriz de Decision para Adopcion de IA Agentica"
+    label: fig:matriz-decision-adopcion
+    chapter: "01"
+    width: "0.75\\textwidth"
+    tier: 3
+    complexity: low
+    todo: |
+      Matriz 2x2:
+      Eje X: Riesgo (Bajo -> Alto)
+      Eje Y: Urgencia (Baja -> Alta)
+      Cuadrantes:
+      - Alta urgencia + Bajo riesgo: "Adoptar ahora" (verde)
+      - Alta urgencia + Alto riesgo: "Piloto controlado" (amarillo)
+      - Baja urgencia + Bajo riesgo: "Evaluar" (azul claro)
+      - Baja urgencia + Alto riesgo: "Monitorear" (gris)
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 02 — Paradigmas
+  # ──────────────────────────────────────────────────────────────────────────
+
+  escalera-abstraccion:
+    source: null
+    status: placeholder
+    caption: "La Escalera de Abstraccion en Ingenieria de Software"
+    label: fig:escalera-abstraccion
+    chapter: "02"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Escalera visual de 6 peldanos (de abajo hacia arriba):
+      1. 1945 - Codigo maquina (binario)
+      2. 1950s - Ensamblador
+      3. 1970s - Lenguajes estructurados (C, Pascal)
+      4. 1990s - OOP (Java, C++)
+      5. 2010s - Cloud + frameworks
+      6. 2020s - IA Agentica (highlight, color navy)
+      Cada peldano: fecha + nombre + productividad relativa (x1, x5, x10...)
+
+  curva-s-adopcion:
+    source: null
+    status: placeholder
+    caption: "Patron historico de adopcion: Resistencia, Adopcion, Dominio"
+    label: fig:curva-s-adopcion
+    chapter: "02"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      3 curvas S superpuestas (misma forma, desplazadas en tiempo):
+      - Curva 1 (gris): Programacion estructurada (1970s-1990s)
+      - Curva 2 (azul): Agile/Cloud (2000s-2020s)
+      - Curva 3 (navy, linea gruesa): IA Agentica (2020s-2030s)
+      Eje X: tiempo. Eje Y: % adopcion.
+      Anotacion: "Estamos aqui" en la curva 3 al ~20%.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 03 — Que es IA Agentica
+  # ──────────────────────────────────────────────────────────────────────────
+
+  loop-agentico:
+    source: null
+    status: placeholder
+    caption: "El Loop Agentico: Percepcion, Razonamiento, Accion, Aprendizaje"
+    label: fig:loop-agentico
+    chapter: "03"
+    width: "0.85\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      LA FIGURA CENTRAL DEL LIBRO. Debe ser iconica y memorable.
+      Diagrama circular con 4 fases conectadas por flechas curvas:
+      1. PERCEPCION (arriba): Icono ojo. "Observar contexto, leer codigo, recibir input"
+      2. RAZONAMIENTO (derecha): Icono cerebro. "Analizar, planificar, decidir siguiente paso"
+      3. ACCION (abajo): Icono rayo. "Ejecutar herramienta, escribir codigo, llamar API"
+      4. APRENDIZAJE (izquierda): Icono libro. "Evaluar resultado, ajustar estrategia"
+      Centro: "AGENTE" con icono de IA.
+      Flechas curvas en sentido horario entre cada fase.
+      Colores: navy primario, cada fase con tono ligeramente diferente.
+      Estilo: profesional, limpio, memorable. Similar a ciclo PDCA pero para IA.
+
+  flujo-restaurante:
+    source: null
+    status: placeholder
+    caption: "Comparacion de flujos: Tradicional vs. Agentico"
+    label: fig:flujo-restaurante
+    chapter: "03"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Dos flujos lado a lado:
+      IZQUIERDA - "Tradicional" (gris):
+        Usuario -> Buscar restaurante -> Elegir -> Llamar -> Confirmar -> Fin
+        (flujo lineal, 5 cajas conectadas con flechas)
+      DERECHA - "Agentico" (navy):
+        Usuario da criterios -> Agente busca opciones -> Evalua disponibilidad
+        -> Si no hay: ajusta criterios (loop) -> Reserva -> Confirma
+        (flujo con loop de decision, diamante para "Disponible?")
+      Separador vertical entre ambos.
+
+  anatomia-sistema-agentico:
+    source: null
+    status: placeholder
+    caption: "Anatomia de un Sistema Agentico"
+    label: fig:anatomia-sistema-agentico
+    chapter: "03"
+    width: "0.9\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      Diagrama de bloques con arquitectura de un agente:
+      CENTRO: Caja grande "LLM" (navy, prominente)
+      ARRIBA: "Orchestrator / Control Loop" conectado al LLM
+      IZQUIERDA: "Memory" con sub-bloques:
+        - Short-term (contexto de conversacion)
+        - Long-term (base de conocimiento)
+      DERECHA: "Tools" con sub-bloques:
+        - APIs externas
+        - Base de datos
+        - Sistema de archivos
+        - Navegador web
+      ABAJO: "User Interface" (input/output del humano)
+      Flechas bidireccionales entre LLM y cada componente.
+      Usar estilos de pa-diagrams.sty (agentbox, orchbox, humanbox).
+
+  function-calling:
+    source: null
+    status: placeholder
+    caption: "Function Calling: Como un LLM usa herramientas"
+    label: fig:function-calling
+    chapter: "03"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Diagrama secuencial (estilo sequence diagram simplificado):
+      5 pasos horizontales de izq a der:
+      1. USUARIO: "Reserva mesa para 4 manana" (burbuja)
+      2. LLM: "Necesito buscar restaurantes" (burbuja pensamiento)
+      3. TOOL CALL: search_restaurants(seats=4, date=tomorrow) (caja codigo)
+      4. RESULTADO: [{name: "La Trattoria", available: true}] (caja datos)
+      5. LLM -> USUARIO: "Reserve mesa en La Trattoria a las 8pm" (burbuja)
+      Flechas entre cada paso. Colores: azul para LLM, gris para tools.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 04 — Por Que Disenar
+  # ──────────────────────────────────────────────────────────────────────────
+
+  fabrica-1890:
+    source: null
+    status: placeholder
+    caption: "La Parabola de la Electricidad: Motor central vs. motores distribuidos"
+    label: fig:fabrica-1890
+    chapter: "04"
+    width: "\\textwidth"
+    tier: 2
+    complexity: high
+    todo: |
+      Ilustracion split en dos mitades:
+      IZQUIERDA - "1890: Motor Central" (sepia/gris):
+        Gran motor de vapor en el centro con poleas y correas
+        que distribuyen energia a cada maquina. Ineficiente.
+        Label: "Reemplazo 1:1 del motor por electricidad"
+      DERECHA - "1920: Motores Distribuidos" (azul/navy):
+        Cada maquina tiene su propio motor electrico.
+        Layout de fabrica reorganizado por flujo de trabajo.
+        Label: "Rediseno completo del proceso"
+      Abajo: "La IA Agentica es la electricidad. No reemplaces el motor. Redisena la fabrica."
+      Nota: Dibujo esquematico, no fotografico. Lineas limpias.
+
+  seis-principios:
+    source: null
+    status: placeholder
+    caption: "Los Seis Principios del Diseno Agentico"
+    label: fig:seis-principios
+    chapter: "04"
+    width: "0.75\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Hexagono con 6 nodos, uno en cada vertice:
+      1. Autonomia Graduada
+      2. Supervision Humana
+      3. Transparencia
+      4. Resiliencia
+      5. Aprendizaje Continuo
+      6. Integracion Organizacional
+      Lineas conectando todos los nodos entre si (mesh).
+      Centro del hexagono: "DISENO AGENTICO"
+      Cada nodo con icono FontAwesome pequeno.
+      Color: navy para nodos, gris para lineas de conexion.
+
+  paradoja-jevons:
+    source: null
+    status: placeholder
+    caption: "La Paradoja de Jevons aplicada al desarrollo de software"
+    label: fig:paradoja-jevons
+    chapter: "04"
+    width: "0.75\\textwidth"
+    tier: 3
+    complexity: low
+    todo: |
+      Grafica con 2 lineas y area sombreada:
+      Eje X: Tiempo (2020 -> 2030)
+      Eje Y: Volumen
+      Linea 1 (azul): "Eficiencia por desarrollador" (sube)
+      Linea 2 (navy, mas gruesa): "Demanda total de software" (sube mas rapido)
+      Area sombreada entre ambas: "Brecha de demanda"
+      Anotacion: "Mas eficiencia != menos desarrolladores"
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 05 — Sesgos Cognitivos
+  # ──────────────────────────────────────────────────────────────────────────
+
+  mapa-siete-sesgos:
+    source: null
+    status: placeholder
+    caption: "Los 7 Sesgos Cognitivos en la Era de la IA"
+    label: fig:mapa-siete-sesgos
+    chapter: "05"
+    width: "0.9\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      Mapa mental con nodo central y 7 ramas:
+      CENTRO: Icono cerebro + chip IA. "Cerebro Humano + IA"
+      7 RAMAS (en circulo alrededor):
+      1. Dunning-Kruger (color rojo): "Creer que sabes mas de lo que sabes"
+      2. Automation Bias (naranja): "Confiar ciegamente en la maquina"
+      3. Cognitive Offloading (amarillo): "Delegar el pensar"
+      4. Anchoring (verde): "Aceptar la primera sugerencia"
+      5. Overconfidence (azul): "Sobreestimar calidad del output"
+      6. Confirmation Bias (indigo): "Buscar solo lo que confirma"
+      7. Complacency (violeta): "Dejar de verificar"
+      Lineas punteadas entre sesgos relacionados (DK<->Overconfidence, etc.)
+
+  curva-dunning-kruger-ia:
+    source: null
+    status: placeholder
+    caption: "El Efecto Dunning-Kruger amplificado por IA"
+    label: fig:curva-dunning-kruger-ia
+    chapter: "05"
+    width: "0.8\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Curva DK clasica (competencia vs. confianza):
+      Eje X: Competencia real (baja -> alta)
+      Eje Y: Confianza percibida (baja -> alta)
+      Curva normal DK en gris (pico, valle, subida gradual)
+      Zona sombreada en rojo: "Zona de peligro con IA"
+        (el pico de confianza es MAS ALTO con IA porque el output parece profesional)
+      Anotacion: "Con IA, el pico de confianza sube pero la competencia no"
+
+  semaforo-mitigacion:
+    source: null
+    status: placeholder
+    caption: "Framework de Mitigacion de Sesgos"
+    label: fig:semaforo-mitigacion
+    chapter: "05"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Matriz coloreada (heatmap estilo semaforo):
+      Filas: 7 sesgos
+      Columnas: 3 niveles de riesgo (Bajo, Medio, Alto)
+      Cada celda: color (verde/amarillo/rojo) + accion de 1 linea
+      Ejemplo: Dunning-Kruger + Riesgo Alto = Rojo: "Code review obligatorio + mentor"
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 06 — Guia por Industria
+  # ──────────────────────────────────────────────────────────────────────────
+
+  heatmap-quick-wins:
+    source: null
+    status: placeholder
+    caption: "Heatmap de Quick Wins: Caso de Uso por Industria"
+    label: fig:heatmap-quick-wins
+    chapter: "06"
+    width: "\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      Heatmap/matriz coloreada:
+      Columnas (~6): Fintech, Healthcare, Retail, Manufacturing, SaaS, Gobierno
+      Filas (~8): Tests, Code Review, Docs, Boilerplate, Refactoring, Migration, Security, DevOps
+      Colores: Verde oscuro (facil, alto ROI) -> Amarillo (medio) -> Rojo (dificil, bajo ROI)
+      Gradiente continuo, no discreto. Datos basados en el capitulo.
+
+  speed-to-roi:
+    source: null
+    status: placeholder
+    caption: "Speed-to-ROI por Sector Industrial"
+    label: fig:speed-to-roi
+    chapter: "06"
+    width: "0.8\\textwidth"
+    tier: 3
+    complexity: low
+    todo: |
+      Barras horizontales (6-8 industrias):
+      - SaaS/Tech: 2-3 meses (barra corta, verde)
+      - Fintech: 3-4 meses
+      - Retail/eCommerce: 4-6 meses
+      - Healthcare: 6-9 meses
+      - Manufacturing: 6-12 meses
+      - Gobierno: 12-18 meses (barra larga, rojo)
+      Ordenadas de menor a mayor. Eje X = meses.
+
+  embudo-4pct:
+    source: null
+    status: placeholder
+    caption: "El Problema del 4 porciento: Por que fracasan las adopciones"
+    label: fig:embudo-4pct
+    chapter: "06"
+    width: "0.7\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Embudo invertido (ancho arriba, angosto abajo):
+      - 100%: "Empresas que inician adopcion"
+      - 60%: Filtro: "Sin sponsorship ejecutivo" (-40%)
+      - 35%: Filtro: "Sin metricas base" (-25%)
+      - 15%: Filtro: "Sin gestion del cambio" (-20%)
+      - 4%: "Adopcion exitosa y sostenida"
+      Colores degradando de gris claro (arriba) a navy (abajo).
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 07 — Evolucion Tecnica
+  # ──────────────────────────────────────────────────────────────────────────
+
+  tres-olas:
+    source: null
+    status: placeholder
+    caption: "Las Tres Olas de IA en Desarrollo de Software"
+    label: fig:tres-olas
+    chapter: "07"
+    width: "\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      Timeline-diagrama elaborado con 3 secciones:
+      OLA 1 (2018-2021, gris): "Asistente Desconectado"
+        - Herramientas: TabNine, Kite
+        - Autonomia: Baja (autocompletado)
+        - Icono: teclado
+      OLA 2 (2022-2024, azul): "IA Integrada al IDE"
+        - Herramientas: Copilot, Cursor, Cody
+        - Autonomia: Media (genera funciones completas)
+        - Icono: IDE con IA
+      OLA 3 (2024+, navy): "Agentes Autonomos"
+        - Herramientas: Claude Code, Devin, SWE-agent
+        - Autonomia: Alta (tareas end-to-end)
+        - Icono: robot autonomo
+      Formato: 3 columnas o timeline con transiciones graduales.
+      Incluir flecha de "Nivel de autonomia" creciente.
+
+  como-funciona-llm:
+    source: null
+    status: placeholder
+    caption: "Como funciona un LLM (simplificado para lideres)"
+    label: fig:como-funciona-llm
+    chapter: "07"
+    width: "\\textwidth"
+    tier: 2
+    complexity: high
+    todo: |
+      Pipeline horizontal simplificado (NO tecnico):
+      1. INPUT: "Escribe una funcion que..." (burbuja usuario)
+      2. TOKENIZACION: Texto se divide en piezas (bloques)
+      3. EMBEDDING: Piezas se convierten en numeros (vectores)
+      4. ATENCION: "Que partes son relevantes entre si" (conexiones)
+      5. GENERACION: Token por token se construye la respuesta
+      6. OUTPUT: "function calcular()..." (burbuja respuesta)
+      Cada paso: caja coloreada con icono + descripcion de 1 linea.
+      Estilo: para no-tecnicos. Sin formulas. Analogias visuales.
+
+  adopcion-por-ola:
+    source: null
+    status: placeholder
+    caption: "Adopcion empresarial por Ola (2020-2026)"
+    label: fig:adopcion-por-ola
+    chapter: "07"
+    width: "0.85\\textwidth"
+    tier: 3
+    complexity: medium
+    todo: |
+      Grafica de area apilada (stacked area chart):
+      Eje X: 2020, 2021, 2022, 2023, 2024, 2025, 2026
+      Eje Y: % de empresas usando
+      3 areas apiladas:
+      - Ola 1 (gris): crece y luego se estabiliza
+      - Ola 2 (azul): crece desde 2022, domina
+      - Ola 3 (navy): crece desde 2024, acelerando
+      Total apilado muestra adopcion general creciente.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 08 — Ecosistema de Herramientas
+  # ──────────────────────────────────────────────────────────────────────────
+
+  ecosistema-4-capas:
+    source: null
+    status: placeholder
+    caption: "Las Cuatro Capas del Ecosistema Agentico"
+    label: fig:ecosistema-4-capas
+    chapter: "08"
+    width: "\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      NOTA: Ya existe TikZ inline en el capitulo 07. Extraer y mejorar.
+      4 capas horizontales (de abajo hacia arriba):
+      CAPA 1 (base, gris): "Infraestructura" - Cloud, GPUs, APIs
+      CAPA 2 (azul claro): "Completado de Codigo" - Copilot, TabNine, Cody
+      CAPA 3 (azul): "Generacion de Codigo" - Cursor, Windsurf, Claude
+      CAPA 4 (navy, arriba): "Agentes Autonomos" - Claude Code, Devin, SWE-agent
+      Flechas de dependencia entre capas.
+      A la derecha: flecha vertical "Autonomia creciente"
+      Usar estilos de pa-diagrams.sty (layerbox).
+
+  landscape-herramientas:
+    source: null
+    status: placeholder
+    caption: "Landscape de Herramientas Agenticas (2025)"
+    label: fig:landscape-herramientas
+    chapter: "08"
+    width: "\\textwidth"
+    tier: 3
+    complexity: high
+    todo: |
+      Mapa estilo "tech landscape" con herramientas organizadas por categoria:
+      4 cuadrantes o secciones:
+      - Completado: GitHub Copilot, Amazon CodeWhisperer, TabNine, Cody
+      - Generacion: Cursor, Windsurf, Aider, Continue
+      - Agentes: Claude Code, Devin, SWE-agent, OpenHands
+      - Infra: LangChain, CrewAI, AutoGen, Semantic Kernel
+      Cada herramienta como caja con nombre (sin logos).
+      NOTA: Complejidad alta porque requiere layout cuidadoso.
+
+  payperuse-vs-suscripcion:
+    source: null
+    status: placeholder
+    caption: "Punto de equilibrio: Pay-Per-Use vs. Suscripcion"
+    label: fig:payperuse-vs-suscripcion
+    chapter: "08"
+    width: "0.8\\textwidth"
+    tier: 3
+    complexity: medium
+    todo: |
+      Grafica con 2 lineas que se cruzan:
+      Eje X: Volumen de uso (requests/mes)
+      Eje Y: Costo mensual (USD)
+      Linea 1 (azul): Pay-per-use (lineal, empieza bajo)
+      Linea 2 (navy): Suscripcion (horizontal, costo fijo)
+      Punto de cruce marcado: "Punto de equilibrio"
+      Area verde: zona donde pay-per-use es mas barato
+      Area roja: zona donde suscripcion es mas barato
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 09 — Impacto en el Negocio
+  # ──────────────────────────────────────────────────────────────────────────
+
+  roi-comparativo:
+    source: null
+    status: placeholder
+    caption: "ROI Comparativo por Tamano de Empresa"
+    label: fig:roi-comparativo
+    chapter: "09"
+    width: "0.85\\textwidth"
+    tier: 1
+    complexity: medium
+    todo: |
+      Grafica de barras agrupadas:
+      3 grupos: Startup, Mid-market, Enterprise
+      Cada grupo: 3 barras (Ano 1, Ano 2, Ano 3)
+      Colores: gris claro (A1), azul (A2), navy (A3)
+      Datos del capitulo 08. Eje Y = % ROI.
+      Incluir linea horizontal punteada en 0% (break-even).
+
+  waterfall-tco:
+    source: null
+    status: placeholder
+    caption: "Desglose de TCO (Total Cost of Ownership) - 3 anos"
+    label: fig:waterfall-tco
+    chapter: "09"
+    width: "\\textwidth"
+    tier: 2
+    complexity: high
+    todo: |
+      Diagrama de cascada (waterfall chart):
+      Bloques sumando de izq a der:
+      1. Licencias de herramientas (azul)
+      2. + Capacitacion (azul claro)
+      3. + Integracion y setup (gris)
+      4. + Mantenimiento anual (gris claro)
+      5. + Costos ocultos (rojo: shadow IT, deuda tecnica, rotacion)
+      6. = TCO TOTAL (barra final, navy, mas alta)
+      Cada bloque muestra monto ($K). Bloques "cuelgan" del anterior.
+
+  escenarios-roi:
+    source: null
+    status: placeholder
+    caption: "Analisis de Sensibilidad: 3 Escenarios de ROI"
+    label: fig:escenarios-roi
+    chapter: "09"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      3 lineas en misma grafica:
+      Eje X: Meses (0-36)
+      Eje Y: ROI acumulado (%)
+      Linea 1 (rojo/gris punteada): "Pesimista" - ROI positivo en mes 18
+      Linea 2 (azul, solida): "Base" - ROI positivo en mes 9
+      Linea 3 (verde, solida): "Optimista" - ROI positivo en mes 4
+      Area sombreada entre pesimista y optimista = rango de incertidumbre.
+      Linea horizontal en 0% = break-even.
+
+  costo-inaccion:
+    source: null
+    status: placeholder
+    caption: "El Costo de la Inaccion"
+    label: fig:costo-inaccion
+    chapter: "09"
+    width: "\\textwidth"
+    tier: 2
+    complexity: high
+    todo: |
+      Infografia de impacto temporal:
+      3 bloques verticales (timeline descendente):
+      12 MESES (amarillo):
+        "Competidores 15% mas rapidos en time-to-market"
+        "Dificultad para atraer talento top"
+      24 MESES (naranja):
+        "30% de brecha en productividad"
+        "Talento senior migra a empresas AI-first"
+      36 MESES (rojo):
+        "Riesgo existencial en mercados competitivos"
+        "Deuda tecnica insalvable"
+      Estilo: urgente pero profesional. Iconos de alerta.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 10 — Cuando Falla
+  # ──────────────────────────────────────────────────────────────────────────
+
+  arbol-red-flags:
+    source: null
+    status: placeholder
+    caption: "Arbol de Decision: Senales de Alerta en la Adopcion"
+    label: fig:arbol-red-flags
+    chapter: "10"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Arbol de decision con 4-5 nodos:
+      Raiz: "Tu adopcion va por buen camino?"
+      Nodo 1: "Tienes metricas base?" -> No: "RIESGO: Adopcion a ciegas"
+      Nodo 2: "Hay sponsorship ejecutivo?" -> No: "RIESGO: Muerte por comite"
+      Nodo 3: "Los equipos reciben capacitacion?" -> No: "RIESGO: Atrofia de skills"
+      Nodo 4: "Mides code quality post-IA?" -> No: "RIESGO: Deuda silenciosa"
+      Si a todo: "Buen camino - mantener monitoreo"
+      Colores: verde para "si", rojo para riesgos, gris para nodos.
+
+  deuda-tecnica-temporal:
+    source: null
+    status: placeholder
+    caption: "Patron de Deuda Tecnica: La curva del Ano 1 vs. Ano 2"
+    label: fig:deuda-tecnica-temporal
+    chapter: "10"
+    width: "0.8\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Grafica con 2 lineas que se cruzan:
+      Eje X: Tiempo (Mes 0 -> Mes 24)
+      Eje Y: Nivel relativo
+      Linea 1 (azul): "Velocidad de desarrollo" - sube en Ano 1, cae en Ano 2
+      Linea 2 (rojo): "Deuda tecnica acumulada" - invisible en Ano 1, explota en Ano 2
+      Punto de cruce: Mes ~14 marcado como "Punto de no retorno"
+      Area Ano 1 sombreada verde: "Euforia"
+      Area Ano 2 sombreada roja: "Crisis"
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 11 — Liderando Equipos
+  # ──────────────────────────────────────────────────────────────────────────
+
+  org-chart-antes-despues:
+    source: null
+    status: placeholder
+    caption: "Estructura de Equipo: Antes vs. Despues de IA Agentica"
+    label: fig:org-chart-antes-despues
+    chapter: "11"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      2 org charts lado a lado:
+      ANTES (gris):
+        Tech Lead -> 4 Developers (Backend, Frontend, QA, DevOps)
+        Estructura plana, roles clasicos
+      DESPUES (navy):
+        Tech Lead (AI-augmented) ->
+          AI Architect + 2 Senior Devs (review-focused) +
+          1 Prompt Engineer + 1 Junior (AI-paired)
+        Nuevos roles destacados con icono estrella.
+
+  matriz-skills-seniority:
+    source: null
+    status: placeholder
+    caption: "Evolucion de Skills por Nivel de Seniority"
+    label: fig:matriz-skills-seniority
+    chapter: "11"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Matriz coloreada:
+      Columnas: Junior, Mid, Senior
+      Filas (~8 skills): Prompt Engineering, Code Review, Architecture,
+        AI Tool Selection, Risk Assessment, Team Mentoring,
+        Business Translation, Governance
+      Colores: Verde (skill critica ahora) -> Amarillo (desarrollar) -> Gris (menos relevante)
+      Cada celda puede tener icono de prioridad.
+
+  dashboard-team-health:
+    source: null
+    status: placeholder
+    caption: "Team Health Scorecard para Equipos con IA"
+    label: fig:dashboard-team-health
+    chapter: "11"
+    width: "0.9\\textwidth"
+    tier: 3
+    complexity: high
+    todo: |
+      Mockup de dashboard con 6-8 metricas:
+      Fila 1: Velocidad (gauge), Calidad (gauge), Satisfaccion (gauge)
+      Fila 2: AI Adoption Rate (%), Skills Growth (trend arrow),
+              Code Review Depth (bar), Incident Rate (trend)
+      Cada metrica: valor actual + trend (flecha up/down) + semaforo (verde/amarillo/rojo)
+      Estilo: clean, profesional, monocromatico (navy + grises).
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 12 — Estrategia de Adopcion
+  # ──────────────────────────────────────────────────────────────────────────
+
+  radar-readiness:
+    source: null
+    status: placeholder
+    caption: "Radar de Readiness: Evaluacion en 4 Dimensiones"
+    label: fig:radar-readiness
+    chapter: "12"
+    width: "0.75\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      Spider/radar chart con 4 ejes:
+      1. Proceso de Desarrollo (madurez CI/CD, testing, code review)
+      2. Infraestructura y Datos (cloud, APIs, seguridad)
+      3. Gestion del Cambio (sponsorship, comunicacion, incentivos)
+      4. Skills del Equipo (AI literacy, prompt eng, architecture)
+      Cada eje: escala 1-5
+      Area sombreada azul claro: "Estado actual" (ejemplo: 2, 3, 1, 2)
+      Area borde navy punteada: "Objetivo" (4, 4, 3, 4)
+      Brecha visual entre actual y objetivo.
+
+  roadmap-18-meses:
+    source: null
+    status: placeholder
+    caption: "Hoja de Ruta Completa: Crawl / Walk / Run (18 Meses)"
+    label: fig:roadmap-18-meses
+    chapter: "12"
+    width: "\\textwidth"
+    tier: 1
+    complexity: high
+    todo: |
+      LA REFERENCIA DE PLANIFICACION DEL LIBRO.
+      Timeline horizontal elaborado dividido en 3 fases:
+      CRAWL (Meses 0-3, gris):
+        - Milestone: Piloto con 1 equipo
+        - KPI: Baseline de metricas
+        - Budget: $X-Y/mes
+        - Gate: "Go/No-Go basado en metricas"
+      WALK (Meses 3-9, azul):
+        - Milestone: Expansion a 3 equipos
+        - KPI: +15% productividad
+        - Budget: $X-Y/mes
+        - Gate: "Governance v1 aprobada"
+      RUN (Meses 9-18, navy):
+        - Milestone: Organizacion completa
+        - KPI: ROI positivo medido
+        - Budget: $X-Y/mes
+        - Gate: "AI-native operating model"
+      Debajo: linea de "Change Management" continua.
+      Formato: Gantt simplificado con iconos por milestone.
+
+  business-case-onepager:
+    source: null
+    status: placeholder
+    caption: "Business Case para el Board: One-Pager"
+    label: fig:business-case-onepager
+    chapter: "12"
+    width: "0.85\\textwidth"
+    tier: 3
+    complexity: medium
+    todo: |
+      Infografia one-pager con 5 secciones:
+      1. PROBLEMA: "X% de brecha competitiva" (icono warning)
+      2. SOLUCION: "IA Agentica en desarrollo" (icono rocket)
+      3. INVERSION: "$XK ano 1" (icono dollar)
+      4. RETORNO: "X% ROI en 12 meses" (icono chart-up)
+      5. RIESGO DE NO ACTUAR: "X% de talento en riesgo" (icono alert)
+      Layout: 5 cajas en cruz o grid. Colores: navy + acento.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 13 — Gobernanza y Riesgos
+  # ──────────────────────────────────────────────────────────────────────────
+
+  piramide-gobernanza:
+    source: null
+    status: placeholder
+    caption: "Framework de Gobernanza: Modelo de 3 Niveles"
+    label: fig:piramide-gobernanza
+    chapter: "13"
+    width: "0.8\\textwidth"
+    tier: 1
+    complexity: medium
+    todo: |
+      Piramide/triangulo de 3 niveles (arriba = estrategico):
+      NIVEL 3 - ESTRATEGICO (navy, arriba, pequeno):
+        "Politicas, principios, limites"
+        Responsable: C-Suite / VP Engineering
+      NIVEL 2 - TACTICO (azul, medio):
+        "Procesos, controles, metricas"
+        Responsable: Tech Leads / Managers
+      NIVEL 1 - OPERACIONAL (gris, base, grande):
+        "Uso diario, code review, herramientas"
+        Responsable: Desarrolladores
+      Flechas bidireccionales entre niveles: feedback loop.
+
+  superficie-ataque:
+    source: null
+    status: placeholder
+    caption: "Nueva Superficie de Ataque: Vectores de Seguridad de IA Agentica"
+    label: fig:superficie-ataque
+    chapter: "13"
+    width: "0.9\\textwidth"
+    tier: 2
+    complexity: high
+    todo: |
+      Diagrama tipo mapa de amenazas:
+      Centro: "Sistema Agentico" (caja navy)
+      Alrededor, 6 vectores de ataque (cajas rojas con flechas hacia el centro):
+      1. Data Leakage: codigo propietario enviado a APIs externas
+      2. Prompt Injection: inputs maliciosos que manipulan el agente
+      3. Supply Chain: dependencias comprometidas sugeridas por IA
+      4. Shadow AI: uso no autorizado de herramientas
+      5. Hallucination Exploits: vulnerabilidades en codigo inventado
+      6. Model Poisoning: datos de training contaminados
+      Cada vector: icono de peligro + descripcion de 1 linea.
+
+  maturity-model:
+    source: null
+    status: placeholder
+    caption: "Modelo de Madurez para Gobernanza de IA Agentica"
+    label: fig:maturity-model
+    chapter: "13"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Escalera de 4 niveles (izq a der, subiendo):
+      Nivel 1 - AD-HOC (gris):
+        "Uso individual sin controles. No hay politicas."
+      Nivel 2 - DEFINIDO (azul claro):
+        "Politicas basicas. Herramientas aprobadas. Training inicial."
+      Nivel 3 - GESTIONADO (azul):
+        "Metricas, auditorias regulares. Governance board activo."
+      Nivel 4 - OPTIMIZADO (navy):
+        "Mejora continua. AI-native operating model. Benchmarking."
+      Flecha de "Madurez" de izq a der. Cada nivel con icono.
+
+  # ──────────────────────────────────────────────────────────────────────────
+  # CAPITULO 14 — Futuro 2030
+  # ──────────────────────────────────────────────────────────────────────────
+
+  bifurcacion-escenarios:
+    source: null
+    status: placeholder
+    caption: "Tres Escenarios para 2030"
+    label: fig:bifurcacion-escenarios
+    chapter: "14"
+    width: "0.85\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Diagrama de bifurcacion desde un punto "HOY (2025)":
+      3 caminos divergentes hacia la derecha (2030):
+      CAMINO 1 (verde, arriba): "OPTIMISTA"
+        "80% codigo AI-generated, equipos 3x mas productivos"
+      CAMINO 2 (azul, medio): "PROBABLE"
+        "50% codigo AI-generated, productividad +40%"
+      CAMINO 3 (rojo, abajo): "PESIMISTA"
+        "Regulacion frena adopcion, brecha de skills critica"
+      Cada camino se ensancha hacia la derecha (incertidumbre crece).
+
+  timeline-futuro:
+    source: null
+    status: placeholder
+    caption: "Timeline de Adopcion Tecnologica 2025-2030"
+    label: fig:timeline-futuro
+    chapter: "14"
+    width: "\\textwidth"
+    tier: 2
+    complexity: medium
+    todo: |
+      Timeline horizontal con hitos por ano:
+      2025: "Coding assistants mainstream" (icono teclado)
+      2026: "Agentes autonomos en produccion" (icono robot)
+      2027: "Multi-agent systems" (icono network)
+      2028: "AI-native development teams" (icono team)
+      2029: "Autonomous software factories" (icono factory)
+      2030: "Human-AI symbiosis" (icono handshake)
+      Linea de tiempo con gradiente gris -> navy.
+
+  desarrollador-2030:
+    source: null
+    status: placeholder
+    caption: "El Desarrollador de 2030: Perfil del Futuro"
+    label: fig:desarrollador-2030
+    chapter: "14"
+    width: "0.85\\textwidth"
+    tier: 3
+    complexity: high
+    todo: |
+      Infografia tipo "perfil profesional":
+      Centro: Silueta/avatar estilizado
+      Alrededor, 6 atributos del dev de 2030:
+      - SKILLS: Architecture thinking, AI orchestration, Business translation
+      - HERRAMIENTAS: Multi-agent IDE, Autonomous CI/CD, AI pair programming
+      - FORMA DE TRABAJO: 70% diseno + revision, 20% coding directo, 10% governance
+      - METRICAS: Value delivered, System reliability, Innovation velocity
+      Estilo: clean, profesional, iconos por atributo. Navy + gris.

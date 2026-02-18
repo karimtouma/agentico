@@ -2,7 +2,7 @@
 
 > **Extensión objetivo:** 5 páginas | **Audiencia:** Gerentes y líderes técnicos
 
-Esta guía práctica acompaña el framework Crawl/Walk/Run del Capítulo 13 con checklists detallados para cada fase de implementación. Cada checkpoint incluye guía contextual, responsables sugeridos, KPIs esperados y señales de alerta.
+Esta guía práctica acompaña el framework Crawl/Walk/Run del Capítulo 12 con checklists detallados para cada fase de implementación. Cada checkpoint incluye guía contextual, responsables sugeridos, KPIs esperados y señales de alerta.
 
 **Cómo usar este apéndice:** Imprime las secciones relevantes a tu fase actual. Asigna un responsable por cada ítem. Revisa el progreso semanalmente en reuniones de seguimiento.
 
@@ -87,7 +87,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 | 22 | 2-3 casos de uso piloto definidos y asignados | Tech Lead | [ ] |
 | 23 | Sesiones de pair programming con IA programadas (semana 1-2) | Champion | [ ] |
 | 24 | Métricas de tracking configuradas y recopilando datos | PM | [ ] |
-| 25 | Canal de feedback establecido (Slack, Teams, encuesta semanal) | PM | [ ] |
+| 25 | Canal de retroalimentación establecido (Slack, Teams, encuesta semanal) | PM | [ ] |
 | 26 | Reunión semanal de seguimiento del piloto calendarizada | PM + Tech Lead | [ ] |
 | 27 | Documentación de mejores prácticas iniciada | Champion | [ ] |
 
@@ -96,7 +96,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 | # | Checkpoint | Responsable | Completado |
 |---|-----------|:-----------:|:----------:|
 | 28 | Datos de uso recopilados y analizados (adopción, frecuencia) | PM | [ ] |
-| 29 | Feedback del equipo documentado (encuesta + entrevistas 1:1) | PM | [ ] |
+| 29 | Retroalimentación del equipo documentada (encuesta + entrevistas 1:1) | PM | [ ] |
 | 30 | Impacto en métricas medido vs. baseline | Tech Lead + PM | [ ] |
 | 31 | Problemas identificados y clasificados (técnicos vs. culturales) | Tech Lead | [ ] |
 | 32 | Costo real del piloto documentado (licencias + tiempo invertido) | PM + Finance | [ ] |
@@ -107,7 +107,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 
 - Adopción del equipo piloto >= 70%
 - Al menos 1 métrica con mejora medible (velocity, defect rate o cycle time)
-- Feedback positivo (NPS >= 7) del 70%+ del equipo
+- Retroalimentación positiva (NPS >= 7) del 70%+ del equipo
 - Cero incidentes de seguridad
 - Costo del piloto dentro del presupuesto (+/- 15%)
 
@@ -119,7 +119,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 - Sponsor no asiste a la revisión del piloto (riesgo de perder soporte político)
 - Métricas empeoran vs. baseline (investigar causa: ¿curva de aprendizaje o problema real?)
 
-### Errores Comunes en Esta Fase (del Cap. 13)
+### Errores Comunes en Esta Fase (del Cap. 12)
 
 1. **Medir solo velocidad, ignorar calidad** - El código generado más rápido pero con más bugs no es progreso
 2. **No dar tiempo de aprendizaje** - Esperar productividad inmediata es irreal; presupueste 2 semanas de ramp-up
@@ -161,7 +161,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 |---|-----------|:-----------:|:----------:|
 | 49 | ROI preliminar calculado (esperado: breakeven o ligeramente positivo) | PM + Finance | [ ] |
 | 50 | Comparación de métricas entre equipos documentada | PM | [ ] |
-| 51 | Ajustes a herramientas o configuración basados en feedback | Tech Lead | [ ] |
+| 51 | Ajustes a herramientas o configuración basados en retroalimentación | Tech Lead | [ ] |
 | 52 | Evaluación de herramientas adicionales (agentes autónomos) | Tech Lead | [ ] |
 | 53 | Presentación de progreso al board/C-suite | Sponsor + PM | [ ] |
 | 54 | Decisión de continuar a Fase 3 tomada | Sponsor | [ ] |
@@ -207,7 +207,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 | 61 | Revisión trimestral de métricas y ROI | PM + Finance | [ ] |
 | 62 | Evaluación semestral de nuevas herramientas y modelos | Tech Lead | [ ] |
 | 63 | Políticas de governance actualizadas según aprendizajes | Security | [ ] |
-| 64 | Benchmarking con industria (conferencias, reportes, peers) | CTO/VP Eng | [ ] |
+| 64 | Comparación con la industria (conferencias, reportes, peers) | CTO/VP Eng | [ ] |
 | 65 | Plan de innovación: agentes especializados para el dominio del negocio | Tech Lead + Product | [ ] |
 | 66 | Programa de re-skilling continuo para el equipo | HR + Tech Lead | [ ] |
 
@@ -224,7 +224,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 
 ## Checklist de Seguridad y Compliance
 
-> **Fuente:** Capítulo 14. Usar como complemento transversal a todas las fases.
+> **Fuente:** Capítulo 13. Usar como complemento transversal a todas las fases.
 
 ### Prevención de Data Leakage
 
@@ -262,7 +262,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 
 ## Checklist de Gestión del Cambio
 
-> **Fuente:** Capítulo 12. La tecnología es el 30% del desafío; la gestión del cambio es el 70%.
+> **Fuente:** Capítulo 11. La tecnología es el 30% del desafío; la gestión del cambio es el 70%.
 
 ### Comunicación
 
@@ -280,7 +280,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 |---|--------|--------|:-----------:|:----------:|
 | 89 | Workshop inicial de herramientas (4-8 horas por equipo) | Inicio de cada fase | Champions | [ ] |
 | 90 | Programa de prompt engineering para todos los niveles | Fase 1-2 | Tech Lead | [ ] |
-| 91 | Training en revisión de código generado por IA | Fase 2 | Senior Devs | [ ] |
+| 91 | Capacitación en revisión de código generado por IA | Fase 2 | Senior Devs | [ ] |
 | 92 | Plan de carrera actualizado con roles emergentes de IA | Fase 2-3 | HR + Tech Lead | [ ] |
 | 93 | Evaluación de skills de IA incorporada en performance reviews | Fase 3 | HR | [ ] |
 
@@ -288,7 +288,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 
 | # | Acción | Responsable | Completado |
 |---|--------|:-----------:|:----------:|
-| 94 | Identificar y abordar las 3 preocupaciones principales del equipo | PM + Tech Lead | [ ] |
+| 94 | Identificar y abordar las 3 preocupaciones principales del equipo | PM + tech lead | [ ] |
 | 95 | Crear safe space para expresar dudas y temores | HR + Champions | [ ] |
 | 96 | Demostrar quick wins visibles en las primeras 2 semanas | Champion | [ ] |
 | 97 | No forzar adopción: ofrecer soporte, no mandatos | Tech Lead | [ ] |
@@ -305,7 +305,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 | Dimensión | Métrica | Baseline | Actual | Target | Status |
 |-----------|---------|:--------:|:------:|:------:|:------:|
 | **Productividad** | Velocity (story points/sprint) | ___ | ___ | +30% | ___ |
-| **Calidad** | Defect rate (bugs/release) | ___ | ___ | -25% | ___ |
+| **Calidad** | Defect rate (bugs/versión) | ___ | ___ | -25% | ___ |
 | **Velocidad** | PR cycle time (horas) | ___ | ___ | -40% | ___ |
 | **Adopción** | % de devs usando IA diariamente | ___ | ___ | 80% | ___ |
 | **Satisfacción** | Developer NPS | ___ | ___ | +15pts | ___ |
@@ -356,7 +356,7 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 | # | Acción | Responsable | Completado |
 |---|--------|:-----------:|:----------:|
 | 111 | Revisión diaria de métricas (adopción, errores, costos) | PM + DevOps | [ ] |
-| 112 | Atención prioritaria a feedback inmediato | Champions | [ ] |
+| 112 | Atención prioritaria a retroalimentación inmediata | Champions | [ ] |
 | 113 | Ajustes rápidos de configuración si es necesario | Tech Lead | [ ] |
 | 114 | Documentación de lecciones aprendidas del go-live | PM | [ ] |
 | 115 | Celebrar el lanzamiento y reconocer al equipo | Sponsor | [ ] |
@@ -375,4 +375,4 @@ Para maximizar la utilidad de estos checklists, te recomendamos trasladarlos a u
 
 ---
 
-*Checklists basados en las mejores prácticas documentadas en los Capítulos 12, 13 y 14 de "El Paradigma Agéntico". 115 checkpoints organizados por fase de implementación. Última actualización: Enero 2026.*
+*Checklists basados en las mejores prácticas documentadas en los Capítulos 9, 11, 12, 13 y 14 de "Agéntico por Diseño, Tomo I". 115 checkpoints organizados por fase de implementación. Última actualización: Febrero 2026.*

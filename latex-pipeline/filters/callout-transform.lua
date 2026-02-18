@@ -353,6 +353,40 @@ function BlockQuote(el)
   return pandoc.RawBlock("latex", latex)
 end
 
+-- Class-to-environment mapping for fenced divs (::: {.callout .tipo})
+local div_class_map = {
+  ["dato-clave"]        = "dato-clave",
+  ["punto-critico"]     = "punto-critico",
+  ["reunion-liderazgo"] = "reunion-liderazgo",
+  ["alerta-critica"]    = "punto-critico",
+  ["para-reunion"]      = "reunion-liderazgo",
+  ["ejemplo-practico"]  = "ejemplo-practico",
+  ["nota-lideres"]      = "nota-lideres",
+  ["callout-generico"]  = "callout-generico",
+}
+
+function Div(el)
+  if not el.classes:includes("callout") then return nil end
+
+  local env_name = "callout-generico"
+  for _, cls in ipairs(el.classes) do
+    if div_class_map[cls] then
+      env_name = div_class_map[cls]
+      break
+    end
+  end
+
+  local content_blocks = strip_title_paragraph(el.content)
+  local inner_latex = blocks_to_latex(content_blocks)
+
+  local latex = string.format(
+    "\\begin{%s}\n%s\\end{%s}",
+    env_name, inner_latex, env_name
+  )
+
+  return pandoc.RawBlock("latex", latex)
+end
+
 return {
-  { BlockQuote = BlockQuote }
+  { BlockQuote = BlockQuote, Div = Div }
 }

@@ -1,5 +1,5 @@
 % =============================================================================
-% book.tex — Pandoc template for "El Paradigma Agéntico"
+% book.tex — Pandoc template for "Agéntico por Diseño, Tomo I"
 % =============================================================================
 \documentclass[$if(classoption)$$for(classoption)$$classoption$$sep$,$endfor$$endif$]{paradigma-agentico}
 
@@ -12,7 +12,7 @@
 \input{pa-typography.sty}
 
 % Metadata
-\title{El Paradigma Agéntico}
+\title{Agéntico por Diseño, Tomo I: Tecnologías de la Información}
 \author{Karim Touma}
 \date{$book.date$}
 
@@ -29,7 +29,8 @@
 % --- Half title page ---
 \vspace*{\fill}
 \begin{center}
-  {\fontsize{28}{34}\selectfont\sffamily\bfseries\color{pa-primary}El Paradigma Agéntico}
+  {\fontsize{28}{34}\selectfont\sffamily\bfseries\color{pa-primary}Agéntico por Diseño}\\[12pt]
+  {\fontsize{16}{20}\selectfont\sffamily\color{pa-midgray}Tomo I}
 \end{center}
 \vspace*{\fill}
 \clearpage
@@ -37,10 +38,11 @@
 % --- Full title page ---
 \vspace*{0.18\textheight}
 \begin{center}
-  {\fontsize{13}{16}\selectfont\sffamily\color{pa-midgray}\MakeUppercase{El Paradigma}}\\[0.8em]
-  {\fontsize{34}{40}\selectfont\sffamily\bfseries\color{pa-primary}Agéntico}\\[1.2em]
+  {\fontsize{13}{16}\selectfont\sffamily\color{pa-midgray}\MakeUppercase{Agéntico}}\\[0.8em]
+  {\fontsize{34}{40}\selectfont\sffamily\bfseries\color{pa-primary}por Diseño}\\[1.2em]
   {\color{pa-primary}\rule{0.45\textwidth}{2pt}}\\[1.2em]
-  {\fontsize{16}{20}\selectfont\sffamily\color{pa-darktext}Una Nueva Era en la\\[0.3em]Ingeniería de Software}\\[2.5em]
+  {\fontsize{14}{18}\selectfont\sffamily\bfseries\color{pa-secondary}TOMO I}\\[0.8em]
+  {\fontsize{18}{22}\selectfont\sffamily\color{pa-darktext}Tecnologías de la Información}\\[2.5em]
   {\fontsize{13}{16}\selectfont\sffamily\color{pa-midgray}Karim Touma}\\[0.6em]
   {\fontsize{10}{13}\selectfont\sffamily\color{pa-midgray}\href{mailto:karim@touma.io}{karim@touma.io}\enspace\textbar\enspace\href{https://karim.touma.io}{karim.touma.io}}\\[0.8em]
   {\fontsize{11}{14}\selectfont\sffamily\color{pa-midgray}$book.date$}
@@ -52,30 +54,135 @@
 \vspace*{\fill}
 \begin{flushleft}
   \small\sffamily\color{pa-darktext}
-  \textbf{El Paradigma Agéntico: Una Nueva Era en la Ingeniería de Software}\\[12pt]
+  \textbf{Agéntico por Diseño, Tomo I: Tecnologías de la Información}\\[12pt]
   Copyright \textcopyright{} $book.date$ Karim Touma\\[6pt]
   \href{mailto:karim@touma.io}{karim@touma.io}\enspace\textbar\enspace\href{https://karim.touma.io}{karim.touma.io}\\[6pt]
   Todos los derechos reservados.\\[12pt]
   Ninguna parte de esta publicación puede ser reproducida, almacenada en un sistema
-  de recuperación, o transmitida en cualquier forma o por cualquier medio ---electrónico,
-  mecánico, fotocopia, grabación, u otro--- sin el permiso previo por escrito del autor,
+  de recuperación, o transmitida en cualquier forma o por cualquier medio --electrónico,
+  mecánico, fotocopia, grabación, u otro-- sin el permiso previo por escrito del autor,
   excepto en el caso de citas breves para reseñas.\\[12pt]
   Las opiniones expresadas en este libro son responsabilidad exclusiva del autor y no
   representan necesariamente las posiciones de las organizaciones mencionadas.\\[12pt]
-  Los casos de estudio ficticios (Capítulos 9, 10 y 11) son creaciones del autor
-  basadas en patrones reales de la industria. Cualquier semejanza con empresas
-  específicas es coincidencia.\\[18pt]
+  Los datos, estadísticas y casos presentados provienen de fuentes públicas verificadas
+  (Gartner, McKinsey, GitHub Research, entre otras). Las fuentes se citan en cada capítulo.\\[12pt]
+  \textit{Los nombres de productos y empresas mencionados en este libro pueden ser
+  marcas registradas de sus respectivos propietarios. El uso de estos nombres
+  es meramente referencial y no implica afiliación ni respaldo.}\\[12pt]
+  \textit{La información contenida en esta obra se proporciona sin garantía de
+  ningún tipo. El autor no asume responsabilidad por errores u omisiones,
+  ni por daños derivados del uso de la información aquí contenida.}\\[18pt]
   ISBN: [pendiente]\\[18pt]
   \textbf{Primera edición}, $book.date$\\[6pt]
   Diseñado y compuesto con \LaTeX{}
 \end{flushleft}
 \clearpage
 
-% --- Table of Contents ---
+% --- Cómo Usar Este Libro ---
 \pagestyle{paradigma-plain}
+\vspace*{0.5cm}
+{\centering\fontsize{20}{24}\selectfont\sffamily\bfseries\color{pa-primary}Cómo Usar Este Libro\par}
+\vspace{1cm}
+
+\noindent\color{pa-darktext}
+Este no es un libro para leer de principio a fin y guardar en el estante.
+Es una \textbf{herramienta de consulta} diseñada para que la uses en tu trabajo diario:
+anota en los márgenes, subraya, marca páginas, y vuelve a las secciones que necesites.
+
+\vspace{1em}
+
+\noindent{\sffamily\bfseries\color{pa-primary}Estructura del libro}
+
+\vspace{0.5em}
+\noindent El contenido se organiza en seis partes que puedes abordar en cualquier orden:
+
+\vspace{0.5em}
+\begin{description}[leftmargin=0.5em,itemsep=4pt,font=\sffamily\bfseries\color{pa-secondary}]
+  \item[Parte I --- Contexto Estratégico] Por qué la IA agéntica importa \emph{ahora} (Caps.\ 0--4)
+  \item[Parte II --- Sesgos y Evidencia] Los errores cognitivos que debes evitar y qué dice la evidencia por industria (Caps.\ 5--6)
+  \item[Parte III --- La Tecnología] Evolución técnica y ecosistema de herramientas (Caps.\ 7--8)
+  \item[Parte IV --- Impacto en el Negocio] ROI, TCO, y qué pasa cuando falla (Caps.\ 9--10)
+  \item[Parte V --- Liderazgo y Estrategia] Cómo liderar equipos y diseñar la adopción (Caps.\ 11--12)
+  \item[Parte VI --- Gobernanza y Futuro] Riesgos, regulación, y visión 2030 (Caps.\ 13--14)
+\end{description}
+
+\vspace{1em}
+
+\noindent{\sffamily\bfseries\color{pa-primary}Si necesitas\ldots}
+
+\vspace{0.5em}
+\begin{tblr}{
+  colspec = {X[1.6,l] X[1,l]},
+  row{1} = {font=\sffamily\bfseries\color{white}, bg=pa-primary},
+  row{even} = {bg=pa-tablealt},
+  hlines = {pa-tablehead},
+  rowsep = 4pt,
+  colsep = 8pt,
+}
+  Tu situación & Ve a\ldots \\
+  Convencer al board de invertir en IA & Caps.\ 1, 9, App.\ B \\
+  Evaluar herramientas agénticas & Caps.\ 8, 11, App.\ B \\
+  Armar el business case / ROI & Caps.\ 9, 12, App.\ C \\
+  Liderar el cambio cultural & Caps.\ 5, 11, 13 \\
+  Diseñar gobernanza y compliance & Cap.\ 13 \\
+  Entender qué es IA agéntica & Caps.\ 3, 4, 7 \\
+  Identificar quick wins por industria & Cap.\ 6 \\
+  Ver qué puede salir mal & Cap.\ 10 \\
+\end{tblr}
+
+\clearpage
+
+\noindent{\sffamily\bfseries\color{pa-primary}Lectura recomendada por rol}
+
+\vspace{0.5em}
+\begin{tblr}{
+  colspec = {X[0.8,l] X[1.4,l] X[0.5,c]},
+  row{1} = {font=\sffamily\bfseries\color{white}, bg=pa-primary},
+  row{even} = {bg=pa-tablealt},
+  hlines = {pa-tablehead},
+  rowsep = 4pt,
+  colsep = 8pt,
+}
+  Rol & Capítulos clave & Tiempo \\
+  CTO / VP Engineering & 1, 3, 7, 8, 11, 13 & 3--4 hrs \\
+  CFO / Finance & 1, 9, 10, 12, App.\ B & 2--3 hrs \\
+  Tech Lead / Architect & 3, 4, 7, 8, 11, App.\ E & 3--4 hrs \\
+  CHRO / People & 5, 11, 13 & 2--3 hrs \\
+  CEO / Board Member & Brief, 1, 9, 14 & 1--2 hrs \\
+\end{tblr}
+
+\vspace{1.5em}
+
+\noindent{\sffamily\bfseries\color{pa-primary}Leyenda de elementos}
+
+\vspace{0.5em}
+\noindent A lo largo del libro encontrarás recuadros con información especial:
+
+\vspace{0.5em}
+\begin{description}[leftmargin=0.5em,itemsep=3pt,font=\sffamily\small\color{pa-secondary}]
+  \item[\faClipboardList\enspace Resumen Ejecutivo] Los puntos clave del capítulo en 60 segundos
+  \item[\faUsers\enspace Para Tu Reunión de Liderazgo] Ejercicios para aplicar en tu próxima reunión
+  \item[\faChartBar\enspace Dato Verificado] Estadísticas con fuente, metodología y limitaciones
+  \item[\faExclamationTriangle\enspace Errores Comunes] Trampas frecuentes que líderes deben evitar
+  \item[\faCheckSquare\enspace Checklist] Listas de verificación para implementación
+  \item[\faLightbulb\enspace Ejemplo Práctico] Aplicación concreta de un concepto
+\end{description}
+
+\vspace{1em}
+
+\noindent{\sffamily\bfseries\color{pa-primary}El margen es tuyo}
+
+\vspace{0.5em}
+\noindent Los márgenes amplios están diseñados para que escribas. Anota ideas, marca lo que
+aplica a tu contexto, conecta secciones entre sí. Un libro de consulta se vuelve más valioso
+cada vez que lo usas.
+
+\clearpage
+
+% --- Table of Contents ---
 {
   \hypersetup{linkcolor=pa-darktext}
-  \setcounter{tocdepth}{2}
+  \setcounter{tocdepth}{1}
   \tableofcontents*
 }
 \clearpage
@@ -85,6 +192,7 @@
 % =============================================================================
 \mainmatter
 \pagestyle{paradigma-page}
+\markboth{}{}
 
 % Part dividers are inserted automatically by part-dividers.lua filter
 % based on chapter numbering (Parts I-VI)
@@ -96,6 +204,11 @@ $body$
 % =============================================================================
 \backmatter
 
+% --- Índice Analítico ---
+\clearpage
+\pagestyle{paradigma-plain}
+\printindex
+
 % --- Sobre el Autor ---
 \clearpage
 \pagestyle{paradigma-plain}
@@ -104,41 +217,54 @@ $body$
 \vspace{1.5cm}
 
 \noindent\color{pa-darktext}
-\textbf{Karim Touma} empez\'{o} a construir sistemas de inteligencia artificial
-antes de que la industria supiera c\'{o}mo llamarlos. Como investigador en la
-Universidad de Santiago de Chile, dise\~{n}\'{o} modelos de data mining y optimizaci\'{o}n
-cuando el machine learning a\'{u}n era territorio acad\'{e}mico. Esa experiencia
-fundacional ---la de quien entiende la IA desde sus fundamentos, no desde
-sus titulares--- es la que atraviesa cada p\'{a}gina de este libro.
+Hay una pregunta que define a \textbf{Karim Touma}: \textit{?`qu\'{e} pasa cuando
+quien toma las decisiones estrat\'{e}gicas tambi\'{e}n entiende qu\'{e} sucede dentro
+del modelo?}
 
 \vspace{0.8em}
-\noindent Desde entonces, su carrera ha seguido una trayectoria poco com\'{u}n:
-la del l\'{i}der ejecutivo que nunca dej\'{o} de escribir c\'{o}digo. En Telef\'{o}nica
-Chile construy\'{o} desde cero la primera capacidad de Big Data Analytics de una
-telco en Latinoam\'{e}rica. En Falabella, como Chief Data \& Analytics Officer,
-lider\'{o} la estrategia de datos para uno de los ecosistemas de e-commerce m\'{a}s
-grandes de la regi\'{o}n. En LATAM Airlines, despleg\'{o} modelos de personalizaci\'{o}n
-en tiempo real para millones de pasajeros. En el camino, fund\'{o} una startup
-de datos y lider\'{o} equipos de m\'{a}s de cien ingenieros en seis pa\'{i}ses.
+\noindent Su respuesta ha sido construirla con las manos. Como investigador en la
+Universidad de Santiago de Chile, dise\~{n}\'{o} modelos de data mining cuando el
+machine learning a\'{u}n era territorio acad\'{e}mico. Esa curiosidad lo llev\'{o} a
+Equifax, donde hizo I+D a escala continental, y de ah\'{i} a una carrera que ha
+seguido una trayectoria poco com\'{u}n: la del l\'{i}der ejecutivo que nunca
+dej\'{o} de escribir c\'{o}digo.
+
+\vspace{0.8em}
+\noindent En Telef\'{o}nica Chile construy\'{o} desde cero la primera capacidad de
+Big Data Analytics de una telco en Latinoam\'{e}rica. En Falabella ---uno de los
+ecosistemas de e-commerce m\'{a}s grandes de la regi\'{o}n--- posicion\'{o} la
+anal\'{i}tica como capacidad estrat\'{e}gica y democratiz\'{o} el acceso a datos en
+toda la organizaci\'{o}n. En LATAM Airlines despleg\'{o} personalizaci\'{o}n en tiempo
+real para millones de pasajeros. Fund\'{o} una startup de pricing basado en datos.
+Lider\'{o} equipos de m\'{a}s de cien ingenieros en seis pa\'{i}ses. A lo largo del
+camino, ha analizado din\'{a}micas de comportamiento de m\'{a}s de 400 millones de
+clientes ---telecomunicaciones, retail, aviaci\'{o}n, cr\'{e}dito--- y en cada
+industria observ\'{o} el mismo patr\'{o}n: la tecnolog\'{i}a sin redise\~{n}o produce
+mejoras incrementales; la tecnolog\'{i}a con redise\~{n}o produce transformaciones.
 
 \vspace{0.8em}
 \noindent Hoy, como Group Chief Digital \& Data Officer de Grupo DEACERO, lidera
-la transformaci\'{o}n de una de las mayores manufactureras de acero de M\'{e}xico
-hacia una operaci\'{o}n AI-native, arquitectando personalmente la plataforma de
-GenAI, datos y digital del grupo. Construye sistemas RAG, hace fine-tuning de
-modelos LLM y los despliega a escala en producci\'{o}n ---no como ejercicio
-te\'{o}rico, sino como parte de su trabajo diario.
+la transformaci\'{o}n digital de una de las mayores manufactureras de acero de
+M\'{e}xico. Arquitecta personalmente la plataforma de GenAI del grupo, construye
+sistemas RAG, hace fine-tuning de LLMs y los despliega a escala en producci\'{o}n
+---no como ejercicio te\'{o}rico, sino como parte de su trabajo diario. Es la
+quinta industria radicalmente distinta en la que aplica la misma convicci\'{o}n:
+que los datos y la inteligencia artificial solo generan valor cuando se dise\~{n}a
+alrededor de ellos, no cuando se agregan encima de lo que ya existe.
 
 \vspace{0.8em}
-\noindent Es graduado del \emph{Stanford Executive Program} en Stanford Graduate
-School of Business y tiene un grado en Ciencias de la Computaci\'{o}n de la
-Universidad de Santiago de Chile.
+\noindent Es alumni del Stanford Graduate School of Business y graduado en Ciencias
+de la Computaci\'{o}n de la Universidad de Santiago de Chile.
 
 \vspace{0.8em}
-\noindent Este libro nace de esa intersecci\'{o}n: la visi\'{o}n de quien toma
-decisiones estrat\'{e}gicas en la mesa directiva y, al mismo tiempo, entiende
-qu\'{e} sucede dentro del modelo. Es una perspectiva que pocos ofrecen, y que
-este tema demanda.
+\noindent Este libro es la destilaci\'{o}n de esa experiencia: dos d\'{e}cadas
+navegando la intersecci\'{o}n entre estrategia y ejecuci\'{o}n, entre la mesa
+directiva y el terminal. No es la perspectiva del acad\'{e}mico que teoriza ni
+la del consultor que recomienda desde afuera. Es la del operador que ha
+apostado su carrera ---una y otra vez, en industrias que no se parecen entre
+s\'{i}--- a una idea simple y poderosa: que la forma de capturar valor de cada
+revoluci\'{o}n tecnol\'{o}gica no es adoptar herramientas, sino \textbf{redise\~{n}ar
+organizaciones}.
 
 \vspace{1.5em}
 \noindent\small\sffamily

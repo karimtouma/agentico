@@ -1,43 +1,46 @@
 % =============================================================================
-% pa-tables.sty — Professional table styling for El Paradigma Agentico
+% pa-tables.sty — Professional table styling for Agéntico por Diseño, Tomo I
 % Uses tabularray for modern table rendering with auto-width support.
 % =============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
 
 % --- Booktabs defaults (used by tabularray's booktabs library) ---
-\setlength{\heavyrulewidth}{0.10em}
-\setlength{\lightrulewidth}{0.04em}
-\setlength{\cmidrulewidth}{0.03em}
+% Optimized for compact professional tables (O'Reilly/Manning style)
+\setlength{\heavyrulewidth}{0.08em}
+\setlength{\lightrulewidth}{0.03em}
+\setlength{\cmidrulewidth}{0.025em}
 \setlength{\abovetopsep}{0pt}
 \setlength{\belowbottomsep}{0pt}
-\setlength{\aboverulesep}{0.6ex}
-\setlength{\belowrulesep}{0.6ex}
+% Reduced rule separation for tighter tables
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
 
 % --- tabularray themes (3 tiers by column count) ---
+% Optimized for 10pt base font with compact cell padding
 
-% pa-narrow: 2-4 columns, \small font
+% pa-narrow: 2-4 columns, normal font (10pt base)
 \NewTblrTheme{pa-narrow}{
+  \SetTblrStyle{firsthead}{font=\normalsize\sffamily\bfseries}
+  \SetTblrStyle{head}{font=\normalsize\sffamily\bfseries}
+  \SetTblrStyle{body}{font=\normalsize\sffamily}
+  \SetTblrStyle{foot}{font=\normalsize\sffamily}
+}
+
+% pa-wide: 5-7 columns, \small font
+\NewTblrTheme{pa-wide}{
   \SetTblrStyle{firsthead}{font=\small\sffamily\bfseries}
   \SetTblrStyle{head}{font=\small\sffamily\bfseries}
   \SetTblrStyle{body}{font=\small\sffamily}
   \SetTblrStyle{foot}{font=\small\sffamily}
 }
 
-% pa-wide: 5-7 columns, \footnotesize font
-\NewTblrTheme{pa-wide}{
+% pa-verywide: 8+ columns, \footnotesize font
+\NewTblrTheme{pa-verywide}{
   \SetTblrStyle{firsthead}{font=\footnotesize\sffamily\bfseries}
   \SetTblrStyle{head}{font=\footnotesize\sffamily\bfseries}
   \SetTblrStyle{body}{font=\footnotesize\sffamily}
   \SetTblrStyle{foot}{font=\footnotesize\sffamily}
-}
-
-% pa-verywide: 8+ columns, \scriptsize font
-\NewTblrTheme{pa-verywide}{
-  \SetTblrStyle{firsthead}{font=\scriptsize\sffamily\bfseries}
-  \SetTblrStyle{head}{font=\scriptsize\sffamily\bfseries}
-  \SetTblrStyle{body}{font=\scriptsize\sffamily}
-  \SetTblrStyle{foot}{font=\scriptsize\sffamily}
 }
 
 % --- Column types for legacy tabularx references ---
@@ -49,6 +52,22 @@
 \AtBeginEnvironment{longtable}{\small\sffamily\rowcolors{2}{pa-tablealt}{white}}
 
 % --- Row stretch ---
-\renewcommand{\arraystretch}{1.35}
+% Reduced from 1.35 for more compact tables
+% 1.15 matches O'Reilly/Manning professional density
+\renewcommand{\arraystretch}{1.15}
+
+% --- Spanish continuation text for multi-page tables ---
+% Override tabularray internal token lists (primary mechanism in v2025C)
+\ExplSyntaxOn
+\tl_gset:Nn \tblrcontfootname { Continúa~en~la~siguiente~página }
+\tl_gset:Nn \tblrcontheadname { (Continuación) }
+\ExplSyntaxOff
+% Also override templates as defense in depth
+\DefTblrTemplate{contfoot-text}{default}{Continúa en la siguiente página}
+\DefTblrTemplate{conthead-text}{default}{(Continuación)}
+
+% Suppress auto-generated caption from longtblr (babel es-tabla produces "Tabla X.Y:")
+% Manual captions in markdown (**Tabla X.Y. Title**) are the authoritative source
+\DefTblrTemplate{caption}{default}{}
 
 \endinput

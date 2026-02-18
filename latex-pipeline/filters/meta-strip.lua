@@ -100,11 +100,69 @@ function BlockQuote(el)
   return nil
 end
 
+-- Second pass: remove empty "Referencias" sections at document level.
+-- Pandoc auto-generates a "Referencias" header for footnote definitions
+-- (localized from "Footnotes" when lang=es). Since footnotes are already
+-- rendered as \footnote{} in LaTeX, the section ends up empty.
+-- Also handles explicit ## Referencias headings followed only by footnote
+-- definitions (which pandoc consumes), leaving the section empty.
+local function is_navigation_para(block)
+  if block.t ~= "Para" and block.t ~= "Plain" then return false end
+  local text = stringify(block.content)
+  return text:match("^Fin del ") or text:match("^Continúa en ")
+end
+
+local function remove_empty_referencias(doc)
+  local blocks = doc.blocks
+  local new_blocks = {}
+  local i = 1
+  while i <= #blocks do
+    local block = blocks[i]
+    if block.t == "Header" and block.level == 2 then
+      local text = stringify(block.content)
+      if text == "Referencias" then
+        -- Look ahead: skip HorizontalRules and navigation footers,
+        -- check if next real content block is a Header or end of document
+        local j = i + 1
+        local has_content = false
+        while j <= #blocks do
+          local nb = blocks[j]
+          if nb.t == "HorizontalRule" or is_navigation_para(nb) then
+            j = j + 1
+          elseif nb.t == "Header" then
+            break  -- next section starts, no content found
+          else
+            has_content = true
+            break
+          end
+        end
+        if not has_content then
+          i = i + 1  -- skip the empty Referencias header
+        else
+          table.insert(new_blocks, block)
+          i = i + 1
+        end
+      else
+        table.insert(new_blocks, block)
+        i = i + 1
+      end
+    else
+      table.insert(new_blocks, block)
+      i = i + 1
+    end
+  end
+  doc.blocks = new_blocks
+  return doc
+end
+
 return {
   {
     Para = Para,
     Plain = Plain,
     Header = Header,
     BlockQuote = BlockQuote,
+  },
+  {
+    Pandoc = remove_empty_referencias,
   }
 }

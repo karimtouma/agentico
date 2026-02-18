@@ -92,8 +92,8 @@ fi
 # =============================================================================
 log_section "Build Output Validation"
 
-LOGFILE="$OUTPUT_DIR/el-paradigma-agentico.log"
-PDFFILE="$OUTPUT_DIR/el-paradigma-agentico.pdf"
+LOGFILE="$OUTPUT_DIR/agentico-por-diseno.log"
+PDFFILE="$OUTPUT_DIR/agentico-por-diseno.pdf"
 
 if [ ! -f "$PDFFILE" ]; then
     log_warn "No PDF found. Run 'make pdf' first."
@@ -156,7 +156,7 @@ fi
 # =============================================================================
 log_section "Filter Effectiveness"
 
-TEXFILE="$OUTPUT_DIR/el-paradigma-agentico.tex"
+TEXFILE="$OUTPUT_DIR/agentico-por-diseno.tex"
 if [ ! -f "$TEXFILE" ]; then
     log_warn "No .tex file found. Run 'make latex' to generate."
 else

@@ -2,20 +2,32 @@
 
 > **Resumen Ejecutivo**
 >
-> - En 2025, el 46% del código está siendo escrito por IA, transformando radicalmente la ingeniería de software
-> - Gartner predice que el 40% de aplicaciones empresariales integrarán agentes de IA para finales de 2026
-> - Sin embargo, más del 40% de proyectos de IA agéntica serán cancelados antes de 2027 por falta de estrategia clara
-> - Este libro proporciona frameworks de decisión para líderes técnicos que deben navegar esta transformación ahora
+> - 📊 El 46% del código nuevo ya es generado con asistencia de IA (GitHub Octoverse 2025, Stack Overflow)
+> - 🔮 Gartner predice que el 40% de aplicaciones empresariales integrarán agentes de IA para finales de 2026
+> - 🔮 Sin embargo, más del 40% de proyectos de IA agéntica serán cancelados antes de 2027 por falta de estrategia clara
+> - Este libro proporciona frameworks de decisión para líderes técnicos que deben navegar esta transformación
 
 ---
 
-## El Momento Crítico: Por Qué 2025-2026 Es el Punto de Inflexión
+> **Cómo leer las estadísticas en este libro**
+>
+> Usamos marcadores para distinguir tipos de evidencia:
+>
+> - 📊 **DATO**: Medición reportada con metodología identificable (GitHub, Stack Overflow, estudios peer-reviewed)
+> - 🔮 **PROYECCIÓN**: Predicción de analistas (Gartner, McKinsey, Forrester). Nota: el track record de estas proyecciones es mixto
+> - 💭 **MI ANÁLISIS**: Estimación o interpretación del autor basada en experiencia. Sesgada pero transparente
+>
+> **Sobre la vigencia de este libro:** El ecosistema de herramientas de IA cambia cada 3-6 meses. Los principios de liderazgo, gobernanza y gestión del cambio en este libro son de vigencia prolongada (3-5+ años). Los precios, capacidades específicas de herramientas y cifras de adopción son válidos al cierre de Q1 2026; verifica antes de usar en presupuestos o presentaciones de board.
+
+---
+
+## El Punto de Inflexión: Por Qué 2025-2026 Marca un Cambio de Era
 
 Si eres CTO, VP de Ingeniería, o Tech Lead, probablemente has notado algo fundamental: el software se está escribiendo de manera diferente.
 
 No me refiero a un nuevo framework JavaScript o a otra metodología ágil. Hablo de algo mucho más profundo: **las máquinas están escribiendo casi la mitad del código que tu equipo produce**.
 
-Según datos de GitHub de 2025, el 46% de todo el código generado por desarrolladores proviene de asistentes de IA como GitHub Copilot[^pref1]. En proyectos Java, esta cifra alcanza el 61%. Esto no es futuro lejano—está sucediendo en este momento en los equipos de ingeniería de todo el mundo.
+Según datos de GitHub de 2025, el 46% de todo el código generado por desarrolladores proviene de asistentes de IA como GitHub Copilot[^pref1]. En proyectos Java, esta cifra alcanza el 61%. Esto no es futuro lejano; está sucediendo en este momento en los equipos de ingeniería de todo el mundo.
 
 **Evolución del porcentaje de código generado por IA (2022-2025)**
 
@@ -26,11 +38,11 @@ Según datos de GitHub de 2025, el 46% de todo el código generado por desarroll
 | 2024 | ~35% | Integración de IA generativa en flujos de CI/CD; primeros agentes autónomos |
 | 2025 | **46%** | IA agéntica en producción; 61% en proyectos Java; 84% de desarrolladores usan herramientas de IA |
 
-*Fuente: GitHub (2025), Second Talent (2025), Stack Overflow Developer Survey (2025)*
+*Fuente: GitHub Octoverse Report (2025), Stack Overflow Developer Survey (2025), Peng et al. ArXiv 2302.06590*
 
 > **Dato verificado:**
 >
-> - **Fuente:** GitHub Octoverse Report 2025; Second Talent analysis
+> - **Fuente:** GitHub Octoverse Report 2025; validado por Peng et al. (2023) "The Impact of AI on Developer Productivity"
 > - **Qué mide:** Porcentaje de código nuevo generado con asistencia de IA (aceptaciones de sugerencias de Copilot como proporción del código total committeado)
 > - **Muestra:** 1.8M+ usuarios activos de GitHub Copilot; datos agregados de proyectos Java, Python, JavaScript y otros lenguajes
 > - **Limitación:** Solo mide código aceptado vía Copilot en GitHub; no incluye código asistido por otras herramientas (ChatGPT, Claude, Cursor) ni asistencia indirecta. La cifra real de código "asistido por IA" probablemente es mayor
@@ -40,12 +52,12 @@ Pero aquí está el problema: mientras que el 84% de los desarrolladores están 
 
 Existe una brecha masiva entre experimentación y ejecución estratégica.
 
-### Las Cifras que Deberían Preocuparte (y Motivarte)
+### Las Cifras que Todo Líder Técnico Debe Conocer
 
 Gartner ha emitido predicciones que toda la alta dirección técnica debería conocer[^pref4]:
 
 - **40% de aplicaciones empresariales** integrarán agentes de IA específicos para tareas para finales de 2026 (comparado con menos del 5% en 2025)
-- **Pero también**: más del **40% de proyectos de IA agéntica serán cancelados** antes de finales de 2027 debido a costos escalados, valor de negocio poco claro, o controles de riesgo inadecuados
+- **Pero también**: una proporción significativa de estos proyectos **serán cancelados** antes de finales de 2027 debido a costos escalados, valor de negocio poco claro, o controles de riesgo inadecuados
 - Para 2028, al menos **15% de las decisiones diarias de trabajo** serán tomadas de forma autónoma por IA agéntica
 - Para 2029, la IA agéntica resolverá autónomamente el **80% de problemas comunes de servicio al cliente** sin intervención humana
 
@@ -66,10 +78,10 @@ Gartner ha emitido predicciones que toda la alta dirección técnica debería co
 > - **Fuente:** Gartner Press Release, junio 2025; Gartner Top Strategic Technology Trends 2025
 > - **Qué mide:** Proyección de adopción de agentes de IA en aplicaciones empresariales y tasa de cancelación de proyectos
 > - **Muestra:** Análisis prospectivo de Gartner basado en encuestas a ejecutivos y modelos de mercado (no son datos observados)
-> - **Limitación:** Las proyecciones de Gartner tienen un margen de error histórico significativo. La predicción de 40% de cancelación refleja el patrón típico del Hype Cycle
-> - **Implicación práctica:** La dualidad es el mensaje clave: el mercado se moverá rápido (40% adopción), pero sin governance la mayoría fracasará (40% cancelación). Estar en el 60% que sobrevive requiere estrategia deliberada
+> - **Limitación:** Las proyecciones de Gartner tienen un margen de error histórico significativo. Esta predicción de cancelación refleja el patrón típico del Hype Cycle
+> - **Implicación práctica:** La dualidad es el mensaje clave: el mercado se moverá rápido, pero sin governance la mayoría fracasará. Estar en la mayoría que sobrevive requiere estrategia deliberada
 
-El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035—más de **$450 mil millones**[^pref5].
+El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035: más de **$450 mil millones**[^pref5].
 
 ### El Costo de la Inacción
 
@@ -82,14 +94,14 @@ Según una encuesta de Gartner de enero de 2025 a 3,412 asistentes de webinars[^
 - 31% están en modo "esperar y ver"
 - 8% no han hecho ninguna inversión
 
-La pregunta no es **si** tu organización adoptará IA agéntica en ingeniería de software. La pregunta es **cuándo** y **cómo**—y si lo harás de manera estratégica o reactiva.
+La pregunta no es **si** tu organización adoptará IA agéntica en ingeniería de software. La pregunta es **cuándo** y **cómo**, y si lo harás de manera estratégica o reactiva.
 
 ### Lo Que Está en Juego Para Tu Equipo
 
 Los datos sobre productividad son contundentes pero requieren contexto:
 
 - Desarrolladores usando GitHub Copilot completan **126% más proyectos por semana**[^pref7]
-- El tiempo de pull request cayó de 9.6 días a 2.4 días—una **reducción del 75%** en ciclos de desarrollo[^pref8]
+- El tiempo de pull request cayó de 9.6 días a 2.4 días: una **reducción del 75%** en ciclos de desarrollo[^pref8]
 - Los equipos ahorran **30-60% del tiempo** en codificación y pruebas rutinarias[^pref9]
 
 Suena increíble, ¿verdad? Pero aquí está el matiz crítico que muchos líderes pasan por alto:
@@ -109,11 +121,11 @@ Suena increíble, ¿verdad? Pero aquí está el matiz crítico que muchos líder
 | **Calidad del código** | Automatización de pruebas y detección temprana de errores | 48% del código generado por IA contiene vulnerabilidades de seguridad |
 | **Deuda técnica** | Refactorización asistida y documentación automática | 4x más clonación de código; riesgo de degradación arquitectónica |
 | **Confianza del equipo** | 84% de desarrolladores ya usan herramientas de IA | Solo 33% confían plenamente en los resultados; 71% no fusionan sin revisión manual |
-| **ROI organizacional** | Mercado de IA alcanzó $391B en 2025; potencial de $450B+ para 2035 | 40%+ de proyectos de IA agéntica serán cancelados antes de 2027 |
+| **ROI organizacional** | Mercado de IA alcanzó $391B en 2025; potencial de $450B+ para 2035 | Tasa de fracaso significativa prevista por Gartner (ver timeline arriba) |
 
 *Fuentes: GitHub (2025), Gartner (2025), GitClear (2025), Stack Overflow Developer Survey (2025)*
 
-Estas cifras contradictorias explican por qué tantos proyectos fracasan. La tecnología funciona—pero solo cuando los líderes comprenden tanto su potencial como sus limitaciones.
+Estas cifras contradictorias explican por qué tantos proyectos fracasan. La tecnología funciona. Pero solo cuando los líderes comprenden tanto su potencial como sus limitaciones.
 
 ## Para Quién Es Este Libro
 
@@ -135,9 +147,19 @@ Este libro está escrito específicamente para **líderes técnicos y de negocio
 ### Lo Que SÍ Necesitas
 
 - Curiosidad sobre cómo la IA agéntica está cambiando la ingeniería de software
-- Responsabilidad por decisiones que afectan equipos, presupuestos o roadmaps de producto
+- Responsabilidad por decisiones que afectan equipos, presupuestos o hojas de ruta de producto
 - Disposición para cuestionar tanto el hype como el escepticismo excesivo
 - Interés en frameworks prácticos de decisión basados en datos reales
+
+## Sobre Esta Serie
+
+Este libro es el **Tomo I** de la serie *Agéntico por Diseño*, enfocado en **Tecnologías de la Información**: cómo los equipos de ingeniería de software adoptan, gestionan y lideran con IA agéntica.
+
+Los tomos futuros explorarán cómo la transformación agéntica impacta otras funciones organizacionales: operaciones y procesos de negocio, estrategia corporativa, y la reorganización del trabajo más allá de TI.
+
+Cada tomo es autónomo; puedes leer este sin necesidad de esperar los siguientes. Pero juntos ofrecerán una visión integral de lo que significa diseñar una organización agéntica.
+
+---
 
 ## Qué Encontrarás en Este Libro
 
@@ -161,16 +183,17 @@ Todas las estadísticas, métricas y tendencias están citadas con fuentes de in
 - Datos de plataformas (GitHub, Stack Overflow)
 - Reportes financieros de empresas públicas
 
-**Casos de Estudio Reales (y Algunos Ficticios Pero Realistas)**
-Verás 5 casos profundos de implementación:
+**Casos de Estudio Reales y Guía por Industria**
+Verás casos profundos de implementación y análisis por sector:
 
-- 2 casos reales completamente documentados
-- 3 casos ficticios basados en patrones comunes que he observado en consultoría
+- 2 casos reales completamente documentados (Fintech LATAM, Enterprise Global)
+- 1 guía por industria basada en investigación de 15+ fuentes (METR, BCG, GitClear, DORA, McKinsey)
+- Escenarios compuestos de fracaso basados en patrones reales de la industria
 
 Cada caso sigue la estructura: Contexto → Decisión → Implementación → Resultados → Lecciones
 
 **Recuadros "Para Tu Próxima Reunión de Liderazgo"**
-Estos resúmenes ejecutivos te dan puntos concretos para comunicar a tu equipo directivo, board, o stakeholders.
+Estos resúmenes ejecutivos te dan puntos concretos para comunicar a tu equipo directivo, board, o partes interesadas.
 
 ### Lo Que NO Encontrarás
 
@@ -187,12 +210,12 @@ Diseñé este libro para ser **modular**. No necesitas leerlo de principio a fin
 
 Si eres responsable de la estrategia completa de IA agéntica:
 
-1. **Parte I: Contexto Estratégico (Caps 1-3)** - Establece el marco mental
-2. **Parte II: Tecnología (Caps 4-5)** - Entiende las capacidades sin entrar en detalles técnicos
-3. **Parte III: Impacto al Negocio (Cap 6)** - Calcula ROI y justifica inversión
-4. **Parte IV: Casos de Estudio (Caps 7-11)** - Aprende de implementaciones reales
-5. **Parte V: Liderazgo (Caps 12-13)** - Lidera equipos humanos en la era de IA
-6. **Parte VI: Gobernanza y Futuro (Caps 14-15)** - Gestiona riesgos y planifica a mediano plazo
+1. **Parte I: Contexto Estratégico (Caps 0-4)** - Establece el marco mental (incluyendo la tesis central "por Diseño")
+2. **Parte II: Sesgos y Evidencia (Caps 5-6)** - Los errores cognitivos que debes evitar y qué dice la evidencia por industria
+3. **Parte III: La Tecnología (Caps 7-8)** - Entiende las capacidades sin entrar en detalles técnicos
+4. **Parte IV: Impacto en el Negocio (Caps 9-10)** - Calcula ROI, justifica inversión y conoce los patrones de fracaso
+5. **Parte V: Liderazgo y Estrategia (Caps 11-12)** - Lidera equipos y diseña la hoja de ruta de adopción
+6. **Parte VI: Gobernanza y Futuro (Caps 13-14)** - Gestiona riesgos y planifica a mediano plazo
 7. **Apéndices** - Herramientas de referencia rápida
 
 **Tiempo estimado**: 8-10 horas de lectura enfocada
@@ -201,33 +224,43 @@ Si eres responsable de la estrategia completa de IA agéntica:
 
 **Si eres Tech Lead o Engineering Manager:**
 
-- Empieza con **Caps 4-5** (Tecnología)
-- Luego **Caps 7-11** (Casos de Estudio)
-- Termina con **Cap 12** (Liderando Equipos)
+- Empieza con **Caps 7-8** (Tecnología)
+- Luego **Cap 6** (Guía por Industria)
+- Termina con **Cap 11** (Liderando Equipos)
 - Consulta **Apéndice C** (Checklist de Implementación)
 
 **Si eres Product Manager:**
 
-- Empieza con **Cap 6** (Impacto al Negocio)
-- Luego **Caps 7-11** (Casos de Estudio)
-- Consulta **Cap 13** (Estrategia de Adopción)
+- Empieza con **Cap 9** (Impacto al Negocio)
+- Luego **Cap 6** (Guía por Industria)
+- Consulta **Cap 12** (Estrategia de Adopción)
 
 **Si estás en un board o comité de inversión:**
 
 - Lee **Cap 1** (Introducción)
-- Salta a **Cap 6** (Impacto al Negocio)
-- Revisa **Cap 14** (Gobernanza y Riesgos)
-- Ojea **Cap 15** (Futuro)
+- Salta a **Cap 9** (Impacto al Negocio)
+- Revisa **Cap 13** (Gobernanza y Riesgos)
+- Ojea **Cap 14** (Futuro)
 
 **Flujo de lectura recomendado según rol**
 
 | Rol | Ruta de lectura | Capítulos clave | Tiempo estimado |
 |-----|-----------------|-----------------|:---------------:|
-| **CTO / VP de Ingeniería** | Lectura completa: Partes I a VI + Apéndices | Todos (Caps 1-15) | 8-10 horas |
-| **Tech Lead / Eng. Manager** | Tecnología + Casos + Liderazgo | Caps 4, 5, 7-12 + Apéndice C | 5-6 horas |
-| **Product Manager** | Negocio + Casos + Estrategia | Caps 6, 7-11, 13 | 4-5 horas |
-| **Board / Comité de inversión** | Visión ejecutiva + Riesgos | Caps 1, 6, 14, 15 | 2-3 horas |
-| **Director de Innovación** | Contexto + Impacto + Gobernanza | Caps 1-3, 6, 13-15 | 5-6 horas |
+| **CTO / VP de Ingeniería** | Lectura completa: Partes I a VI + Apéndices | Todos (Caps 1-14) | 8-10 horas |
+| **Tech Lead / Eng. Manager** | Tecnología + Guía + Liderazgo | Caps 7-8, 6, 11 + Apéndice C | 5-6 horas |
+| **Product Manager** | Negocio + Guía + Estrategia | Caps 9, 6, 12 | 4-5 horas |
+| **Board / Comité de inversión** | Visión ejecutiva + Riesgos | Caps 1, 9, 13-14 | 2-3 horas |
+| **Director de Innovación** | Contexto + Impacto + Gobernanza | Caps 1-4, 9, 13-14 | 5-6 horas |
+
+**Lectura por contexto organizacional**
+
+| Contexto | Ruta recomendada | Tiempo estimado |
+|----------|-----------------|:---------------:|
+| **"Solo tengo 2 horas"** | Resumen Ejecutivo (00a) → Cap 4 (tesis central) → Cap 9 (ROI) | 2 horas |
+| **Startup / Scale-up (<50 devs)** | Caps 8 (herramientas) + 6 (industria) + 12 (hoja de ruta) + Apéndice C | 3-4 horas |
+| **Mid-market (100-1,000 devs)** | Caps 4 + 9 (ROI) + 11 (equipos) + 12 (hoja de ruta) + 6 (industria) | 5-6 horas |
+| **Enterprise (1,000+ devs)** | Lectura completa recomendada; énfasis en Caps 13 (gobernanza) + 5 (sesgos) + 9 (ROI) | 8-10 horas |
+| **Industria regulada (banca, salud, gobierno)** | Caps 13 (gobernanza) + 5 (sesgos) + 10 (fracasos) + 6 (industria) + Apéndice B | 4-5 horas |
 
 ### Usando los Recuadros y Herramientas
 
@@ -242,27 +275,23 @@ A lo largo del libro encontrarás:
 
 Debo ser transparente sobre quién soy y qué perspectiva traigo a este libro.
 
-### Mi Trayectoria
+### Mi Trayectoria (en breve)
 
-Llevo más de 15 años construyendo capacidades de datos e inteligencia artificial en América Latina. Mi carrera ha seguido una trayectoria poco común: la del líder ejecutivo que nunca dejó de escribir código.
+Llevo más de 15 años construyendo capacidades de datos e IA en cinco industrias distintas (telecomunicaciones, retail, aviación, crédito, manufactura). Hoy soy Group Chief Digital & Data Officer de Grupo DEACERO, donde arquitecto personalmente la plataforma de GenAI y despliego modelos en producción. He liderado equipos de más de cien ingenieros en seis países. He visto proyectos de IA generar cientos de millones en valor, y he visto otros fracasar estrepitosamente.
 
-Empecé como investigador en la Universidad de Santiago de Chile, diseñando modelos de data mining y optimización cuando el machine learning aún era territorio académico. Después construí desde cero la primera capacidad de Big Data Analytics de una telco en Latinoamérica (Telefónica Chile). Lideré la estrategia de datos para Falabella, uno de los ecosistemas de e-commerce más grandes de la región. Desplegué modelos de personalización en tiempo real para millones de pasajeros en LATAM Airlines. Fundé una startup de datos. Lideré equipos de más de cien ingenieros en seis países.
-
-Hoy, como Group Chief Digital & Data Officer de Grupo DEACERO, lidero la transformación de una de las mayores manufactureras de acero de México hacia una operación AI-native. Construyo sistemas RAG, hago fine-tuning de modelos LLM y los despliego a escala en producción—no como ejercicio teórico, sino como parte de mi trabajo diario.
-
-He pasado por Equifax, Experian, Telefónica, LATAM, Falabella, y ahora DEACERO. He analizado el comportamiento de más de 400 millones de clientes. He visto proyectos de IA generar cientos de millones de dólares en valor—y he visto otros fracasar estrepitosamente.
+Mi bio completa está al final del libro. Lo que importa aquí son mis sesgos.
 
 ### Mis Sesgos (Que Debes Conocer)
 
 **Soy optimista pragmático**: Creo que la IA agéntica transformará la ingeniería de software y que es la principal palanca para mejorar la productividad de Latinoamérica. Pero he visto demasiado hype tecnológico para no cuestionar las afirmaciones extraordinarias. Como escribí una vez: "Una organización no se transforma en data-driven al construir un data-lake o hacer proyectos de Machine Learning."
 
-**Pienso desde Latinoamérica**: Veo el mundo tech desde una óptica diferente al Silicon Valley. Los constraints de nuestros mercados—capital limitado, talento escaso, infraestructura variable—nos obligan a ser más creativos y pragmáticos. Eso informa todo lo que escribo.
+**Pienso desde Latinoamérica**: Veo el mundo tech desde una óptica diferente al Silicon Valley. Los constraints de nuestros mercados (capital limitado, talento escaso, infraestructura variable) nos obligan a ser más creativos y pragmáticos. Eso informa todo lo que escribo.
 
 **Sigo escribiendo código**: A diferencia de muchos ejecutivos que dejaron el teclado hace años, yo sigo construyendo. Arquitecto personalmente plataformas de GenAI, configuro pipelines de datos, y debuggeo en producción. Eso me da una perspectiva que no obtienes solo leyendo reportes de analistas.
 
 **He fracasado**: He visto proyectos de IA prometer mucho y entregar poco. He apostado en tecnologías que no funcionaron. He liderado transformaciones que encontraron resistencia cultural brutal. Esos fracasos informan este libro tanto como los éxitos.
 
-**Priorizo datos sobre anécdotas**: Si lees una afirmación en este libro sin una cita, probablemente sea mi opinión personal—y deberías cuestionar mi opinión tanto como cuestionarías la de cualquier otro.
+**Priorizo datos sobre anécdotas**: Si lees una afirmación en este libro sin una cita, probablemente sea mi opinión personal, y deberías cuestionar mi opinión tanto como cuestionarías la de cualquier otro.
 
 ### Por Qué Escribí Este Libro
 
@@ -270,9 +299,9 @@ Veo muchos equipos definiendo mal los objetivos de integrar IA a su ambiente lab
 
 Unos buscan "innovar" sin saber para qué. Otros compran herramientas sin cambiar procesos. Muchos miden las métricas equivocadas. Y casi todos subestiman el cambio cultural necesario.
 
-La IA agéntica no es solo una herramienta más—es un cambio de paradigma en cómo construimos software. Y Latinoamérica tiene una oportunidad única: adoptar estas tecnologías sin cargar el legacy de décadas de procesos obsoletos que frenan a las organizaciones del hemisferio norte.
+La IA agéntica no es solo una herramienta más; es un cambio de paradigma en cómo construimos software. Y Latinoamérica tiene una oportunidad única: adoptar estas tecnologías sin cargar el legacy de décadas de procesos obsoletos que frenan a las organizaciones del hemisferio norte.
 
-Este libro es el que hubiera querido leer antes de tomar mis primeras decisiones sobre IA agéntica. Es un framework para pensar, no un tutorial para copiar. Porque las respuestas correctas siempre son "depende"—y necesitas un framework para pensar en **de qué depende**.
+Este libro es el que hubiera querido leer antes de tomar mis primeras decisiones sobre IA agéntica. Es un framework para pensar, no un tutorial para copiar. Porque las respuestas correctas siempre son "depende", y necesitas un framework para pensar en **de qué depende**.
 
 ## Una Nota Sobre el Ritmo de Cambio
 
@@ -298,7 +327,7 @@ Este libro no tiene todas las respuestas. Ningún libro podría tenerlas en un c
 Lo que sí ofrece es:
 
 - **Estructura** para pensar sobre decisiones complejas
-- **Datos** para fundamentar tus argumentos ante stakeholders
+- **Datos** para fundamentar tus argumentos ante partes interesadas
 - **Casos de estudio** para aprender de éxitos y fracasos de otros
 - **Frameworks** para adaptar a tu contexto específico
 
@@ -314,17 +343,15 @@ Empecemos.
 
 ---
 
-**Para tu próxima reunión de liderazgo:**
+**Para Tu Próxima Reunión de Liderazgo:**
 
-📊 *"En 2025, el 46% del código ya está siendo escrito por IA. Gartner predice que 40% de nuestras aplicaciones empresariales integrarán agentes de IA para finales de 2026. Pero también advierte que 40% de estos proyectos serán cancelados por falta de estrategia clara. Necesitamos un framework de decisión ahora—no en 6 meses."*
+📊 *"El 46% del código nuevo ya es generado con asistencia de IA. Gartner predice que 40% de nuestras aplicaciones empresariales integrarán agentes de IA para finales de 2026. Pero también advierte que 40% de estos proyectos serán cancelados por falta de estrategia clara. Necesitamos un framework de decisión ahora, no en 6 meses."*
 
 ---
 
-## Referencias
+[^pref1]: GitHub. (2025). "Octoverse Report 2025: The State of Open Source and AI". Disponible en: https://github.blog/news-insights/octoverse/
 
-[^pref1]: Second Talent. (2025). "AI Coding Assistant Statistics & Trends [2025]". Disponible en: https://www.secondtalent.com/resources/ai-coding-assistant-statistics/
-
-[^pref2]: Index.dev. (2025). "Developer Productivity Statistics with AI Tools 2025". Disponible en: https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools
+[^pref2]: Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey". Disponible en: https://survey.stackoverflow.co/2025/ai
 
 [^pref3]: McKinsey. (2025). "The state of AI in 2025: Agents, innovation, and transformation". Disponible en: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
 
@@ -334,19 +361,23 @@ Empecemos.
 
 [^pref6]: Gartner. (2025). Press Release - Agentic AI Investment Survey Results.
 
-[^pref7]: Second Talent. (2025). "GitHub Copilot Statistics & Adoption Trends [2025]". Disponible en: https://www.secondtalent.com/resources/github-copilot-statistics/
+[^pref7]: Peng, S. et al. (2023). "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot". ArXiv. Disponible en: https://arxiv.org/abs/2302.06590
 
-[^pref8]: Arxiv. (2023). "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot". Disponible en: https://arxiv.org/abs/2302.06590
+[^pref8]: Peng, S. et al. (2023). "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot". ArXiv. DOI: 10.48550/arXiv.2302.06590
 
-[^pref9]: Index.dev. (2025). "Developer Productivity Statistics with AI Tools 2025".
+[^pref9]: Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey".
 
-[^pref10]: NetCorp Software Development. (2026). "AI-Generated Code Statistics 2026: Can AI Replace Your Development Team?". Disponible en: https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics
+[^pref10]: Snyk. (2024). "AI Code Security Report: Vulnerabilities in AI-Generated Code". Disponible en: https://snyk.io/reports/ai-code-security/
 
 [^pref11]: GitClear. (2025). "AI Copilot Code Quality: 2025 Data Suggests 4x Growth in Code Clones". Disponible en: https://www.gitclear.com/ai_assistant_code_quality_2025_research
 
-[^pref12]: Microsoft Research. (2025). Citado en Second Talent statistics report.
+[^pref12]: Microsoft Research. (2025). Internal analysis citado en declaraciones públicas de Satya Nadella (Microsoft Build, abril 2025).
 
 [^pref13]: Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey". Disponible en: https://survey.stackoverflow.co/2025/ai
 
-[^pref14]: Second Talent. (2025). "AI Coding Assistant Statistics & Trends [2025]".
+[^pref14]: Vaccaro, M. et al. (2024). "When combinations of humans and AI are useful". Nature Human Behaviour. DOI: 10.1038/s41562-024-02024-1
+
+---
+
+*Fin del Prefacio. Continúa en Resumen Ejecutivo para el Líder*
 

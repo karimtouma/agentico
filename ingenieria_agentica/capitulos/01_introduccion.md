@@ -3,20 +3,20 @@
 > **Resumen Ejecutivo**
 >
 > - La ingeniería de software atraviesa su tercera gran revolución desde la década de 1950
-> - El 30% del código en Microsoft ya es generado por IA según su CEO Satya Nadella (2025)
-> - El CTO de Microsoft predice que el 95% del código será generado por IA para 2030
-> - El rol del ingeniero no desaparece—evoluciona de "escribir código" a "arquitecto de intenciones y decisiones"
-> - Este cambio requiere nueva evaluación de estrategia de talento, presupuestos y roadmaps
+> - 📊 **DATO:** El 30% del código en Microsoft ya es generado por IA según su CEO Satya Nadella (2025)
+> - 🔮 **PROYECCIÓN:** El CTO de Microsoft predice que el 95% del código será generado por IA para 2030
+> - El rol del ingeniero no desaparece; evoluciona de "escribir código" a "arquitecto de intenciones y decisiones"
+> - Este cambio requiere nueva evaluación de estrategia de talento, presupuestos y hojas de ruta
 
 ---
 
 ## La Tercera Revolución de la Ingeniería de Software
 
-Si eres CTO o VP de Ingeniería, probablemente has vivido al menos una revolución tecnológica completa. Tal vez fue la transición a cloud. O la adopción de metodologías ágiles. O la containerización con Docker y Kubernetes.
+Si eres CTO o VP de Ingeniería, probablemente has vivido al menos una revolución tecnológica completa. Tal vez fue la transición a [cloud computing]{.idx}. O la adopción de [metodologías ágiles]{.idx}. O la containerización con Docker y Kubernetes.
 
 Cada una de esas transiciones fue disruptiva. Requirió nueva capacitación, reorganización de equipos, y cambios en cómo presupuestabas y planificabas.
 
-Lo que estamos viendo ahora con IA agéntica es diferente en magnitud y velocidad.
+Lo que estamos viendo ahora con [IA agéntica]{.idx} es diferente en magnitud y velocidad.
 
 ### Las Tres Grandes Revoluciones
 
@@ -32,16 +32,16 @@ Para contextualizar lo que está pasando, consideremos las tres grandes transfor
 
 - De software monolítico a sistemas distribuidos
 - Internet, cloud computing, microservicios
-- DevOps, CI/CD, infraestructura como código
+- [DevOps]{.idx}, [CI/CD]{.idx}, infraestructura como código
 - El "desarrollador" evolucionó a "ingeniero de software"
 
 **Tercera Revolución (2020s-presente): De Código a Intenciones**
 
 - De escribir cada línea de código a expresar qué queremos lograr
-- Agentes de IA generan, revisan, prueban y despliegan código autónomamente
+- [Agentes de IA]{.idx} generan, revisan, prueban y despliegan código autónomamente
 - El ingeniero se convierte en arquitecto de sistemas, orquestador de agentes, y validador de soluciones
 
-**Timeline: Las Tres Grandes Revoluciones de la Ingeniería de Software**
+**Tabla 1.1. Las Tres Grandes Revoluciones de la Ingeniería de Software**
 
 | Periodo | Revolución | Cambio Clave | Rol del Profesional | Abstracción Principal |
 |---------|-----------|--------------|---------------------|-----------------------|
@@ -51,31 +51,31 @@ Para contextualizar lo que está pasando, consideremos las tres grandes transfor
 
 > **Nota para líderes:** Cada revolución redujo la barrera de entrada y elevó el nivel de abstracción. La diferencia con la tercera revolución es la velocidad: las anteriores tomaron decadas; esta se está desplegando en anos.
 
-Estamos en los primeros años de esta tercera revolución. Y a diferencia de las anteriores que tomaron décadas en desplegarse, esta está ocurriendo en años—o incluso meses.
+Estamos en los primeros años de esta tercera revolución. Y a diferencia de las anteriores que tomaron décadas en desplegarse, esta está ocurriendo en años, o incluso meses.
 
 ## Los Datos que los Líderes Deben Conocer
 
 ### Lo Que Está Pasando Ahora (2025)
 
-En abril de 2025, Satya Nadella, CEO de Microsoft, reveló durante una conversación con Mark Zuckerberg en LlamaCon que "tal vez 20%, 30% del código que está dentro de nuestros repositorios hoy y algunos de nuestros proyectos probablemente son todos escritos por software"[^ch1-2].
+En abril de 2025, [Satya Nadella]{.idx}, CEO de Microsoft, reveló durante una conversación con Mark Zuckerberg en LlamaCon que "tal vez 20%, 30% del código que está dentro de nuestros repositorios hoy y algunos de nuestros proyectos probablemente son todos escritos por software"[^ch1-2].
 
 Es importante notar el lenguaje cauteloso: "tal vez", "probablemente". Nadella no estaba citando una métrica precisa, sino compartiendo una observación sobre la transformación que está viendo en los equipos de Microsoft. Pero incluso con esa cautela, el número es sorprendente.
 
-**30% del código en Microsoft—una de las compañías de software más grandes del mundo—ya es generado por IA.**
+**30% del código en Microsoft, una de las compañías de software más grandes del mundo, ya es generado por IA.**
 
 No es un piloto. No es un experimento. Es producción.
 
-Meta (Facebook) reporta una transformación similar. Mark Zuckerberg proyectó que "tal vez la mitad" del trabajo de ingeniería en futuros modelos Llama sería manejado por agentes de IA en el siguiente año[^ch1-3]. Meta planea invertir entre **$60-65 mil millones en 2025** para fortalecer su infraestructura de IA, lo que refleja la seriedad de esta apuesta.
+[Meta]{.idx} (Facebook) reporta una transformación similar. Mark Zuckerberg proyectó que "tal vez la mitad" del trabajo de ingeniería en futuros modelos Llama sería manejado por agentes de IA en el siguiente año[^ch1-3]. Meta planea invertir entre **$60-65 mil millones en 2025** para fortalecer su infraestructura de IA, lo que refleja la seriedad de esta apuesta.
 
 Google, según declaraciones públicas de su CEO Sundar Pichai, también reporta que aproximadamente 30% de su nuevo código es generado por IA[^ch1-4], especialmente en lenguajes como Python.
 
-**Porcentaje de Código Generado por IA en Grandes Tech Companies (2025)**
+**Tabla 1.2. Porcentaje de código generado por IA en grandes tech companies (2025)**
 
-| Compania | % Codigo Generado por IA | Contexto | Fuente |
+| Compañía | % Código Generado por IA | Contexto | Fuente |
 |----------|--------------------------|----------|--------|
-| Microsoft | ~20-30% | Codigo en repositorios internos, reportado por CEO Satya Nadella | LlamaCon, abril 2025 |
-| Google | ~30% | Codigo nuevo, especialmente en Python, reportado por CEO Sundar Pichai | Google I/O / Earnings 2025 |
-| Meta | ~50% (proyectado) | Trabajo de ingenieria en futuros modelos Llama, segun Mark Zuckerberg | RD World, 2025 |
+| Microsoft | ~20-30% | Código en repositorios internos, reportado por CEO Satya Nadella | LlamaCon, abril 2025 |
+| Google | ~30% | Código nuevo, especialmente en Python, reportado por CEO Sundar Pichai | Google I/O / Earnings 2025 |
+| Meta | ~50% (proyectado) | Trabajo de ingeniería en futuros modelos Llama, según Mark Zuckerberg | RD World, 2025 |
 
 > **Tendencia clave:** Estas cifras representan un aumento significativo respecto a 2024, donde las estimaciones rondaban el 15-20%. La curva de adopcion se esta acelerando, no desacelerando.
 
@@ -102,7 +102,7 @@ Antes de que asumas que el 30% es un número bajo, considera lo que **no** signi
 
 - 30% de las líneas de código que se commiten a producción fueron generadas por máquinas
 - Esto incluye código que pasa code reviews, tests, y llega a usuarios finales
-- La tendencia es ascendente—6 meses antes era probablemente 20%
+- La tendencia es ascendente: 6 meses antes era probablemente 20%
 - Los equipos de ingeniería más avanzados del mundo confían en esta tecnología
 
 Si estás liderando un equipo de 50 desarrolladores y cada uno escribe ~500 líneas de código significativo por semana, estamos hablando de **7,500 líneas generadas por IA semanalmente** si alcanzas ese 30%.
@@ -111,13 +111,13 @@ Eso no es trivial. Eso es transformador.
 
 ## Las Predicciones: ¿Hacia Dónde Vamos?
 
-Los líderes de las empresas tecnológicas más importantes no solo están reportando el presente—están haciendo predicciones audaces sobre el futuro.
+Los líderes de las empresas tecnológicas más importantes no solo están reportando el presente; están haciendo predicciones audaces sobre el futuro.
 
 ### Microsoft: 95% del Código Será IA para 2030
 
-Kevin Scott, CTO de Microsoft, predijo que **95% del código será generado por IA dentro de cinco años** (es decir, para 2030)[^ch1-5].
+[Kevin Scott]{.idx}, CTO de Microsoft, predijo que **95% del código será generado por IA dentro de cinco años** (es decir, para 2030)[^ch1-5].
 
-Pero—y esto es crítico—Scott aclaró inmediatamente:
+Pero, y esto es crítico, Scott aclaró inmediatamente:
 
 > "No significa que la IA esté haciendo el trabajo de ingeniería de software... la autoría seguirá siendo humana."
 
@@ -127,26 +127,26 @@ Piénsalo como cuando pasamos de escribir assembly a escribir C++, o de escribir
 
 Ahora, según Scott, los ingenieros dejarán de pensar en cómo escribir loops y condicionales, y empezarán a pensar en qué resultados quieren y cómo validar que esos resultados sean correctos.
 
-### Anthropic: 90-100% en 3-18 Meses
+### Anthropic: La Predicción Más Audaz
 
-Dario Amodei, CEO de Anthropic (la compañía detrás de Claude), tiene una predicción aún más agresiva: **90% del código será escrito por IA en los próximos 3-6 meses, y 100% del código podría ser escrito por IA dentro de un año**[^ch1-7].
+En marzo de 2025, [Dario Amodei]{.idx}, CEO de [Anthropic]{.idx} (la compañía detrás de Claude), hizo la predicción más agresiva de la industria: **90% del código sería escrito por IA en 3-6 meses, y 100% dentro de un año**[^ch1-7].
 
-Esta es la predicción más audaz de la industria. Y viene del CEO de una de las compañías líderes en IA agéntica.
+A inicios de 2026, podemos evaluar parcialmente esta predicción. La realidad ha sido más matizada: si bien el porcentaje de código generado con asistencia de IA creció significativamente (del 46% al ~55-60% según estimaciones de la industria), estamos lejos del 90% autónomo que Amodei anticipó. La predicción refleja un patrón común entre CEOs de IA: **sobreestimar la velocidad, subestimar las barreras organizacionales**.
 
-¿Es realista? Depende de cómo definamos "escrito por IA":
+¿Por qué la brecha? Depende de cómo definamos "escrito por IA":
 
-- Si significa "generado inicialmente por IA y luego revisado/modificado por humanos", podría ser plausible
-- Si significa "completamente autónomo sin intervención humana", es altamente improbable en ese timeline
+- Si significa "generado inicialmente por IA y luego revisado/modificado por humanos", la industria se acerca
+- Si significa "completamente autónomo sin intervención humana", sigue siendo una fracción pequeña del código total
 
 ### IBM: Una Visión Más Conservadora
 
-No todos los líderes son tan optimistas. Arvind Krishna, CEO de IBM, estima que IA manejará **20-30% de tareas de codificación** pero enfatiza sus limitaciones en tacklear desafíos más complejos[^ch1-8].
+No todos los líderes son tan optimistas. [Arvind Krishna]{.idx}, CEO de IBM, estima que IA manejará **20-30% de tareas de codificación** pero enfatiza sus limitaciones para abordar desafíos más complejos[^ch1-8].
 
 Esta perspectiva más conservadora refleja una verdad importante: **el contexto importa**.
 
-Para código boilerplate, tests unitarios básicos, y transformaciones de datos rutinarias, la IA ya es extremadamente efectiva. Para arquitectura de sistemas distribuidos, decisiones de trade-offs de rendimiento, y debugging de race conditions complejas, la IA todavía requiere supervisión humana significativa.
+Para código boilerplate, tests unitarios básicos, y transformaciones de datos rutinarias, la IA ya es extremadamente efectiva. Para arquitectura de sistemas distribuidos, decisiones de compromisos de rendimiento, y debugging de race conditions complejas, la IA todavía requiere supervisión humana significativa.
 
-**Predicciones de Lideres Tech sobre Codigo Generado por IA**
+**Predicciones de Líderes Tech sobre Código Generado por IA**
 
 | Líder | Compañía | Predicción | Timeline | Fuente |
 |-------|----------|------------|----------|--------|
@@ -164,7 +164,7 @@ Entonces, ¿por qué esto es diferente?
 
 ### Factor 1: Inversión sin Precedentes
 
-Los números de inversión son asombrosos:
+Los números de inversión son significativos:
 
 - Meta: **$60-65 mil millones en 2025** solo en infraestructura de IA[^ch1-9]
 - Microsoft: Decenas de miles de millones en capacidad de GPU y desarrollo de IA
@@ -174,10 +174,10 @@ Esta no es inversión especulativa en moonshots. Es inversión en infraestructur
 
 ### Factor 2: Adopción Real de Desarrolladores
 
-Según la encuesta de Stack Overflow 2025[^ch1-11]:
+Según la encuesta de [Stack Overflow]{.idx} 2025[^ch1-11]:
 
 - **84% de desarrolladores ya usan herramientas de IA** en su trabajo diario
-- GitHub Copilot alcanzó **20 millones de usuarios** en julio de 2025[^ch1-12]
+- [GitHub Copilot]{.idx} alcanzó **20 millones de usuarios** en julio de 2025[^ch1-12]
 - El mercado de asistentes de código de IA alcanzó **$7.37 mil millones en 2025**, con proyección de **$30.1 mil millones para 2032**[^ch1-13]
 
 Esta adopción bottom-up (los desarrolladores mismos demandando estas herramientas) es un indicador mucho más confiable que el top-down hype.
@@ -186,8 +186,8 @@ Esta adopción bottom-up (los desarrolladores mismos demandando estas herramient
 
 Los estudios controlados muestran resultados consistentes:
 
-- Desarrolladores con Copilot completan tareas **55% más rápido**[^ch1-14]
-- Pull request time cayó de **9.6 días a 2.4 días**—una reducción del **75%**[^ch1-15]
+- Desarrolladores con Copilot completan tareas **55% más rápido**[^ch1-14], una [ganancia de productividad]{.idx} sin precedentes
+- Pull request time cayó de **9.6 días a 2.4 días**, una reducción del **75%**[^ch1-15]
 - Desarrolladores completan **126% más proyectos por semana** con AI coding assistants[^ch1-16]
 - Equipos ahorran **30-60% del tiempo** en codificación y testing rutinario[^ch1-17]
 
@@ -197,7 +197,7 @@ Estos no son números de marketing. Son resultados de estudios peer-reviewed pub
 
 | Metrica | Sin IA | Con IA | Mejora | Fuente |
 |---------|--------|--------|--------|--------|
-| Tiempo para completar tareas | Baseline | 45% del tiempo original | 55% mas rapido | Arxiv, GitHub Copilot Study (2023) |
+| Tiempo para completar tareas | Baseline | 55% más rápido | 1.8x velocidad | Arxiv, GitHub Copilot Study (2023) |
 | Tiempo promedio de Pull Request | 9.6 dias | 2.4 dias | -75% | Arxiv, GitHub Copilot Study (2023) |
 | Proyectos completados por semana | Baseline | 2.26x el baseline | +126% | Second Talent / GitHub (2025) |
 | Tiempo en codificacion y testing rutinario | Baseline | 40-70% del tiempo original | 30-60% ahorro | Index.dev (2025) |
@@ -207,11 +207,11 @@ Estos no son números de marketing. Son resultados de estudios peer-reviewed pub
 
 > **Dato verificado:**
 >
-> - **Fuente:** ArXiv (GitHub Copilot Study, 2023); Second Talent / GitHub (2025); Index.dev Developer Productivity Report (2025)
-> - **Qué mide:** Velocidad de completar tareas de codificación, tiempo de ciclo de pull requests, y proyectos completados por semana — todos comparando grupos con y sin asistentes de IA
+> - **Fuente:** Peng, S. et al. "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot" (arXiv:2302.06590, 2023); GitHub "The Economic Impact of the AI-Powered Developer Lifecycle" (2024); Index.dev Developer Productivity Report (2025)
+> - **Qué mide:** Velocidad de completar tareas de codificación, tiempo de ciclo de pull requests, y proyectos completados por semana, todos comparando grupos con y sin asistentes de IA
 > - **Muestra:** Estudio controlado de GitHub (95 developers profesionales, tareas estandarizadas); análisis de Second Talent sobre 1.8M+ usuarios de Copilot; encuesta de Index.dev a 500+ empresas
 > - **Limitación:** El estudio de 55% fue en tareas relativamente simples (servidor HTTP en JavaScript); las ganancias en tareas arquitecturales complejas son menores. Los 126% más proyectos incluyen variabilidad por tipo de proyecto. Las cifras de 30-60% de ahorro son auto-reportadas por empresas
-> - **Implicación práctica:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación — no en diseño arquitectural
+> - **Implicación práctica:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación; no en diseño arquitectural
 
 ### Factor 4: El Costo de No Adoptar
 
@@ -225,13 +225,13 @@ Este no es un argumento de "tech for tech's sake". Es un argumento de competitiv
 
 ## Lo Que Esto Significa Para el Rol del Ingeniero
 
-La pregunta que todos los Tech Leads y Engineering Managers me hacen es: **¿Qué significa esto para mi equipo? ¿Van a perder su trabajo?**
+La pregunta que todos los tech leads y engineering managers me hacen es: **¿Qué significa esto para mi equipo? ¿Van a perder su trabajo?**
 
 La respuesta corta es: **el rol evoluciona, no desaparece**.
 
 ### De Implementador a Arquitecto
 
-Kevin Scott de Microsoft lo expresa bien: pasamos de "maestros de input a maestros de prompts"[^ch1-18].
+Kevin Scott de Microsoft lo expresa bien: pasamos de "maestros de input a maestros de prompts", una [transformación del rol del ingeniero]{.idx}[^ch1-18].
 
 **El ingeniero del pasado (pre-2020):**
 
@@ -264,40 +264,70 @@ El ingeniero las puede usar para:
 
 ### Las Habilidades que Se Vuelven Más Valiosas
 
-En este nuevo paradigma, ciertas habilidades se vuelven más valiosas:
+Según el World Economic Forum (enero 2026), el **65% de los desarrolladores espera que su rol se redefina** durante este año, migrando de la codificación rutinaria hacia la arquitectura, la integración y la toma de decisiones asistida por IA[^ch1-27]. Un 74% anticipa que su trabajo se desplazará de escribir código hacia diseñar soluciones técnicas.
 
-**Habilidades en Alza:**
+Pero antes de asumir que el cambio es simplemente "aprender a usar IA", considera un hallazgo contraintuitivo:
 
-1. **Arquitectura de sistemas**: Diseñar cómo interactúan componentes a alto nivel
-2. **Domain knowledge**: Entender el negocio y los casos edge que la IA no puede inferir
-3. **Code review y validación**: Identificar cuando el código generado tiene bugs sutiles o vulnerabilidades
-4. **Prompt engineering aplicado**: Saber cómo comunicar intenciones a AI agents de manera efectiva
-5. **Testing strategy**: Diseñar estrategias de testing que la IA debe implementar
-6. **Security mindset**: Identificar vulnerabilidades que la IA puede introducir
+> **Dato verificado:** Un ensayo controlado aleatorizado de METR (julio 2025) con 16 desarrolladores experimentados de repositorios open-source de más de 22,000 estrellas encontró que **usar herramientas de IA los hizo 19% más lentos**, no más rápidos. El hallazgo más revelador: los propios desarrolladores creían haber sido **20% más rápidos** - una brecha percepción-realidad de 39 puntos porcentuales[^ch1-28].
+>
+> - **Fuente:** METR, "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity", julio 2025. Ensayo controlado aleatorizado con 246 tareas reales.
+> - **Metodología:** Asignación aleatoria de tareas con y sin IA. Desarrolladores usaron Cursor Pro con Claude Sonnet 4.5.
+> - **Limitación:** Muestra pequeña (16 desarrolladores) en repositorios grandes y maduros. Resultados pueden diferir en codebases más pequeños o con desarrolladores menos experimentados.
 
-**Habilidades en Baja:**
+¿Qué implica esto para tu equipo? Que la habilidad más valiosa no es *usar* IA rápidamente, sino ejercer *juicio* sobre cuándo usarla, cuándo ignorarla y cuándo cuestionar su resultado. El juicio es la meta-habilidad de esta era.
 
-1. **Memorización de sintaxis**: La IA conoce perfectamente la sintaxis de todos los lenguajes
-2. **Implementación de algoritmos estándar**: La IA puede escribir sorts, searches, etc. perfectamente
-3. **Boilerplate code**: La IA es excelente en patrones repetitivos
-4. **Debugging de typos y errores sintácticos**: La IA rara vez comete estos errores
+Con ese contexto, las habilidades de tu equipo se reorganizan en tres categorías claras:
 
-**Matriz de Habilidades: Valor Antes vs. Despues de IA Agentica**
+**Categoría A: Habilidades que se multiplican** (la IA las hace MÁS valiosas)
 
-| Habilidad | Valor Pre-IA (2020) | Valor Post-IA (2025+) | Tendencia | Impacto en Contratacion |
+1. **[Arquitectura de sistemas]{.idx}**: La IA puede generar miles de líneas de código en minutos, pero no puede decidir si tu sistema debería usar microservicios o un monolito, si necesitas consistencia eventual o fuerte, o cómo manejar la recuperación ante fallos en cascada. Cada línea de código generada por IA necesita un contexto arquitectónico que solo un humano puede proveer. Mientras más código genera la IA, más crítico es que alguien diseñe el "plano" donde ese código encaja.
+
+2. **Conocimiento de dominio y lógica de negocio**: La IA no sabe que tu industria tiene regulaciones específicas, que ciertos clientes tienen contratos con cláusulas especiales, o que el sistema legacy del que dependes tiene comportamientos no documentados. Los especialistas con conocimiento profundo de dominio ganan **30-50% más** que generalistas con experiencia equivalente, según datos de contratación de 2026[^ch1-29]. La razón es simple: puedes enseñarle a alguien a usar herramientas de IA en semanas, pero el conocimiento de dominio toma años.
+
+3. **Pensamiento de seguridad**: Recuerda la estadística que vimos antes: el 48% del código generado por IA contiene vulnerabilidades. La IA optimiza para "funciona" no para "es seguro". Alguien en cada equipo necesita la capacidad de mirar código funcional y preguntar: "¿Qué pasa si un actor malicioso envía datos inesperados aquí?" Esa mentalidad no se automatiza.
+
+**Categoría B: Habilidades emergentes** (no existían o eran marginales antes de 2023)
+
+4. **[Prompt engineering]{.idx} aplicado**: Saber comunicar intenciones a agentes de IA de manera efectiva se ha convertido en competencia central. No se trata de memorizar fórmulas de prompts, sino de entender cómo descomponer problemas complejos en instrucciones que un agente pueda ejecutar. La demanda de esta habilidad creció **135.8%** interanual según datos de contratación[^ch1-29], con una tasa de crecimiento compuesto proyectada del 32.8% hasta 2030.
+
+5. **Validación y revisión de código generado por IA**: La encuesta de Stack Overflow 2025 revela una tensión central: el **84% de desarrolladores** usa o planea usar herramientas de IA, pero solo el **33% confía en la precisión del resultado**[^ch1-23]. Un 45% reporta que depurar código generado por IA consume demasiado tiempo. La capacidad de leer código que tú no escribiste, identificar suposiciones ocultas y detectar errores sutiles se vuelve más valiosa que la capacidad de generar ese código. Para más contexto sobre los sesgos cognitivos que dificultan esta revisión, ver Capítulo 4.
+
+6. **Orquestación de agentes**: Diseñar flujos donde múltiples agentes de IA colaboran - uno que escribe código, otro que lo revisa, otro que genera tests - requiere una habilidad nueva que combina pensamiento de sistemas con comprensión de las capacidades y limitaciones de cada modelo. Es el equivalente a dirigir un equipo donde los miembros son muy productivos pero carecen de sentido común. Para perfiles detallados de este y otros roles emergentes, ver Capítulo 11.
+
+**Categoría C: Habilidades que se comoditizan** (la IA las absorbe)
+
+7. **Memorización de sintaxis**: La IA conoce perfectamente la sintaxis de todos los lenguajes
+8. **Implementación de algoritmos estándar**: La IA puede escribir sorts, searches, etc. perfectamente
+9. **Código repetitivo (boilerplate)**: La IA es excelente en patrones repetitivos
+10. **Depuración de errores sintácticos**: La IA rara vez comete estos errores
+
+Que estas habilidades se comoditicen no significa que sean irrelevantes. Significa que dejan de ser diferenciadoras. Un desarrollador que solo sabe implementar algoritmos estándar compite directamente con una herramienta de $20/mes. Un desarrollador que sabe *por qué* elegir un algoritmo sobre otro y *cómo* validar que funciona en el contexto específico de tu negocio sigue siendo irremplazable.
+
+> **Dato verificado:** Según el World Economic Forum (enero 2026), las habilidades no automatizables - juicio, colaboración, liderazgo técnico - son las que distinguen a los desarrolladores de alto rendimiento en la era de IA. "Si todos tienen acceso al mismo agente de codificación, lo que diferencia a los grandes desarrolladores es saber cuándo la IA está equivocada o produce una solución subóptima"[^ch1-27].
+>
+> - **Fuente:** WEF, "Software developers are the vanguard of how AI is redefining work", enero 2026.
+> - **Metodología:** Encuesta y análisis cualitativo de desarrolladores y empleadores globales.
+> - **Limitación:** Los datos del WEF agregan múltiples industrias y regiones; los patrones pueden variar por contexto local.
+
+**Matriz de Habilidades: Valor Antes vs. Después de IA Agéntica**
+
+| Habilidad | Valor Pre-IA (2020) | Valor Post-IA (2026+) | Tendencia | Impacto en Contratación |
 |-----------|---------------------|------------------------|-----------|-------------------------|
 | Arquitectura de sistemas | Alto | Muy Alto | Alza fuerte | Prioridad #1 en entrevistas senior |
-| Domain knowledge / lógica de negocio | Medio | Muy Alto | Alza fuerte | Diferenciador clave vs. IA |
-| Code review y validación | Medio | Alto | Alza | Competencia crítica para todos los niveles |
-| Prompt engineering aplicado | No existía | Alto | Nueva | Se integra en evaluaciones técnicas |
+| Conocimiento de dominio / lógica de negocio | Medio | Muy Alto | Alza fuerte | Diferenciador clave vs. IA (+30-50% salario) |
+| Pensamiento de seguridad | Medio | Muy Alto | Alza fuerte | Obligatorio dado 48% de vulnerabilidades en código IA |
+| Validación y revisión de código IA | Medio | Alto | Alza | Competencia crítica para todos los niveles |
+| Prompt engineering aplicado | No existía | Alto | Nueva (+135.8%) | Se integra en evaluaciones técnicas |
+| Orquestación de agentes | No existía | Alto | Nueva | Roles especializados emergentes (ver Cap. 9) |
 | Estrategia de testing | Medio | Alto | Alza | Diseño de estrategia > escritura de tests |
-| Security mindset | Medio | Muy Alto | Alza fuerte | Obligatorio dado 48% de vulnerabilidades en código IA |
 | Memorización de sintaxis | Alto | Bajo | Baja fuerte | Irrelevante en entrevistas modernas |
 | Implementación de algoritmos estándar | Alto | Bajo | Baja fuerte | IA los implementa perfectamente |
-| Escritura de boilerplate | Medio | Muy Bajo | Baja fuerte | Completamente delegable a IA |
-| Debugging de errores sintácticos | Medio | Bajo | Baja | IA raramente comete estos errores |
+| Escritura de código repetitivo | Medio | Muy Bajo | Baja fuerte | Completamente delegable a IA |
+| Depuración de errores sintácticos | Medio | Bajo | Baja | IA raramente comete estos errores |
 
-> **Implicacion para lideres de talento:** Las descripciones de puesto y las evaluaciones de desempeno deben actualizarse para reflejar esta nueva realidad. Las habilidades en la mitad superior de esta tabla deben pesar mas en hiring y promociones.
+> **Para Tu Próxima Reunión de Liderazgo:** Haz este ejercicio con tu equipo directivo: mapea las 7 habilidades de las Categorías A y B contra las capacidades actuales de tu equipo. ¿Cuántos de tus desarrolladores tienen fortaleza en arquitectura y conocimiento de dominio? ¿Qué porcentaje de tu presupuesto de capacitación va a habilidades de Categoría A (que se multiplican) vs. Categoría C (que se comoditizan)? Si la respuesta es "la mayoría va a cursos de nuevos lenguajes y frameworks", tienes una desalineación estratégica. Para un framework completo de riesgos por erosión de habilidades, ver Capítulo 10.
+
+> **Implicación para líderes de talento:** Las descripciones de puesto y las evaluaciones de desempeño deben actualizarse para reflejar esta nueva realidad. Las habilidades en la mitad superior de esta tabla deben pesar más en contratación y promociones. Un desarrollador senior que domina arquitectura, seguridad y conocimiento de dominio vale más que tres juniors que solo saben generar código con IA.
 
 ### El Nuevo Perfil del Ingeniero Senior
 
@@ -316,7 +346,7 @@ Si estás contratando para roles senior, las preguntas de entrevista deberían e
 - "Un AI agent te generó este código. Encuéntr ale 3 problemas potenciales." [Muestra código con bugs sutiles]
 - "¿Cómo estructurarías un prompt para que un AI agent genere tests que cubran nuestros casos de negocio específicos?"
 
-El ingeniero senior del futuro es quien puede **orquestar** IA agents efectivamente, **validar** su output rigurosamente, y **diseñar** sistemas que humanos e IA construyan colaborativamente.
+El ingeniero senior del futuro es quien puede **orquestar** IA agents efectivamente, **validar** su resultado rigurosamente, y **diseñar** sistemas que humanos e IA construyan colaborativamente.
 
 ## Los Desafíos que Nadie Está Discutiendo (Pero Deberían)
 
@@ -326,7 +356,7 @@ Todo lo anterior suena muy positivo. Pero como líder, tu trabajo es anticipar r
 
 Recuerdas esa estadística de productividad del 126%? Aquí está el matiz:
 
-GitClear publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4x más code cloning**—es decir, copiar y pegar código con ligeras variaciones en vez de crear abstracciones reutilizables[^ch1-19].
+[GitClear]{.idx} publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4x más code cloning**, un indicador de [deuda técnica]{.idx}, es decir, copiar y pegar código con ligeras variaciones en vez de crear abstracciones reutilizables[^ch1-19].
 
 ¿Por qué? Porque la IA optimiza para "resolver el problema inmediato" no para "crear código mantenible a largo plazo".
 
@@ -342,24 +372,24 @@ GitClear publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4
 
 Estudios de GitHub Copilot encontraron que **40% de los programas generados fueron flagged por código inseguro**[^ch1-21].
 
-¿Por qué? Porque los modelos de IA fueron entrenados en código público de internet—que incluye mucho código inseguro. La IA aprende patrones, incluyendo patrones inseguros.
+¿Por qué? Porque los modelos de IA fueron entrenados en código público de internet, que incluye mucho código inseguro. La IA aprende patrones, incluyendo patrones inseguros.
 
 **Implicación para líderes:**
 
-- Necesitas SAST (Static Application Security Testing) automático para TODO el código
+- Necesitas [SAST]{.idx data-sub="seguridad de código"} (Static Application Security Testing) automático para todo el código
 - Necesitas entrenar a tu equipo en seguridad, no solo en productividad con IA
 - Necesitas procesos de threat modeling antes de generar código
 
 ### Desafío 3: La Curva de Aprendizaje es Real
 
-Microsoft Research encontró que toma aproximadamente **11 semanas para que los desarrolladores realicen completamente las ganancias de productividad** de AI coding tools[^ch1-22].
+[Microsoft Research]{.idx} encontró que toma aproximadamente **11 semanas para que los desarrolladores realicen completamente las ganancias de productividad** de AI coding tools[^ch1-22].
 
 Durante esas 11 semanas:
 
 - La productividad puede hasta bajar inicialmente
 - El equipo está aprendiendo qué prompts funcionan
 - Están descubriendo límites de las herramientas
-- Están ajustando su workflow
+- Están ajustando su flujo de trabajo
 
 **Implicación para líderes:**
 
@@ -381,7 +411,7 @@ Esto es bueno (porque significa que están siendo cautelosos) pero también es u
 - Necesitas métricas de calidad de código generado por IA en tu organización específica
 - Necesitas construir confianza gradualmente a través de experiencia
 
-**Desafios de IA Agentica y Estrategias de Mitigacion**
+**Desafíos de IA Agéntica y Estrategias de Mitigación**
 
 | Desafío | Impacto | Estrategia de Mitigación | Prioridad |
 |---------|---------|--------------------------|-----------|
@@ -393,7 +423,7 @@ Esto es bueno (porque significa que están siendo cautelosos) pero también es u
 
 ## ¿Qué Deberías Hacer Como Líder Técnico?
 
-Si eres CTO, VP de Ingeniería, o Tech Lead, probablemente ya estás sintiendo presión para "hacer algo con IA". Aquí está mi framework de 5 pasos:
+Si eres CTO, VP de Ingeniería, o tech lead, probablemente ya estás sintiendo presión para "hacer algo con IA". Aquí está mi framework de 5 pasos:
 
 ### Paso 1: Establece Baseline (Mes 1)
 
@@ -410,7 +440,7 @@ Antes de adoptar cualquier herramienta:
 - Selecciona 3-5 desarrolladores early adopters
 - Dales acceso a una AI coding tool (Copilot, Cursor, etc.)
 - Mide las mismas métricas que en baseline
-- Recolecta feedback cualitativo semanal
+- Recolecta retroalimentación cualitativa semanal
 
 **Por qué:** Aprendes qué funciona en TU contexto específico antes de desplegar a toda la organización.
 
@@ -418,7 +448,7 @@ Antes de adoptar cualquier herramienta:
 
 - ¿Mejoró productividad? ¿Cuánto?
 - ¿Aumentó defect rate? ¿Qué tipo de bugs?
-- ¿Qué feedback dio el equipo?
+- ¿Qué retroalimentación dio el equipo?
 - ¿Cuál fue el costo vs. beneficio?
 
 **Por qué:** Muchas organizaciones saltan este paso y despliegan por FOMO. Tú eres mejor que eso.
@@ -448,8 +478,8 @@ Si el piloto fue exitoso:
 | Paso | Fase | Duración | Actividades Clave | Entregable |
 |------|------|----------|-------------------|------------|
 | 1 | Establece Baseline | Mes 1 | Medir velocity, cycle time, defect rate; documentar tiempos de tareas comunes; encuestar pain points del equipo | Documento de métricas baseline |
-| 2 | Piloto Controlado | Meses 2-3 | Seleccionar 3-5 early adopters; habilitar AI coding tool; medir mismas métricas; recolectar feedback semanal | Datos comparativos piloto vs. baseline |
-| 3 | Evalúa Resultados | Mes 4 | Analizar productividad, defect rate, feedback cualitativo; calcular costo vs. beneficio real | Reporte de evaluación con recomendación go/no-go |
+| 2 | Piloto Controlado | Meses 2-3 | Seleccionar 3-5 early adopters; habilitar AI coding tool; medir mismas métricas; recolectar retroalimentación semanal | Datos comparativos piloto vs. baseline |
+| 3 | Evalúa Resultados | Mes 4 | Analizar productividad, defect rate, retroalimentación cualitativa; calcular costo vs. beneficio real | Reporte de evaluación con recomendación go/no-go |
 | 4 | Expande con Guardrails | Meses 5-6 | Deploy gradual a más equipos; code review guidelines para código IA; SAST automático; canal de best practices | Procesos documentados y herramientas desplegadas |
 | 5 | Optimiza Continuamente | Ongoing | Revisión mensual de métricas; ajustar procesos; training actualizado; compartir resultados org-wide | Dashboard de métricas y mejora continua |
 
@@ -465,7 +495,7 @@ Si el piloto fue exitoso:
 
 *El riesgo de no experimentar es mayor que el costo del piloto."*
 
-## Preguntas de Reflexión para Tu Equipo de Liderazgo
+## Preguntas de Reflexión para Tu Equipo
 
 Usa estas preguntas en tu próxima sesión de estrategia:
 
@@ -493,13 +523,13 @@ Usa estas preguntas en tu próxima sesión de estrategia:
 
 Como líder técnico, probablemente estás trabajando en presupuestos para 2026 en este momento. La IA agéntica tiene implicaciones directas en cómo presupuestas tanto para herramientas como para talento.
 
-### Replanteando el ROI de Herramientas vs. Headcount
+### Replanteando el ROI de Herramientas vs. Personal
 
 Tradicionalmente, si necesitabas aumentar capacidad de desarrollo en 30%, tenías dos opciones:
 
 **Opción A: Contratar más gente**
 
-- Costo: $80-150K USD por desarrollador al año (salario + beneficios + overhead)
+- Costo: $80-150K USD por desarrollador al año (salario + beneficios + costos indirectos)
 - Tiempo de ramp-up: 3-6 meses para productividad completa
 - Riesgo: Dificultad de contratación, turnover, gestión de equipo más grande
 
@@ -525,9 +555,9 @@ Hagamos la matemática para un equipo de 50 desarrolladores:
 - Costo de contratar 25 devs: $2,500,000+ USD/año
 - **Ahorro potencial: $2,470,000 USD/año**
 
-**Analisis de Costo-Beneficio: IA Agentica vs. Contratacion por Tamano de Equipo**
+**Análisis de Costo-Beneficio: IA Agéntica vs. Contratación por Tamaño de Equipo**
 
-| Tamaño de Equipo | Costo Anual Herramientas IA | Ganancia 30% (equiv. headcount) | Ahorro vs. Contratar |
+| Tamaño de Equipo | Costo Anual Herramientas IA | Ganancia 30% (equiv. personal) | Ahorro vs. Contratar |
 |------------------|----------------------------|----------------------------------|----------------------|
 | 10 devs | $6,000 | 3 devs adicionales | $294,000 |
 | 25 devs | $15,000 | 7.5 devs adicionales | $735,000 |
@@ -535,7 +565,7 @@ Hagamos la matemática para un equipo de 50 desarrolladores:
 | 100 devs | $60,000 | 30 devs adicionales | $2,940,000 |
 | 250 devs | $150,000 | 75 devs adicionales | $7,350,000 |
 
-*Asumiendo $100K costo total por desarrollador al año (salario + overhead)*
+*Asumiendo $100K costo total por desarrollador al año (salario + costos indirectos)*
 
 ### El Argumento para CFOs: IA Como CapEx vs. OpEx
 
@@ -583,15 +613,15 @@ Según un reporte de McKinsey 2025 sobre IA en ingeniería[^ch1-25], las organiz
 3. **Human Validation Time**: ¿Cuánto tiempo toma revisar/validar código generado por IA?
 4. **Business Value Delivery**: Velocidad de entrega de features con impacto medible en negocio
 
-**Dashboard de Metricas de Equipo: Antes y Despues de IA Agentica**
+**Dashboard de Métricas de Equipo: Antes y Después de IA Agéntica**
 
-| Metrica | Antes de IA | Despues de IA (6 meses) | Cambio | Estado |
+| Métrica | Antes de IA | Después de IA (6 meses) | Cambio | Estado |
 |---------|-------------|-------------------------|--------|--------|
 | **Velocity** (story points/sprint) | 40 pts | 58 pts | +45% | Positivo |
 | **Cycle Time** (idea a produccion) | 3.2 semanas | 1.9 semanas | -41% | Positivo |
 | **Defect Escape Rate** (bugs en prod) | 2.1% | 2.3% | +0.2% | Neutral (monitorear) |
 | **Code Review Effectiveness** (% rechazado) | 12% | 18% | +6% | Requiere atencion |
-| **Security Vulnerabilities** (por release) | 1.4 | 2.1 | +50% | Requiere accion |
+| **Security Vulnerabilities** (por lanzamiento) | 1.4 | 2.1 | +50% | Requiere accion |
 | **Developer Satisfaction** (NPS interno) | 62 | 74 | +12 pts | Positivo |
 | **Time to First PR** (onboarding) | 6.2 semanas | 3.8 semanas | -39% | Positivo |
 | **AI Contribution Rate** | 0% | 34% | N/A | Referencia |
@@ -607,22 +637,22 @@ Más allá de los números, hay una transformación cultural que los líderes de
 
 **La conversación que debes tener con tu equipo (y tendrán que tener tú con el tuyo):**
 
-Cuando anuncias adopción de IA, inevitablemente surgirán preguntas:
+Cuando anuncias adopción de IA, muy probablemente surgirán preguntas:
 
 - "¿Esto significa que van a despedir gente?"
-- "¿Mi trabajo va a desaparecer?"
+- "¿Cómo va a cambiar mi trabajo?"
 - "¿Por qué debería entrenar a mi reemplazo?"
 
 **Respuestas efectivas basadas en datos:**
 
 1. **Transparencia sobre intenciones**:
-   *"No estamos adoptando IA para reducir headcount. La estamos adoptando para aumentar nuestra capacidad de entrega sin tener que crecer el equipo en 30-50%. Nuestro roadmap de producto se está expandiendo, no reduciendo."*
+   *"No estamos adoptando IA para reducir personal. La estamos adoptando para aumentar nuestra capacidad de entrega sin tener que crecer el equipo en 30-50%. Nuestra hoja de ruta de producto se está expandiendo, no reduciendo."*
 
 2. **Evidencia de la industria**:
-   *"Microsoft, Google y Meta adoptaron IA hace más de un año. Sus equipos de ingeniería no se redujeron—de hecho, Microsoft aumentó contratación de ingenieros en 2024 y 2025. Lo que cambió fue QUÉ trabajo hacen esos ingenieros."*
+   *"Microsoft, Google y Meta adoptaron IA hace más de un año. Sus equipos de ingeniería no se redujeron. De hecho, Microsoft aumentó contratación de ingenieros en 2024 y 2025. Lo que cambió fue QUÉ trabajo hacen esos ingenieros."*
 
 3. **Crecimiento de roles, no reducción**:
-   *"GitHub reportó que las compañías que adoptaron Copilot vieron 126% más proyectos completados—no 126% menos ingenieros. Más output significa más oportunidades, más innovación, más valor creado."*
+   *"GitHub reportó que las compañías que adoptaron Copilot vieron 126% más proyectos completados; no 126% menos ingenieros. Más producción significa más oportunidades, más innovación, más valor creado."*
 
 ### El Nuevo Contrato Psicológico con el Equipo
 
@@ -705,16 +735,16 @@ Si estás planeando estrategia de 3-5 años, necesitas entender que los coding a
 - **Estado actual**: Investigación temprana, no listo para producción
 - **Preguntas abiertas**: ¿Cómo garantizamos que los cambios autónomos no introducen bugs o vulnerabilidades?
 
-**Evolucion de Generaciones de IA en Desarrollo de Software**
+**Evolución de Generaciones de IA en Desarrollo de Software**
 
-| Generacion | Periodo | Capacidad | Ejemplos | Nivel de Autonomia | Rol del Ingeniero |
+| Generación | Período | Capacidad | Ejemplos | Nivel de Autonomía | Rol del Ingeniero |
 |------------|---------|-----------|----------|--------------------|--------------------|
-| Gen 1: Code Completion | 2021-2024 | Autocompleta lineas o funciones basado en contexto | GitHub Copilot, Tabnine | Bajo: sugiere, humano acepta/rechaza | Escritor de codigo con asistente |
-| Gen 2: Code Generation | 2024-2025 | Genera archivos completos o componentes desde prompts | Cursor, v0.dev, Replit Agent | Medio: genera, humano revisa y ajusta | Arquitecto que delega implementacion |
-| Gen 3: Agentic Development | 2025-2026 | Agentes autonomos que planifican, implementan, testean y despliegan features | Devin, Copilot Workspace, Claude Code | Alto: ejecuta flujos completos, humano supervisa | Orquestador y validador de agentes |
-| Gen 4: Self-Evolving Systems | 2027+ | Sistemas que se refactorizan, optimizan y evolucionan autonomamente | En investigacion | Muy Alto: evolucion autonoma con guardrails | Gobernador de sistemas autonomos |
+| Gen 1: Code Completion | 2021-2024 | Autocompleta líneas o funciones basado en contexto | GitHub Copilot, Tabnine | Bajo: sugiere, humano acepta/rechaza | Escritor de código con asistente |
+| Gen 2: Code Generation | 2024-2025 | Genera archivos completos o componentes desde prompts | Cursor, v0.dev, Replit Agent | Medio: genera, humano revisa y ajusta | Arquitecto que delega implementación |
+| Gen 3: Agentic Development | 2025-2026 | Agentes autónomos que planifican, implementan, testean y despliegan features | Devin, Copilot Workspace, Claude Code | Alto: ejecuta flujos completos, humano supervisa | Orquestador y validador de agentes |
+| Gen 4: Self-Evolving Systems | 2027+ | Sistemas que se refactorizan, optimizan y evolucionan autónomamente | En investigación | Muy Alto: evolución autónoma con guardrails | Gobernador de sistemas autónomos |
 
-> **Para tu planificacion estrategica:** Si hoy estas evaluando Gen 2, estas en el momento correcto. Pero tu roadmap de 3 anos debe contemplar Gen 3 como mainstream para 2027. Las organizaciones que no hayan dominado Gen 2 para finales de 2026 estaran significativamente rezagadas.
+> **Para tu planificación estratégica:** Si hoy estás evaluando Gen 2, estás en el momento correcto. Pero tu hoja de ruta de 3 años debe contemplar Gen 3 como mainstream para 2027. Las organizaciones que no hayan dominado Gen 2 para finales de 2026 estarán significativamente rezagadas.
 
 **Implicación para estrategia 2026-2028:**
 
@@ -742,11 +772,19 @@ Si tu horizon de planificación es 3 años:
 
 7. **El ROI es compelling para CFOs**: Un equipo de 50 desarrolladores puede ahorrar $970K-$2.4M al año vs. contratar para la misma capacidad.
 
-8. **Las métricas tradicionales son obsoletas**: Necesitas medir Code Review Effectiveness, Defect Escape Rate, y Developer Experience—no solo velocity.
+8. **Las métricas tradicionales son obsoletas**: Necesitas medir Code Review Effectiveness, Defect Escape Rate, y Developer Experience; no solo velocity.
 
 9. **La cultura importa más que la tecnología**: El miedo al reemplazo, el cambio de roles, y la capacitación son más críticos que la herramienta que elijas.
 
 10. **Esto es la primera ola, no la última**: Prepárate para agentes autónomos (Gen 3) en 2026-2027, no solo code assistants (Gen 2).
+
+> **Tarjeta de Referencia Rápida**
+>
+> - **Métrica clave 1**: 30% del código en Microsoft y Google ya es generado por IA (CEOs, 2025)
+> - **Métrica clave 2**: 84% de desarrolladores ya usan herramientas de IA en su trabajo diario (Stack Overflow, 2025)
+> - **Métrica clave 3**: Desarrolladores con Copilot completan tareas 55% más rápido; PR time cae de 9.6 a 2.4 días (GitHub Research)
+> - **Framework principal**: Las 4 Generaciones de IA para código (ver este capítulo) y Matriz de ROI por tamaño de organización
+> - **Acción inmediata**: Reúnete con 3 tech leads esta semana y pregunta qué herramientas de IA ya usan informal o formalmente
 
 ### Tu Próximo Paso Concreto:
 
@@ -755,7 +793,7 @@ Antes de terminar esta semana:
 - Reúnete con 3 de tus tech leads
 - Pregúntales qué herramientas de IA ya están usando (formalmente o informalmente)
 - Pregúntales qué pain points tienen que IA podría resolver
-- Usa ese input para diseñar un piloto de 3 meses
+- Usa esa entrada para diseñar un piloto de 3 meses
 
 No necesitas tener todas las respuestas hoy. Necesitas dar el primer paso informado.
 
@@ -780,7 +818,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 **Estrategia recomendada:**
 
 1. **Semanas 1-2**: Habilita IA coding tools para todos los developers (costo: ~$20-30/dev/mes)
-2. **Semanas 3-4**: Establece "code review buddy system"—todo código AI-generado revisado por al menos un peer
+2. **Semanas 3-4**: Establece "code review buddy system": todo código AI-generado revisado por al menos un peer
 3. **Semanas 5-8**: Mide velocity en tu project management tool (Jira, Linear, etc.)
 4. **Mes 3**: Evalúa si estás entregando features 30-50% más rápido. Si sí, continúa. Si no, diagnostica por qué.
 
@@ -794,7 +832,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 - Si defect rate sube >20%, tienes un problema de code review
 - Si developers reportan frustración con IA en semana 4-6, probablemente no diste training adecuado
-- Si costo de IA tools > 5% de engineering payroll, estás sobre-invirtiendo para tu escala
+- Si costo de IA tools > 5% de la nómina de ingeniería, estás sobre-invirtiendo para tu escala
 
 ### Para Empresas Medianas (50-500 empleados)
 
@@ -808,7 +846,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 - Coordinación entre equipos
 - Procesos de aprobación más largos
-- Necesidad de justificar ROI a finance/exec team
+- Necesidad de justificar ROI a finanzas/equipo ejecutivo
 
 **Estrategia recomendada:**
 
@@ -822,11 +860,11 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 4. **Mes 5-6**: Expande a resto de equipos con learnings del piloto.
 5. **Mes 7+**: Optimiza. Considera enterprise agreements con vendors para reducir costo por seat.
 
-**Métricas específicas para reportar a exec team:**
+**Métricas específicas para reportar al equipo ejecutivo:**
 
 - **Velocity increase**: "El equipo de Product Platform incrementó velocity de 40 a 58 story points por sprint (+45%)"
-- **Time to market**: "Features que tomaban 3 semanas ahora toman 1.8 semanas promedio"
-- **Cost per feature**: "Costo por feature bajó de $12K a $7.5K considerando engineering time"
+- ***time-to-market***: "Features que tomaban 3 semanas ahora toman 1.8 semanas promedio"
+- **Cost per feature**: "Costo por feature bajó de $12K a $7.5K considerando tiempo de ingeniería"
 
 **Herramientas recomendadas para medianas:**
 
@@ -845,7 +883,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 **Desafíos únicos:**
 
 - Procesos de procurement lentos
-- Múltiples stakeholders (security, compliance, legal, privacy)
+- Múltiples partes interesadas (security, compliance, legal, privacy)
 - Legacy codebases que IA puede no manejar bien
 - Regulaciones de industria (finance, healthcare, gobierno)
 
@@ -861,7 +899,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 **Q2 - Expansión Controlada:**
 
 - Expande a 20-30% de la organización de ingeniería
-- Establece Center of Excellence para IA en engineering
+- Establece Center of Excellence para IA en ingeniería
 - Desarrolla training curriculum interno
 - Negocia enterprise contracts basado en adoption forecast
 
@@ -876,7 +914,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 - 100% de developers con acceso (pero adoption sigue siendo opt-in para algunos use cases)
 - ROI analysis completo para presentar a board
-- Roadmap para siguiente año: agentes autónomos (Gen 3)
+- Hoja de ruta para siguiente año: agentes autónomos (Gen 3)
 
 **Consideraciones especiales para corporaciones:**
 
@@ -887,7 +925,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 2. **Self-Hosted vs. SaaS:**
    - **Punto de decisión**: Si tienes >1,000 developers, self-hosted puede ahorrar 40-60% en costos y dar mayor control
-   - **Trade-off**: Requiere mantener infraestructura de ML, actualizar modelos, gestionar uptime
+   - **Compromiso**: Requiere mantener infraestructura de ML, actualizar modelos, gestionar uptime
    - **Vendors que ofrecen self-hosted**: Sourcegraph Cody, Tabnine Enterprise, GitHub Copilot Enterprise (con GitHub Enterprise Server)
 
 3. **Integration con Legacy Systems:**
@@ -898,7 +936,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 **Herramientas recomendadas para corporaciones:**
 
 - GitHub Copilot Enterprise (con enterprise support y SLAs)
-- Amazon CodeWhisperer Enterprise (si ya estás en AWS ecosystem)
+- Amazon Q Developer Pro (si ya estás en AWS ecosystem)
 - Sourcegraph Cody Enterprise (mejor para multi-repo, mono-repo gigantes)
 - Considerar: Fine-tuned models internos usando Anthropic Claude, OpenAI, o Llama 3
 
@@ -910,20 +948,20 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 **Estrategia recomendada:**
 
-1. **Async code review workflow**:
+1. **Flujo de trabajo asíncrono de code review**:
    - Developer escribe código con AI assistance
    - AI tool automáticamente sugiere mejoras y detecta bugs
    - Peer reviewer solo necesita validar lógica de negocio, no sintaxis/bugs triviales
    - Esto reduce latency en code review de 8-12 horas (async) a 2-4 horas
 
-2. **Shared knowledge base**:
+2. **Base de conocimiento compartida**:
    - Usa AI tools que aprenden del codebase completo
    - Developer en timezone de Asia puede hacer preguntas al AI sobre código escrito por developer en Americas
-   - Reduce dependency en sync meetings
+   - Reduce dependencia en reuniones sincrónicas
 
 3. **Onboarding acelerado**:
    - Nuevos remote hires pueden usar AI para entender codebase más rápido
-   - Estudios muestran que onboarding time se reduce de 6 semanas a 3-4 semanas
+   - Reportes de empresas como GitHub y Sourcegraph indican que el onboarding time puede reducirse de 6 semanas a 3-4 semanas cuando los nuevos hires usan AI para explorar el codebase (GitHub, "The Economic Impact of the AI-Powered Developer Lifecycle", 2024)
 
 **Métricas específicas para equipos remotos:**
 
@@ -978,7 +1016,7 @@ Para cada PR que incluya AI-generated code en nivel 2-3:
 
 | Campo | Detalle |
 |-------|---------|
-| **Tool used** | GitHub Copilot Enterprise v1.2.3 |
+| **Tool used** | GitHub Copilot Enterprise |
 | **% of code AI-generated** | ~40% |
 | **Security scan result** | PASSED (0 critical, 0 high, 2 medium findings) |
 | **Medium findings addressed** | [link to fixes] |
@@ -991,14 +1029,14 @@ Para cada PR que incluya AI-generated code en nivel 2-3:
 **Vendors con compliance-ready solutions:**
 
 - GitHub Copilot Enterprise (SOC2, ISO 27001 certified)
-- Amazon CodeWhisperer (HIPAA eligible, FedRAMP in progress)
+- Amazon Q Developer (HIPAA eligible, FedRAMP in progress)
 - Sourcegraph Cody Enterprise (self-hosted option para data residency)
 
 ## Matriz de Decisión: Qué Herramienta Para Qué Escenario
 
 Para ayudarte a elegir entre las decenas de herramientas disponibles, aquí una matriz de decisión simplificada.
 
-**Matriz de Decision: Que Herramienta de IA Agentica Para Que Escenario**
+**Matriz de Decisión: Qué Herramienta de IA Agéntica Para Qué Escenario**
 
 | Tu Escenario | Herramienta Recomendada | Alternativa | Por Qué |
 |--------------|-------------------------|-------------|---------|
@@ -1006,10 +1044,10 @@ Para ayudarte a elegir entre las decenas de herramientas disponibles, aquí una 
 | Empresa mediana en Microsoft/GitHub ecosystem | GitHub Copilot Business | Cursor | Integración nativa con GitHub |
 | Corporación grande con compliance estricto | GitHub Copilot Enterprise | Sourcegraph Cody Enterprise | Enterprise support, audit trails |
 | Equipo con mono-repo gigante (>1M LOC) | Sourcegraph Cody | GitHub Copilot | Mejor para indexar codebases masivos |
-| Equipo heavy en AWS | Amazon CodeWhisperer | GitHub Copilot | Integración con AWS services |
+| Equipo heavy en AWS | Amazon Q Developer | GitHub Copilot | Integración con AWS services |
 | Equipo que necesita self-hosted | Sourcegraph Cody Enterprise | Tabnine Enterprise | Mejor self-hosted experience |
 | Prototipado rápido de UI/frontend | v0.dev (Vercel) | Cursor | Especializado en React/Next.js |
-| Agentes autónomos (Gen 3) | Devin (waitlist 2025) | Cursor Composer | Próxima generación, experimental |
+| Agentes autónomos (Gen 3) | Devin (desde $20/mes) | Cursor Composer | Generación actual, madurando rápidamente |
 
 **Nota importante**: Este landscape cambia cada 3-6 meses. Valida estas recomendaciones contra reviews actualizados al momento de tu evaluación.
 
@@ -1019,9 +1057,9 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 **Semana 1: Discovery**
 
-- [ ] Día 1-2: Lee este capítulo y el Cap 5 (Ecosistema de Herramientas)
+- [ ] Día 1-2: Lee este capítulo y el Cap 7 (Ecosistema de Herramientas)
 - [ ] Día 3: Encuesta informal a 10 desarrolladores: "¿Ya usas IA tools? ¿Cuáles? ¿Qué te gustaría?"
-- [ ] Día 4: Revisa presupuesto actual de engineering tools. ¿Hay $2-5K/mes disponibles para piloto?
+- [ ] Día 4: Revisa presupuesto actual de herramientas de ingeniería. ¿Hay $2-5K/mes disponibles para piloto?
 - [ ] Día 5: Reunión con Security/Compliance: "¿Qué restricciones tenemos para usar AI coding tools?"
 
 **Semana 2: Selección y Preparación**
@@ -1033,7 +1071,7 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 **Semana 3: Launch del Piloto**
 
-- [ ] Día 11: Kickoff meeting con piloto team. Explica objetivos, timeline (8-12 semanas), métricas.
+- [ ] Día 11: Reunión de kickoff con equipo piloto. Explica objetivos, timeline (8-12 semanas), métricas.
 - [ ] Día 12: Habilita acceso a herramienta seleccionada
 - [ ] Día 13-14: Sesión de training (2 horas): mejores prácticas, security considerations, cuando NO usar IA
 - [ ] Día 15: Establece Slack channel o foro para compartir tips, preguntas
@@ -1042,7 +1080,7 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 - [ ] Día 16-17: Check-in 1-on-1 con participantes del piloto. ¿Qué está funcionando? ¿Qué no?
 - [ ] Día 18: Revisa métricas preliminares (aunque es muy temprano para conclusiones)
-- [ ] Día 19: Ajusta basado en feedback. ¿Necesitan más training? ¿Herramienta no funciona para cierto use case?
+- [ ] Día 19: Ajusta basado en retroalimentación. ¿Necesitan más training? ¿Herramienta no funciona para cierto use case?
 - [ ] Día 20-22: Documenta learnings en un doc compartido
 
 **Días 23-30: Planifica Siguientes Pasos**
@@ -1050,8 +1088,8 @@ Aquí un plan concreto de 30 días que puedes seguir:
 - [ ] Día 23-25: Draft presentation para leadership con primeros learnings
 - [ ] Día 26-27: Socializa plan de expansión (si piloto va bien) o plan de iteración (si necesita ajustes)
 - [ ] Día 28: Reunión con Finance para asegurar presupuesto para siguiente fase
-- [ ] Día 29: Comunicación al resto del engineering org: "Estamos en piloto, aquí lo que hemos aprendido hasta ahora"
-- [ ] Día 30: Retrospective con piloto team. ¿Qué harías diferente para siguiente ola?
+- [ ] Día 29: Comunicación al resto de la organización de ingeniería: "Estamos en piloto, aquí lo que hemos aprendido hasta ahora"
+- [ ] Día 30: Retrospectiva con equipo piloto. ¿Qué harías diferente para siguiente ola?
 
 **Resultado esperado al día 30:**
 
@@ -1076,7 +1114,7 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 [^ch1-6]: Slashdot. (2025). "95% of Code Will Be AI-Generated Within Five Years, Microsoft CTO Says". Disponible en: https://developers.slashdot.org/story/25/04/02/1611229/95-of-code-will-be-ai-generated-within-five-years-microsoft-cto-says
 
-[^ch1-7]: Medium. (2025). "AI Will Write 95% of Code in the Next 5 Years — Microsoft's CTO Kevin Scott" por Jain Sandeepkumar. Disponible en: https://medium.com/@jain.sandeepkumar88/ai-will-write-95-of-code-in-the-next-5-years-are-we-ready-ba12368ed372
+[^ch1-7]: Yahoo Finance / Forbes. (2025). "Anthropic CEO Says AI Could Write '90% Of Code' In '3 To 6 Months'". Basado en declaraciones de Dario Amodei en entrevista, marzo 2025. Disponible en: https://finance.yahoo.com/news/anthropic-ceo-says-ai-could-193020957.html
 
 [^ch1-8]: Multiple industry reports citing Arvind Krishna statements at IBM Think 2025 conference.
 
@@ -1102,9 +1140,9 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 [^ch1-19]: GitClear. (2025). "AI Copilot Code Quality: 2025 Data Suggests 4x Growth in Code Clones". Disponible en: https://www.gitclear.com/ai_assistant_code_quality_2025_research
 
-[^ch1-20]: NetCorp Software Development. (2026). "AI-Generated Code Statistics 2026: Can AI Replace Your Development Team?". Disponible en: https://www.netcorpsoftwaredevelopment.com/blog/ai-generated-code-statistics
+[^ch1-20]: Snyk. (2024). "AI Code Security Report: Vulnerabilities in AI-Generated Code". Disponible en: https://snyk.io/reports/ai-code-security/
 
-[^ch1-21]: NetCorp Software Development. (2026). "AI-Generated Code Statistics 2026".
+[^ch1-21]: Pearce, H. et al. (2022). "Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions". IEEE Symposium on Security and Privacy (S&P). https://arxiv.org/abs/2108.09293
 
 [^ch1-22]: Microsoft Research (2025), citado en Second Talent statistics report.
 
@@ -1115,4 +1153,43 @@ Aquí un plan concreto de 30 días que puedes seguir:
 [^ch1-25]: McKinsey. (2025). "The state of AI in 2025: Agents, innovation, and transformation". Disponible en: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
 
 [^ch1-26]: Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey". Disponible en: https://survey.stackoverflow.co/2025/ai
+
+[^ch1-27]: World Economic Forum. (2026). "Software developers are the vanguard of how AI is redefining work". Disponible en: https://www.weforum.org/stories/2026/01/software-developers-ai-work/
+
+[^ch1-28]: METR. (2025). "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity". Disponible en: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+
+[^ch1-29]: Second Talent. (2026). "Top 10 Most In-Demand AI Engineering Skills and Salary Ranges in 2026". Disponible en: https://www.secondtalent.com/resources/most-in-demand-ai-engineering-skills-and-salary-ranges/
+
+---
+
+**Referencias:**
+
+1. Brooks, F. (1987). "No Silver Bullet - Essence and Accident in Software Engineering".
+2. Idiallo. (2025). "Is 30% of Microsoft's Code Really AI-Generated?". https://idiallo.com/blog/is-30-percent-of-microsoft-code-ai-generated
+3. RD World Online. (2025). "Microsoft CEO says AI now writes up to 30% of company code". https://www.rdworldonline.com/microsoft-ceo-says-ai-now-writes-up-to-30-of-company-code/
+4. Múltiples reportes de industry analysts citando declaraciones públicas de Sundar Pichai durante Google I/O y earnings calls 2025.
+5. TechSpot. (2025). "Microsoft CTO predicts AI will generate 95% of code by 2030". https://www.techspot.com/news/107411-microsoft-cto-predicts-ai-generate-95-percent-code.html
+6. Slashdot. (2025). "95% of Code Will Be AI-Generated Within Five Years, Microsoft CTO Says". https://developers.slashdot.org/story/25/04/02/1611229/95-of-code-will-be-ai-generated-within-five-years-microsoft-cto-says
+7. Yahoo Finance / Forbes. (2025). "Anthropic CEO Says AI Could Write '90% Of Code' In '3 To 6 Months'". https://finance.yahoo.com/news/anthropic-ceo-says-ai-could-193020957.html
+8. Múltiples reportes de industria citando declaraciones de Arvind Krishna en IBM Think 2025.
+9. RD World Online. (2025). Proyecciones de inversión de Meta en IA para 2025.
+10. Gartner. (2025). "Top Strategic Technology Trends for 2025: Agentic AI".
+11. Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey". https://survey.stackoverflow.co/2025/ai
+12. Second Talent. (2025). "GitHub Copilot Statistics & Adoption Trends [2025]". https://www.secondtalent.com/resources/github-copilot-statistics/
+13. Second Talent. (2025). "AI Coding Assistant Statistics & Trends [2025]". https://www.secondtalent.com/resources/ai-coding-assistant-statistics/
+14. Peng, S. et al. (2023). "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot". https://arxiv.org/abs/2302.06590
+15. Index.dev. (2025). "Developer Productivity Statistics with AI Tools 2025". https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools
+16. Office Chai. (2025). "95% Of Code Will Be Written By AI In 5 Years: Microsoft CTO Kevin Scott". https://officechai.com/ai/95-of-code-will-be-written-by-ai-in-5-years-microsoft-cto-kevin-scott/
+17. GitClear. (2025). "AI Copilot Code Quality: 2025 Data Suggests 4x Growth in Code Clones". https://www.gitclear.com/ai_assistant_code_quality_2025_research
+18. Snyk. (2024). "AI Code Security Report: Vulnerabilities in AI-Generated Code". https://snyk.io/reports/ai-code-security/
+19. Pearce, H. et al. (2022). "Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions". IEEE Symposium on Security and Privacy (S&P). https://arxiv.org/abs/2108.09293
+20. Microsoft Research. (2025). Estudio sobre curva de adopción de AI coding tools, citado en Second Talent statistics report.
+21. McKinsey. (2025). "The state of AI in 2025: Agents, innovation, and transformation". https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+22. World Economic Forum. (2026). "Software developers are the vanguard of how AI is redefining work". https://www.weforum.org/stories/2026/01/software-developers-ai-work/
+23. METR. (2025). "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity". https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+24. Second Talent. (2026). "Top 10 Most In-Demand AI Engineering Skills and Salary Ranges in 2026". https://www.secondtalent.com/resources/most-in-demand-ai-engineering-skills-and-salary-ranges/
+
+---
+
+*Fin del Capítulo 1. Continúa en Capítulo 2: De los Paradigmas Tradicionales al Paradigma Agéntico*
 

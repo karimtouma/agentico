@@ -1,3 +1,11 @@
+> ⚠️ **ARCHIVO LEGACY** - Este archivo usa la numeración **anterior** al refactor de contenido.
+> En este archivo: Cap 14=Sesgos Cognitivos, Cap 15=Gobernanza, Cap 16=Futuro 2030.
+> En la estructura actual: Cap 4=Sesgos Cognitivos, Cap 13=Gobernanza, Cap 14=Futuro 2030.
+> **Para la versión canónica, consulte los archivos individuales en `/capitulos/` y el índice en `BOOK_MASTER.md`.**
+> Este archivo no incluye: Cap 06b (Cuando Falla), Cap 09 (Guía por Industria), ni Apéndice E (Modelos Mentales). Última actualización de referencias: Febrero 2026.
+
+---
+
 # El Paradigma Agéntico: Una Nueva Era en la Ingeniería de Software
 
 **Guía estratégica para líderes técnicos sobre la adopción de IA agéntica**
@@ -14,17 +22,18 @@
 - **Capítulo 3:** ¿Qué Es Realmente la Inteligencia Artificial Agéntica?
 
 ### Parte II: Entendiendo la Tecnología
-- **Capítulo 4:** La Evolución Técnica Hacia la IA Agéntica en Ingeniería
-- **Capítulo 5:** El Ecosistema de Herramientas Agénticas
+- **Capítulo 8:** La Evolución Técnica Hacia la IA Agéntica en Ingeniería
+- **Capítulo 9:** El Ecosistema de Herramientas Agénticas
 
 ### Parte III: Impacto en el Negocio
-- **Capítulo 6:** El Impacto en el Negocio - ROI, TCO y Justificación Financiera
+- **Capítulo 10:** El Impacto en el Negocio - ROI, TCO y Justificación Financiera
+- **Capítulo 10b:** Cuando la IA Agéntica Falla [Casos Compuestos]
 
 ### Parte IV: Casos de Estudio
-- **Capítulo 7:** Caso de Estudio – Fintech en América Latina *(caso real)*
-- **Capítulo 8:** Caso de Estudio – Adopción Enterprise a Escala Global *(caso real)*
-- **Capítulo 9:** Caso de Estudio – Startup: De 0 a 1M de Usuarios con IA *(caso ficticio)*
-- **Capítulo 10:** Caso de Estudio – Transformación de TI en Banco Tradicional *(caso ficticio)*
+- **Capítulo 5:** Caso de Estudio – Fintech en América Latina *(caso real)*
+- **Capítulo 6:** Caso de Estudio – Adopción Enterprise a Escala Global *(caso real)*
+- **Capítulo 7:** Caso de Estudio – Startup: De 0 a 1M de Usuarios con IA *(caso ficticio)*
+- **Capítulo 4:** Caso de Estudio – Transformación de TI en Banco Tradicional *(caso ficticio)*
 - **Capítulo 11:** Caso de Estudio – El Equipo Híbrido Humano-IA *(caso ficticio)*
 
 ### Parte V: Liderazgo y Estrategia
@@ -32,8 +41,9 @@
 - **Capítulo 13:** Estrategia de Adopción – Roadmap de IA Agéntica
 
 ### Parte VI: Gobernanza y Futuro
-- **Capítulo 14:** Desafíos, Riesgos y Gobernanza del Paradigma Agéntico
-- **Capítulo 15:** Visión a Futuro – 2026-2030
+- **Capítulo 14:** Sesgos Cognitivos en la Era de la IA Agéntica
+- **Capítulo 15:** Desafíos, Riesgos y Gobernanza del Paradigma Agéntico
+- **Capítulo 16:** Visión a Futuro – 2026-2030
 
 ### Apéndices
 - **Apéndice A:** Glosario Ejecutivo
@@ -60,7 +70,7 @@ Si eres CTO, VP de Ingeniería, o Tech Lead, probablemente has notado algo funda
 
 No me refiero a un nuevo framework JavaScript o a otra metodología ágil. Hablo de algo mucho más profundo: **las máquinas están escribiendo casi la mitad del código que tu equipo produce**.
 
-Según datos de GitHub de 2025, el 46% de todo el código generado por desarrolladores proviene de asistentes de IA como GitHub Copilot[^1]. En proyectos Java, esta cifra alcanza el 61%. Esto no es futuro lejano—está sucediendo en este momento en los equipos de ingeniería de todo el mundo.
+Según datos de GitHub de 2025, el 46% de todo el código generado por desarrolladores proviene de asistentes de IA como GitHub Copilot[^1]. En proyectos Java, esta cifra alcanza el 61%. Esto no es futuro lejano - está sucediendo en este momento en los equipos de ingeniería de todo el mundo.
 
 **Evolución del porcentaje de código generado por IA (2022-2025)**
 
@@ -112,7 +122,7 @@ Gartner ha emitido predicciones que toda la alta dirección técnica debería co
 > - **Limitación:** Las proyecciones de Gartner tienen un margen de error histórico significativo. La predicción de 40% de cancelación refleja el patrón típico del Hype Cycle
 > - **Implicación práctica:** La dualidad es el mensaje clave: el mercado se moverá rápido (40% adopción), pero sin governance la mayoría fracasará (40% cancelación). Estar en el 60% que sobrevive requiere estrategia deliberada
 
-El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035—más de **$450 mil millones**[^5].
+El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035 - más de **$450 mil millones**[^5].
 
 ### El Costo de la Inacción
 
@@ -125,14 +135,14 @@ Según una encuesta de Gartner de enero de 2025 a 3,412 asistentes de webinars[^
 - 31% están en modo "esperar y ver"
 - 8% no han hecho ninguna inversión
 
-La pregunta no es **si** tu organización adoptará IA agéntica en ingeniería de software. La pregunta es **cuándo** y **cómo**—y si lo harás de manera estratégica o reactiva.
+La pregunta no es **si** tu organización adoptará IA agéntica en ingeniería de software. La pregunta es **cuándo** y **cómo** - y si lo harás de manera estratégica o reactiva.
 
 ### Lo Que Está en Juego Para Tu Equipo
 
 Los datos sobre productividad son contundentes pero requieren contexto:
 
 - Desarrolladores usando GitHub Copilot completan **126% más proyectos por semana**[^7]
-- El tiempo de pull request cayó de 9.6 días a 2.4 días—una **reducción del 75%** en ciclos de desarrollo[^8]
+- El tiempo de pull request cayó de 9.6 días a 2.4 días - una **reducción del 75%** en ciclos de desarrollo[^8]
 - Los equipos ahorran **30-60% del tiempo** en codificación y pruebas rutinarias[^9]
 
 Suena increíble, ¿verdad? Pero aquí está el matiz crítico que muchos líderes pasan por alto:
@@ -156,7 +166,7 @@ Suena increíble, ¿verdad? Pero aquí está el matiz crítico que muchos líder
 
 *Fuentes: GitHub (2025), Gartner (2025), GitClear (2025), Stack Overflow Developer Survey (2025)*
 
-Estas cifras contradictorias explican por qué tantos proyectos fracasan. La tecnología funciona—pero solo cuando los líderes comprenden tanto su potencial como sus limitaciones.
+Estas cifras contradictorias explican por qué tantos proyectos fracasan. La tecnología funciona - pero solo cuando los líderes comprenden tanto su potencial como sus limitaciones.
 
 ## Para Quién Es Este Libro
 
@@ -228,7 +238,7 @@ Diseñé este libro para ser **modular**. No necesitas leerlo de principio a fin
 Si eres responsable de la estrategia completa de IA agéntica:
 
 1. **Parte I: Contexto Estratégico (Caps 1-3)** - Establece el marco mental
-2. **Parte II: Tecnología (Caps 4-5)** - Entiende las capacidades sin entrar en detalles técnicos
+2. **Parte II: Tecnología (Caps 8-9)** - Entiende las capacidades sin entrar en detalles técnicos
 3. **Parte III: Impacto al Negocio (Cap 6)** - Calcula ROI y justifica inversión
 4. **Parte IV: Casos de Estudio (Caps 7-11)** - Aprende de implementaciones reales
 5. **Parte V: Liderazgo (Caps 12-13)** - Lidera equipos humanos en la era de IA
@@ -240,7 +250,7 @@ Si eres responsable de la estrategia completa de IA agéntica:
 ### Lectura Dirigida (Para Roles Específicos)
 
 **Si eres Tech Lead o Engineering Manager:**
-- Empieza con **Caps 4-5** (Tecnología)
+- Empieza con **Caps 8-9** (Tecnología)
 - Luego **Caps 7-11** (Casos de Estudio)
 - Termina con **Cap 12** (Liderando Equipos)
 - Consulta **Apéndice C** (Checklist de Implementación)
@@ -296,7 +306,7 @@ He visto tecnologías venir e irse. He apostado correctamente en algunas (cloud,
 
 **Priorizo a las personas sobre la tecnología**: Las mejores herramientas fallan sin adopción. La cultura come tecnología en el desayuno.
 
-**Prefiero datos sobre anécdotas**: Si lees una afirmación en este libro sin una cita, probablemente sea mi opinión personal—y deberías cuestionar mi opinión tanto como cuestionarías la de cualquier otro.
+**Prefiero datos sobre anécdotas**: Si lees una afirmación en este libro sin una cita, probablemente sea mi opinión personal - y deberías cuestionar mi opinión tanto como cuestionarías la de cualquier otro.
 
 **Tengo conflictos de interés potenciales**: He trabajado con vendors de IA, he invertido en startups de AI tooling, y ofrezco consultoría sobre adopción de IA. Intento ser objetivo, pero debes saber dónde están mis incentivos.
 
@@ -357,7 +367,7 @@ Empecemos.
 
 **Para tu próxima reunión de liderazgo:**
 
-📊 *"En 2025, el 46% del código ya está siendo escrito por IA. Gartner predice que 40% de nuestras aplicaciones empresariales integrarán agentes de IA para finales de 2026. Pero también advierte que 40% de estos proyectos serán cancelados por falta de estrategia clara. Necesitamos un framework de decisión ahora—no en 6 meses."*
+📊 *"En 2025, el 46% del código ya está siendo escrito por IA. Gartner predice que 40% de nuestras aplicaciones empresariales integrarán agentes de IA para finales de 2026. Pero también advierte que 40% de estos proyectos serán cancelados por falta de estrategia clara. Necesitamos un framework de decisión ahora - no en 6 meses."*
 
 ---
 
@@ -423,9 +433,9 @@ Empecemos.
 
 **Ejemplo concreto:** Reservar un restaurante con un asistente tradicional requiere 5+ interacciones del usuario (buscar, filtrar, verificar disponibilidad, reservar, agregar al calendario). Un agente de IA recibe "reserva un restaurante italiano para 4 personas el viernes cerca de la oficina" y ejecuta autónomamente los 10-15 pasos necesarios en segundos.
 
-En ingeniería de software, esto significa que un agente puede recibir "implementa la funcionalidad de exportar reportes a PDF" y autónomamente escribir código, crear tests, ejecutarlos, corregir errores, y abrir un pull request—todo bajo supervisión humana.
+En ingeniería de software, esto significa que un agente puede recibir "implementa la funcionalidad de exportar reportes a PDF" y autónomamente escribir código, crear tests, ejecutarlos, corregir errores, y abrir un pull request - todo bajo supervisión humana.
 
-*Profundice en: Capítulo 3 (Qué es IA Agéntica) y Capítulo 4 (Evolución Técnica)*
+*Profundice en: Capítulo 3 (Qué es IA Agéntica) y Capítulo 8 (Evolución Técnica)*
 
 ---
 
@@ -439,7 +449,7 @@ Si sus competidores están desarrollando 2x más rápido con el mismo equipo, ca
 
 ### Apuesta 2: La ecuación económica del talento se reestructura
 
-El mercado global de IA alcanzó $391 mil millones en 2025. Microsoft reporta $420M en costos evitados anuales gracias a IA en desarrollo de software—el equivalente a 3,500 ingenieros.
+El mercado global de IA alcanzó $391 mil millones en 2025. Microsoft reporta $420M en costos evitados anuales gracias a IA en desarrollo de software - el equivalente a 3,500 ingenieros.
 
 Para una empresa de 50 desarrolladores, la inversión típica de ~$67K en herramientas de IA genera un ROI de 4,053% en el primer año. Para 200 desarrolladores, $710K generan ROI de 3,259%. La matemática funciona en prácticamente cualquier escenario razonable.
 
@@ -447,7 +457,7 @@ Para una empresa de 50 desarrolladores, la inversión típica de ~$67K en herram
 
 El rol del ingeniero evoluciona de "escribir código" a "arquitecto de intenciones": definir qué construir, supervisar cómo se construye, y validar que funcione correctamente. Esto requiere nuevas competencias, nuevos roles (AI Code Reviewer, Agent Orchestrator), y nuevas métricas de rendimiento.
 
-*Profundice en: Capítulo 1 (Introducción), Capítulo 6 (Impacto en Negocio), Capítulo 12 (Liderando Equipos)*
+*Profundice en: Capítulo 1 (Introducción), Capítulo 10 (Impacto en Negocio), Capítulo 12 (Liderando Equipos)*
 
 ---
 
@@ -465,7 +475,7 @@ El ecosistema tiene 4 capas: interfaces de usuario (Cursor, GitHub Copilot), orq
 | Mid-Market (100-1,000) | GitHub Copilot Business + Cursor | ~$8,000/mes (200 devs) | 1,200%+ |
 | Enterprise (1,000+) | Tabnine Enterprise + soluciones internas | ~$80,000/mes (2,000 devs) | 600%+ |
 
-*Profundice en: Capítulo 5 (Ecosistema de Herramientas), Apéndice B (Frameworks de Decisión)*
+*Profundice en: Capítulo 9 (Ecosistema de Herramientas), Apéndice B (Frameworks de Decisión)*
 
 ### Decisión 2: Cómo medir el ROI y presentar el caso al board
 
@@ -473,7 +483,7 @@ Use esta fórmula base: **[% de productividad ganada] × [costo total de ingenie
 
 Use 25-35% como estimación conservadora de ganancia de productividad (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación.
 
-*Profundice en: Capítulo 6 (Impacto en Negocio), Apéndice B (Framework #12: Modelo de ROI)*
+*Profundice en: Capítulo 10 (Impacto en Negocio), Apéndice B (Framework #12: Modelo de ROI)*
 
 ### Decisión 3: Cómo gestionar la transición del equipo
 
@@ -491,13 +501,13 @@ Establezca niveles de autonomía claros:
 
 La mayoría de organizaciones en 2025-2026 deberían operar entre Nivel 0 y Nivel 1. Solo escale autonomía con governance madura.
 
-*Profundice en: Capítulo 14 (Gobernanza y Riesgos), Apéndice B (Framework #6: Niveles de Autonomía)*
+*Profundice en: Capítulo 15 (Gobernanza y Riesgos), Apéndice B (Framework #6: Niveles de Autonomía)*
 
 ### Decisión 5: Qué governance establecer desde el día 1
 
 No espere a tener un incidente. Establezca desde el inicio: política de uso de IA (qué está permitido/restringido/prohibido), risk appetite statement, y un comité de gobernanza con frecuencia trimestral. La gobernanza madura es lo que separa al 60% de proyectos que sobreviven del 40% que Gartner predice serán cancelados.
 
-*Profundice en: Capítulo 14 (Gobernanza y Riesgos), Apéndice C (Checklist de Implementación)*
+*Profundice en: Capítulo 15 (Gobernanza y Riesgos), Apéndice C (Checklist de Implementación)*
 
 ---
 
@@ -542,7 +552,7 @@ No espere a tener un incidente. Establezca desde el inicio: política de uso de 
 - **Human-in-the-loop:** Aprobación humana antes de producción para código crítico
 - **DLP:** Prevención de fuga de datos hacia APIs externas
 
-*Profundice en: Capítulo 14 (Gobernanza y Riesgos), Apéndice B (Framework #10: Clasificación de Riesgo)*
+*Profundice en: Capítulo 15 (Gobernanza y Riesgos), Apéndice B (Framework #10: Clasificación de Riesgo)*
 
 ---
 
@@ -588,15 +598,16 @@ No espere a tener un incidente. Establezca desde el inicio: política de uso de 
 | Si necesita... | Lea... |
 |---|---|
 | Entender qué es IA agéntica | Capítulo 3 |
-| Ver la evolución técnica completa | Capítulo 4 |
-| Evaluar herramientas | Capítulo 5 + Apéndice B |
-| Construir el business case / ROI | Capítulo 6 |
-| Ver casos reales de implementación | Capítulos 7-8 |
+| Ver la evolución técnica completa | Capítulo 8 |
+| Evaluar herramientas | Capítulo 9 + Apéndice B |
+| Construir el business case / ROI | Capítulo 10 |
+| Ver casos reales de implementación | Capítulos 5-6 |
 | Ver escenarios ficticios realistas | Capítulos 9-11 |
 | Liderar la transición del equipo | Capítulo 12 |
 | Diseñar el roadmap de adopción | Capítulo 13 + Apéndice C |
-| Establecer governance y gestionar riesgos | Capítulo 14 |
-| Entender hacia dónde va el mercado (2026-2030) | Capítulo 15 |
+| Entender los sesgos cognitivos en adopción de IA | Capítulo 14 |
+| Establecer governance y gestionar riesgos | Capítulo 15 |
+| Entender hacia dónde va el mercado (2026-2030) | Capítulo 16 |
 | Usar frameworks de decisión listos | Apéndice B (12 frameworks) |
 | Seguir un checklist de implementación | Apéndice C (115 checkpoints) |
 | Consultar términos y definiciones | Apéndice A (Glosario ejecutivo) |
@@ -614,7 +625,7 @@ No espere a tener un incidente. Establezca desde el inicio: política de uso de 
 > - La ingeniería de software atraviesa su tercera gran revolución desde la década de 1950
 > - El 30% del código en Microsoft ya es generado por IA según su CEO Satya Nadella (2025)
 > - El CTO de Microsoft predice que el 95% del código será generado por IA para 2030
-> - El rol del ingeniero no desaparece—evoluciona de "escribir código" a "arquitecto de intenciones y decisiones"
+> - El rol del ingeniero no desaparece - evoluciona de "escribir código" a "arquitecto de intenciones y decisiones"
 > - Este cambio requiere nueva evaluación de estrategia de talento, presupuestos y roadmaps
 
 ---
@@ -657,7 +668,7 @@ Para contextualizar lo que está pasando, consideremos las tres grandes transfor
 
 > **Nota para líderes:** Cada revolución redujo la barrera de entrada y elevó el nivel de abstracción. La diferencia con la tercera revolución es la velocidad: las anteriores tomaron decadas; esta se está desplegando en anos.
 
-Estamos en los primeros años de esta tercera revolución. Y a diferencia de las anteriores que tomaron décadas en desplegarse, esta está ocurriendo en años—o incluso meses.
+Estamos en los primeros años de esta tercera revolución. Y a diferencia de las anteriores que tomaron décadas en desplegarse, esta está ocurriendo en años - o incluso meses.
 
 ## Los Datos que los Líderes Deben Conocer
 
@@ -667,7 +678,7 @@ En enero de 2025, Satya Nadella, CEO de Microsoft, reveló en una entrevista que
 
 Es importante notar el lenguaje cauteloso: "tal vez", "probablemente". Nadella no estaba citando una métrica precisa, sino compartiendo una observación sobre la transformación que está viendo en los equipos de Microsoft. Pero incluso con esa cautela, el número es sorprendente.
 
-**30% del código en Microsoft—una de las compañías de software más grandes del mundo—ya es generado por IA.**
+**30% del código en Microsoft - una de las compañías de software más grandes del mundo - ya es generado por IA.**
 
 No es un piloto. No es un experimento. Es producción.
 
@@ -705,7 +716,7 @@ Antes de que asumas que el 30% es un número bajo, considera lo que **no** signi
 **SÍ significa que:**
 - 30% de las líneas de código que se commiten a producción fueron generadas por máquinas
 - Esto incluye código que pasa code reviews, tests, y llega a usuarios finales
-- La tendencia es ascendente—6 meses antes era probablemente 20%
+- La tendencia es ascendente - 6 meses antes era probablemente 20%
 - Los equipos de ingeniería más avanzados del mundo confían en esta tecnología
 
 Si estás liderando un equipo de 50 desarrolladores y cada uno escribe ~500 líneas de código significativo por semana, estamos hablando de **7,500 líneas generadas por IA semanalmente** si alcanzas ese 30%.
@@ -714,13 +725,13 @@ Eso no es trivial. Eso es transformador.
 
 ## Las Predicciones: ¿Hacia Dónde Vamos?
 
-Los líderes de las empresas tecnológicas más importantes no solo están reportando el presente—están haciendo predicciones audaces sobre el futuro.
+Los líderes de las empresas tecnológicas más importantes no solo están reportando el presente - están haciendo predicciones audaces sobre el futuro.
 
 ### Microsoft: 95% del Código Será IA para 2030
 
 Kevin Scott, CTO de Microsoft, predijo que **95% del código será generado por IA dentro de cinco años** (es decir, para 2030)[^5].
 
-Pero—y esto es crítico—Scott aclaró inmediatamente:
+Pero - y esto es crítico - Scott aclaró inmediatamente:
 
 > "No significa que la IA esté haciendo el trabajo de ingeniería de software... la autoría seguirá siendo humana."
 
@@ -789,7 +800,7 @@ Esta adopción bottom-up (los desarrolladores mismos demandando estas herramient
 Los estudios controlados muestran resultados consistentes:
 
 - Desarrolladores con Copilot completan tareas **55% más rápido**[^14]
-- Pull request time cayó de **9.6 días a 2.4 días**—una reducción del **75%**[^15]
+- Pull request time cayó de **9.6 días a 2.4 días** - una reducción del **75%**[^15]
 - Desarrolladores completan **126% más proyectos por semana** con AI coding assistants[^16]
 - Equipos ahorran **30-60% del tiempo** en codificación y testing rutinario[^17]
 
@@ -809,10 +820,10 @@ Estos no son números de marketing. Son resultados de estudios peer-reviewed pub
 
 > **Dato verificado:**
 > - **Fuente:** ArXiv (GitHub Copilot Study, 2023); Second Talent / GitHub (2025); Index.dev Developer Productivity Report (2025)
-> - **Qué mide:** Velocidad de completar tareas de codificación, tiempo de ciclo de pull requests, y proyectos completados por semana — todos comparando grupos con y sin asistentes de IA
+> - **Qué mide:** Velocidad de completar tareas de codificación, tiempo de ciclo de pull requests, y proyectos completados por semana - todos comparando grupos con y sin asistentes de IA
 > - **Muestra:** Estudio controlado de GitHub (95 developers profesionales, tareas estandarizadas); análisis de Second Talent sobre 1.8M+ usuarios de Copilot; encuesta de Index.dev a 500+ empresas
 > - **Limitación:** El estudio de 55% fue en tareas relativamente simples (servidor HTTP en JavaScript); las ganancias en tareas arquitecturales complejas son menores. Los 126% más proyectos incluyen variabilidad por tipo de proyecto. Las cifras de 30-60% de ahorro son auto-reportadas por empresas
-> - **Implicación práctica:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación — no en diseño arquitectural
+> - **Implicación práctica:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación - no en diseño arquitectural
 
 ### Factor 4: El Costo de No Adoptar
 
@@ -920,7 +931,7 @@ Todo lo anterior suena muy positivo. Pero como líder, tu trabajo es anticipar r
 
 Recuerdas esa estadística de productividad del 126%? Aquí está el matiz:
 
-GitClear publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4x más code cloning**—es decir, copiar y pegar código con ligeras variaciones en vez de crear abstracciones reutilizables[^19].
+GitClear publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4x más code cloning** - es decir, copiar y pegar código con ligeras variaciones en vez de crear abstracciones reutilizables[^19].
 
 ¿Por qué? Porque la IA optimiza para "resolver el problema inmediato" no para "crear código mantenible a largo plazo".
 
@@ -935,7 +946,7 @@ GitClear publicó un estudio en 2025 mostrando que **AI-assisted coding genera 4
 
 Estudios de GitHub Copilot encontraron que **40% de los programas generados fueron flagged por código inseguro**[^21].
 
-¿Por qué? Porque los modelos de IA fueron entrenados en código público de internet—que incluye mucho código inseguro. La IA aprende patrones, incluyendo patrones inseguros.
+¿Por qué? Porque los modelos de IA fueron entrenados en código público de internet - que incluye mucho código inseguro. La IA aprende patrones, incluyendo patrones inseguros.
 
 **Implicación para líderes:**
 - Necesitas SAST (Static Application Security Testing) automático para TODO el código
@@ -1196,10 +1207,10 @@ Cuando anuncias adopción de IA, inevitablemente surgirán preguntas:
    *"No estamos adoptando IA para reducir headcount. La estamos adoptando para aumentar nuestra capacidad de entrega sin tener que crecer el equipo en 30-50%. Nuestro roadmap de producto se está expandiendo, no reduciendo."*
 
 2. **Evidencia de la industria**:
-   *"Microsoft, Google y Meta adoptaron IA hace más de un año. Sus equipos de ingeniería no se redujeron—de hecho, Microsoft aumentó contratación de ingenieros en 2024 y 2025. Lo que cambió fue QUÉ trabajo hacen esos ingenieros."*
+   *"Microsoft, Google y Meta adoptaron IA hace más de un año. Sus equipos de ingeniería no se redujeron - de hecho, Microsoft aumentó contratación de ingenieros en 2024 y 2025. Lo que cambió fue QUÉ trabajo hacen esos ingenieros."*
 
 3. **Crecimiento de roles, no reducción**:
-   *"GitHub reportó que las compañías que adoptaron Copilot vieron 126% más proyectos completados—no 126% menos ingenieros. Más output significa más oportunidades, más innovación, más valor creado."*
+   *"GitHub reportó que las compañías que adoptaron Copilot vieron 126% más proyectos completados - no 126% menos ingenieros. Más output significa más oportunidades, más innovación, más valor creado."*
 
 ### El Nuevo Contrato Psicológico con el Equipo
 
@@ -1308,7 +1319,7 @@ Si tu horizon de planificación es 3 años:
 
 7. **El ROI es compelling para CFOs**: Un equipo de 50 desarrolladores puede ahorrar $970K-$2.4M al año vs. contratar para la misma capacidad.
 
-8. **Las métricas tradicionales son obsoletas**: Necesitas medir Code Review Effectiveness, Defect Escape Rate, y Developer Experience—no solo velocity.
+8. **Las métricas tradicionales son obsoletas**: Necesitas medir Code Review Effectiveness, Defect Escape Rate, y Developer Experience - no solo velocity.
 
 9. **La cultura importa más que la tecnología**: El miedo al reemplazo, el cambio de roles, y la capacitación son más críticos que la herramienta que elijas.
 
@@ -1342,7 +1353,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 **Estrategia recomendada:**
 1. **Semanas 1-2**: Habilita IA coding tools para todos los developers (costo: ~$20-30/dev/mes)
-2. **Semanas 3-4**: Establece "code review buddy system"—todo código AI-generado revisado por al menos un peer
+2. **Semanas 3-4**: Establece "code review buddy system" - todo código AI-generado revisado por al menos un peer
 3. **Semanas 5-8**: Mide velocity en tu project management tool (Jira, Linear, etc.)
 4. **Mes 3**: Evalúa si estás entregando features 30-50% más rápido. Si sí, continúa. Si no, diagnostica por qué.
 
@@ -1604,7 +1615,7 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 [^6]: Slashdot. (2025). "95% of Code Will Be AI-Generated Within Five Years, Microsoft CTO Says". Disponible en: https://developers.slashdot.org/story/25/04/02/1611229/95-of-code-will-be-ai-generated-within-five-years-microsoft-cto-says
 
-[^7]: Medium. (2025). "AI Will Write 95% of Code in the Next 5 Years — Microsoft's CTO Kevin Scott" por Jain Sandeepkumar. Disponible en: https://medium.com/@jain.sandeepkumar88/ai-will-write-95-of-code-in-the-next-5-years-are-we-ready-ba12368ed372
+[^7]: Medium. (2025). "AI Will Write 95% of Code in the Next 5 Years - Microsoft's CTO Kevin Scott" por Jain Sandeepkumar. Disponible en: https://medium.com/@jain.sandeepkumar88/ai-will-write-95-of-code-in-the-next-5-years-are-we-ready-ba12368ed372
 
 [^8]: Multiple industry reports citing Arvind Krishna statements at IBM Think 2025 conference.
 
@@ -1708,7 +1719,7 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 
 **Productividad:**
 - El mismo cálculo de trayectorias: **1-2 días** (mejora de ~50%)
-- Ahora el programa es portátil—puedes guardarlo y reutilizarlo
+- Ahora el programa es portátil - puedes guardarlo y reutilizarlo
 
 **Quién lo hacía:**
 - Matemáticos e ingenieros eléctricos
@@ -1719,7 +1730,7 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 - Cambios pequeños requieren reescribir grandes secciones
 - No portable entre diferentes computadoras (cada CPU tiene su propio lenguaje de máquina)
 
-**Tabla 2.1 — Productividad por paradigma en la era temprana de la computación (1940-1960)**
+**Tabla 2.1 - Productividad por paradigma en la era temprana de la computación (1940-1960)**
 
 | Paradigma | Período | Tiempo para programa simple (100 líneas equiv.) | Desarrolladores necesarios | Tasa de error | Reutilización del programa |
 |-----------|---------|------------------------------------------------|----------------------------|---------------|---------------------------|
@@ -1749,11 +1760,11 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 
 **Por qué colapsó:**
 - Todavía muy cercano al hardware (gestión manual de registros, memoria)
-- No portable—código de ensamblador para IBM mainframe no funciona en DEC PDP
+- No portable - código de ensamblador para IBM mainframe no funciona en DEC PDP
 - Tareas complejas (como parsing de texto) requieren centenares de líneas
 
 **Lección para líderes:**
-> La abstracción no es un lujo técnico—es un acelerador de negocio. IBM ganó dominio del mercado de mainframes en los 60s en parte porque sus ensambladores eran superiores a los de competidores.
+> La abstracción no es un lujo técnico - es un acelerador de negocio. IBM ganó dominio del mercado de mainframes en los 60s en parte porque sus ensambladores eran superiores a los de competidores.
 
 ### Nivel 3: Lenguajes de Alto Nivel - Procedural (1960s-1980s)
 
@@ -1792,7 +1803,7 @@ En vez de 30-50 líneas de ensamblador para hacer lo mismo.
 - Time to market para aplicación típica de negocio: **12-18 meses → 4-6 meses**
 - Escasez de talento: Disminuyó porque más gente podía aprender FORTRAN que ensamblador
 
-**Tabla 2.2 — Curva de adopción de lenguajes de alto nivel (1960-1980)**
+**Tabla 2.2 - Curva de adopción de lenguajes de alto nivel (1960-1980)**
 
 | Año | % de proyectos nuevos en lenguajes de alto nivel | Lenguaje dominante | Evento clave |
 |-----|--------------------------------------------------|-------------------|--------------|
@@ -1875,7 +1886,7 @@ class BankAccount {
 - Costo de mantenimiento: **40-50% más bajo** a 5 años
 
 **Resistencia inicial (déjà vu):**
-- "OOP es ineficiente—demasiado overhead de objetos"
+- "OOP es ineficiente - demasiado overhead de objetos"
 - "C es suficientemente bueno, ¿por qué complicar?"
 - "Los programadores buenos no necesitan OOP"
 
@@ -1977,7 +1988,7 @@ function UserList({ users }) {
 **Costo de migración:** $4M (12 meses de trabajo de 25 ingenieros)
 **ROI a 3 años:** Ahorro de $18M en costos de desarrollo
 
-**Tabla 2.3 — Comparación histórica de paradigmas: productividad, calidad y costo**
+**Tabla 2.3 - Comparación histórica de paradigmas: productividad, calidad y costo**
 
 | Paradigma | Período pico | Líneas de código para feature típica | Tiempo de desarrollo | Defect rate (primera entrega) | Costo mantenimiento (5 años) | Nivel de abstracción |
 |-----------|-------------|--------------------------------------|---------------------|-------------------------------|------------------------------|---------------------|
@@ -2048,7 +2059,7 @@ Cada transición paradigmática siguió el mismo patrón sociológico en la indu
 - COBOL hoy: Empresas pagan $150-200/hora por programadores COBOL porque es legacy crítico pero nadie nuevo lo aprende
 - Assembly hoy: Solo nichos específicos (embedded systems, drivers)
 
-**Tabla 2.4 — Curva de adopción de paradigmas: de la invención al dominio**
+**Tabla 2.4 - Curva de adopción de paradigmas: de la invención al dominio**
 
 | Fase | Duración típica | Adopción del mercado | Actitud predominante | Señales observables |
 |------|----------------|---------------------|---------------------|---------------------|
@@ -2100,7 +2111,7 @@ Aplicando el patrón histórico al momento actual:
 
 Basado en patrones históricos: **12-24 meses** antes de que la ventana de "early adopter advantage" se cierre.
 
-Después de eso, no ganarás ventaja—solo evitarás desventaja.
+Después de eso, no ganarás ventaja - solo evitarás desventaja.
 
 ---
 
@@ -2119,7 +2130,7 @@ Pero hay factores que hacen esta transición única:
 
 **IA Agéntica:**
 - Predicción: 5-7 años (2020-2027)
-- ¿Por qué más rápido? Adopción impulsada por cloud (distribución instantánea), tools como plugins, y el hecho de que NO requiere reescribir código legacy—solo cambiar cómo escribes código nuevo
+- ¿Por qué más rápido? Adopción impulsada por cloud (distribución instantánea), tools como plugins, y el hecho de que NO requiere reescribir código legacy - solo cambiar cómo escribes código nuevo
 
 ### Diferencia 2: Barrera de Entrada Más Baja
 
@@ -2132,7 +2143,7 @@ Pero hay factores que hacen esta transición única:
 **Para adoptar IA agéntica en 2025:**
 - Comprar licencias ($20-100/dev/mes)
 - Training de 2-4 semanas
-- NO requiere reescribir nada—solo cambia cómo escribes código nuevo
+- NO requiere reescribir nada - solo cambia cómo escribes código nuevo
 - Costo: $10K-50K para organización mediana
 
 **Implicación:** La barrera baja significa que tus competidores pueden adoptar más rápido de lo que piensas.
@@ -2193,7 +2204,7 @@ Como líder, tienes que decidir: ¿Adoptas IA agéntica ahora (2025-2026) o espe
 - El equipo rechaza todo lo que huele a "hype"
 - **Estrategia:** Empieza con piloto de 3-5 voluntarios early adopters, demuestra resultados, luego expande. NO forces adoption top-down.
 
-**Tabla 2.6 — Matriz de decision: ¿Cuando adoptar IA agentica en tu organizacion?**
+**Tabla 2.6 - Matriz de decision: ¿Cuando adoptar IA agentica en tu organizacion?**
 
 Instrucciones: Puntua cada factor de 1 (bajo) a 5 (alto). Multiplica por el peso indicado. Suma el total.
 
@@ -2250,7 +2261,7 @@ Cada paradigma redefinió qué significa "ser programador". El paradigma agénti
 - Orquesta a músicos (IA agents) para ejecutar esa visión
 - Valor está en la visión, la coordinación, y la validación
 
-**Tabla 2.5 — Evolucion del rol del desarrollador a traves de los paradigmas**
+**Tabla 2.5 - Evolucion del rol del desarrollador a traves de los paradigmas**
 
 | Dimension | Paradigma Procedural (1970s-90s) | Paradigma OOP (1990s-2010s) | Paradigma Declarativo (2010s-2020s) | Paradigma Agentico (2020s+) |
 |-----------|--------------------------------|---------------------------|-----------------------------------|---------------------------|
@@ -2381,7 +2392,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 4. **El rol del desarrollador evoluciona, no desaparece:** De traductor de lógica a sintaxis → a arquitecto de intenciones y validador de soluciones.
 
-5. **No es solo tech—es estrategia de negocio:** Organizaciones que adoptaron paradigmas emergentes temprano ganaron años de ventaja competitiva.
+5. **No es solo tech - es estrategia de negocio:** Organizaciones que adoptaron paradigmas emergentes temprano ganaron años de ventaja competitiva.
 
 6. **La barrera de entrada es baja:** No requiere reescribir código legacy. Costo: $20-100/dev/mes. No hay excusa para no pilotar.
 
@@ -2602,7 +2613,7 @@ Este es el **bucle agéntico**: Percibir → Razonar → Actuar → Aprender →
 
 **Total:** 1 input inicial + 1 confirmación final, ~15 minutos de ejecución del agente, ~2 minutos de tu tiempo
 
-**Diferencia clave:** El agente manejó errores, iteró sobre soluciones, ejecutó comandos, verificó que todo funciona—sin que tuvieras que intervenir en cada paso.
+**Diferencia clave:** El agente manejó errores, iteró sobre soluciones, ejecutó comandos, verificó que todo funciona - sin que tuvieras que intervenir en cada paso.
 
 ---
 
@@ -2639,7 +2650,7 @@ Para que un sistema sea verdaderamente "agéntico", necesita cuatro componentes 
 - Navega web (buscar documentación, scrape data)
 
 **Analogía:**
-- Son las "manos y piernas" del agente—su capacidad de acción física
+- Son las "manos y piernas" del agente - su capacidad de acción física
 
 **Framework de decisión para líderes:**
 
@@ -2784,7 +2795,7 @@ Para líderes que necesitan explicar esto a stakeholders no técnicos:
 **Lo que NO podías hacer:**
 - Darle acceso a una calculadora para que haga el cálculo exacto
 
-**Resultado:** Los modelos estaban limitados a "conocimiento en sus pesos"—solo sabían lo que aprendieron durante entrenamiento. No podían acceder a información actualizada, ejecutar código, o usar herramientas.
+**Resultado:** Los modelos estaban limitados a "conocimiento en sus pesos" - solo sabían lo que aprendieron durante entrenamiento. No podían acceder a información actualizada, ejecutar código, o usar herramientas.
 
 ### Después de Function Calling (2023+)
 
@@ -3037,7 +3048,7 @@ Según estudios de 2025:
 **Ejemplo de falla:**
 - Le pides a un agente de código: "Refactoriza esta clase para mejor mantenibilidad"
 - El agente puede hacer refactors superficiales (rename variables, extract methods)
-- Pero NO puede decidir si deberías cambiar de patrón Observer a Event Sourcing—esa decisión requiere entender trade-offs arquitectónicos profundos que solo un senior engineer puede hacer
+- Pero NO puede decidir si deberías cambiar de patrón Observer a Event Sourcing - esa decisión requiere entender trade-offs arquitectónicos profundos que solo un senior engineer puede hacer
 
 ### Limitación 2: Contexto Limitado
 
@@ -3167,7 +3178,7 @@ Usa esta matriz de decisión:
 
 📊 **Puntos clave para comunicar a executives:**
 
-*"IA agéntica no es solo 'IA más inteligente'—es un cambio fundamental en cómo el software opera. Pasamos de herramientas que responden a compañeros de trabajo digitales que actúan.*
+*"IA agéntica no es solo 'IA más inteligente' - es un cambio fundamental en cómo el software opera. Pasamos de herramientas que responden a compañeros de trabajo digitales que actúan.*
 
 *Gartner predice que 40% de nuestras aplicaciones empresariales integrarán agentes para finales de 2026. Pero también advierte que 40% de proyectos de IA agéntica serán cancelados por falta de estrategia.*
 
@@ -3187,11 +3198,11 @@ Usa esta matriz de decisión:
 
 3. **Adopción acelerada pero con riesgos**: 8x crecimiento predicho en 12 meses, pero 40% de proyectos fallarán
 
-4. **Use cases validados**: Automatización de procesos, análisis de datos, customer support, desarrollo de software—todos con ROI medible
+4. **Use cases validados**: Automatización de procesos, análisis de datos, customer support, desarrollo de software - todos con ROI medible
 
 5. **Limitaciones reales**: Razonamiento limitado en problemas complejos, contexto limitado, no aprenden permanentemente
 
-6. **Riesgos gestionables**: Security, acciones destructivas, costos escalados—todos mitigables con guardrails
+6. **Riesgos gestionables**: Security, acciones destructivas, costos escalados - todos mitigables con guardrails
 
 7. **Framework de evaluación**: Usa la matriz de 8 preguntas para decidir si un problema es bueno para IA agéntica
 
@@ -3235,7 +3246,7 @@ Usa esta matriz de decisión:
 
 **Palabras:** ~9,100
 **Páginas estimadas:** ~18
-**Siguiente:** [Capítulo 4: La Evolución Técnica Hacia la IA Agéntica](04_evolucion_tecnica.md)
+**Siguiente:** [Capítulo 8: La Evolución Técnica Hacia la IA Agéntica](04_evolucion_tecnica.md)
 
 
 # La Evolución Técnica Hacia la IA Agéntica en Ingeniería
@@ -3283,9 +3294,9 @@ Antes de entrar en las 3 olas, es útil situar dónde está su organización en 
 
 > **Para tu próxima reunión de liderazgo**
 >
-> Use este mapa para situar a su organización: **la mayoría de empresas en 2025 están entre "Copilots" y "Agentes"**. Si su equipo aún no ha consolidado Copilots (Ola 2), no salte directamente a Agentes (Ola 3)—consolide primero. Si ya tiene Copilots maduros, el siguiente paso es pilotar agentes en tareas controladas.
+> Use este mapa para situar a su organización: **la mayoría de empresas en 2025 están entre "Copilots" y "Agentes"**. Si su equipo aún no ha consolidado Copilots (Ola 2), no salte directamente a Agentes (Ola 3) - consolide primero. Si ya tiene Copilots maduros, el siguiente paso es pilotar agentes en tareas controladas.
 >
-> El salto a "Multi-Agente" requiere governance madura (ver Capítulo 14) y equipos preparados para supervisar sistemas autónomos (ver Capítulo 12).
+> El salto a "Multi-Agente" requiere governance madura (ver Capítulo 15) y equipos preparados para supervisar sistemas autónomos (ver Capítulo 12).
 
 ---
 
@@ -3416,7 +3427,7 @@ GitHub anunció Copilot: "Your AI pair programmer".
 
 **Demo famosa que viralizó Copilot:**
 
-El desarrollador escribía un comentario describiendo lo que necesitaba —"función para extraer todos los enlaces de una página web"— y Copilot generaba automáticamente las 8-10 líneas de código necesarias para hacerlo: conectarse a la página, analizarla, y devolver la lista de enlaces. Todo en segundos, sin que el desarrollador escribiera una sola línea de lógica. La demostración se volvió viral porque mostraba algo que parecía ciencia ficción: describir una intención en lenguaje natural y obtener código funcional al instante.
+El desarrollador escribía un comentario describiendo lo que necesitaba  - "función para extraer todos los enlaces de una página web" -  y Copilot generaba automáticamente las 8-10 líneas de código necesarias para hacerlo: conectarse a la página, analizarla, y devolver la lista de enlaces. Todo en segundos, sin que el desarrollador escribiera una sola línea de lógica. La demostración se volvió viral porque mostraba algo que parecía ciencia ficción: describir una intención en lenguaje natural y obtener código funcional al instante.
 
 **Reacción de la industria:**
 - Asombro: "Esto es magia"
@@ -4045,7 +4056,7 @@ No todas las organizaciones deben estar en Ola 3. Usa esta guía:
 
 **Palabras:** ~13,100
 **Páginas estimadas:** ~26
-**Siguiente:** [Capítulo 5: El Ecosistema de Herramientas Agénticas](05_ecosistema_herramientas.md)
+**Siguiente:** [Capítulo 9: El Ecosistema de Herramientas Agénticas](05_ecosistema_herramientas.md)
 
 
 # El Ecosistema de Herramientas Agénticas - Guía de Selección para Líderes
@@ -4065,7 +4076,7 @@ Cuando Brian Armstrong, CEO de Coinbase, anunció en enero de 2024 que habían c
 
 El ecosistema de herramientas agénticas para desarrollo de software ha experimentado un crecimiento explosivo. En 2020, las opciones se limitaban a experimentos académicos y el entonces naciente GitHub Copilot. Para 2025, existen más de 150 productos comerciales y 300+ proyectos open source compitiendo por la atención de CTOs y VPs de Ingeniería.
 
-Este capítulo no es un catálogo exhaustivo —eso sería obsoleto antes de imprimirse— sino una **guía estratégica para tomar decisiones informadas**. Presentaremos:
+Este capítulo no es un catálogo exhaustivo  - eso sería obsoleto antes de imprimirse -  sino una **guía estratégica para tomar decisiones informadas**. Presentaremos:
 
 1. **Las cuatro capas del ecosistema** y cómo se relacionan
 2. **Comparativa de las 20 herramientas más relevantes** con datos verificables
@@ -4919,7 +4930,7 @@ El CFO preguntará: "¿Y si la productividad no es 35%, sino 15%? ¿Y si los cos
 | **Base (reportado)** | 35% | $67K | $2.8M | 4,053% | 9 días |
 | **Optimista** | 50% | $67K | $3.9M | 5,730% | 6 días |
 
-**Conclusión crítica:** Incluso en el escenario pesimista—15% de ganancia con 50% más de inversión—el ROI sigue siendo 875%. La matemática funciona en prácticamente cualquier escenario razonable. El verdadero riesgo no es que falle: es esperar 12 meses mientras competidores capturan esa ventaja.
+**Conclusión crítica:** Incluso en el escenario pesimista - 15% de ganancia con 50% más de inversión - el ROI sigue siendo 875%. La matemática funciona en prácticamente cualquier escenario razonable. El verdadero riesgo no es que falle: es esperar 12 meses mientras competidores capturan esa ventaja.
 
 > **Para tu próxima reunión de liderazgo**
 >
@@ -5731,7 +5742,7 @@ El CTO había estado experimentando personalmente con GitHub Copilot y Cursor po
 **ROI Proyectado (estimación conservadora para Board):**
 - Costo: $150K Year 1
 - Ganancia: 40% de 25 devs = 10 devs equivalentes = $1.2M en salarios evitados
-- **ROI proyectado: 700%** (solo contando salary avoidance; el ROI real resultó ser 1,725% al incluir todos los beneficios—ver Sección 3)
+- **ROI proyectado: 700%** (solo contando salary avoidance; el ROI real resultó ser 1,725% al incluir todos los beneficios - ver Sección 3)
 
 ### 2. El Proceso de Convencimiento (Marzo-Abril 2024)
 
@@ -7043,7 +7054,7 @@ A los 12 VPs y CTOs de Fortune 500 que compartieron sus experiencias bajo condic
 
 **Los resultados:** MVP en 6 semanas (vs. 6 meses estimados), 1M de usuarios en 18 meses, equipo de solo 15 personas (vs. 50+ proyectados), y levantamiento de Serie A de $12M con métricas de eficiencia que impresionaron a VCs top-tier.
 
-**La lección:** Para startups early-stage con recursos limitados, IA agéntica no es una ventaja competitiva opcional—es la diferencia entre competir y desaparecer.
+**La lección:** Para startups early-stage con recursos limitados, IA agéntica no es una ventaja competitiva opcional - es la diferencia entre competir y desaparecer.
 
 ---
 
@@ -7851,7 +7862,7 @@ NexaFlow desarrolló este framework de 3 preguntas para decidir cuándo usar IA 
 
 ## Conclusión: La Nueva Ecuación de Competitividad
 
-El caso de NexaFlow no es excepcional—es el futuro estándar de startups tecnológicas en 2025-2026.
+El caso de NexaFlow no es excepcional - es el futuro estándar de startups tecnológicas en 2025-2026.
 
 **La ecuación tradicional de startups SaaS:**
 ```
@@ -7909,7 +7920,7 @@ Porque en startups, 6 meses de ventaja pueden ser la diferencia entre liderar un
 **Frameworks descargables:**
 
 - Checklist de AI-readiness para startups (ver Apéndice C de este libro)
-- Template de business case para CFOs (ver Capítulo 6)
+- Template de business case para CFOs (ver Capítulo 10)
 - Matriz de decisión AI-First vs. AI-Assisted (reproducir tabla de sección 5.3)
 
 ---
@@ -7934,7 +7945,7 @@ Porque en startups, 6 meses de ventaja pueden ser la diferencia entre liderar un
 
 **Los resultados:** En 24 meses, lograron documentar 30% del código legacy, reducir el onboarding de developers de 9 meses a 3, y lanzar su primera app mobile-first en 4 meses (vs. 18 meses históricos). Pero el camino estuvo plagado de fracasos, resistencia, y un proyecto piloto que casi termina con el despido del CTO.
 
-**La lección:** En organizaciones tradicionales, la transformación con IA no es un problema técnico—es un problema político, cultural, y de gestión del cambio. El éxito requiere paciencia estratégica, no revolución.
+**La lección:** En organizaciones tradicionales, la transformación con IA no es un problema técnico - es un problema político, cultural, y de gestión del cambio. El éxito requiere paciencia estratégica, no revolución.
 
 ---
 
@@ -8015,7 +8026,7 @@ Después de auditar el departamento de TI, identificó 5 problemas críticos:
 
 **El dilema de Patricia:**
 
-Sabía que IA agéntica podría resolver los problemas técnicos (documentar legacy, acelerar desarrollo, reducir onboarding). Pero el 80% del desafío no era técnico—era político y cultural.
+Sabía que IA agéntica podría resolver los problemas técnicos (documentar legacy, acelerar desarrollo, reducir onboarding). Pero el 80% del desafío no era técnico - era político y cultural.
 
 > **Para tu próxima reunión de liderazgo:**
 >
@@ -8062,7 +8073,7 @@ En una conferencia de fintech, Patricia habló con el CTO de BancoÁgil off-the-
 
 **La revelación:**
 
-Continental tenía **15x más ingenieros** que BancoÁgil pero producía **6x menos features**. BancoÁgil no ganaba por talento superior—ganaba por **herramientas superiores + cultura ágil**.
+Continental tenía **15x más ingenieros** que BancoÁgil pero producía **6x menos features**. BancoÁgil no ganaba por talento superior - ganaba por **herramientas superiores + cultura ágil**.
 
 ---
 
@@ -8135,7 +8146,7 @@ Antes de lanzar el piloto, Patricia necesitaba buy-in del sindicato. Esto fue m�
 
 3. **Upskilling masivo:**
    - Compromiso de invertir $1M en training para todo el equipo
-   - Crear "AI Champions" internos—developers que se especializarían en supervisar IA
+   - Crear "AI Champions" internos - developers que se especializarían en supervisar IA
 
 4. **Prioridad a employabilidad:**
    - "Si no adoptamos IA, en 5 años Continental cerrará o será adquirido por un competidor. Entonces sí perderán todos los empleos."
@@ -8354,7 +8365,7 @@ Post-mortem reveló 3 factores:
 
 **Aprendizajes clave:**
 
-Patricia reportó al board: "Ganamos 8%, no 50%. Pero aprendimos que el problema no es la tecnología—es nuestro proceso. Si adoptamos Agile + IA, proyectamos 40-50% de mejora."
+Patricia reportó al board: "Ganamos 8%, no 50%. Pero aprendimos que el problema no es la tecnología - es nuestro proceso. Si adoptamos Agile + IA, proyectamos 40-50% de mejora."
 
 ### 3.4 Fase 3: El Proyecto que Casi Falla (Meses 9-12)
 
@@ -8459,7 +8470,7 @@ Bugs aumentaron 18%. Root cause analysis mostró:
 
 **El proyecto:**
 
-Lanzar "Continental Go"—app mobile para clientes jóvenes con UX moderna (competidor directo de neobancos).
+Lanzar "Continental Go" - app mobile para clientes jóvenes con UX moderna (competidor directo de neobancos).
 
 **Equipo:**
 - 15 developers (80% usando IA)
@@ -8499,7 +8510,7 @@ Lanzar "Continental Go"—app mobile para clientes jóvenes con UX moderna (comp
 
 El CEO presentó Continental Go en la conferencia anual del sector bancario local. Quote:
 
-"Por primera vez en 80 años, lanzamos un producto digital más rápido que nuestros competidores fintech. La IA no reemplazó a nuestros ingenieros—los hizo imparables."
+"Por primera vez en 80 años, lanzamos un producto digital más rápido que nuestros competidores fintech. La IA no reemplazó a nuestros ingenieros - los hizo imparables."
 
 Este momento marcó el cambio de narrativa interna: De "IA es un riesgo" a "IA es una ventaja competitiva."
 
@@ -8546,7 +8557,7 @@ El primer año fue inversión pura (training, herramientas, incident recovery). 
 
 **Comparación con neobancos:**
 
-Post-transformación, Continental seguía siendo 3x más lento que BancoÁgil en lanzar productos. Pero redujo la brecha de 6x a 3x—suficiente para competir.
+Post-transformación, Continental seguía siendo 3x más lento que BancoÁgil en lanzar productos. Pero redujo la brecha de 6x a 3x - suficiente para competir.
 
 ### 4.2 Impacto en Cultura Organizacional
 
@@ -8600,7 +8611,7 @@ No todo fue éxito. Patricia documentó 3 failures significativos:
 
 **Lección clave:**
 
-Patricia en retrospectiva: "El 40-50% de nuestros experimentos con IA fallaron. Pero eso es saludable—significa que estábamos pusheando los límites. El problema sería si el 100% hubiera tenido éxito, significaría que no éramos lo suficientemente ambiciosos."
+Patricia en retrospectiva: "El 40-50% de nuestros experimentos con IA fallaron. Pero eso es saludable - significa que estábamos pusheando los límites. El problema sería si el 100% hubiera tenido éxito, significaría que no éramos lo suficientemente ambiciosos."
 
 ### 4.4 Impacto en Relación con Reguladores
 
@@ -8659,7 +8670,7 @@ Patricia identificó allies early (el board member ex-fintech, 2 engineering man
 
 **El error de muchos CTOs:**
 
-Intentan un "big bang transformation"—cambiar todo de una vez. En organizaciones tradicionales, esto genera resistencia masiva.
+Intentan un "big bang transformation" - cambiar todo de una vez. En organizaciones tradicionales, esto genera resistencia masiva.
 
 **La estrategia de Patricia: "Ganar batallas pequeñas primero"**
 
@@ -8709,7 +8720,7 @@ Patricia negoció con CFO un presupuesto separado de $500K/año para experiments
 
 **El "AI Champions Program":**
 
-Patricia creó un programa interno donde 20 developers se certificaban como "AI Champions"—expertos en uso de IA que ayudaban a otros.
+Patricia creó un programa interno donde 20 developers se certificaban como "AI Champions" - expertos en uso de IA que ayudaban a otros.
 
 Beneficios:
 - Reconocimiento público (badges, mención en newsletter interno)
@@ -8789,11 +8800,11 @@ Patricia diseñó un framework de 3 fases que puede aplicarse a cualquier organi
 
 1. **La transformación en organizaciones tradicionales es 80% política y 20% tecnología.** Banco Continental invirtió más tiempo en gestión de stakeholders (sindicato, reguladores, board) que en selección de herramientas. Sin buy-in político, la mejor tecnología fracasa.
 
-2. **El modelo Crawl-Walk-Run no es opcional en empresas reguladas—es supervivencia.** Intentar un "big bang" en una organización con décadas de cultura establecida genera resistencia masiva. Las victorias incrementales construyen credibilidad y momentum.
+2. **El modelo Crawl-Walk-Run no es opcional en empresas reguladas - es supervivencia.** Intentar un "big bang" en una organización con décadas de cultura establecida genera resistencia masiva. Las victorias incrementales construyen credibilidad y momentum.
 
 3. **El "no-layoff guarantee" es inversión, no costo.** Continental garantizó empleo por 36 meses y a cambio obtuvo cooperación sindical, reducción de sabotaje interno, y adopción genuina. El costo de rotación habría sido 3x mayor.
 
-4. **Compliance-first no ralentiza—protege.** Diseñar sistemas de IA con gobernanza desde el día 1 evitó incidentes regulatorios que habrían costado meses de retraso y millones en multas.
+4. **Compliance-first no ralentiza - protege.** Diseñar sistemas de IA con gobernanza desde el día 1 evitó incidentes regulatorios que habrían costado meses de retraso y millones en multas.
 
 5. **Los KPIs deben evolucionar con la transformación.** Medir "líneas de código" en un equipo AI-augmented es como medir productividad de un piloto por cuántas veces mueve el timón. Continental rediseñó métricas hacia impacto de negocio, y eso cambió comportamientos.
 
@@ -8832,7 +8843,7 @@ Realiza un mapeo de stakeholders de tu organización usando la matriz poder vs. 
 
 El caso de Banco Continental enseña una lección crítica para líderes en organizaciones tradicionales:
 
-**Transformación con IA no se trata de comprar las mejores herramientas—se trata de cambiar cultura, gestionar política, y construir momentum gradualmente.**
+**Transformación con IA no se trata de comprar las mejores herramientas - se trata de cambiar cultura, gestionar política, y construir momentum gradualmente.**
 
 **Las 3 trampas mortales en organizaciones tradicionales:**
 
@@ -8850,7 +8861,7 @@ El caso de Banco Continental enseña una lección crítica para líderes en orga
 
 **El mensaje final de Patricia Rojas (en su presentación de Mes 24):**
 
-"Hace 24 meses, éramos un banco de 80 años con 520 developers compitiendo contra fintechs de 30 personas. Hoy, seguimos siendo un banco de 80 años, pero nuestros 520 developers tienen el output de 800. No ganamos reemplazando humanos con IA—ganamos multiplicando lo que nuestros humanos pueden lograr.
+"Hace 24 meses, éramos un banco de 80 años con 520 developers compitiendo contra fintechs de 30 personas. Hoy, seguimos siendo un banco de 80 años, pero nuestros 520 developers tienen el output de 800. No ganamos reemplazando humanos con IA - ganamos multiplicando lo que nuestros humanos pueden lograr.
 
 La pregunta no es si tu organización tradicional debe adoptar IA. La pregunta es: ¿Puedes sobrevivir si no lo haces?"
 
@@ -8943,13 +8954,13 @@ La propuesta inicial fue controversial. El VP de Producto argumentó que "los de
 María presentó un business case basado en tres pilares:
 
 1. **Velocidad competitiva:** Con equipos híbridos, TechForward podría competir en velocidad de innovación con empresas 5x más grandes.
-2. **Costo-efectividad:** Contratar 10 desarrolladores adicionales costaría ~$800K USD/año (incluyendo salarios, beneficios, y overhead). Escalar con agentes de IA costaría ~$150K USD/año en APIs y licencias—una fracción del costo.
+2. **Costo-efectividad:** Contratar 10 desarrolladores adicionales costaría ~$800K USD/año (incluyendo salarios, beneficios, y overhead). Escalar con agentes de IA costaría ~$150K USD/año en APIs y licencias - una fracción del costo.
 3. **Atracción de talento:** Los mejores ingenieros querían trabajar en empresas a la vanguardia tecnológica. Posicionarse como pioneros en equipos híbridos sería una ventaja competitiva en reclutamiento.
 
 El board aprobó un **piloto de 6 meses** con un equipo: el equipo de Plataforma (4 desarrolladores). Presupuesto: $30K USD adicionales para herramientas de IA y consultores externos.
 
 > **Para tu próxima reunión de liderazgo:**
-> Cuando propongas reorganizaciones radicales como equipos híbridos, ancla la discusión en tres ejes: velocidad de negocio, costo vs. alternativas (no costo absoluto), y ventaja competitiva en talento. Evita presentarlo como "IA reemplaza a humanos"—posiciónalo como "humanos en roles de mayor impacto, orquestando IA".
+> Cuando propongas reorganizaciones radicales como equipos híbridos, ancla la discusión en tres ejes: velocidad de negocio, costo vs. alternativas (no costo absoluto), y ventaja competitiva en talento. Evita presentarlo como "IA reemplaza a humanos" - posiciónalo como "humanos en roles de mayor impacto, orquestando IA".
 
 ---
 
@@ -9108,7 +9119,7 @@ Al finalizar el planning, el Orquestador configura las tareas en el dashboard de
 **10:00 AM - Estado del trabajo**
 
 El Orquestador revisa el dashboard:
-- ✅ **Agente Codificador** completó el endpoint de export (generó 320 líneas de código en 2 horas de "trabajo" —en realidad, 15 minutos de ejecución distribuidos en ventanas de API)
+- ✅ **Agente Codificador** completó el endpoint de export (generó 320 líneas de código en 2 horas de "trabajo"  - en realidad, 15 minutos de ejecución distribuidos en ventanas de API)
 - ✅ **Agente de Tests** escribió 8 de 10 unit tests
 - ⚠️ **Agente Codificador** está estancado en el front-end: no sabe cómo integrar con el sistema de permisos existente (necesita contexto que no está en su prompt)
 
@@ -9144,7 +9155,7 @@ El equipo no hace stand-ups con los agentes (sería absurdo). En cambio, el **Or
 
 - **Arquitecto:** "Voy a revisar el tema de OAuth. Necesito 1 hora para definir estrategia de migración gradual."
 
-- **Revisor:** "Tengo 3 PRs pendientes de agentes. Revisaré hoy. Detecté un patrón: los agentes generan código correcto pero no siempre consideran backwards compatibility—voy a actualizar el prompt template para incluir esa verificación."
+- **Revisor:** "Tengo 3 PRs pendientes de agentes. Revisaré hoy. Detecté un patrón: los agentes generan código correcto pero no siempre consideran backwards compatibility - voy a actualizar el prompt template para incluir esa verificación."
 
 **Hallazgo cultural importante:** Los stand-ups se volvieron más estratégicos y menos sobre "qué hice ayer". Los humanos discuten problemas complejos y mejoras de proceso, no tareas rutinarias.
 
@@ -9174,7 +9185,7 @@ El equipo presenta:
 
 **Product Manager:** "Increíble velocidad. Normalmente estas features nos tomarían 2 sprints. ¿Cómo garantizamos la calidad?"
 
-**Revisor de Calidad:** "Todo el código generado pasa por mi review. Además, los agentes escriben más tests que los humanos—no se cansan de casos edge. Hemos tenido 1 bug menor en staging en 3 meses, vs. 4-5 bugs menores por sprint antes del piloto."
+**Revisor de Calidad:** "Todo el código generado pasa por mi review. Además, los agentes escriben más tests que los humanos - no se cansan de casos edge. Hemos tenido 1 bug menor en staging en 3 meses, vs. 4-5 bugs menores por sprint antes del piloto."
 
 **3:00 PM - Retrospectiva del Equipo (solo humanos)**
 
@@ -9182,7 +9193,7 @@ El equipo reflexiona sobre el sprint:
 
 **Lo que funcionó bien:**
 - Los agentes son especialmente buenos en tareas bien definidas (endpoints CRUD, tests, docs)
-- El dashboard de agentes da visibilidad en tiempo real—mejor que antes
+- El dashboard de agentes da visibilidad en tiempo real - mejor que antes
 - Los humanos pueden enfocarse en problemas complejos sin distraerse con tareas rutinarias
 
 **Lo que necesita mejorar:**
@@ -9230,7 +9241,7 @@ El equipo realizó un post-mortem profundo:
    - El Revisor de Calidad asumió que los tests pasando = código seguro
 
 3. **Cambios implementados:**
-   - **Crearon un "risk score" para tareas:** Código de facturación, autenticación, y pagos tiene score "Alto"—requiere aprobación del Arquitecto además del Revisor
+   - **Crearon un "risk score" para tareas:** Código de facturación, autenticación, y pagos tiene score "Alto" - requiere aprobación del Arquitecto además del Revisor
    - **Mejoraron los prompts:** Todos los agentes ahora tienen instrucción explícita: "Si tocas código relacionado con dinero, permisos, o datos sensibles, solicita review adicional de humano"
    - **Expandieron test coverage:** Contrataron a un QA Engineer (humano) para diseñar estrategias de testing que los agentes luego implementan
 
@@ -9258,7 +9269,7 @@ El problema era una "carga cognitiva de supervisión" excesiva:
 
 2. **Horarios de operación de agentes:** Los agentes ahora solo "trabajan" de lunes a viernes, 9 AM - 6 PM (hora del equipo). Esto permite a Javier desconectarse sin preocupación.
 
-3. **Automatización de decisiones simples:** Implementaron un sistema de "auto-aprobación" para tareas de bajo riesgo (ej: updates de documentación, refactorings menores en código non-crítico)—el agente puede mergear sin aprobación humana si pasa todos los tests y linters.
+3. **Automatización de decisiones simples:** Implementaron un sistema de "auto-aprobación" para tareas de bajo riesgo (ej: updates de documentación, refactorings menores en código non-crítico) - el agente puede mergear sin aprobación humana si pasa todos los tests y linters.
 
 4. **Contrataron un segundo Orquestador** para compartir la carga (costo adicional, pero necesario).
 
@@ -9280,7 +9291,7 @@ El equipo enfrentó una situación incómoda: ¿Cómo evaluar y compensar a inge
 **Tensión específica:**
 
 El **Revisor de Calidad** (Andrés) se sentía poco valorado:
-> "Yo reviso 50-60 PRs al mes de agentes. Es trabajo crítico—detecto bugs que podrían costar miles de dólares. Pero en la métrica de 'líneas de código escritas', aparezco con casi cero. ¿Cómo se mide mi impacto?"
+> "Yo reviso 50-60 PRs al mes de agentes. Es trabajo crítico - detecto bugs que podrían costar miles de dólares. Pero en la métrica de 'líneas de código escritas', aparezco con casi cero. ¿Cómo se mide mi impacto?"
 
 Por otro lado, el **Arquitecto** (Carolina) sentía lo opuesto:
 > "Diseñé la arquitectura de 8 features mayores este trimestre. Eso habilitó que los agentes las ejecutaran rápidamente. Pero cuando el CEO celebra 'lanzamos X feature', no queda claro que fue mi diseño lo que lo hizo posible."
@@ -9298,7 +9309,7 @@ TechForward rediseñó su framework de evaluación:
 **Reconocimiento público:**
 
 - En el all-hands mensual, el CEO empezó a reconocer **"quién diseñó"** y **"quién aseguró calidad"** de features mayores, no solo "quién la construyó".
-- Ejemplo: "Esta feature de export CSV fue diseñada por Carolina, implementada por nuestros agentes, y validada por Andrés—es un ejemplo perfecto de nuestro modelo híbrido."
+- Ejemplo: "Esta feature de export CSV fue diseñada por Carolina, implementada por nuestros agentes, y validada por Andrés - es un ejemplo perfecto de nuestro modelo híbrido."
 
 **Lección crítica:** La cultura de reconocimiento debe evolucionar. En equipos híbridos, reconocer "autoría de código" es obsoleto. Reconoce juicio estratégico, calidad de decisiones, y habilitación de otros (humanos o agentes).
 
@@ -9326,7 +9337,7 @@ TechForward implementó un modelo de compensación que diferenciaba roles en equ
 **Comunicación transparente:**
 
 María explicó a toda la org:
-> "Los roles en equipos híbridos requieren skills diferentes y tienen mayor impacto de negocio. No es que sean 'mejores ingenieros'—son roles especializados. Todos tendrán oportunidad de transicionar a equipos híbridos si lo desean. Es una evolución de carrera, no una jerarquía."
+> "Los roles en equipos híbridos requieren skills diferentes y tienen mayor impacto de negocio. No es que sean 'mejores ingenieros' - son roles especializados. Todos tendrán oportunidad de transicionar a equipos híbridos si lo desean. Es una evolución de carrera, no una jerarquía."
 
 6 meses después, 2 ingenieros de equipos tradicionales solicitaron moverse a roles de equipo híbrido.
 
@@ -9426,7 +9437,7 @@ El incidente de facturación enseñó a TechForward que **los agentes necesitan 
 - **Rollback automatizado:** Si métricas de error suben >2x en producción → rollback automático
 
 > **Para tu próxima reunión de liderazgo:**
-> No lances agentes autónomos sin estos tres niveles de gobernanza. El riesgo no es que los agentes "fallen a veces"—eso es esperado. El riesgo es que fallen en código crítico sin detección rápida. Diseña asumiendo que los agentes cometerán errores.
+> No lances agentes autónomos sin estos tres niveles de gobernanza. El riesgo no es que los agentes "fallen a veces" - eso es esperado. El riesgo es que fallen en código crítico sin detección rápida. Diseña asumiendo que los agentes cometerán errores.
 
 ### Lección 5: El Futuro del "Equipo de Desarrollo"
 
@@ -9450,7 +9461,7 @@ Después de 12 meses, TechForward había transformado 3 de sus 4 equipos a model
 | **Costo por feature** | Baseline | 40-60% del baseline |
 
 **Proyección de María para 2030:**
-> "En 5 años, un 'equipo de desarrollo' de 10 personas en TechForward podrá competir en output con equipos de 100 personas de empresas que no adopten este modelo. No porque seamos más inteligentes—porque orquestaremos inteligencia artificial de forma más efectiva."
+> "En 5 años, un 'equipo de desarrollo' de 10 personas en TechForward podrá competir en output con equipos de 100 personas de empresas que no adopten este modelo. No porque seamos más inteligentes - porque orquestaremos inteligencia artificial de forma más efectiva."
 
 ### Lección 6: Preparando a Tu Organización para Equipos Híbridos
 
@@ -9518,9 +9529,9 @@ María, la CTO, lo resume así:
 
 **Para líderes técnicos considerando este camino:**
 
-Equipos híbridos no son ciencia ficción—son una extrapolación razonable de capacidades que ya existen hoy (2025) llevadas 18-24 meses adelante. La tecnología estará lista. La pregunta es: **¿estará lista tu organización?**
+Equipos híbridos no son ciencia ficción - son una extrapolación razonable de capacidades que ya existen hoy (2025) llevadas 18-24 meses adelante. La tecnología estará lista. La pregunta es: **¿estará lista tu organización?**
 
-Empieza con un piloto. Mide rigurosamente. Itera rápidamente. Y sobre todo: invierte tanto en la cultura y procesos humanos como en las herramientas de IA. Los equipos híbridos exitosos no son sobre reemplazar humanos—son sobre **humanos y agentes colaborando de formas nuevas**.
+Empieza con un piloto. Mide rigurosamente. Itera rápidamente. Y sobre todo: invierte tanto en la cultura y procesos humanos como en las herramientas de IA. Los equipos híbridos exitosos no son sobre reemplazar humanos - son sobre **humanos y agentes colaborando de formas nuevas**.
 
 ---
 
@@ -9528,13 +9539,13 @@ Empieza con un piloto. Mide rigurosamente. Itera rápidamente. Y sobre todo: inv
 
 ### Lo que debes recordar:
 
-1. **Los equipos híbridos no son ciencia ficción—son la extrapolación lógica de capacidades que ya existen.** TechForward Labs logró que agentes de IA generaran el 80% del código con humanos supervisando calidad y arquitectura. La tecnología para esto ya está disponible en 2025; lo que falta es el rediseño organizacional.
+1. **Los equipos híbridos no son ciencia ficción - son la extrapolación lógica de capacidades que ya existen.** TechForward Labs logró que agentes de IA generaran el 80% del código con humanos supervisando calidad y arquitectura. La tecnología para esto ya está disponible en 2025; lo que falta es el rediseño organizacional.
 
-2. **Nuevos roles requieren nuevas habilidades.** El "Orquestador de Agentes" necesita pensamiento sistémico, prompt engineering avanzado, y capacidad de supervisar múltiples flujos simultáneos. No todo ingeniero tiene este perfil—identificar y capacitar temprano es crítico.
+2. **Nuevos roles requieren nuevas habilidades.** El "Orquestador de Agentes" necesita pensamiento sistémico, prompt engineering avanzado, y capacidad de supervisar múltiples flujos simultáneos. No todo ingeniero tiene este perfil - identificar y capacitar temprano es crítico.
 
 3. **Las métricas tradicionales se vuelven irrelevantes.** Cuando un agente genera 10,000 líneas de código en una hora, medir "commits por día" pierde sentido. TechForward migró a métricas de impacto: features entregadas, tiempo-a-producción, y satisfacción del cliente.
 
-4. **El costo humano no desaparece—se transforma.** La inversión de $150K y 6 meses de experimentación con errores fue el precio real. La carga cognitiva del rol de Orquestador es alta y requiere rotación y soporte.
+4. **El costo humano no desaparece - se transforma.** La inversión de $150K y 6 meses de experimentación con errores fue el precio real. La carga cognitiva del rol de Orquestador es alta y requiere rotación y soporte.
 
 5. **La ventaja competitiva es temporal pero decisiva.** Equipos 3-4x más pequeños con output equivalente o superior cambian la economía del software. Quien llegue primero a este modelo tendrá 12-18 meses de ventaja antes de que se vuelva commodity.
 
@@ -9609,7 +9620,7 @@ Este caso de estudio es **ficticio y prospectivo**, proyectando tendencias actua
 ---
 
 > **Para tu próxima reunión de liderazgo:**
-> Usa este caso como punto de partida para una discusión estratégica: "Si esto es posible en 2026-2027, ¿qué deberíamos hacer HOY en 2025 para prepararnos?" No necesitas replicar exactamente el modelo de TechForward—adáptalo a tu contexto. Pero la pregunta fundamental permanece: ¿cómo evolucionamos de 'equipos que usan IA' a 'equipos híbridos de humanos orquestando IA'?
+> Usa este caso como punto de partida para una discusión estratégica: "Si esto es posible en 2026-2027, ¿qué deberíamos hacer HOY en 2025 para prepararnos?" No necesitas replicar exactamente el modelo de TechForward - adáptalo a tu contexto. Pero la pregunta fundamental permanece: ¿cómo evolucionamos de 'equipos que usan IA' a 'equipos híbridos de humanos orquestando IA'?
 
 ---
 
@@ -9627,10 +9638,10 @@ Este caso de estudio es **ficticio y prospectivo**, proyectando tendencias actua
 ## Resumen Ejecutivo
 
 - **El rol del líder técnico evoluciona** de "gestionar personas que escriben código" a "orquestar colaboración entre humanos y sistemas de IA", requiriendo nuevas competencias en prompt engineering, gestión de riesgos de IA, y comunicación de cambio organizacional.
-- **Emergen nuevos roles especializados** en equipos con IA: Entrenador de Agentes, Auditor de IA, Ingeniero de Prompts, y Revisor de Código Generado—roles que no existían hace 2 años pero que serán críticos para 2026-2027.
+- **Emergen nuevos roles especializados** en equipos con IA: Entrenador de Agentes, Auditor de IA, Ingeniero de Prompts, y Revisor de Código Generado - roles que no existían hace 2 años pero que serán críticos para 2026-2027.
 - **La gestión del cambio es tan importante como la tecnología:** Introducir IA sin pánico requiere comunicación transparente, planes de re-skilling claros, y posicionar la IA como "evolución de roles" en lugar de "reemplazo de personas".
 - **Las métricas tradicionales de productividad se vuelven obsoletas:** Medir "líneas de código" o "commits" pierde sentido cuando el 70-80% del código lo genera IA. Nuevas métricas deben enfocarse en impacto de negocio, calidad de decisiones, y velocidad de entrega de valor.
-- **La retención de talento depende de ofrecer evolución profesional:** Los mejores ingenieros quieren trabajar con IA de vanguardia—las empresas que no ofrezcan esto perderán talento ante competidores que sí lo hagan.
+- **La retención de talento depende de ofrecer evolución profesional:** Los mejores ingenieros quieren trabajar con IA de vanguardia - las empresas que no ofrezcan esto perderán talento ante competidores que sí lo hagan.
 
 ---
 
@@ -9976,7 +9987,7 @@ Resultado: 3 de los mejores ingenieros renunciaron en 2 meses. La moral del equi
 **Caso Real - Cómo SÍ hacerlo:**
 
 Una VPE en una fintech argentina convocó a su equipo y dijo:
-> "Quiero que experimentemos con IA agéntica. He reservado $20K de presupuesto y 20% del tiempo del equipo para los próximos 3 meses. Necesito voluntarios que quieran explorar esto. No hay presión—si no funciona, no pasa nada. Si funciona, ustedes serán los expertos que entrenen al resto."
+> "Quiero que experimentemos con IA agéntica. He reservado $20K de presupuesto y 20% del tiempo del equipo para los próximos 3 meses. Necesito voluntarios que quieran explorar esto. No hay presión - si no funciona, no pasa nada. Si funciona, ustedes serán los expertos que entrenen al resto."
 
 6 ingenieros se ofrecieron como voluntarios. Al cabo de 3 meses, habían aumentado su productividad 2.3x y estaban emocionados de compartir lo aprendido. El resto del equipo vio el éxito y pidió acceso a las herramientas.
 
@@ -10020,7 +10031,7 @@ Compensación:
 ```
 
 **El mensaje implícito aquí es:**
-> "Tu rol no desaparece—evoluciona hacia algo más estratégico y mejor pagado."
+> "Tu rol no desaparece - evoluciona hacia algo más estratégico y mejor pagado."
 
 #### Fase 3: Quick Wins Visibles
 
@@ -10100,7 +10111,7 @@ Esto mantiene al equipo informado, reduce rumores, y normaliza tanto éxitos com
 |---------------------|---------------------|
 | **Líneas de código escritas** | El 70-80% lo escribe IA. No refleja impacto humano. |
 | **Número de commits** | IA puede generar 50 commits/día. Métrica pierde significado. |
-| **PRs mergeados** | Similar—IA genera muchos PRs pequeños. |
+| **PRs mergeados** | Similar - IA genera muchos PRs pequeños. |
 | **Tiempo de resolución de tickets** | Si IA resuelve ticket en 2 horas, ¿es mérito del humano supervisor? |
 
 **El riesgo de métricas perversas:**
@@ -10238,7 +10249,7 @@ Antes de implementar cualquier métrica nueva, pregúntate:
 - [ ] **¿Puedo explicarla en 2 frases a un ingeniero?** (si es muy compleja, nadie la entenderá)
 
 > **Para tu próxima reunión de liderazgo:**
-> Rediseñar métricas de performance es una de las acciones más importantes al introducir IA. Hazlo mal y destruirás adopción de IA (los ingenieros harán lo que sea medido, no lo que genera valor). Involucra al equipo en diseñar las métricas—ellos saben qué es real vs. vanity metrics.
+> Rediseñar métricas de performance es una de las acciones más importantes al introducir IA. Hazlo mal y destruirás adopción de IA (los ingenieros harán lo que sea medido, no lo que genera valor). Involucra al equipo en diseñar las métricas - ellos saben qué es real vs. vanity metrics.
 
 ---
 
@@ -10270,7 +10281,7 @@ Si no se gestiona, esto lleva a:
 
 1. **En all-hands, celebra decisiones, no código:**
    - ❌ "El equipo escribió 20K líneas de código este mes"
-   - ✅ "Carolina tomó la decisión de migrar a microservicios—eso nos permite escalar 10x en Q4"
+   - ✅ "Carolina tomó la decisión de migrar a microservicios - eso nos permite escalar 10x en Q4"
 
 2. **Reconoce "salvadas" en code review:**
    - "Andrés detectó una vulnerabilidad en código de IA que habría causado data leak. Salvó a la empresa de un potencial incidente catastrófico."
@@ -10308,7 +10319,7 @@ OWNERSHIP FINAL:
 ```
 
 **Mensaje cultural:**
-> "Usas IA como un cirujano usa un bisturí láser. Si la cirugía sale bien, es tu habilidad. Si sale mal, no culpas al láser—analizas qué decisión humana falló."
+> "Usas IA como un cirujano usa un bisturí láser. Si la cirugía sale bien, es tu habilidad. Si sale mal, no culpas al láser - analizas qué decisión humana falló."
 
 #### Pilar 3: Colaboración Intra-Equipo (No Solo Humano-IA)
 
@@ -10517,7 +10528,7 @@ Cada ingeniero tiene presupuesto trimestral de **$500 USD** para:
 
 4. **Blog técnico público:**
    - Publicar learnings sobre uso de IA
-   - Esto atrae talento ("Vi tu blog post sobre prompts—quiero trabajar con ustedes")
+   - Esto atrae talento ("Vi tu blog post sobre prompts - quiero trabajar con ustedes")
 
 ### Red Flags: Cuándo los Ingenieros Se Van
 
@@ -10567,13 +10578,13 @@ Pero requiere valentía para experimentar, humildad para aprender junto a tu equ
 
 ### Lo que debes recordar:
 
-1. **El rol del líder técnico evoluciona de "mejor programador" a "mejor orquestador".** En la era agéntica, tu valor no está en escribir el mejor código sino en diseñar sistemas donde humanos e IA colaboren efectivamente. Las competencias de liderazgo (empatía, visión, comunicación) siguen siendo centrales—el contexto es lo que cambia.
+1. **El rol del líder técnico evoluciona de "mejor programador" a "mejor orquestador".** En la era agéntica, tu valor no está en escribir el mejor código sino en diseñar sistemas donde humanos e IA colaboren efectivamente. Las competencias de liderazgo (empatía, visión, comunicación) siguen siendo centrales - el contexto es lo que cambia.
 
 2. **Las métricas de performance deben rediseñarse antes de introducir IA, no después.** Si tu equipo sigue siendo evaluado por líneas de código cuando introduces agentes, crearás incentivos perversos. Migra a métricas de impacto de negocio (features entregadas, satisfacción del cliente, tiempo-a-valor) antes del primer piloto.
 
-3. **La retención de talento es tu mayor riesgo y tu mayor oportunidad.** Ingenieros top quieren trabajar con IA de vanguardia. Ofrecer experiencia en herramientas agénticas, roles nuevos como Orquestador de Agentes, y career paths claros en contexto de IA es tu mejor estrategia de retención—y reclutamiento.
+3. **La retención de talento es tu mayor riesgo y tu mayor oportunidad.** Ingenieros top quieren trabajar con IA de vanguardia. Ofrecer experiencia en herramientas agénticas, roles nuevos como Orquestador de Agentes, y career paths claros en contexto de IA es tu mejor estrategia de retención - y reclutamiento.
 
-4. **La comunicación continua no es opcional—es infraestructura.** Un anuncio único de "vamos a usar IA" genera ansiedad. Un plan de comunicación de 12 meses con actualizaciones mensuales, espacios de preguntas, y celebración de victorias construye confianza y adopción genuina.
+4. **La comunicación continua no es opcional - es infraestructura.** Un anuncio único de "vamos a usar IA" genera ansiedad. Un plan de comunicación de 12 meses con actualizaciones mensuales, espacios de preguntas, y celebración de victorias construye confianza y adopción genuina.
 
 5. **Puedes 10x el impacto de tu equipo sin 10x el headcount.** Esta es la promesa central de la IA agéntica para líderes. Pero requiere valentía para experimentar, humildad para aprender junto al equipo, y disciplina para gestionar el cambio cultural.
 
@@ -10605,11 +10616,11 @@ Completa el Scorecard de Madurez de Equipos con IA (incluido al final de este ca
    - Si tus mejores 3 ingenieros recibieran ofertas de empresas AI-first con 20% más de salario y exposición a IA de vanguardia, ¿cuántos se quedarían? ¿Por qué?
 
 6. **Sobre cambio:**
-   - ¿Tienes un plan de comunicación de 12 meses para introducir IA? (No solo un anuncio—un plan de comunicación continua)
+   - ¿Tienes un plan de comunicación de 12 meses para introducir IA? (No solo un anuncio - un plan de comunicación continua)
    - ¿Cuál es tu plan de re-skilling para ingenieros que quieran evolucionar a roles AI-augmented?
 
 7. **Sobre ti mismo:**
-   - ¿Estás emocionado o ansioso por liderar en la era de IA? (Ambos son válidos—la pregunta es cómo gestionas esa emoción)
+   - ¿Estás emocionado o ansioso por liderar en la era de IA? (Ambos son válidos - la pregunta es cómo gestionas esa emoción)
    - ¿Qué necesitas aprender en los próximos 6 meses para ser un líder técnico efectivo en 2027?
 
 ---
@@ -11280,7 +11291,7 @@ ROI = ($1.37M - $184K) / $184K = 645%
 
 **Presentación al board:**
 
-> "En 18 meses, invertimos $184K en IA agéntica. Esto nos generó $1.37M en valor. Nuestro ROI es 6.5x. Adicionalmente, aumentamos developer satisfaction de +18 a +41, reduciendo rotación 36%. La IA no solo nos hizo más productivos—nos hizo más atractivos para talento top."
+> "En 18 meses, invertimos $184K en IA agéntica. Esto nos generó $1.37M en valor. Nuestro ROI es 6.5x. Adicionalmente, aumentamos developer satisfaction de +18 a +41, reduciendo rotación 36%. La IA no solo nos hizo más productivos - nos hizo más atractivos para talento top."
 
 ---
 
@@ -11352,7 +11363,7 @@ ROI = ($1.37M - $184K) / $184K = 645%
 - Cancelación de iniciativa completa
 
 **Prevención:**
-- ✅ Crawl, Walk, Run—no saltes pasos
+- ✅ Crawl, Walk, Run - no saltes pasos
 - ✅ Piloto en código no-crítico primero
 - ✅ Establece kill switches y rollback plans
 
@@ -11620,7 +11631,7 @@ CONTACTO:
 #### Objeción 1: "¿Y si la IA genera código con bugs críticos?"
 
 **Respuesta:**
-> "Excelente pregunta. La IA no reemplaza code review humano—lo complementa. Estableceremos política de que 100% del código generado por IA pasa por review humano antes de merge. Adicionalmente, clasificaremos código por riesgo: código crítico (pagos, auth) requiere doble review. En pilotos de empresas similares, defect rate no aumentó—de hecho, a veces baja porque IA genera más tests."
+> "Excelente pregunta. La IA no reemplaza code review humano - lo complementa. Estableceremos política de que 100% del código generado por IA pasa por review humano antes de merge. Adicionalmente, clasificaremos código por riesgo: código crítico (pagos, auth) requiere doble review. En pilotos de empresas similares, defect rate no aumentó - de hecho, a veces baja porque IA genera más tests."
 
 #### Objeción 2: "¿Esto no va a hacer que despidamos gente?"
 
@@ -11630,7 +11641,7 @@ CONTACTO:
 #### Objeción 3: "$185K es mucho dinero para experimentar."
 
 **Respuesta:**
-> "Comparado con qué? Contratar 1 ingeniero senior cuesta $100K/año. Por $185K en 18 meses, obtenemos productividad equivalente a 8 ingenieros—ROI de 6.5x. Y tenemos múltiples GO/NO-GO gates: Mes 3 (pilotos), Mes 9 (expansión). Si no funciona en Mes 9, cortamos antes de gastar los $185K completos."
+> "Comparado con qué? Contratar 1 ingeniero senior cuesta $100K/año. Por $185K en 18 meses, obtenemos productividad equivalente a 8 ingenieros - ROI de 6.5x. Y tenemos múltiples GO/NO-GO gates: Mes 3 (pilotos), Mes 9 (expansión). Si no funciona en Mes 9, cortamos antes de gastar los $185K completos."
 
 #### Objeción 4: "¿Qué pasa con seguridad de datos?"
 
@@ -11640,13 +11651,13 @@ CONTACTO:
 #### Objeción 5: "Nuestros competidores no han hecho esto, ¿por qué nosotros?"
 
 **Respuesta:**
-> "Precisamente por eso es una oportunidad. Ser early adopter nos da ventaja de 12-18 meses. Cuando ellos adopten (y lo harán—Gartner proyecta 80% de orgs usando IA en dev para 2026), nosotros ya tendremos procesos maduros. La pregunta no es si adoptar IA, sino cuándo. Propongo que sea ahora, no cuando ya sea commodity."
+> "Precisamente por eso es una oportunidad. Ser early adopter nos da ventaja de 12-18 meses. Cuando ellos adopten (y lo harán - Gartner proyecta 80% de orgs usando IA en dev para 2026), nosotros ya tendremos procesos maduros. La pregunta no es si adoptar IA, sino cuándo. Propongo que sea ahora, no cuando ya sea commodity."
 
 ---
 
 ## Conclusión: De Estrategia a Ejecución
 
-La adopción de IA agéntica no es un proyecto de 3 meses—es una transformación organizacional de 12-18 meses. Las empresas que tienen éxito siguen un patrón claro:
+La adopción de IA agéntica no es un proyecto de 3 meses - es una transformación organizacional de 12-18 meses. Las empresas que tienen éxito siguen un patrón claro:
 
 **Los 7 Principios de Adopción Exitosa:**
 
@@ -11663,7 +11674,7 @@ La adopción de IA agéntica no es un proyecto de 3 meses—es una transformaci�
 Si decides posponer IA agéntica:
 - Tus competidores te adelantarán 12-18 meses en velocidad de innovación
 - Talento top preferirá trabajar en empresas AI-first
-- Cuando finalmente adoptes, será commodity—sin ventaja competitiva
+- Cuando finalmente adoptes, será commodity - sin ventaja competitiva
 
 **El costo de actuar:**
 
@@ -11692,7 +11703,7 @@ La pregunta no es **si** tu organización adoptará IA agéntica. La pregunta es
 
 3. **El business case debe hablar el idioma del CFO.** ROI de 300-600% en 18 meses, reducción de 40-60% en tiempo de desarrollo, y disminución de 30-50% en bugs críticos son las cifras que abren presupuestos. Presenta escenarios conservador, moderado, y optimista.
 
-4. **El Scorecard de Readiness te dice si estás listo—úsalo con honestidad.** Si tu score es menor a 60/100, no lances pilotos todavía. Invierte 60-90 días en preparación (training, governance básica, comunicación). Un piloto fallido por falta de readiness es peor que no hacer piloto.
+4. **El Scorecard de Readiness te dice si estás listo - úsalo con honestidad.** Si tu score es menor a 60/100, no lances pilotos todavía. Invierte 60-90 días en preparación (training, governance básica, comunicación). Un piloto fallido por falta de readiness es peor que no hacer piloto.
 
 5. **El costo de NO actuar es mayor que el costo de actuar.** Competidores que adopten IA agéntica tendrán 12-18 meses de ventaja en velocidad de innovación. El talento top gravitará hacia empresas AI-first. Cuando adoptes tarde, será commodity sin ventaja competitiva.
 
@@ -11767,13 +11778,13 @@ Completa el Scorecard de Readiness de la Sección 1 de este capítulo con tu equ
 ---
 
 > **Para tu próxima reunión de liderazgo:**
-> Bloquea 2 horas para revisar este capítulo con tu equipo de liderazgo (CTO, VPs, Directors). Usa el Scorecard de Readiness para autoevaluarse. Si score >60, presenta el business case al board en las próximas 2-4 semanas. Si score <60, define plan de 60-90 días para llegar a readiness, luego presenta business case. La ventana de oportunidad para ser early adopter se cierra en 2026—actúa ahora.
+> Bloquea 2 horas para revisar este capítulo con tu equipo de liderazgo (CTO, VPs, Directors). Usa el Scorecard de Readiness para autoevaluarse. Si score >60, presenta el business case al board en las próximas 2-4 semanas. Si score <60, define plan de 60-90 días para llegar a readiness, luego presenta business case. La ventana de oportunidad para ser early adopter se cierra en 2026 - actúa ahora.
 
 ---
 
 **Fin del Capítulo 13**
 
-[Continúa en Capítulo 14: Gobernanza y Gestión de Riesgos]
+[Continúa en Capítulo 14: Sesgos Cognitivos en la Era de la IA Agéntica]
 
 
 # Desafíos, Riesgos y Gobernanza del Paradigma Agéntico
@@ -13558,7 +13569,7 @@ Pérdida de competitividad Ventaja competitiva      Pérdida de confianza
 
 ---
 
-**Próximo capítulo:** En el Capítulo 15 exploramos el futuro de la ingeniería de software en la década de 2030: ¿Qué roles sobrevivirán? ¿Cómo cambiará la educación en CS? ¿Qué escenarios debemos prepararnos?
+**Próximo capítulo:** En el Capítulo 16 exploramos el futuro de la ingeniería de software en la década de 2030: ¿Qué roles evolucionarán? ¿Cómo cambiará la educación en CS? ¿Qué escenarios debemos prepararnos?
 
 
 # Visión a Futuro – 2026-2030
@@ -13579,9 +13590,9 @@ Nos encontramos en un momento bisagra para la ingeniería de software. El paradi
 Para concluir, proyectemos qué podemos esperar en el futuro inmediato y a mediano plazo.
 
 > **Nota para líderes:** Este capítulo mezcla tres tipos de información, claramente diferenciados:
-> - **[OBSERVADO]** — Datos y tendencias verificables al cierre de 2025
-> - **[PROYECCIÓN]** — Predicciones de analistas (Gartner, McKinsey, líderes de industria) con metodología documentada. Son estimaciones informadas, no certezas
-> - **[ESPECULATIVO]** — Extrapolaciones del autor basadas en tendencias actuales, sin certeza. Útiles para planificación estratégica, no para presupuestos firmes
+> - **[OBSERVADO]** - Datos y tendencias verificables al cierre de 2025
+> - **[PROYECCIÓN]** - Predicciones de analistas (Gartner, McKinsey, líderes de industria) con metodología documentada. Son estimaciones informadas, no certezas
+> - **[ESPECULATIVO]** - Extrapolaciones del autor basadas en tendencias actuales, sin certeza. Útiles para planificación estratégica, no para presupuestos firmes
 >
 > Cuando cite datos de este capítulo en reuniones de board, distinga siempre entre "esto ya está pasando" y "esto creemos que pasará".
 
@@ -14328,7 +14339,7 @@ Imaginemos en la reunión diaria, junto a los desarrolladores humanos reportando
 
 ## Tres Escenarios para 2030
 
-**[ESPECULATIVO]** No hay una sola versión del futuro. Los tres escenarios que siguen son construcciones del autor basadas en la extrapolación de tendencias actuales. Ninguno es una predicción—son herramientas de planificación estratégica para preparar a su organización ante diferentes futuros posibles.
+**[ESPECULATIVO]** No hay una sola versión del futuro. Los tres escenarios que siguen son construcciones del autor basadas en la extrapolación de tendencias actuales. Ninguno es una predicción - son herramientas de planificación estratégica para preparar a su organización ante diferentes futuros posibles.
 
 ### Escenario A: Optimista - "La Era Dorada del Software"
 
@@ -14607,7 +14618,7 @@ El futuro no se predice, se construye. Independientemente de cuál escenario se 
 - ¿Code review changes cuando hay IA involved?
 - ¿Tenemos DLP para prevenir data leakage?
 
-**Semana 2-3:** Draft de AI Use Policy v0.1 (ver Capítulo 14)
+**Semana 2-3:** Draft de AI Use Policy v0.1 (ver Capítulo 15)
 
 **Semana 4:** Presentar a exec team, obtener buy-in
 
@@ -15544,7 +15555,7 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 **Cuándo usarlo:** Al seleccionar herramientas de IA para desarrollo. Estructura la comparación y reduce el sesgo hacia la herramienta "más nueva" o "más popular".
 
-**Referencia:** Capítulo 5, 13
+**Referencia:** Capítulo 9, 13
 
 ### Criterios y Pesos
 
@@ -15705,7 +15716,7 @@ ALTO     │               │               │   BAJO
 
 **Cuándo usarlo:** Para estructurar la governance de IA en la organización. Define quién decide qué a cada nivel.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 15
 
 ### Nivel Estratégico: Board / C-Suite
 
@@ -15743,7 +15754,7 @@ ALTO     │               │               │   BAJO
 
 **Cuándo usarlo:** Para evaluar qué tan madura es la governance de IA en su organización y definir el próximo nivel objetivo.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 15
 
 | Nivel | Nombre | Características | Indicadores |
 |:-----:|--------|-----------------|-------------|
@@ -15838,7 +15849,7 @@ Activar detención automática del agente cuando:
 
 **Cuándo usarlo:** Cuando ocurre un incidente relacionado con código o decisiones generados por IA. Proporciona un proceso estructurado para contención y aprendizaje.
 
-**Referencia:** Capítulo 14
+**Referencia:** Capítulo 15
 
 ### Las 5 Fases
 
@@ -16159,7 +16170,7 @@ Para maximizar la utilidad de estos checklists, le recomendamos trasladarlos a u
 
 ## Checklist de Seguridad y Compliance
 
-> **Fuente:** Capítulo 14. Usar como complemento transversal a todas las fases.
+> **Fuente:** Capítulo 15. Usar como complemento transversal a todas las fases.
 
 ### Prevención de Data Leakage
 
@@ -16398,15 +16409,15 @@ Este apéndice reúne todas las herramientas, reportes, libros, comunidades y re
 
 | Reporte | Organización | Relevancia | Referenciado en |
 |---------|-------------|------------|-----------------|
-| **Hype Cycle for AI in Software Engineering** (2025) | Gartner | Posicionamiento de herramientas y tecnologías en el ciclo de adopción | Caps. 1, 5, 13 |
+| **Hype Cycle for AI in Software Engineering** (2025) | Gartner | Posicionamiento de herramientas y tecnologías en el ciclo de adopción | Caps. 1, 9, 13 |
 | **The Economic Potential of Generative AI** (2024) | McKinsey | Cuantificación del impacto económico de IA generativa por industria | Caps. 1, 6, 13 |
-| **Scaling AI in Software Development** (2025) | McKinsey | Framework de escalamiento de IA en organizaciones de desarrollo | Caps. 6, 13 |
+| **Scaling AI in Software Development** (2025) | McKinsey | Framework de escalamiento de IA en organizaciones de desarrollo | Caps. 10, 13 |
 | **The Future of Software Development with AI Agents** (2025) | Forrester | Evaluación de herramientas y tendencias en IA agéntica | Caps. 5, 15 |
-| **Total Economic Impact of AI Coding Assistants** (2025) | Forrester | Análisis de ROI documentado de herramientas de IA para desarrollo | Caps. 6, 13 |
+| **Total Economic Impact of AI Coding Assistants** (2025) | Forrester | Análisis de ROI documentado de herramientas de IA para desarrollo | Caps. 10, 13 |
 | **AI Index Report 2025** | Stanford HAI | Datos comprensivos sobre el estado global de la IA | Caps. 1, 15 |
-| **State of AI in Software Development** (2024-2025) | GitHub/Microsoft Research | Datos de adopción y productividad de millones de desarrolladores | Caps. 1, 4, 6 |
-| **Developer Survey** (2024, 2025) | Stack Overflow | Encuesta anual sobre herramientas, prácticas y tendencias | Caps. 1, 5, 6 |
-| **Code Cloning Analysis with AI** (2025) | GitClear | Análisis del impacto de IA en la calidad y originalidad del código | Caps. 6, 14 |
+| **State of AI in Software Development** (2024-2025) | GitHub/Microsoft Research | Datos de adopción y productividad de millones de desarrolladores | Caps. 1, 8, 10 |
+| **Developer Survey** (2024, 2025) | Stack Overflow | Encuesta anual sobre herramientas, prácticas y tendencias | Caps. 1, 9, 10 |
+| **Code Cloning Analysis with AI** (2025) | GitClear | Análisis del impacto de IA en la calidad y originalidad del código | Caps. 10, 14 |
 | **Talent Insights: AI Engineering** (2025) | LinkedIn | Tendencias de demanda de talento en IA | Caps. 12, 15 |
 
 ### Estudios Académicos

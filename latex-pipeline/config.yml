@@ -1,6 +1,7 @@
 book:
-  title: "El Paradigma Agéntico"
-  subtitle: "Una Nueva Era en la Ingeniería de Software"
+  title: "Agéntico por Diseño"
+  tomo: "Tomo I"
+  subtitle: "Tecnologías de la Información"
   author: "Karim Touma"
   lang: es
   date: "2026"
@@ -27,3 +28,6 @@ features:
   pull_quotes: true
   colored_tables: true
   chapter_thumbs: false
+
+# Figure rendering mode: all | final-only | no-placeholders
+figure-mode: all

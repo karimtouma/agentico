@@ -16,14 +16,14 @@ Cuando escuchas "paradigma de programación", probablemente piensas que es un te
 
 Estás equivocado.
 
-Cada transición de paradigma en la historia del software tuvo implicaciones masivas para:
+Cada transición de [paradigma de programación]{.idx} en la historia del software tuvo implicaciones masivas para:
 
 - **Productividad**: Programadores 5-10x más eficientes
-- **Time to market**: Features que tomaban meses ahora toman semanas
+- ***time-to-market***: Features que tomaban meses ahora toman semanas
 - **Costo de talento**: Qué habilidades son valiosas vs. obsoletas
 - **Ventaja competitiva**: Quién construye más rápido gana el mercado
 
-Veamos la historia y extraigamos las lecciones para la transición actual hacia IA agéntica.
+Veamos la historia y extraigamos las lecciones para la transición actual hacia [IA agéntica]{.idx}.
 
 ---
 
@@ -34,7 +34,7 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 **Cómo se programaba:**
 
 - Literalmente reconectar cables físicos en paneles de switches
-- El ENIAC (primer computador electrónico general-purpose) requería días para reprogramarse
+- El [ENIAC]{.idx} (primer computador electrónico general-purpose) requería días para reprogramarse
 - Un "programa" era un diagrama de conexiones de cables
 
 **Productividad:**
@@ -63,7 +63,7 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 **Productividad:**
 
 - El mismo cálculo de trayectorias: **1-2 días** (mejora de ~50%)
-- Ahora el programa es portátil—puedes guardarlo y reutilizarlo
+- Ahora el programa es portátil; puedes guardarlo y reutilizarlo
 
 **Quién lo hacía:**
 
@@ -76,7 +76,7 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 - Cambios pequeños requieren reescribir grandes secciones
 - No portable entre diferentes computadoras (cada CPU tiene su propio lenguaje de máquina)
 
-**Tabla 2.1 — Productividad por paradigma en la era temprana de la computación (1940-1960)**
+**Tabla 2.1. Productividad por paradigma en la era temprana de la computación (1940-1960)**
 
 | Paradigma | Período | Tiempo para programa simple (100 líneas equiv.) | Desarrolladores necesarios | Tasa de error | Reutilización del programa |
 |-----------|---------|------------------------------------------------|----------------------------|---------------|---------------------------|
@@ -110,30 +110,23 @@ Veamos la historia y extraigamos las lecciones para la transición actual hacia 
 **Por qué colapsó:**
 
 - Todavía muy cercano al hardware (gestión manual de registros, memoria)
-- No portable—código de ensamblador para IBM mainframe no funciona en DEC PDP
+- No portable; código de ensamblador para IBM mainframe no funciona en DEC PDP
 - Tareas complejas (como parsing de texto) requieren centenares de líneas
 
 **Lección para líderes:**
-> La abstracción no es un lujo técnico—es un acelerador de negocio. IBM ganó dominio del mercado de mainframes en los 60s en parte porque sus ensambladores eran superiores a los de competidores.
+> La abstracción no es un lujo técnico; es un acelerador de negocio. IBM ganó dominio del mercado de mainframes en los 60s en parte porque sus ensambladores eran superiores a los de competidores.
 
 ### Nivel 3: Lenguajes de Alto Nivel - Procedural (1960s-1980s)
 
 **La innovación: FORTRAN, COBOL, C, Pascal**
 
-FORTRAN (1957) fue el primer lenguaje de alto nivel exitoso comercialmente. Permitía escribir:
+[FORTRAN]{.idx} (1957) fue el primer [lenguaje de alto nivel]{.idx} exitoso comercialmente. Permitía escribir:
 
-```
-// Pseudocódigo en FORTRAN
-DO 10 I = 1, 100
-   SUM = SUM + A(I)
-10 CONTINUE
-```
-
-En vez de 30-50 líneas de ensamblador para hacer lo mismo.
+En FORTRAN, un programador podía escribir un bucle iterativo con apenas tres instrucciones (una sentencia DO para iniciar el ciclo, una operación de acumulación, y una sentencia CONTINUE para cerrar el bucle) y sumar los cien elementos de un arreglo. En ensamblador, la misma operación requería 30 a 50 líneas: cargar registros, gestionar contadores, saltar a direcciones de memoria, y controlar el flujo manualmente.
 
 **Impacto medible:**
 
-- Según IBM, programadores eran **5x más productivos** en FORTRAN que en ensamblador
+- Según [IBM]{.idx}, programadores eran **5x más productivos** en FORTRAN que en ensamblador
 - Un programa que tomaba 2 semanas en ensamblador tomaba 2 días en FORTRAN
 - COBOL permitió que "analistas de negocio" (no ingenieros) escribieran programas
 
@@ -154,10 +147,10 @@ En vez de 30-50 líneas de ensamblador para hacer lo mismo.
 **Datos de la industria (1960-1975):**
 
 - Costo por línea de código: **$10-20 en ensamblador → $2-5 en FORTRAN/COBOL**
-- Time to market para aplicación típica de negocio: **12-18 meses → 4-6 meses**
+- *time-to-market* para aplicación típica de negocio: **12-18 meses → 4-6 meses**
 - Escasez de talento: Disminuyó porque más gente podía aprender FORTRAN que ensamblador
 
-**Tabla 2.2 — Curva de adopción de lenguajes de alto nivel (1960-1980)**
+**Tabla 2.2. Curva de adopción de lenguajes de alto nivel (1960-1980)**
 
 | Año | % de proyectos nuevos en lenguajes de alto nivel | Lenguaje dominante | Evento clave |
 |-----|--------------------------------------------------|-------------------|--------------|
@@ -182,68 +175,35 @@ En vez de 30-50 líneas de ensamblador para hacer lo mismo.
 
 **La innovación: Smalltalk, C++, Java, Python**
 
-OOP introdujo el concepto de **encapsulación**: agrupar datos y comportamiento relacionados.
+[Programación orientada a objetos]{.idx} introdujo el concepto de [encapsulación]{.idx}: agrupar datos y comportamiento relacionados.
 
 **Ejemplo del salto conceptual:**
 
-**Paradigma Procedural (C):**
-```
-// Pseudocódigo - paradigma procedural
-struct BankAccount {
-    int account_number;
-    float balance;
-};
+**Tabla 2.3. De procedural a orientado a objetos: el mismo problema, dos paradigmas**
 
-void deposit(struct BankAccount *acc, float amount) {
-    acc->balance += amount;
-}
-
-void withdraw(struct BankAccount *acc, float amount) {
-    if (acc->balance >= amount) {
-        acc->balance -= amount;
-    }
-}
-```
-
-**Paradigma OOP (Java):**
-```
-// Pseudocódigo - paradigma OOP
-class BankAccount {
-    private int accountNumber;
-    private float balance;
-
-    public void deposit(float amount) {
-        balance += amount;
-        logTransaction("DEPOSIT", amount);
-        notifyCustomer();
-    }
-
-    public void withdraw(float amount) {
-        if (balance >= amount) {
-            balance -= amount;
-            logTransaction("WITHDRAWAL", amount);
-        } else {
-            throw new InsufficientFundsException();
-        }
-    }
-}
-```
+| Aspecto | Paradigma Procedural (estilo C) | Paradigma OOP (estilo Java) |
+|---------|--------------------------------|---------------------------|
+| **Estructura de datos** | Una estructura plana con número de cuenta y saldo, sin comportamiento propio | Una clase que encapsula datos (número de cuenta, saldo) y comportamiento juntos |
+| **Operación de depósito** | Una función externa recibe un puntero a la cuenta y modifica el saldo directamente | Un método propio del objeto que actualiza el saldo, registra la transacción y notifica al cliente |
+| **Operación de retiro** | Una función externa verifica el saldo y lo reduce; si no hay fondos, simplemente no hace nada | Un método propio del objeto que verifica fondos, registra la transacción, y si no hay saldo suficiente, lanza una excepción formal |
+| **Responsabilidad del programador** | Debe recordar llamar validaciones, logging y notificaciones en cada lugar donde se use la cuenta | Todo el comportamiento está centralizado en la clase; agregar logging o notificaciones se hace en un solo lugar |
+| **Impacto de un cambio** | Agregar una regla (por ejemplo, cobrar comisión en retiros) requiere encontrar y modificar todas las funciones que tocan el saldo | Agregar una regla se hace modificando un solo método dentro de la clase |
 
 **Por qué esto importa para negocio:**
 
 - El código OOP es más fácil de mantener y extender
 - Cambios en lógica de negocio (ej: agregar fees a withdrawals) están localizados en una clase, no dispersos en 50 archivos
-- Reduce costo de mantenimiento de software (60-80% del costo total de ownership)
+- Reduce costo de mantenimiento de software (60-80% del [costo total de ownership]{.idx})
 
 **Impacto medible en productividad:**
 
-- Según estudios de Capers Jones (1990s): proyectos en Java eran **30-40% más rápidos** de desarrollar que proyectos equivalentes en C
+- Según estudios de [Capers Jones]{.idx}: proyectos en Java eran **30-40% más rápidos** de desarrollar que proyectos equivalentes en C
 - Defect rate: **20-30% más bajo** en OOP vs. procedural para sistemas complejos
 - Costo de mantenimiento: **40-50% más bajo** a 5 años
 
 **Resistencia inicial (déjà vu):**
 
-- "OOP es ineficiente—demasiado overhead de objetos"
+- "OOP es ineficiente: demasiada sobrecarga de objetos"
 - "C es suficientemente bueno, ¿por qué complicar?"
 - "Los programadores buenos no necesitan OOP"
 
@@ -261,7 +221,7 @@ En 1995, J.P. Morgan decidió reescribir sus sistemas críticos de trading de C 
 
 **Resultados a 5 años (2000-2005):**
 
-- Time to market para nuevos productos financieros: **9 meses → 3 meses**
+- *time-to-market* para nuevos productos financieros: **9 meses → 3 meses**
 - Costo de mantenimiento anual: **$40M → $18M**
 - Defectos críticos en producción: **reducción del 60%**
 - **ROI:** La inversión se pagó en 2.5 años
@@ -273,29 +233,17 @@ En 1995, J.P. Morgan decidió reescribir sus sistemas críticos de trading de C 
 
 **La innovación: SQL, React, Kubernetes, Terraform**
 
-La programación declarativa dice **"qué quieres"** en vez de **"cómo lograrlo"**.
+La [programación declarativa]{.idx} dice **"qué quieres"** en vez de **"cómo lograrlo"**.
 
 **Ejemplo: Obtener datos de una base de datos**
 
-**Paradigma Procedural (pseudo-C):**
-```
-// Pseudocódigo imperativo
-FileHandle file = open("customers.dat");
-Customer[] results;
-while (record = file.readNextRecord()) {
-    if (record.city == "New York" && record.age > 25) {
-        results.add(record);
-    }
-}
-file.close();
-return results;
-```
+**Tabla 2.4. Imperativo vs. declarativo: consultar una base de datos**
 
-**Paradigma Declarativo (SQL):**
-```
-SELECT * FROM customers
-WHERE city = 'New York' AND age > 25;
-```
+| Aspecto | Paradigma Imperativo (estilo C) | Paradigma Declarativo (SQL) |
+|---------|--------------------------------|---------------------------|
+| **Lo que el programador escribe** | Abrir el archivo de datos manualmente, recorrer registro por registro con un bucle, evaluar condiciones (ciudad = "New York" y edad > 25), agregar los que cumplen a una lista de resultados, cerrar el archivo: unas 10-12 líneas de instrucciones | Una sola sentencia que dice "dame todos los clientes de New York mayores de 25 años": una o dos líneas |
+| **Quién decide el "cómo"** | El programador controla cada detalle: apertura de archivo, iteración, filtrado, cierre | El motor de base de datos decide automáticamente cómo optimizar la consulta (usar índices, orden de filtros, etc.) |
+| **Volumen de instrucciones** | 10 a 50 líneas según la complejidad de los filtros | 1 a 3 líneas para la misma consulta |
 
 **Impacto:**
 
@@ -305,28 +253,14 @@ WHERE city = 'New York' AND age > 25;
 
 **Frameworks modernos (React, Vue, etc.):**
 
-Antes (jQuery - imperativo):
-```
-// Pseudocódigo imperativo
-function updateUserList(users) {
-    $("#user-list").empty();
-    for (user in users) {
-        $("#user-list").append("<li>" + user.name + "</li>");
-    }
-}
-```
+**Tabla 2.5. Imperativo vs. declarativo en interfaces de usuario**
 
-Ahora (React - declarativo):
-```
-// Pseudocódigo declarativo
-function UserList({ users }) {
-    return (
-        <ul>
-            {users.map(user => <li>{user.name}</li>)}
-        </ul>
-    );
-}
-```
+| Aspecto | Antes: jQuery (imperativo) | Ahora: React (declarativo) |
+|---------|---------------------------|---------------------------|
+| **Enfoque del programador** | Vaciar manualmente el contenedor de la lista en la pantalla, recorrer el arreglo de usuarios uno por uno, y agregar cada nombre como elemento HTML concatenando texto | Describir que la interfaz es una lista donde cada usuario se muestra con su nombre; el framework se encarga de actualizar la pantalla |
+| **Gestión de cambios** | Si los datos cambian, el programador debe volver a ejecutar toda la secuencia de vaciar y reconstruir manualmente | El framework detecta automáticamente qué cambió y actualiza solo los elementos necesarios de la pantalla |
+| **Propensión a errores** | Alta: el programador manipula el DOM directamente, lo que genera bugs de sincronización entre datos y pantalla | Baja: el framework garantiza que la pantalla siempre refleja el estado actual de los datos |
+| **Volumen de lógica manual** | El programador escribe el "cómo" paso a paso (vaciar, iterar, insertar) | El programador escribe el "qué" (esta es la estructura que quiero ver) y el framework resuelve el "cómo" |
 
 **Por qué esto importa para negocio:**
 
@@ -339,19 +273,19 @@ function UserList({ users }) {
 **Situación inicial (2014):**
 
 - Stack: jQuery, Backbone.js (imperativo)
-- Time to market para nueva feature: 4-6 semanas
+- *time-to-market* para nueva feature: 4-6 semanas
 - Bugs en producción por iteración: 15-25
 
 **Después de migración a React (2017):**
 
-- Time to market: 1-2 semanas (reducción del 70%)
+- *time-to-market*: 1-2 semanas (reducción del 70%)
 - Bugs en producción: 5-8 (reducción del 65%)
 - Developer productivity self-reported: +45%
 
 **Costo de migración:** $4M (12 meses de trabajo de 25 ingenieros)
 **ROI a 3 años:** Ahorro de $18M en costos de desarrollo
 
-**Tabla 2.3 — Comparación histórica de paradigmas: productividad, calidad y costo**
+**Tabla 2.6. Comparación histórica de paradigmas: productividad, calidad y costo**
 
 | Paradigma | Período pico | Líneas de código para feature típica | Tiempo de desarrollo | Defect rate (primera entrega) | Costo mantenimiento (5 años) | Nivel de abstracción |
 |-----------|-------------|--------------------------------------|---------------------|-------------------------------|------------------------------|---------------------|
@@ -370,6 +304,10 @@ function UserList({ users }) {
 ---
 
 ## El Patrón Histórico: Resistencia → Adopción → Dominio
+
+> **Contexto LATAM**
+>
+> [América Latina]{.idx} ha vivido cada transición paradigmática con un lag de 3-7 años respecto a Silicon Valley. Pero tiene una ventaja recurrente: cuando adopta, lo hace sin la deuda técnica del paradigma anterior. Muchas empresas latinoamericanas saltaron directamente a cloud sin pasar por on-premise enterprise, y adoptaron ágil sin la inercia de décadas de waterfall. Con IA agéntica, la brecha se ha reducido: herramientas como Copilot y Cursor están disponibles simultáneamente en todo el mundo, y el ecosistema de talento LATAM (nearshoring + bilinguismo) está particularmente bien posicionado para capturar valor temprano. El riesgo es que la adopción sea superficial (licencias sin rediseño), repitiendo el patrón del 88% que adopta pero solo el 6% que transforma (McKinsey; ver Capítulo 4).
 
 Cada transición paradigmática siguió el mismo patrón sociológico en la industria:
 
@@ -427,10 +365,10 @@ Cada transición paradigmática siguió el mismo patrón sociológico en la indu
 
 **Ejemplos históricos:**
 
-- COBOL hoy: Empresas pagan $150-200/hora por programadores COBOL porque es legacy crítico pero nadie nuevo lo aprende
+- COBOL hoy: Empresas pagan $150-200/hora por programadores COBOL porque es [legacy]{.idx} crítico pero nadie nuevo lo aprende
 - Assembly hoy: Solo nichos específicos (embedded systems, drivers)
 
-**Tabla 2.4 — Curva de adopción de paradigmas: de la invención al dominio**
+**Tabla 2.7. Curva de adopción de paradigmas: de la invención al dominio**
 
 | Fase | Duración típica | Adopción del mercado | Actitud predominante | Señales observables |
 |------|----------------|---------------------|---------------------|---------------------|
@@ -458,35 +396,43 @@ Aplicando el patrón histórico al momento actual:
 
 ### Invención: 2020-2022
 
-- GPT-3 (2020): Primeras demos de code generation
-- GitHub Copilot (2021): Primer producto comercial
+- [GPT-3]{.idx data-sub="modelos de lenguaje"} (2020): Primeras demos de code generation
+- [GitHub Copilot]{.idx data-sub="asistentes de código"} (2021): Primer producto comercial
 - Escepticismo masivo: "Es un parlanchín, no entiende código real"
 
 ### Early Adoption: 2023-2024
 
 - Copilot alcanza 1.8M usuarios (2023), luego 20M (2025)
-- Startups (Vercel, Replit, Cursor) construyen productos sobre LLMs
-- Primeros estudios muestran 55-126% gains de productividad
+- Startups (Vercel, Replit, [Cursor]{.idx data-sub="asistentes de código"}) construyen productos sobre [LLMs]{.idx}
+- Primeros estudios muestran gains significativos: 55.8% más tareas completadas (Peng et al., arXiv:2302.06590) y hasta 126% en tareas específicas (McKinsey, 2023)
 - Empresas conservadoras todavía escépticas
 
 ### **Punto de Inflexión: 2025-2026** ← **ESTAMOS AQUÍ**
 
 - Microsoft, Google, Meta reportan 30% de código generado por IA
-- Gartner predice 40% de aplicaciones empresariales con IA agéntica para finales de 2026
+- [Gartner]{.idx} predice 40% de aplicaciones empresariales con IA agéntica para finales de 2026
 - Salarios: Developers con expertise en IA tools ya ganan 10-15% más
 - Primera ola de Fortune 500 adoptando formalmente (no solo pilotos)
 
 ### Predicción: Dominio 2027-2030
 
-- >80% del código nuevo generado con asistencia de IA (predicción de Microsoft CTO)
+- 95% del código generado con asistencia de IA para 2030 (Kevin Scott, CTO de Microsoft, abril 2025; Satya Nadella confirmó que ya en 2025 "hasta 30% del código de Microsoft es generado por IA")
 - Empresas que no adoptaron luchan para contratar talent ("nadie quiere trabajar sin IA tools")
 - Programadores que "escriben código a mano" son nicho (como los que escriben assembly hoy)
+
+> **Dato verificado:**
+>
+> - **Fuente:** Kevin Scott, CTO de Microsoft (abril 2025); Satya Nadella, CEO de Microsoft (entrevistas y earnings calls 2025); Gartner "Top Strategic Technology Trends 2025"
+> - **Qué mide:** Porcentaje de código generado con asistencia de IA en empresas líderes de tecnología y predicción de adopción empresarial
+> - **Muestra/Metodología:** Declaraciones ejecutivas basadas en datos internos de Microsoft (190,000+ empleados). Gartner basa su predicción en encuestas a 1,500+ organizaciones globales
+> - **Limitación:** Las declaraciones de ejecutivos de empresas que venden herramientas de IA tienen incentivo a reportar cifras optimistas. "30% del código" puede medirse de múltiples formas (líneas, commits, PRs) con resultados muy diferentes. La predicción de 95% para 2030 es extrapolación, no dato
+> - **Implicación práctica:** Usa el 30% como referencia de que la adopción en Big Tech es real y significativa, pero no como promesa de lo que tu organización logrará. Para tu business case, modela con 15-25% como escenario conservador
 
 **¿Cuánto tiempo tienes para decidir?**
 
 Basado en patrones históricos: **12-24 meses** antes de que la ventana de "early adopter advantage" se cierre.
 
-Después de eso, no ganarás ventaja—solo evitarás desventaja.
+Después de eso, no ganarás ventaja. Solo evitarás desventaja.
 
 ---
 
@@ -507,7 +453,7 @@ Pero hay factores que hacen esta transición única:
 **IA Agéntica:**
 
 - Predicción: 5-7 años (2020-2027)
-- ¿Por qué más rápido? Adopción impulsada por cloud (distribución instantánea), tools como plugins, y el hecho de que NO requiere reescribir código legacy—solo cambiar cómo escribes código nuevo
+- ¿Por qué más rápido? Adopción impulsada por cloud (distribución instantánea), tools como plugins, y el hecho de que NO requiere reescribir código legacy. Solo cambia cómo escribes código nuevo (ver Capítulo 7 para un análisis técnico detallado de estas herramientas y sus arquitecturas)
 
 ### Diferencia 2: Barrera de Entrada Más Baja
 
@@ -518,11 +464,11 @@ Pero hay factores que hacen esta transición única:
 - Comprar nuevos servidores (JVM requería más recursos que C)
 - Costo: $500K-2M para organización mediana
 
-**Para adoptar IA agéntica en 2025:**
+**Para adoptar IA agéntica en 2026:**
 
 - Comprar licencias ($20-100/dev/mes)
 - Training de 2-4 semanas
-- NO requiere reescribir nada—solo cambia cómo escribes código nuevo
+- NO requiere reescribir nada. Solo cambia cómo escribes código nuevo
 - Costo: $10K-50K para organización mediana
 
 **Implicación:** La barrera baja significa que tus competidores pueden adoptar más rápido de lo que piensas.
@@ -542,7 +488,7 @@ Pero hay factores que hacen esta transición única:
 
 **Implicación para talent strategy:**
 
-- Contratar por "capacidad de trabajar con IA" puede ser más valioso que contratar por "experto en lenguaje X"
+- Contratar por "capacidad de trabajar con IA" puede ser más valioso que contratar por "experto en lenguaje X", un cambio fundamental en la [estrategia de talento]{.idx}
 - Los "generalistas eficaces con IA" pueden ser más valiosos que "especialistas sin IA"
 
 ---
@@ -563,14 +509,14 @@ Como líder, tienes que decidir: ¿Adoptas IA agéntica ahora (2025-2026) o espe
 **Escenario B: Tienes problema de contratación**
 
 - No puedes contratar suficientes developers al salario que puedes pagar
-- El roadmap de producto está limitado por capacidad de engineering
+- La hoja de ruta de producto está limitada por capacidad de ingeniería
 - **Beneficio de adoptar:** 30-50% boost de productividad = equivalente a contratar 30-50% más gente sin el costo
 
 **Escenario C: Tu industria está en transformación digital activa**
 
 - Fintech, e-commerce, SaaS
-- Time to market es ventaja competitiva crítica
-- **Beneficio de adoptar:** Reducir time to market de 6 meses a 3 meses = ganar 2-3 ciclos de producto vs. competidores
+- *time-to-market* es ventaja competitiva crítica
+- **Beneficio de adoptar:** Reducir *time-to-market* de 6 meses a 3 meses = ganar 2-3 ciclos de producto vs. competidores
 
 ### Escenarios donde PUEDES esperar (pero con cautela):
 
@@ -592,7 +538,7 @@ Como líder, tienes que decidir: ¿Adoptas IA agéntica ahora (2025-2026) o espe
 - El equipo rechaza todo lo que huele a "hype"
 - **Estrategia:** Empieza con piloto de 3-5 voluntarios early adopters, demuestra resultados, luego expande. NO forces adoption top-down.
 
-**Tabla 2.6 — Matriz de decisión: ¿Cuándo adoptar IA agéntica en tu organización?**
+**Tabla 2.8. Matriz de decisión: ¿Cuándo adoptar IA agéntica en tu organización?**
 
 Instrucciones: Puntúa cada factor de 1 (bajo) a 5 (alto). Multiplica por el peso indicado. Suma el total.
 
@@ -600,7 +546,7 @@ Instrucciones: Puntúa cada factor de 1 (bajo) a 5 (alto). Multiplica por el pes
 |---|---------------------|---------------------|------|----------|
 | 1 | Velocidad de entrega es ventaja competitiva crítica en tu mercado | ___ | x3 | ___ |
 | 2 | Capacidad de contratación de developers es limitada o costosa | ___ | x2 | ___ |
-| 3 | Time to market actual supera los 6 meses para features clave | ___ | x2 | ___ |
+| 3 | *time-to-market* actual supera los 6 meses para features clave | ___ | x2 | ___ |
 | 4 | Openness del equipo a experimentar con nuevas herramientas | ___ | x2 | ___ |
 | 5 | Riesgos regulatorios y de compliance son manejables (no extremos) | ___ | x1 | ___ |
 | 6 | Presupuesto disponible para herramientas ($50-200/dev/mes) | ___ | x1 | ___ |
@@ -608,13 +554,13 @@ Instrucciones: Puntúa cada factor de 1 (bajo) a 5 (alto). Multiplica por el pes
 
 **Interpretación del score:**
 
-| Rango de score | Nivel de urgencia | Recomendación de acción |
-|---------------|-------------------|------------------------|
-| **>40 puntos** | Alta urgencia | Adoptar AHORA. Iniciar rollout formal en Q1-Q2 2026. Asignar presupuesto, seleccionar herramientas, y comenzar entrenamiento del equipo completo. |
-| **25-40 puntos** | Urgencia moderada | Lanzar piloto con 5-10 developers en Q2 2026. Medir resultados durante 3 meses. Expandir a toda la organización en H2 2026 si los resultados son positivos. |
-| **<25 puntos** | Urgencia baja (pero no nula) | Iniciar piloto exploratorio en H2 2026 con 2-3 voluntarios. Reevaluar en Q1 2027. Mientras tanto, monitorear avances de la industria y preparar el terreno cultural. |
+| Rango de score | Prioridad de adopción | Recomendación de acción |
+|---------------|----------------------|------------------------|
+| **>40 puntos** | Alta prioridad | Iniciar rollout formal en el próximo trimestre. Asignar presupuesto, seleccionar herramientas, y comenzar entrenamiento del equipo completo. |
+| **25-40 puntos** | Prioridad moderada | Lanzar piloto con 5-10 developers. Medir resultados durante 3 meses. Expandir si los resultados son positivos. |
+| **<25 puntos** | Prioridad baja (pero no nula) | Iniciar piloto exploratorio con 2-3 voluntarios. Reevaluar en 6 meses. Mientras tanto, monitorear avances de la industria y preparar el terreno cultural. |
 
-> **Ejemplo práctico:** Una fintech de 50 developers en Ciudad de México puntuó: velocidad competitiva = 5 (x3 = 15), contratación limitada = 4 (x2 = 8), time to market = 4 (x2 = 8), openness del equipo = 3 (x2 = 6), compliance = 3 (x1 = 3), presupuesto = 4 (x1 = 4). **Total: 44 puntos** → Adopción inmediata recomendada. Comenzaron en Q3 2025 y reportaron 40% de mejora en velocity a los 4 meses.
+> **Ejemplo práctico:** Una fintech de 50 developers en Ciudad de México puntuó: velocidad competitiva = 5 (x3 = 15), contratación limitada = 4 (x2 = 8), *time-to-market* = 4 (x2 = 8), openness del equipo = 3 (x2 = 6), compliance = 3 (x1 = 3), presupuesto = 4 (x1 = 4). **Total: 44 puntos** → Adopción inmediata recomendada. Comenzaron en Q3 2025 y reportaron 40% de mejora en velocity a los 4 meses.
 
 ---
 
@@ -653,7 +599,7 @@ Cada paradigma redefinió qué significa "ser programador". El paradigma agénti
 - Orquesta a músicos (IA agents) para ejecutar esa visión
 - Valor está en la visión, la coordinación, y la validación
 
-**Tabla 2.5 — Evolución del rol del desarrollador a través de los paradigmas**
+**Tabla 2.9. Evolución del rol del desarrollador a través de los paradigmas**
 
 | Dimensión | Paradigma Procedural (1970s-90s) | Paradigma OOP (1990s-2010s) | Paradigma Declarativo (2010s-2020s) | Paradigma Agéntico (2020s+) |
 |-----------|--------------------------------|---------------------------|-----------------------------------|---------------------------|
@@ -666,7 +612,7 @@ Cada paradigma redefinió qué significa "ser programador". El paradigma agénti
 | **Perfil de contratación ideal** | Experto en un lenguaje específico | Experto en patrones y arquitectura | Full-stack, adaptable a múltiples tecnologías | Generalista con profundo conocimiento del dominio de negocio y capacidad de orquestar IA |
 | **Riesgo de obsolescencia** | Alto si no aprendió OOP | Alto si no adoptó frameworks modernos | Medio si no adopta herramientas de IA | Bajo si evoluciona continuamente |
 
-> **Implicación para líderes de talento:** El desarrollador del paradigma agéntico dedica la mayor parte de su tiempo a actividades de alto valor: diseñar arquitectura, validar que el código generado cumple con los requisitos de negocio, y comunicarse con stakeholders. Las organizaciones deben ajustar sus procesos de evaluación de desempeño: medir "features entregadas y calidad del sistema" en lugar de "líneas de código escritas" o "commits por semana".
+> **Implicación para líderes de talento:** El desarrollador del paradigma agéntico dedica la mayor parte de su tiempo a actividades de alto valor: diseñar arquitectura, validar que el código generado cumple con los requisitos de negocio, y comunicarse con partes interesadas. Las organizaciones deben ajustar sus procesos de evaluación de desempeño: medir "features entregadas y calidad del sistema" en lugar de "líneas de código escritas" o "commits por semana".
 
 ---
 
@@ -689,7 +635,7 @@ Cada paradigma redefinió qué significa "ser programador". El paradigma agénti
 
 **Implicación para hiring:**
 
-- Menos headcount necesario para la misma capacidad
+- Menos personal necesario para la misma capacidad
 - Pero salarios más altos (porque necesitas seniors y mid-levels, no un ejército de juniors)
 
 **Caso de estudio: GitHub (2024-2025)**
@@ -704,7 +650,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 - Antes: 100 devs × $100K promedio = $10M payroll, producen X features
 - Después: 80 devs × $115K promedio = $9.2M payroll, producen 1.35X features
-- **Resultado: 35% más output, 8% menos costo**
+- **Resultado: 35% más producción, 8% menos costo**
 
 ### Implicación 2: Code Review se Vuelve Más Crítico, No Menos
 
@@ -799,15 +745,24 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 4. **El rol del desarrollador evoluciona, no desaparece:** De traductor de lógica a sintaxis → a arquitecto de intenciones y validador de soluciones.
 
-5. **No es solo tech—es estrategia de negocio:** Organizaciones que adoptaron paradigmas emergentes temprano ganaron años de ventaja competitiva.
+5. **No es solo tech; es estrategia de negocio:** Organizaciones que adoptaron paradigmas emergentes temprano ganaron años de ventaja competitiva.
 
 6. **La barrera de entrada es baja:** No requiere reescribir código legacy. Costo: $20-100/dev/mes. No hay excusa para no pilotar.
 
-7. **Los equipos cambian:** Menos headcount, salarios más altos, code review más crítico, onboarding más rápido pero enfocado diferente.
+7. **Los equipos cambian:** Menos personal, salarios más altos, code review más crítico, onboarding más rápido pero enfocado diferente.
 
-8. **Aprende de resistencias pasadas:** Los argumentos contra IA hoy ("ineficiente", "no para producción") son idénticos a los argumentos contra Java en 1995. Y estaban equivocados.
+8. **Aprende de resistencias pasadas:** Los argumentos contra IA hoy ("ineficiente", "no para producción") son idénticos a los argumentos contra Java en 1995. Y estaban equivocados. Para convertir estas lecciones históricas en una estrategia práctica de adopción, ver Capítulo 12 (framework Crawl/Walk/Run) y Capítulo 4 (por qué diseñar organizacionalmente, no solo adoptar herramientas).
 
-### Preguntas de Reflexión para Tu Equipo:
+
+> **Tarjeta de Referencia Rápida**
+>
+> - **Métrica clave 1**: Cada transición paradigmática multiplicó productividad 3-10x; datos preliminares de IA muestran 1.5-2.5x
+> - **Métrica clave 2**: Adopción de lenguajes de alto nivel pasó de 5% a 50% en 10 años (1960-1970); IA agéntica está en ~30-35% en 2025
+> - **Métrica clave 3**: Ventana de early adopter advantage: 12-24 meses antes de que IA agéntica sea table stakes
+> - **Framework principal**: La Escalera de Abstracción y la Curva de Adopción Paradigmática (ver este capítulo)
+> - **Acción inmediata**: Evalúa en qué paradigma opera tu equipo hoy y propón un piloto de 3 meses con inversión de $20-100/dev/mes
+
+## Preguntas de Reflexión para Tu Equipo
 
 1. **Sobre historia:**
    - ¿En qué paradigma estamos hoy? ¿Cuándo fue la última transición que vivimos?
@@ -815,7 +770,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 2. **Sobre presente:**
    - ¿Qué % de nuestro equipo ya usa IA tools informalmente? (Probablemente más de lo que piensas)
-   - ¿Cuál es nuestro time to market actual? ¿Qué pasaría si lo redujéramos 30-50%?
+   - ¿Cuál es nuestro *time-to-market* actual? ¿Qué pasaría si lo redujéramos 30-50%?
 
 3. **Sobre futuro:**
    - Si IA agéntica sigue el patrón histórico, ¿dónde queremos estar en 2027?
@@ -838,4 +793,8 @@ GitHub reportó que después de adoptar Copilot internamente:
 7. Arxiv. (2023). "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot".
 8. Stack Overflow. (2025). "AI | 2025 Stack Overflow Developer Survey".
 9. Montoya, Jonathan. (2024). "Programming Abstraction and the Future of Software Engineering". Blog post.
+
+---
+
+*Fin del Capítulo 2. Continúa en Capítulo 3: ¿Qué es la Inteligencia Artificial Agéntica?*
 

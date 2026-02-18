@@ -1,12 +1,13 @@
 % =============================================================================
-% pa-typography.sty — Typography enhancements for El Paradigma Agéntico
+% pa-typography.sty — Typography enhancements for Agéntico por Diseño, Tomo I
 % =============================================================================
 
 \NeedsTeXFormat{LaTeX2e}
 
 % --- Paragraph settings ---
-\setlength{\parindent}{1.5em}
-\setlength{\parskip}{0pt plus 1pt}
+% Standard 1em indent for professional publishing
+\setlength{\parindent}{1.0em}
+\setlength{\parskip}{0pt plus 0.5pt}
 
 % --- Hyphenation and line-breaking (canonical location — overrides .cls values) ---
 \hyphenpenalty=800
@@ -26,16 +27,18 @@
 % --- Smart quotes and punctuation (LuaLaTeX handles this via fontspec) ---
 
 % --- Prevent floating figures from jumping ahead of sections ---
-\renewcommand{\topfraction}{0.85}
-\renewcommand{\bottomfraction}{0.70}
-\renewcommand{\textfraction}{0.15}
+\renewcommand{\topfraction}{0.75}
+\renewcommand{\bottomfraction}{0.65}
+\renewcommand{\textfraction}{0.20}
 \renewcommand{\floatpagefraction}{0.66}
 
 % --- Ensure all pages have content at bottom (prevent stretching) ---
 % Already set in .cls with \raggedbottom
 
 % --- URL breaking ---
+% xurl provides better line breaking for long URLs without visible hyphens
 \PassOptionsToPackage{hyphens}{url}
+\AtEndPreamble{\RequirePackage{xurl}}
 
 % --- Caption styling ---
 \captionnamefont{\small\sffamily\bfseries\color{pa-primary}}

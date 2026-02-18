@@ -1,9 +1,9 @@
 % =============================================================================
-% paradigma-agentico.cls — Document class for "El Paradigma Agéntico"
+% paradigma-agentico.cls — Document class for "Agéntico por Diseño, Tomo I"
 % Based on memoir class for professional book typesetting
 % =============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{paradigma-agentico}[2025/01/01 El Paradigma Agentico book class]
+\ProvidesClass{paradigma-agentico}[2025/01/01 Agentico por Diseno Tomo I book class]
 
 % -----------------------------------------------------------------------------
 % Class options
@@ -17,7 +17,9 @@
 % -----------------------------------------------------------------------------
 % Base class: memoir
 % -----------------------------------------------------------------------------
-\LoadClass[11pt,openany,final]{memoir}
+% 10pt base font: professional publishing standard (O'Reilly uses 10pt)
+% openright: chapters always start on recto (odd) pages
+\LoadClass[10pt,openright,final]{memoir}
 
 % -----------------------------------------------------------------------------
 % Required packages
@@ -73,6 +75,10 @@
 % Math (for some symbols)
 \RequirePackage{amssymb}
 
+% Index (must load before hyperref for clickable page numbers)
+\RequirePackage{imakeidx}
+\makeindex[columns=2, title=Índice Analítico, intoc]
+
 % Hyperlinks
 \RequirePackage{hyperref}
 \RequirePackage{bookmark}
@@ -110,28 +116,47 @@
 \newunicodechar{🔬}{\faMicroscope}
 \newunicodechar{🤖}{\faRobot}
 
-% Drop caps
+% Drop caps - configuración compacta y estable
 \RequirePackage{lettrine}
+\setcounter{DefaultLines}{2}            % Solo 2 líneas de altura
+\renewcommand{\DefaultLoversize}{-0.15} % Letra 15% más pequeña que default
+\renewcommand{\DefaultLhang}{0}         % Sin colgado a la izquierda (alineado)
+\setlength{\DefaultFindent}{0.4em}      % Margen derecho de la letra capital
+\setlength{\DefaultNindent}{0.4em}      % Indentación uniforme línea 2+
+\renewcommand{\LettrineFontHook}{\color{pa-primary}\sffamily} % Sans-serif como headers
 
 % Epigraphs
 \RequirePackage{epigraph}
 
+% Margin notes for workbook annotations
+\RequirePackage{marginnote}
+\renewcommand*{\marginfont}{\footnotesize\sffamily\color{pa-midgray}}
+
 % -----------------------------------------------------------------------------
 % Page geometry — Crown Quarto trim on letter stock
+% Optimized for hardcover binding following Tschichold's principles
+% Reference: Butterick's Practical Typography, The Book Designer
 % -----------------------------------------------------------------------------
 % Stock size: US Letter (for printing)
 \setstocksize{11in}{8.5in}
-% Trim size: Crown Quarto (7.44 × 9.68 inches)
+% Trim size: Crown Quarto (7.44 × 9.68 inches = 189 × 246mm)
 \settrimmedsize{9.68in}{7.44in}{*}
 % Center the trimmed page on the stock
 \settrims{0.66in}{0.53in}
-% Type block: ~20cm tall × 12.2cm wide (~67-70 chars/line with Libertinus 11pt)
-\settypeblocksize{20cm}{12.2cm}{*}
-% Inner (gutter) margin: 2.8cm for binding ~500 pages
-\setlrmargins{2.8cm}{*}{*}
-\setulmargins{2.5cm}{*}{*}
-\setheadfoot{14pt}{26pt}
-\setheaderspaces{*}{12pt}{*}
+
+% Type block: 21.0cm tall × 13.5cm wide (~68-75 chars/line at 10pt)
+% 3cm outer margin for moderate annotation space
+\settypeblocksize{21.0cm}{13.5cm}{*}
+
+% Asymmetric margins for hardcover binding (Tschichold-inspired)
+% Inner (gutter): 2.2cm - sufficient for case-bound hardcover
+% Outer: auto-calculated (~3.0cm) from trim width minus gutter minus type block
+\setlrmargins{2.2cm}{*}{*}
+% Top: 1.8cm, Bottom: auto-calculated (~2.5cm)
+\setulmargins{1.8cm}{*}{*}
+
+\setheadfoot{13pt}{24pt}
+\setheaderspaces{*}{11pt}{*}
 \checkandfixthelayout[nearest]
 
 % -----------------------------------------------------------------------------
@@ -191,7 +216,9 @@
 }
 
 % Hyphenation and tolerance are set in pa-typography.sty (loaded later).
-% Line spacing — Libertinus has generous x-height, 1.12 is sufficient.
+% Line spacing — Based on Butterick's Practical Typography recommendation
+% Optimal range: 120-145% of point size. 1.15 (115%) prioritizes density
+% Libertinus has generous x-height, so slightly below 120% is acceptable
 \setSingleSpace{1.15}
 \SingleSpacing
 
@@ -214,8 +241,9 @@
     \chaptitlefont ##1%
   }%
   \renewcommand*{\afterchapternum}{}%
-  \setlength{\beforechapskip}{60pt}%
-  \setlength{\afterchapskip}{36pt}%
+  % Reduced from 60pt/36pt for better page density
+  \setlength{\beforechapskip}{25pt}%
+  \setlength{\afterchapskip}{16pt}%
 }
 \chapterstyle{paradigma}
 
@@ -273,13 +301,13 @@
 \makeoddfoot{paradigma-plain}{}{\small\sffamily\thepage}{}
 \aliaspagestyle{chapter}{paradigma-plain}
 
-% Truncate running headers to fit 12.2cm type block
-% Page number + spacing uses ~1.5cm, leaving ~10.7cm for text
+% Truncate running headers to fit 11.5cm type block
+% Page number + spacing uses ~1.5cm, leaving ~9.5cm for text
 \renewcommand*{\chaptermark}[1]{%
-  \markboth{\truncate{10cm}{#1}}{}%
+  \markboth{\truncate{9cm}{#1}}{}%
 }
 \renewcommand*{\sectionmark}[1]{%
-  \markright{\truncate{10cm}{#1}}%
+  \markright{\truncate{9cm}{#1}}%
 }
 
 % -----------------------------------------------------------------------------
@@ -293,11 +321,11 @@
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
-% Spacing
-\setbeforesecskip{-3ex plus -1ex minus -0.5ex}
-\setaftersecskip{1.5ex plus 0.5ex}
-\setbeforesubsecskip{-2.5ex plus -1ex minus -0.5ex}
-\setaftersubsecskip{1ex plus 0.3ex}
+% Spacing — Tighter for professional density
+\setbeforesecskip{-2.5ex plus -0.8ex minus -0.3ex}
+\setaftersecskip{1.0ex plus 0.3ex}
+\setbeforesubsecskip{-2.0ex plus -0.6ex minus -0.2ex}
+\setaftersubsecskip{0.7ex plus 0.2ex}
 
 % -----------------------------------------------------------------------------
 % Table of Contents styling
@@ -396,7 +424,7 @@
 % PDF metadata
 \AtBeginDocument{%
   \hypersetup{
-    pdftitle={El Paradigma Agéntico: Una Nueva Era en la Ingeniería de Software},
+    pdftitle={Agéntico por Diseño, Tomo I: Tecnologías de la Información},
     pdfauthor={Karim Touma},
     pdfsubject={IA Agéntica en Ingeniería de Software},
     pdfkeywords={inteligencia artificial, agentes, ingeniería de software, liderazgo, estrategia}
@@ -423,9 +451,9 @@
 % Decorative separator
 \newcommand{\separator}{%
   \begin{center}%
-    \vspace{0.8em}%
+    \vspace{0.4em}%
     {\color{pa-midgray}\rule{0.3\textwidth}{0.5pt}}%
-    \vspace{0.8em}%
+    \vspace{0.4em}%
   \end{center}%
 }
 
@@ -444,16 +472,46 @@
 
 % Part divider page (used by Lua filter)
 \newcommand{\partdivider}[2]{%
-  \cleardoublepage%
+  \clearpage%
   \thispagestyle{empty}%
-  \vspace*{\fill}%
+  \vspace*{4cm}%
   \begin{center}%
     {\fontsize{12}{16}\selectfont\sffamily\color{pa-midgray}\MakeUppercase{Parte}\enspace}%
     {\fontsize{12}{16}\selectfont\sffamily\bfseries\color{pa-primary}#1}\\[18pt]%
     {\color{pa-primary}\rule{0.3\textwidth}{1.5pt}}\\[18pt]%
     {\fontsize{24}{30}\selectfont\sffamily\bfseries\color{pa-darktext}#2}%
   \end{center}%
-  \vspace*{\fill}%
+  \vspace*{2cm}%
+  \clearpage%
+}
+
+% Mini Table of Contents (per-chapter, inserted by Lua filter)
+\newcommand{\chapterminitoc}[1]{%
+  \vspace{6pt}%
+  \noindent{\small\sffamily\bfseries\color{pa-midgray}En este capítulo:}%
+  \vspace{2pt}%
+  \begin{itemize}[leftmargin=1.5em,itemsep=1pt,topsep=2pt,parsep=0pt,label=\textcolor{pa-primary}{\textbullet}]%
+    \small\sffamily\color{pa-secondary}%
+    #1%
+  \end{itemize}%
+  \vspace{6pt}%
+  {\color{pa-primary}\hrule height 0.4pt}%
+  \vspace{10pt}%
+}
+
+% Notes page (inserted by Lua filter after part dividers)
+\newcount\pa@notelinecount
+\newcommand{\notespage}[1]{%
+  \clearpage%
+  \thispagestyle{empty}%
+  \vspace*{1cm}%
+  {\centering\fontsize{14}{18}\selectfont\sffamily\bfseries\color{pa-midgray}Mis Notas --- #1\par}%
+  \vspace{1cm}%
+  \pa@notelinecount=0\relax%
+  \loop\ifnum\pa@notelinecount<28%
+    \noindent{\color{pa-lightgray}\rule{\textwidth}{0.3pt}}\par\vspace{0.55cm}%
+    \advance\pa@notelinecount by 1\relax%
+  \repeat%
   \clearpage%
 }
 
@@ -553,8 +611,8 @@
 % -----------------------------------------------------------------------------
 % Widow/orphan control
 % -----------------------------------------------------------------------------
-\widowpenalty=10000
-\clubpenalty=10000
+\widowpenalty=8000
+\clubpenalty=8000
 \brokenpenalty=4991
 \predisplaypenalty=10000
 \postdisplaypenalty=1549

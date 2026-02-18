@@ -1,6 +1,6 @@
 ---
 name: book-build
-description: Skills para construir, previsualizar y optimizar el libro "El Paradigma Agéntico" en LaTeX via Docker
+description: Skills para construir, previsualizar y optimizar el libro "Agéntico por Diseño, Tomo I" en LaTeX via Docker
 ---
 
 # Skill: Book Build Pipeline
@@ -21,7 +21,7 @@ Build completo del libro PDF dentro de Docker.
 **Proceso:**
 1. `cd /Users/karim/Desktop/book/latex-pipeline`
 2. `docker compose run --rm book make pdf`
-3. Output: `latex-pipeline/output/el-paradigma-agentico.pdf`
+3. Output: `latex-pipeline/output/agentico-por-diseno.pdf`
 4. Revisar warnings de LaTeX en la salida (overfull hbox, etc.)
 5. Reportar: tamaño del PDF, número de páginas, warnings críticos
 
@@ -43,7 +43,7 @@ Build rápido de un solo capítulo o el libro completo y abrirlo.
 **Proceso sin parámetro:**
 1. `cd /Users/karim/Desktop/book/latex-pipeline`
 2. `docker compose run --rm book make pdf`
-3. `open output/el-paradigma-agentico.pdf`
+3. `open output/agentico-por-diseno.pdf`
 
 **Proceso con capítulo:**
 1. `cd /Users/karim/Desktop/book/latex-pipeline`
