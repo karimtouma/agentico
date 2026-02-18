@@ -79,14 +79,11 @@ BOOK_PDF    := $(OUTPUT)/agentico-por-diseno.pdf
 BOOK_TEX    := $(OUTPUT)/agentico-por-diseno.tex
 BOOK_EPUB   := $(OUTPUT)/agentico-por-diseno.epub
 DIGITAL_PDF := $(OUTPUT)/agentico-por-diseno-digital.pdf
-EXEC_PDF    := $(OUTPUT)/agentico-executive-edition.pdf
-EXEC_FILE   := $(CONTENT)/EXECUTIVE_EDITION.md
-
 # =============================================================================
 # Targets
 # =============================================================================
 
-.PHONY: pdf digital epub latex chapter executive validate optimize preview clean docker-build figures help
+.PHONY: pdf digital epub latex chapter validate optimize preview clean docker-build figures help
 
 ## Build figures (TikZ → PDF, SVG → PDF)
 figures:
@@ -167,19 +164,6 @@ digital:
 		-o $(DIGITAL_PDF) \
 		$(ALL_FILES)
 	@echo "✓ Digital PDF: $(DIGITAL_PDF)"
-
-## Build Executive Edition (condensed 60-90 page version for C-suite)
-executive:
-	@echo "══════════════════════════════════════════════"
-	@echo "  Building: Executive Edition (PDF)"
-	@echo "══════════════════════════════════════════════"
-	@mkdir -p $(OUTPUT)
-	cd $(OUTPUT) && pandoc $(PANDOC_OPTS) \
-		-o $(EXEC_PDF) \
-		$(EXEC_FILE)
-	@echo ""
-	@echo "✓ Executive Edition: $(EXEC_PDF)"
-	@echo "  Size: $$(du -h $(EXEC_PDF) | cut -f1)"
 
 ## Export EPUB
 epub:
@@ -264,7 +248,6 @@ help:
 	@echo "  make figures      Build figures (TikZ/SVG → PDF)"
 	@echo "  make pdf          Build print-ready PDF (default)"
 	@echo "  make digital      Build digital PDF (hyperlinks visible)"
-	@echo "  make executive    Build Executive Edition (60-90 pages)"
 	@echo "  make epub         Export EPUB"
 	@echo "  make latex        Generate .tex for inspection"
 	@echo "  make chapter CHAP=04  Build single chapter"

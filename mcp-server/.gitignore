@@ -1,0 +1,4 @@
+node_modules/
+dist/
+kv-data.json
+.wrangler/

@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agentico-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-03-10",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Observability
+  "observability": {
+    "enabled": true
+  },
+
+  // Durable Objects for MCP agent state
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "BookMCP"
+      }
+    ]
+  },
+
+  // KV namespace for book content
+  "kv_namespaces": [
+    {
+      "binding": "BOOK_KV",
+      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+    }
+  ],
+
+  // Migrations for Durable Objects
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["BookMCP"]
+    }
+  ]
+}

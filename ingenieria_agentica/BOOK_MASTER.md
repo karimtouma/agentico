@@ -112,7 +112,7 @@
 **Reestructurado:**
 - Cap 10 (antes 10b): 3 patrones de fracaso basados en datos (Gartner, GitClear, METR, Snyk)
 - Cap 12 (antes 14): Viñetas reemplazadas con datos reales (Cursor, Gartner Hype Cycle, McKinsey)
-- EXECUTIVE_EDITION.md: Secciones de casos → datos reales de industria
+
 
 **Renumeración:**
 - Caps 7-14 → Caps 5-12 (eliminación de 2 capítulos reduce numeración)
@@ -145,8 +145,7 @@
 4. [x] Escribir prefacio
 5. [x] Crear apéndices
 6. [x] Revisión de coherencia y pulido editorial
-7. [x] Archivo consolidado (BOOK_FINAL.md) generado
-8. [x] Feedback editorial implementado (Sesión 5)
+7. [x] Feedback editorial implementado (Sesión 5)
 9. [x] Revisión estratégica (Sesión 6)
 10. [x] Cirugía de contenido (Sesión 7)
     - Eliminación de 3 casos ficticios redundantes (-19,600 palabras)

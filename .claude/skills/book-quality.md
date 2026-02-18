@@ -163,7 +163,7 @@ Validación exhaustiva de referencias cruzadas entre TODOS los archivos del libr
 | 13 | 13_gobernanza_riesgos.md | Gobernanza y Riesgos |
 | 14 | 14_futuro_2030.md | Futuro 2030 |
 
-2. **Escanear TODAS las referencias** en todos los archivos (capitulos/ + apendices/ + BOOK_MASTER.md + BOOK_FINAL.md) con Grep:
+2. **Escanear TODAS las referencias** en todos los archivos (capitulos/ + apendices/ + BOOK_MASTER.md) con Grep:
 
 - `Capítulo \d+` — menciones generales
 - `Cap\.\s*\d+` — formato abreviado
@@ -177,9 +177,7 @@ Validación exhaustiva de referencias cruzadas entre TODOS los archivos del libr
 - Cap > 14 = **ERROR**
 - Framework # > 12 = **ERROR**
 
-4. **Verificar BOOK_FINAL.md** específicamente por refs del esquema antiguo.
-
-5. **Generar reporte** con cada referencia categorizada: OK, ADVERTENCIA, ERROR.
+4. **Generar reporte** con cada referencia categorizada: OK, ADVERTENCIA, ERROR.
 
 ---
 
@@ -202,7 +200,7 @@ Auditoría de consistencia de cifras ROI, métricas financieras y estadísticas.
 4. **Detectar cifras sin caveat.** Para ROI > 1,000%, verificar que en un rango de ±5 líneas exista algún caveat:
 - Patrón de caveats: `P25|P50|P75|P90|sensibilidad|distribución|percentil|mediana|outlier|caveat|conservador|ajust|brut`
 
-5. **Detectar estadísticas sobre-repetidas** (>5 apariciones, excluyendo BOOK_FINAL.md y EDITORIAL_ANALYSIS.md):
+5. **Detectar estadísticas sobre-repetidas** (>5 apariciones):
 
 - `55%.*productividad|productividad.*55%` (MIT RCT)
 - `30%.*código.*IA|30-40%` (Gartner)
@@ -276,56 +274,13 @@ DATOS VERIFICADOS:
 
 ---
 
-## /freshness
-
-Verificar que BOOK_FINAL.md está sincronizado con los archivos fuente.
-
-**Proceso:**
-
-1. **Comparar fechas de modificación.** Usar `ls -la` para obtener fecha de modificación de:
-- `/Users/karim/Desktop/book/ingenieria_agentica/BOOK_FINAL.md`
-- Cada archivo en `capitulos/` y `apendices/`
-
-Si algún archivo fuente es más reciente que BOOK_FINAL.md, reportar como DESINCRONIZADO.
-
-2. **Verificar títulos de capítulos en BOOK_FINAL.md.** Buscar con Grep los encabezados `# ` de nivel 1 en BOOK_FINAL.md y comparar contra los títulos reales de cada archivo fuente (primera línea `# ` de cada archivo).
-
-3. **Verificar conteo de capítulos.** Contar encabezados H1 en BOOK_FINAL.md vs. número de archivos en `capitulos/`.
-
-4. **Verificar numeración.** Buscar en BOOK_FINAL.md refs al esquema antiguo:
-- `Cap.*5.*evolución` → ERROR (Cap 5 es Sesgos, no Evolución)
-- `Cap.*6.*ecosistema` → ERROR (Cap 6 es Guía por Industria, no Ecosistema)
-- Verificar que capítulos 10 (Cuando Falla), 5 (Sesgos) estén presentes
-
-5. **Generar reporte:**
-
-```
-FRESHNESS CHECK — [fecha]
-
-BOOK_FINAL.md: [fecha modificación]
-
-DESINCRONIZADOS:
-- [archivo] ([fecha]) — más reciente que BOOK_FINAL
-
-SINCRONIZADOS:
-- [archivo] ([fecha]) — OK
-
-TÍTULOS: [N] coinciden / [M] total
-NUMERACIÓN: [OK | PROBLEMAS]
-CAPÍTULOS FALTANTES EN BOOK_FINAL: [lista]
-
-VEREDICTO: [SINCRONIZADO | DESINCRONIZADO — regenerar]
-```
-
----
-
 ## /redundancy
 
 Detecta contenido repetido entre capítulos — stats, citas, y overlap temático.
 
 **Proceso:**
 
-1. **Stats duplicadas (dinámico).** Grep `\d+[%x]` en todos los archivos de `capitulos/` (excluyendo BOOK_FINAL.md, EDITORIAL_ANALYSIS.md). Para cada stat encontrada:
+1. **Stats duplicadas (dinámico).** Grep `\d+[%x]` en todos los archivos de `capitulos/`. Para cada stat encontrada:
 - Extraer el número + contexto (±5 palabras)
 - Agrupar por valor numérico (ej. todos los "55%" juntos, todos los "40%" juntos)
 - Flag: cualquier stat que aparezca en **3+ archivos distintos**
