@@ -4,6 +4,7 @@
   "main": "src/index.ts",
   "compatibility_date": "2025-03-10",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
 
   // Observability
   "observability": {
@@ -25,6 +26,14 @@
     {
       "binding": "BOOK_KV",
       "id": "4405cb4f8f274dbcb850a395f8f1a9fe"
+    }
+  ],
+
+  // Custom domain
+  "routes": [
+    {
+      "pattern": "book-mcp.touma.io",
+      "custom_domain": true
     }
   ],
 
