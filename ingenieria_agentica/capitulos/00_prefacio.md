@@ -46,7 +46,7 @@ Según datos de GitHub de 2025, el 46% de todo el código generado por desarroll
 > - **Qué mide:** Porcentaje de código nuevo generado con asistencia de IA (aceptaciones de sugerencias de Copilot como proporción del código total committeado)
 > - **Muestra:** 1.8M+ usuarios activos de GitHub Copilot; datos agregados de proyectos Java, Python, JavaScript y otros lenguajes
 > - **Limitación:** Solo mide código aceptado vía Copilot en GitHub; no incluye código asistido por otras herramientas (ChatGPT, Claude, Cursor) ni asistencia indirecta. La cifra real de código "asistido por IA" probablemente es mayor
-> - **Implicación práctica:** Si al menos 46% del código nuevo ya es asistido por IA, la pregunta para líderes no es "¿debemos adoptar?" sino "¿cómo gobernar lo que ya está sucediendo?"
+> - **Implicación:** Si al menos 46% del código nuevo ya es asistido por IA, la pregunta para líderes no es "¿debemos adoptar?" sino "¿cómo gobernar lo que ya está sucediendo?"
 
 Pero aquí está el problema: mientras que el 84% de los desarrolladores están usando herramientas de IA[^pref2], menos del 10% de las organizaciones han logrado escalar agentes de IA a nivel de producción en alguna función específica, según el reporte "State of AI 2025" de McKinsey[^pref3].
 
@@ -79,7 +79,7 @@ Gartner ha emitido predicciones que toda la alta dirección técnica debería co
 > - **Qué mide:** Proyección de adopción de agentes de IA en aplicaciones empresariales y tasa de cancelación de proyectos
 > - **Muestra:** Análisis prospectivo de Gartner basado en encuestas a ejecutivos y modelos de mercado (no son datos observados)
 > - **Limitación:** Las proyecciones de Gartner tienen un margen de error histórico significativo. Esta predicción de cancelación refleja el patrón típico del Hype Cycle
-> - **Implicación práctica:** La dualidad es el mensaje clave: el mercado se moverá rápido, pero sin governance la mayoría fracasará. Estar en la mayoría que sobrevive requiere estrategia deliberada
+> - **Implicación:** La dualidad es el mensaje clave: el mercado se moverá rápido, pero sin governance la mayoría fracasará. Estar en la mayoría que sobrevive requiere estrategia deliberada
 
 El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035: más de **$450 mil millones**[^pref5].
 

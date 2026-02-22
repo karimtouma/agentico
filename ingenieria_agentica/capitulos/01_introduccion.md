@@ -85,7 +85,7 @@ Google, según declaraciones públicas de su CEO Sundar Pichai, también reporta
 > - **Qué mide:** Porcentaje de código nuevo en repositorios internos generado con asistencia de IA
 > - **Muestra:** Repositorios internos de 3 de las 5 empresas tecnológicas más grandes del mundo (Microsoft ~200K empleados, Google ~180K, Meta ~70K)
 > - **Limitación:** Son declaraciones de CEOs en contexto de earnings calls y entrevistas, no auditorías independientes. Cada empresa puede medir "código generado por IA" de forma diferente. Existe incentivo para las empresas de proyectar liderazgo en IA
-> - **Implicación práctica:** Aunque las cifras exactas son auto-reportadas, la convergencia en ~30% entre tres empresas independientes sugiere que el orden de magnitud es correcto. Para tu organización: si las Big Tech ya están en 30%, la pregunta es cuánto terreno están cediendo al no estar ahí
+> - **Implicación:** Aunque las cifras exactas son auto-reportadas, la convergencia en ~30% entre tres empresas independientes sugiere que el orden de magnitud es correcto. Para tu organización: si las Big Tech ya están en 30%, la pregunta es cuánto terreno están cediendo al no estar ahí
 
 ### ¿Qué Significa "30%"?
 
@@ -211,7 +211,7 @@ Estos no son números de marketing. Son resultados de estudios peer-reviewed pub
 > - **Qué mide:** Velocidad de completar tareas de codificación, tiempo de ciclo de pull requests, y proyectos completados por semana, todos comparando grupos con y sin asistentes de IA
 > - **Muestra:** Estudio controlado de GitHub (95 developers profesionales, tareas estandarizadas); análisis de Second Talent sobre 1.8M+ usuarios de Copilot; encuesta de Index.dev a 500+ empresas
 > - **Limitación:** El estudio de 55% fue en tareas relativamente simples (servidor HTTP en JavaScript); las ganancias en tareas arquitecturales complejas son menores. Los 126% más proyectos incluyen variabilidad por tipo de proyecto. Las cifras de 30-60% de ahorro son auto-reportadas por empresas
-> - **Implicación práctica:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación; no en diseño arquitectural
+> - **Implicación:** Use 25-35% como estimación conservadora para su business case (no el 55% del mejor escenario). Los mayores impactos se ven en tareas repetitivas, testing, y documentación; no en diseño arquitectural
 
 ### Factor 4: El Costo de No Adoptar
 
@@ -290,7 +290,7 @@ Con ese contexto, las habilidades de tu equipo se reorganizan en tres categoría
 
 4. **[Prompt engineering]{.idx} aplicado**: Saber comunicar intenciones a agentes de IA de manera efectiva se ha convertido en competencia central. No se trata de memorizar fórmulas de prompts, sino de entender cómo descomponer problemas complejos en instrucciones que un agente pueda ejecutar. La demanda de esta habilidad creció **135.8%** interanual según datos de contratación[^ch1-29], con una tasa de crecimiento compuesto proyectada del 32.8% hasta 2030.
 
-5. **Validación y revisión de código generado por IA**: La encuesta de Stack Overflow 2025 revela una tensión central: el **84% de desarrolladores** usa o planea usar herramientas de IA, pero solo el **33% confía en la precisión del resultado**[^ch1-23]. Un 45% reporta que depurar código generado por IA consume demasiado tiempo. La capacidad de leer código que tú no escribiste, identificar suposiciones ocultas y detectar errores sutiles se vuelve más valiosa que la capacidad de generar ese código. Para más contexto sobre los sesgos cognitivos que dificultan esta revisión, ver Capítulo 4.
+5. **Validación y revisión de código generado por IA**: La encuesta de Stack Overflow 2025 revela una tensión central: el **84% de desarrolladores** usa o planea usar herramientas de IA, pero solo el **33% confía en la precisión del resultado**[^ch1-23]. Un 45% reporta que depurar código generado por IA consume demasiado tiempo. La capacidad de leer código que tú no escribiste, identificar suposiciones ocultas y detectar errores sutiles se vuelve más valiosa que la capacidad de generar ese código. Para más contexto sobre los sesgos cognitivos que dificultan esta revisión, ver Capítulo 5.
 
 6. **Orquestación de agentes**: Diseñar flujos donde múltiples agentes de IA colaboran - uno que escribe código, otro que lo revisa, otro que genera tests - requiere una habilidad nueva que combina pensamiento de sistemas con comprensión de las capacidades y limitaciones de cada modelo. Es el equivalente a dirigir un equipo donde los miembros son muy productivos pero carecen de sentido común. Para perfiles detallados de este y otros roles emergentes, ver Capítulo 11.
 
@@ -318,7 +318,7 @@ Que estas habilidades se comoditicen no significa que sean irrelevantes. Signifi
 | Pensamiento de seguridad | Medio | Muy Alto | Alza fuerte | Obligatorio dado 48% de vulnerabilidades en código IA |
 | Validación y revisión de código IA | Medio | Alto | Alza | Competencia crítica para todos los niveles |
 | Prompt engineering aplicado | No existía | Alto | Nueva (+135.8%) | Se integra en evaluaciones técnicas |
-| Orquestación de agentes | No existía | Alto | Nueva | Roles especializados emergentes (ver Cap. 9) |
+| Orquestación de agentes | No existía | Alto | Nueva | Roles especializados emergentes (ver Cap. 11) |
 | Estrategia de testing | Medio | Alto | Alza | Diseño de estrategia > escritura de tests |
 | Memorización de sintaxis | Alto | Bajo | Baja fuerte | Irrelevante en entrevistas modernas |
 | Implementación de algoritmos estándar | Alto | Bajo | Baja fuerte | IA los implementa perfectamente |
@@ -519,9 +519,9 @@ Usa estas preguntas en tu próxima sesión de estrategia:
    - ¿Podemos permitirnos estar 12-18 meses atrás de la curva de adopción?
    - ¿Qué oportunidades de negocio podríamos capturar si desarrollamos 2x más rápido?
 
-## El Impacto en Tu Presupuesto y Planificación 2026
+## El Impacto en Tu Presupuesto y Planificación
 
-Como líder técnico, probablemente estás trabajando en presupuestos para 2026 en este momento. La IA agéntica tiene implicaciones directas en cómo presupuestas tanto para herramientas como para talento.
+Como líder técnico, probablemente estás trabajando en el siguiente ciclo presupuestario. La IA agéntica tiene implicaciones directas en cómo presupuestas tanto para herramientas como para talento.
 
 ### Replanteando el ROI de Herramientas vs. Personal
 
@@ -824,7 +824,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 **Herramientas recomendadas para startups:**
 
-- GitHub Copilot ($19/dev/mes) para code completion
+- GitHub Copilot ($10/dev/mes) para code completion
 - Cursor ($20/dev/mes) para code generation más complejo
 - v0.dev (pricing variable) para prototipos rápidos de UI
 
@@ -1040,7 +1040,7 @@ Para ayudarte a elegir entre las decenas de herramientas disponibles, aquí una 
 
 | Tu Escenario | Herramienta Recomendada | Alternativa | Por Qué |
 |--------------|-------------------------|-------------|---------|
-| Startup early-stage, presupuesto limitado | Cursor ($20/mes) | GitHub Copilot ($19/mes) | Mejor code generation por el precio |
+| Startup early-stage, presupuesto limitado | Cursor ($20/mes) | GitHub Copilot ($10/mes) | Mejor code generation por el precio |
 | Empresa mediana en Microsoft/GitHub ecosystem | GitHub Copilot Business | Cursor | Integración nativa con GitHub |
 | Corporación grande con compliance estricto | GitHub Copilot Enterprise | Sourcegraph Cody Enterprise | Enterprise support, audit trails |
 | Equipo con mono-repo gigante (>1M LOC) | Sourcegraph Cody | GitHub Copilot | Mejor para indexar codebases masivos |

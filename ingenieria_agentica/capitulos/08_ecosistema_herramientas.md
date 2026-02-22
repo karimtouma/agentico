@@ -410,7 +410,7 @@ El nivel más avanzado. Estos sistemas pueden ejecutar tareas completas con supe
 
 ### Análisis Profundo: Devin vs. OpenHands
 
-**Devin** ha generado controversia desde su lanzamiento en marzo 2024. Cognition AI lo presenta como "el primer ingeniero de software de IA". Inicialmente cobró $500/mes por seat, pero en 2025 lanzó Devin 2.0 con un plan Core desde $20/mes basado en Agent Compute Units (ACUs), manteniendo el plan Team a $500/mes con 250 ACUs incluidas.
+**Devin** ha generado controversia desde su lanzamiento en marzo 2024. Cognition AI lo presenta como "el primer ingeniero de software de IA". Inicialmente cobró $500/mes por seat, pero en 2025 lanzó Devin 2.0 con un plan Core desde $20/mes basado en Agent Compute Units (ACUs), manteniendo el plan Team a $500/mes con 250 ACUs incluidas. En julio 2025, Cognition adquirió Windsurf (antes Codeium) por ~$250M tras el colapso de la adquisición de $3B por OpenAI, consolidando agente autónomo e IDE en una sola plataforma.
 
 **Capacidades demostradas:**
 
@@ -444,7 +444,7 @@ El nivel más avanzado. Estos sistemas pueden ejecutar tareas completas con supe
 
 ### Claude Code: El Agente de Anthropic
 
-Anthropic lanzó [Claude Code]{.idx data-sub="agentes autónomos"} en diciembre 2024 (SDK en febrero 2025) como su respuesta a Devin, pero con filosofía diferente: **agente como herramienta, no como reemplazo**.
+Anthropic lanzó [Claude Code]{.idx data-sub="agentes autónomos"} en febrero 2025 como research preview (GA en mayo 2025) como su respuesta a Devin, pero con filosofía diferente: **agente como herramienta, no como reemplazo**.
 
 **Diseño:**
 
@@ -561,7 +561,7 @@ Zhipu AI (conocida como Z.ai internacionalmente) lanzó GLM-5 en febrero 2026, u
 
 **Especificaciones de GLM-5:**
 
-- ~745 mil millones de parámetros (44 mil millones activos, arquitectura MoE con 256 expertos)
+- ~745 mil millones de parámetros (40 mil millones activos, arquitectura MoE con 256 expertos, top-8 activados)
 - Contexto de 200,000 tokens, output de hasta 128,000 tokens
 - Entrenado completamente en chips Huawei Ascend (independiente de semiconductores estadounidenses)
 - MIT license (uso comercial permitido)
@@ -574,7 +574,7 @@ Zhipu AI (conocida como Z.ai internacionalmente) lanzó GLM-5 en febrero 2026, u
 | AIME 2025 (matemáticas) | ~96% | 94.2% | 93.8% |
 | SWE-Bench Verified | ~48% | ~50% | ~47% |
 
-**Pricing disruptivo:** ~$0.11 por millón de tokens (input), o aproximadamente $3/mes para uso típico de desarrollador. Comparado con los $200/mes de Claude Max, representa una reducción de ~60x en costo.
+**Pricing disruptivo:** ~$0.80 por millón de tokens (input), ~$2.60 por millón de tokens (output), o aproximadamente $10-20/mes para uso típico de desarrollador. Comparado con los $200/mes de Claude Max, representa una reducción de ~10-20x en costo.
 
 **Implicación estratégica:** Para organizaciones sensibles al costo o con equipos grandes, modelos como GLM-5 ofrecen una alternativa viable. La calidad ha alcanzado paridad práctica con modelos occidentales en muchas evaluaciones de código.
 
@@ -688,7 +688,7 @@ La elección de hyperscaler impacta directamente en qué tan fácil es implement
 >
 > - **Fuente:** Documentación oficial de AWS, Azure y GCP (feb 2026)
 > - **Limitación:** Las capacidades cambian trimestralmente; esta comparación tiene vigencia de ~6 meses
-> - **Implicación práctica:** No elijas hyperscaler solo por esta tabla; evalúa tu stack existente y los modelos que necesitas
+> - **Implicación:** No elijas hyperscaler solo por esta tabla; evalúa tu stack existente y los modelos que necesitas
 
 #### AWS Bedrock: Governance Enterprise
 
@@ -931,7 +931,7 @@ Antes de elegir herramientas, es crítico entender los **modelos de pricing** qu
 | **Devin** | ACUs (consumo puro) | $20 + ACUs | $500/equipo | Custom |
 | **Amazon Q Developer** | Flat-rate | $19/mes | $19/user | $19/user |
 | **Gemini Code Assist** | Flat-rate | $19-$54/mes | $19-$45/user | $45-$54/user |
-| **GLM-5 (Zhipu AI)** | API pay-per-token | $3-$10/mes | -| -|
+| **GLM-5 (Zhipu AI)** | API pay-per-token | $10-$20/mes | - | - |
 
 ### Los Cuatro Modelos y Cuándo Conviene Cada Uno
 
@@ -945,7 +945,7 @@ Antes de elegir herramientas, es crítico entender los **modelos de pricing** qu
 
 ### El Factor China: Presión de Precios desde GLM-5
 
-Zhipu AI (Z.AI) lanzó GLM-5 en febrero 2026 (745B params, 44B activos, MoE) con rendimiento competitivo frente a Claude Opus y GPT-5 en razonamiento, coding y tareas agénticas. A nivel de API, el costo es de ~$0.11/M tokens de input vs. $3.00/M de Claude Sonnet: una **ventaja de ~27x en costo por token**.
+Zhipu AI (Z.AI) lanzó GLM-5 en febrero 2026 (745B params, 40B activos, MoE) con rendimiento competitivo frente a Claude Opus y GPT-5 en razonamiento, coding y tareas agénticas. A nivel de API, el costo es de ~$0.80/M tokens de input vs. $3.00/M de Claude Sonnet: una **ventaja de ~4x en costo por token**.
 
 ¿Qué significa para el mercado? Los precios de herramientas occidentales probablemente caerán 30-50% en los próximos 18 meses a medida que la presión competitiva se intensifique. **Implicación para compradores:** negocia contratos anuales con cláusulas de ajuste de precio, no te amarres a tarifas 2026 por 3 años.
 
@@ -978,7 +978,7 @@ No existe una combinación perfecta universal. La selección depende de:
 | Code Completion | Windsurf Free (25 créditos) | $0 | Autocompletado competitivo, sin costo |
 | Code Generation | Cursor Pro ($20/mes) | $20 | ROI alto en equipos pequeños, pool de créditos |
 | Prototipos | v0.dev o Bolt.new | $0-$20 | PM/Founders pueden validar sin ingeniería |
-| Alternativa low-cost | GLM-5 vía API (~$3/mes) | $3 | Para boilerplate y documentación, ~27x más barato por token |
+| Alternativa low-cost | GLM-5 vía API (~$10/mes) | $10 | Para boilerplate y documentación, ~4x más barato por token |
 
 **Costo mensual total (5 devs):** ~$130/mes (Cursor Pro para 3 devs + Windsurf free para 2 + API)
 **Productividad esperada:** +40-60%

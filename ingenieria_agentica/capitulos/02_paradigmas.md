@@ -426,7 +426,7 @@ Aplicando el patrón histórico al momento actual:
 > - **Qué mide:** Porcentaje de código generado con asistencia de IA en empresas líderes de tecnología y predicción de adopción empresarial
 > - **Muestra/Metodología:** Declaraciones ejecutivas basadas en datos internos de Microsoft (190,000+ empleados). Gartner basa su predicción en encuestas a 1,500+ organizaciones globales
 > - **Limitación:** Las declaraciones de ejecutivos de empresas que venden herramientas de IA tienen incentivo a reportar cifras optimistas. "30% del código" puede medirse de múltiples formas (líneas, commits, PRs) con resultados muy diferentes. La predicción de 95% para 2030 es extrapolación, no dato
-> - **Implicación práctica:** Usa el 30% como referencia de que la adopción en Big Tech es real y significativa, pero no como promesa de lo que tu organización logrará. Para tu business case, modela con 15-25% como escenario conservador
+> - **Implicación:** Usa el 30% como referencia de que la adopción en Big Tech es real y significativa, pero no como promesa de lo que tu organización logrará. Para tu business case, modela con 15-25% como escenario conservador
 
 **¿Cuánto tiempo tienes para decidir?**
 

@@ -114,14 +114,14 @@ Este apéndice reúne todas las herramientas, reportes, libros, comunidades y re
 
 | Framework/Regulación | Organización | Aplicación | Referenciado en |
 |---------------------|-------------|------------|-----------------|
-| **EU AI Act** (2025) | Unión Europea | Clasificación de riesgo y requisitos para sistemas de IA | Cap. 11 |
-| **AI Risk Management Framework (AI RMF)** | NIST (EE.UU.) | Marco de gestión de riesgos de IA para organizaciones | Cap. 11 |
-| **ISO/IEC 42001** | ISO | Estándar para sistemas de gestión de IA | Cap. 11 |
-| **OWASP Top 10 for LLM Applications** (2024) | OWASP | 10 vulnerabilidades más críticas en aplicaciones con LLM | Cap. 11 |
-| **AI Bill of Rights** (Executive Order 2023) | Casa Blanca (EE.UU.) | Principios para el desarrollo responsable de IA | Cap. 11 |
-| **SOC 2 Type II** | AICPA | Compliance de seguridad para servicios cloud | Cap. 11 |
-| **GDPR** | Unión Europea | Protección de datos personales, relevante para IA | Cap. 11 |
-| **HIPAA** | HHS (EE.UU.) | Protección de datos de salud | Cap. 11 |
+| **EU AI Act** (2025) | Unión Europea | Clasificación de riesgo y requisitos para sistemas de IA | Cap. 13 |
+| **AI Risk Management Framework (AI RMF)** | NIST (EE.UU.) | Marco de gestión de riesgos de IA para organizaciones | Cap. 13 |
+| **ISO/IEC 42001** | ISO | Estándar para sistemas de gestión de IA | Cap. 13 |
+| **OWASP Top 10 for LLM Applications** (2024) | OWASP | 10 vulnerabilidades más críticas en aplicaciones con LLM | Cap. 13 |
+| **AI Bill of Rights** (Executive Order 2023) | Casa Blanca (EE.UU.) | Principios para el desarrollo responsable de IA | Cap. 13 |
+| **SOC 2 Type II** | AICPA | Compliance de seguridad para servicios cloud | Cap. 13 |
+| **GDPR** | Unión Europea | Protección de datos personales, relevante para IA | Cap. 13 |
+| **HIPAA** | HHS (EE.UU.) | Protección de datos de salud | Cap. 13 |
 
 ---
 

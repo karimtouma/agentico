@@ -24,7 +24,7 @@ Esta afirmación envió ondas de choque en los boardrooms de empresas tecnológi
 > - **Qué mide:** Porcentaje de código en repositorios internos generado con asistencia de IA (20-30% según Nadella)
 > - **Muestra:** Operaciones internas de Microsoft (~200K empleados, decenas de miles de ingenieros de software)
 > - **Limitación:** Es un cálculo interno de Microsoft basado en equivalencia de personal, no auditado externamente. El "ahorro" asume que la alternativa era contratar 3,500 ingenieros, lo cual puede no ser directamente comparable. Empresas más pequeñas verán ahorros proporcionales, no equivalentes
-> - **Implicación práctica:** Para su business case: use la fórmula "[% de productividad ganada] × [costo total de ingeniería]" como proxy. Los modelos detallados por tamaño de empresa se presentan en las siguientes secciones
+> - **Implicación:** Para su business case: use la fórmula "[% de productividad ganada] × [costo total de ingeniería]" como proxy. Los modelos detallados por tamaño de empresa se presentan en las siguientes secciones
 
 Este capítulo se enfoca en traducir el potencial técnico de la IA agéntica en **métricas financieras que CFOs, boards, e inversores entienden y priorizan**. No hablaremos de algoritmos ni arquitecturas, sino de:
 

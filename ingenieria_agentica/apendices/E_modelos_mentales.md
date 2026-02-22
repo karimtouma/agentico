@@ -28,7 +28,7 @@ Eso es el **context window** de un modelo de lenguaje.
 | 200K tokens | ~150 páginas | Secciones significativas de un codebase |
 | 1M tokens | ~750 páginas | Casi cualquier proyecto completo |
 
-**Implicación práctica:**
+**Implicación:**
 
 Si tu codebase promedio tiene 50,000 líneas de código, un modelo con 8K de context solo puede "ver" ~200 líneas a la vez. Esto significa:
 

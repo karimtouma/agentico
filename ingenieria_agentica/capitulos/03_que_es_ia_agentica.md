@@ -691,7 +691,7 @@ Ejemplos de [Gartner]{.idx}:
 > - **Qué mide:** Penetración de agentes de IA en aplicaciones empresariales y tasa de cancelación de proyectos
 > - **Muestra/Metodología:** Encuestas Gartner a 1,500+ organizaciones globales, complementadas con análisis de mercado y entrevistas con CTOs/CIOs
 > - **Limitación:** La definición de "agente de IA integrado" varía ampliamente: desde un chatbot simple hasta un sistema autónomo completo. La predicción de 40% de adopción Y 40% de cancelación sugiere que Gartner espera un ciclo de hype-desencanto típico. Las proyecciones de mercado a 5+ años tienen históricamente un margen de error del 30-50%
-> - **Implicación práctica:** El dato más útil no es el 40% de adopción, sino el 40% de cancelación. La diferencia entre éxito y fracaso no es la tecnología; es la estrategia de implementación. Ver Capítulo 12 para el framework de adopción por fases
+> - **Implicación:** El dato más útil no es el 40% de adopción, sino el 40% de cancelación. La diferencia entre éxito y fracaso no es la tecnología; es la estrategia de implementación. Ver Capítulo 12 para el framework de adopción por fases
 
 ### Datos de McKinsey (State of AI 2025)
 

@@ -1073,7 +1073,7 @@ Completa el [Scorecard de Readiness]{.idx data-sub="frameworks de evaluación"} 
 ---
 
 > **Para Tu Próxima Reunión de Liderazgo:**
-> Bloquea 2 horas para revisar este capítulo con tu equipo de liderazgo (CTO, VPs, Directors). Usa el Scorecard de Readiness para autoevaluarse. Si score >60, presenta el business case al board en las próximas 2-4 semanas. Si score <60, define plan de 60-90 días para llegar a readiness, luego presenta business case. La ventana de oportunidad para ser early adopter se cierra en 2026. Actúa ahora.
+> Bloquea 2 horas para revisar este capítulo con tu equipo de liderazgo (CTO, VPs, Directors). Usa el Scorecard de Readiness para autoevaluarse. Si score >60, presenta el business case al board en las próximas 2-4 semanas. Si score <60, define plan de 60-90 días para llegar a readiness, luego presenta business case. La ventana de oportunidad para ser early adopter se cierra este año. Actúa ahora.
 
 ---
 

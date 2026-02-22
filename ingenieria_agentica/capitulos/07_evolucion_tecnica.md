@@ -16,7 +16,7 @@
 Si eres CTO o VP de Ingeniería, probablemente estás recibiendo presiones:
 
 - Tu CEO pregunta: "¿Por qué no estamos usando IA para codificar más rápido?"
-- Tu CFO pregunta: "¿GitHub Copilot vale los $20/usuario/mes?"
+- Tu CFO pregunta: "¿GitHub Copilot vale los $19/usuario/mes?"
 - Tu equipo pregunta: "¿Podemos probar Cursor/Devin?"
 
 Para tomar decisiones informadas, necesitas entender **de dónde venimos, dónde estamos, y hacia dónde vamos**.
@@ -232,7 +232,7 @@ Copilot validó el mercado. Inmediatamente surgieron competidores:
 |-------------|-------------|--------|-----------|-----------|
 | GitHub Copilot | GPT-4o | Gratis-$39/mes | Mejor calidad de código, mayor adopción | Premium requests limitados en tiers bajos |
 | Amazon Q Developer | Propio (Amazon) | Gratis-$19/mes | Integración con AWS, gratis para individuos | Ecosistema más limitado |
-| Tabnine | Propio | $39-59/mes (Enterprise) | Self-hosted option, privacy | Solo plan Enterprise (eliminó tier gratuito en 2025) |
+| Tabnine | Propio | $39/user/mes (Enterprise) | Self-hosted option, privacy | Solo plan Enterprise (eliminó tier gratuito y plan Dev en 2025) |
 | Windsurf (ex-Codeium) | Propio + Claude/GPT | $15-60/mes | Precio accesible, buena integración | Créditos limitados en tier Pro |
 
 ### Cómo Funcionaba la Ola 2: El Paradigma "Autocomplete++"
@@ -880,7 +880,7 @@ Un modelo con "7 mil millones de parámetros" (7B) tiene 7 mil millones de núme
 
 **Cuidado importante:** Más contexto ≠ mejor performance. Los modelos exhiben el "middle curse": tienden a ignorar o procesar peor la información que está en el medio del contexto. La investigación "Lost in the Middle" (Liu et al., Stanford, 2024, arXiv:2307.03172) demostró que el rendimiento degrada significativamente cuando la información relevante está en posiciones intermedias del contexto, incluso si el modelo "soporta" ventanas grandes.
 
-> **Implicación práctica:** No asumas que "meter todo el codebase en contexto" es la mejor estrategia. Técnicas como RAG (recuperar solo lo relevante) suelen funcionar mejor que contextos masivos.
+> **Implicación:** No asumas que "meter todo el codebase en contexto" es la mejor estrategia. Técnicas como RAG (recuperar solo lo relevante) suelen funcionar mejor que contextos masivos.
 
 ### Temperature: Creatividad vs Consistencia
 
