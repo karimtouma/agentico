@@ -44,6 +44,11 @@ APPENDIX_FILES := $(APPENDICES)/A_glosario.md \
 ALL_FILES := $(CHAPTER_FILES) $(APPENDIX_FILES)
 
 # Filter chain (order matters!)
+# FILTER_FILES mirrors FILTER_CHAIN and exists so the targets below can depend
+# on the filters themselves. Keep both lists in sync when adding a filter.
+FILTER_FILES := $(wildcard $(FILTERS)/*.lua)
+STY_FILES    := $(wildcard $(STY)/*.sty)
+
 FILTER_CHAIN := --lua-filter=$(FILTERS)/meta-strip.lua \
                 --lua-filter=$(FILTERS)/figure-transform.lua \
                 --lua-filter=$(FILTERS)/code-transform.lua \
@@ -74,8 +79,12 @@ PANDOC_OPTS := --from $(MD_FORMAT) \
                --no-highlight \
                --toc --toc-depth=3 \
                --metadata-file=$(CONFIG) \
-               -V documentclass=paradigma-agentico \
-               -V classoption=twoside
+               -V documentclass=paradigma-agentico
+
+# PANDOC_OPTS pins the class options; PANDOC_OPTS_NOCLASS lets a target add its
+# own (pandoc accepts -V classoption repeatedly and passes them all through).
+PANDOC_OPTS_NOCLASS := $(PANDOC_OPTS)
+PANDOC_OPTS         := $(PANDOC_OPTS) -V classoption=twoside
 
 # LuaLaTeX needs to find our .cls and .sty files
 export TEXINPUTS := $(CLS):$(STY):
@@ -89,7 +98,7 @@ DIGITAL_PDF := $(OUTPUT)/agentico-por-diseno-digital.pdf
 # Targets
 # =============================================================================
 
-.PHONY: pdf digital epub latex chapter validate logcheck optimize preview clean docker-build figures help
+.PHONY: pdf digital epub latex chapter validate check-content logcheck optimize preview clean docker-build figures help
 
 ## Build figures (TikZ → PDF, SVG → PDF)
 figures:
@@ -102,7 +111,7 @@ figures:
 ## Build print-ready PDF (default)
 pdf: figures $(BOOK_PDF)
 
-$(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls
+$(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls $(FILTER_FILES) $(STY_FILES) $(CONFIG)
 	@echo "══════════════════════════════════════════════"
 	@echo "  Building: Agéntico por Diseño, Tomo I (PDF)"
 	@echo "══════════════════════════════════════════════"
@@ -172,7 +181,7 @@ logcheck:
 ## Generate intermediate .tex for inspection
 latex: $(BOOK_TEX)
 
-$(BOOK_TEX): $(ALL_FILES) $(TEMPLATES)/book.tex
+$(BOOK_TEX): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls $(FILTER_FILES) $(STY_FILES) $(CONFIG)
 	@echo "Generating LaTeX source..."
 	@mkdir -p $(OUTPUT)
 	cd $(OUTPUT) && pandoc $(PANDOC_OPTS) \
@@ -201,8 +210,9 @@ endif
 digital:
 	@echo "Building digital PDF..."
 	@mkdir -p $(OUTPUT)
-	cd $(OUTPUT) && pandoc $(PANDOC_OPTS) \
-		-V mode=digital \
+	cd $(OUTPUT) && pandoc $(PANDOC_OPTS_NOCLASS) \
+		-V classoption=twoside \
+		-V classoption=digital \
 		-o $(DIGITAL_PDF) \
 		$(ALL_FILES)
 	@echo "✓ Digital PDF: $(DIGITAL_PDF)"
@@ -219,6 +229,10 @@ epub:
 		-o $(BOOK_EPUB) \
 		$(ALL_FILES)
 	@echo "✓ EPUB: $(BOOK_EPUB)"
+
+## Validate the manuscript sources (chapters present, no code blocks, no placeholders)
+check-content:
+	@bash /book/scripts/validate.sh
 
 ## Validate cross-references, format, and LaTeX warnings
 validate: latex
@@ -261,7 +275,10 @@ optimize: pdf
 
 ## Build and open preview (macOS)
 preview: pdf
-	@open $(BOOK_PDF) 2>/dev/null || echo "Open $(BOOK_PDF) manually"
+	@echo ""
+	@echo "  El PDF esta en latex-pipeline/output/agentico-por-diseno.pdf"
+	@echo "  Abrelo desde el host (este target corre dentro del contenedor):"
+	@echo "    open latex-pipeline/output/agentico-por-diseno.pdf"
 
 ## Clean build artifacts
 clean:
@@ -289,6 +306,7 @@ help:
 	@echo "  make epub         Export EPUB"
 	@echo "  make latex        Generate .tex for inspection"
 	@echo "  make chapter CHAP=04  Build single chapter"
+	@echo "  make check-content Validate the manuscript sources"
 	@echo "  make validate     Check cross-refs and warnings"
 	@echo "  make logcheck     Fail if the last build had TeX errors"
 	@echo "  make optimize     Analyze typography issues"

@@ -156,11 +156,13 @@ function parseFrameworks(content: string): Framework[] {
   const frameworks: Framework[] = [];
   const lines = content.split("\n");
   let currentName = "";
-  let currentId = "";
   let currentLines: string[] = [];
 
   for (const line of lines) {
-    const h2Match = line.match(/^##\s+(.+)/);
+    // Only numbered H2s are frameworks. Appendix B ends with an unnumbered
+    // "Como Usar Estos Frameworks" section that was being scraped as a 13th
+    // framework, so get_frameworks reported 13 where the book documents 12.
+    const h2Match = line.match(/^##\s+(\d+\.\s+.+)/);
     if (h2Match) {
       if (currentName && currentLines.length > 0) {
         frameworks.push({
@@ -170,8 +172,6 @@ function parseFrameworks(content: string): Framework[] {
         });
       }
       currentName = h2Match[1].replace(/\{[^}]*\}/g, "").trim();
-      const idMatch = currentName.match(/#(\d+)/);
-      currentId = idMatch ? `framework-${idMatch[1]}` : slugify(currentName);
       currentLines = [];
     } else {
       currentLines.push(line);
@@ -180,7 +180,7 @@ function parseFrameworks(content: string): Framework[] {
 
   if (currentName && currentLines.length > 0) {
     frameworks.push({
-      id: currentId || slugify(currentName),
+      id: slugify(currentName),
       name: currentName,
       content: currentLines.join("\n").trim(),
     });

@@ -1,33 +1,49 @@
+# =============================================================================
+# config.yml - metadatos que se pasan a pandoc con --metadata-file
+# =============================================================================
+#
+# ADVERTENCIA: casi todo este fichero es DECORATIVO.
+#
+# Solo dos valores llegan realmente al PDF:
+#
+#   book.date    -> lo interpola templates/book.tex ($book.date$) en la portada,
+#                   la pagina de creditos y los metadatos del PDF.
+#   figure-mode  -> lo lee filters/figure-transform.lua.
+#
+# Todo lo demas (title, tomo, subtitle, author, lang, theme, page_size, mode,
+# fonts:, layout:, features:) NO se consume en ninguna parte. El titulo, el
+# subtitulo y el autor estan escritos a mano en templates/book.tex y en
+# \pdftitle/\pdfauthor de cls/paradigma-agentico.cls; el idioma lo resuelve
+# babel dentro del .cls; y la geometria, las fuentes y los colores estan
+# fijados en el .cls y en los .sty.
+#
+# Compruebalo tu mismo:
+#   grep -rn 'book.title\|page_size\|margin_inner' templates/ cls/ sty/ filters/
+#
+# DONDE SE CAMBIA CADA COSA DE VERDAD:
+#   tamano de pagina y margenes -> cls/paradigma-agentico.cls (\settrimmedsize,
+#                                  \settypeblocksize, \setlrmargins, \setulmargins)
+#   cuerpo de texto y fuentes   -> cls/paradigma-agentico.cls (\LoadClass[10pt...],
+#                                  bloque de fontspec)
+#   paleta de color y tema      -> sty/pa-colors.sty (\setthemecorporategray,
+#                                  \setthemewarmterracotta)
+#   modo digital vs imprenta    -> la opcion de clase 'digital' (make digital),
+#                                  no la clave 'mode' de aqui
+#
+# Ver docs/pipeline-latex.md para el detalle.
+# =============================================================================
+
 book:
-  title: "Agéntico por Diseño"
-  tomo: "Tomo I"
-  subtitle: "Tecnologías de la Información"
-  author: "Karim Touma"
-  lang: es
+  # Unico campo vivo de este bloque. El resto se conserva como metadato
+  # descriptivo del proyecto, pero no afecta al PDF.
   date: "2026"
 
-theme: modern_blue          # modern_blue | corporate_gray | warm_terracotta
-page_size: letter           # letter | a4 | a5
-mode: print                 # print | digital
+  title: "Agéntico por Diseño"      # decorativo (real: templates/book.tex)
+  tomo: "Tomo I"                    # decorativo
+  subtitle: "Tecnologías de la Información"  # decorativo
+  author: "Karim Touma"             # decorativo (real: book.tex y el .cls)
+  lang: es                          # decorativo (real: babel en el .cls)
 
-fonts:
-  body: LibertinusSerif
-  heading: LibertinusSans
-  mono: FiraMono
-  size: 11pt
-
-layout:
-  margin_inner: 3cm
-  margin_outer: 2.5cm
-  margin_top: 2.5cm
-  margin_bottom: 3cm
-
-features:
-  illustrations: true
-  drop_caps: true
-  pull_quotes: true
-  colored_tables: true
-  chapter_thumbs: false
-
-# Figure rendering mode: all | final-only | no-placeholders
+# Modo de renderizado de figuras: all | final-only | no-placeholders
+# Lo lee filters/figure-transform.lua. Este SI tiene efecto.
 figure-mode: all

@@ -95,14 +95,14 @@ Parte I se salta la hoja de notas). La hoja de notas abre la parte, no la cierra
 | # | Archivo | Título (H1 real del fichero) | Págs | Palabras | Estado |
 |---|---------|------------------------------|------|----------|--------|
 | 11 | [11_liderando_equipos_ia.md](capitulos/11_liderando_equipos_ia.md) | Liderando Equipos en la Era de la IA | 301-336 | 10,185 | Completado |
-| 12 | [12_estrategia_adopcion.md](capitulos/12_estrategia_adopcion.md) | Estrategia de Adopción – Hoja de Ruta de IA Agéntica | 337-368 | 7,422 | Completado |
+| 12 | [12_estrategia_adopcion.md](capitulos/12_estrategia_adopcion.md) | Estrategia de Adopción - Hoja de Ruta de IA Agéntica | 337-368 | 7,422 | Completado |
 
 ### PARTE VI: GOBERNANZA Y FUTURO (94 págs, 23,977 palabras)
 
 | # | Archivo | Título (H1 real del fichero) | Págs | Palabras | Estado |
 |---|---------|------------------------------|------|----------|--------|
 | 13 | [13_gobernanza_riesgos.md](capitulos/13_gobernanza_riesgos.md) | Desafíos, Riesgos y Gobernanza del Paradigma Agéntico | 369-424 | 13,706 | Completado (el más largo del libro) |
-| 14 | [14_futuro_2030.md](capitulos/14_futuro_2030.md) | Visión a Futuro – 2026-2030 | 425-462 | 10,271 | Completado |
+| 14 | [14_futuro_2030.md](capitulos/14_futuro_2030.md) | Visión a Futuro - 2026-2030 | 425-462 | 10,271 | Completado |
 
 ### APÉNDICES (84 págs, 19,505 palabras)
 

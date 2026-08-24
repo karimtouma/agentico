@@ -1,4 +1,4 @@
-# Estrategia de Adopción – Hoja de Ruta de IA Agéntica
+# Estrategia de Adopción - Hoja de Ruta de IA Agéntica
 
 > **Extensión objetivo:** 25 páginas
 

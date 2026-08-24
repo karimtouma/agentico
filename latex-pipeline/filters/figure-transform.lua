@@ -1,7 +1,9 @@
 -- =============================================================================
 -- figure-transform.lua — Resolve figure references from manifest.yml
 -- =============================================================================
--- Syntax in markdown:  ![fig:loop-agentico]
+-- Syntax in markdown:  ![](fig:loop-agentico)
+--   Note: ![fig:id] does NOT work. Pandoc only builds an Image when the
+--   target is inside parentheses; ![fig:id] stays literal text.
 -- Manifest at:         /book/content/figuras/manifest.yml
 -- Output:              LaTeX \begin{figure}...\end{figure} or placeholder box
 -- =============================================================================

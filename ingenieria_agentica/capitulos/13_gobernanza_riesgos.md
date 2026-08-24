@@ -2026,4 +2026,4 @@ La adopción de IA agéntica en ingeniería de software no es solo una decisión
 
 ---
 
-*Fin del Capítulo 13. Continúa en Capítulo 14: Visión a Futuro – 2026-2030*
+*Fin del Capítulo 13. Continúa en Capítulo 14: Visión a Futuro - 2026-2030*
