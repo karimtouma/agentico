@@ -90,21 +90,22 @@ imprime las líneas ofensivas y aborta con estado distinto de cero.
 
 ## 3. Todos los targets
 
-Leídos de `latex-pipeline/Makefile`. Todos se invocan igual:
+Los 14 targets de `latex-pipeline/Makefile`. Todos se invocan igual:
 `docker compose run --rm book make <target>` desde `latex-pipeline/`.
 
 | Target | Qué hace | Cuándo usarlo | Advertencias |
 |---|---|---|---|
-| `pdf` | El build completo: pandoc + 3 pases de LuaLaTeX + makeindex + `logcheck`. Es el default del contenedor. | Siempre que quieras el libro. | Sus prerequisitos **no** incluyen filtros ni `.sty`: ver Troubleshooting. |
-| `figures` | Compila `figuras/tikz/*.tex` y `figuras/svg/*.svg` a PDF vía `scripts/build-figures.sh`. Es prerequisito de `pdf`. | Cuando agregues fuentes de figuras. | Hoy `tikz/` y `svg/` están **vacíos**, así que imprime `No figure sources found` y sigue. Las 46 figuras del `manifest.yml` están en estado `placeholder`. |
+| `pdf` | El build completo: pandoc + 3 pases de LuaLaTeX + makeindex + `logcheck`. Es el default del contenedor. | Siempre que quieras el libro. | Sus prerequisitos cubren el contenido, el template, el `.cls`, los 12 filtros Lua, los `.sty` y `config.yml`: cualquiera de esos que toques lo vuelve obsoleto. La excepción es el PDF commiteado, que puede llegar más nuevo que las fuentes en un clon fresco: ver Troubleshooting. |
+| `figures` | Compila `figuras/tikz/*.tex` y `figuras/svg/*.svg` a PDF vía `scripts/build-figures.sh`. Es prerequisito de `pdf`. | Cuando agregues fuentes de figuras. | Hoy `tikz/` y `svg/` están **vacíos**, así que imprime `No figure sources found` y sigue. Las 46 figuras del `manifest.yml` están en estado `placeholder` y ninguna se referencia todavía desde el manuscrito: 0 apariciones de `![](fig:id)`. |
 | `latex` | Solo pandoc: genera `output/agentico-por-diseno.tex` para inspección. | Para ver qué LaTeX produjeron los filtros sin esperar a LuaLaTeX. | No ejecuta LuaLaTeX, no produce PDF ni log. |
 | `chapter CHAP=NN` | Compila un solo capítulo a `output/chapter-NN.pdf`. | Iterar rápido sobre un capítulo (~40 s). | Ver sección 6. |
-| `digital` | Compila a `output/agentico-por-diseno-digital.pdf` pasando `-V mode=digital`. | **Ninguno, hoy.** | `-V mode=digital` define una variable de pandoc que `templates/book.tex` nunca lee, y la opción de clase `digital` (la que activa `colorlinks` en `paradigma-agentico.cls`) no la pasa ningún target: `PANDOC_OPTS` solo manda `-V classoption=twoside`. El PDF que sale es idéntico al de imprenta, con otro nombre. |
+| `digital` | Compila a `output/agentico-por-diseno-digital.pdf` con `-V classoption=twoside -V classoption=digital`, es decir `\documentclass[twoside,digital]{paradigma-agentico}`. La opción `digital` activa el `\ifpa@digital` del `.cls`: `colorlinks=true` con enlaces, citas y URLs en color, en vez del `hidelinks` de imprenta. | Cuando quieras una versión para leer en pantalla, con los enlaces visibles. | Usa `PANDOC_OPTS_NOCLASS` (todo `PANDOC_OPTS` menos el `classoption` fijo) porque de otro modo `twoside` bloquearía añadir la segunda opción. La compilación la maneja pandoc, no los tres pases del Makefile: no pasa por `logcheck` ni por el `makeindex` del libro. |
 | `epub` | Exporta `output/agentico-por-diseno.epub`. | Solo para una lectura rápida en pantalla. | Degradado: los filtros emiten LaTeX crudo, que pandoc descarta al generar EPUB. Verificado en la última corrida: **0 tablas** y solo 4 de las 21 apariciones de "Resumen Ejecutivo" sobreviven. Tampoco lleva metadatos: el `.opf` sale sin `dc:title` y sin `dc:creator`, la portada dice `UNTITLED` y el idioma queda en `en-US` (`config.yml` anida todo bajo `book:`, así que pandoc nunca ve un `title` ni un `lang` de nivel superior). |
-| `validate` | Imprime conteos de cross-refs, refs indefinidas, overfull/underfull y warnings. | Casi nunca: usa `logcheck`. | Depende de `latex`, que **no ejecuta LuaLaTeX**. Si el `.tex` está al día, `validate` no corre nada y hace `grep` sobre `output/*.log`, que puede ser el log de una corrida anterior o no existir. Nada en su salida indica que los números son viejos. |
+| `check-content` | Corre `scripts/validate.sh`: comprueba que estén los 16 capítulos y los 5 apéndices, avisa de ficheros inesperados, cuenta palabras, blockquotes y filas de tabla, busca bloques de código y placeholders, y si hay PDF y `.tex` revisa overfull, refs indefinidas, part dividers y callouts. | Antes de commitear cambios al manuscrito. Es el quality gate del contenido. | Sale con 0 si no hay errores; hoy deja 1 warning (13 marcadores de code fence que no son bloques `{=latex}`, los únicos que el chequeo excluye por ser LaTeX crudo de maquetación). Las secciones 2 y 3 de su salida leen el PDF, el log y el `.tex` que ya estén en `output/`: si no compilaste, avisa y sigue. |
+| `validate` | Imprime conteos de cross-refs, refs indefinidas, overfull/underfull y warnings. | Casi nunca: usa `logcheck` para el build y `check-content` para el manuscrito. | Depende de `latex`, que **no ejecuta LuaLaTeX**. Si el `.tex` está al día, `validate` no corre nada y hace `grep` sobre `output/*.log`, que puede ser el log de una corrida anterior o no existir. Nada en su salida indica que los números son viejos. |
 | `logcheck` | Imprime el bloque "Build health" y falla si hay errores reales. | Automático tras `pdf`; a mano para releer el veredicto del último build sin recompilar. | Lee el log existente. Si no hay log, imprime `no log found - skipped` y sale con éxito. |
 | `optimize` | Depende de `pdf` y luego lista overfull/underfull boxes y el total de páginas. | En teoría, para cazar problemas tipográficos. | Sus `grep` usan `'Overfull \\\\hbox'`, un patrón con dos barras literales que **nunca** aparece en el log, y el `|| echo "None found"` cuelga del `head`, que siempre sale con éxito: las tres secciones salen vacías incluso habiendo 20 overfull. Para verlos de verdad, usa el comando de la sección 7. |
-| `preview` | `pdf` y luego `open` del PDF. | Nada, desde Docker. | El `open` corre **dentro del contenedor**, donde no existe: imprime el mensaje de fallback. Abre el PDF tú desde macOS. |
+| `preview` | Depende de `pdf` y al terminar imprime la ruta del PDF y el comando para abrirlo desde el host. | Cuando compilas para mirar el resultado enseguida. | No abre nada solo: los targets corren dentro del contenedor, donde no hay `open`. Copia el comando que imprime y ejecútalo en macOS. |
 | `clean` | Borra `output/*.pdf`, `*.tex`, `*.log`, `*.aux`, `*.toc`, `*.idx`, `*.ind` y demás intermedios. | Cuando el build quedó en un estado raro. | **Borra también el PDF commiteado.** Recupéralo con `git restore latex-pipeline/output/agentico-por-diseno.pdf` o recompílalo. |
 | `docker-build` | `docker compose build --no-cache`. | Solo tras editar el `Dockerfile`. | **Se corre en el host**, no dentro del contenedor (adentro no hay Docker). Reconstruye desde cero: tarda lo mismo que la primera vez. |
 | `help` | Lista los targets. | Recordatorio rápido. | - |
@@ -215,22 +216,24 @@ Error distinto, causa distinta: si `docker compose` responde
 `no configuration file provided: not found`, el daemon está bien y lo que pasa
 es que no estás parado en `latex-pipeline/`.
 
-### `make pdf` no recoge tus cambios
+### `make pdf` dice que no hay nada que hacer
 
 La línea de prerequisitos del Makefile es exactamente:
 
 ```make
-$(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls
+$(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls $(FILTER_FILES) $(STY_FILES) $(CONFIG)
 ```
 
-O sea: los 21 archivos de contenido, el template y la clase. **Nada más.**
-Editar un filtro Lua, un `.sty`, `config.yml` o el propio Makefile no vuelve
-obsoleto el PDF, y make se queda mirando. Verificado: tras un `touch` a
-`filters/hr-transform.lua` y a `sty/pa-tables.sty`, `make -n pdf` no invoca
-pandoc ni una vez; tras un `touch` a `templates/book.tex`, sí.
+`FILTER_FILES` es `$(wildcard $(FILTERS)/*.lua)` y `STY_FILES` es
+`$(wildcard $(STY)/*.sty)`, así que la lista cubre los 21 archivos de
+contenido, el template, la clase, los 12 filtros Lua, los 6 `.sty` y
+`config.yml`. `$(BOOK_TEX)` depende de lo mismo. Editar un filtro o un `.sty`
+**sí** dispara la reconstrucción.
 
-Peor aún: como el PDF está commiteado, un clon fresco suele tenerlo más nuevo
-que el contenido, y el primer `make pdf` puede no hacer nada.
+Queda un caso en el que make se puede quedar mirando: el PDF está commiteado,
+y en un clon fresco git le pone la fecha del checkout, que suele ser más nueva
+que la de las fuentes. Ahí el primer `make pdf` puede no hacer nada. Lo mismo
+pasa si editas el propio Makefile, que no es prerequisito de sí mismo.
 
 Las dos salidas:
 
@@ -251,31 +254,38 @@ Ojo con `make clean`: borra `output/*.pdf`, y eso incluye el PDF que está en el
 repo. Si no piensas recompilar de inmediato, recupéralo con
 `git restore latex-pipeline/output/agentico-por-diseno.pdf`.
 
+Y recuerda que nada vigila el PDF commiteado: si cambias el manuscrito, hay que
+recompilarlo y volver a commitearlo a mano.
+
 ### Editaste `config.yml` y no cambió nada
 
-Es la trampa más cara del repo. `--metadata-file=$(CONFIG)` sí carga el archivo,
-pero de todas sus claves solo dos llegan a alguna parte:
+`--metadata-file=$(CONFIG)` sí carga el archivo, pero de todas sus claves solo
+dos llegan a alguna parte:
 
 - **`figure-mode`** (`all` | `final-only` | `no-placeholders`), que lee
   `filters/figure-transform.lua` para decidir si dibuja los placeholders.
 - **`book.date`**, la única que interpola `templates/book.tex` (`$book.date$`):
   aparece en la portada, en la página de créditos y en `\date{}`.
 
-Todo lo demás es letra muerta:
+El resto de lo que queda en el archivo se conserva como metadato descriptivo
+del proyecto, y su cabecera lo marca explícitamente como decorativo:
 
 | Clave | Quién manda de verdad |
 |---|---|
-| `theme`, `page_size`, `mode` | Nadie las lee. El color y el formato están fijos en `cls/paradigma-agentico.cls`. |
-| `fonts:`, `layout:` | El `.cls`: stock 11in × 8.5in, trim 9.68in de alto × 7.44in de ancho, caja 21.0cm × 13.5cm, interior 2.2cm, superior 1.8cm, cuerpo 10pt Libertinus Serif, interlineado 1.15. Cambiar `layout.margin_inner` no mueve un margen. |
-| `features:` | No aparece en ningún filtro, ni en el `.cls`, ni en el template. |
-| `book.title`, `book.tomo`, `book.subtitle`, `book.author` | Están escritos a mano dentro de `templates/book.tex`. |
+| `book.title`, `book.tomo`, `book.subtitle`, `book.author` | Están escritos a mano dentro de `templates/book.tex` y en el `\pdftitle`/`\pdfauthor` del `.cls`. |
 | `book.lang` | El `.cls`, con `\RequirePackage[spanish,es-tabla]{babel}`. |
 
-Así que: para tocar el formato físico o los colores, edita el `.cls`; para el
-título, el subtítulo o el autor, `templates/book.tex`. Ambos sí son prerequisitos
-del PDF, así que `make` los detecta. `config.yml` no lo es: aunque lo edites para
-cambiar `figure-mode` o `book.date`, `make pdf` puede decidir que no hay nada que
-hacer. Fuérzalo como se describe arriba.
+Las claves muertas que hubo antes (`theme`, `page_size`, `mode`, `fonts:`,
+`layout:`, `features:`) ya no están en el archivo: se eliminaron porque no las
+leía nadie; reponerlas no cambiaría nada. La geometría sigue fija en `cls/paradigma-agentico.cls`: stock 11in × 8.5in, trim
+9.68in de alto × 7.44in de ancho, caja 21.0cm × 13.5cm, interior 2.2cm,
+superior 1.8cm, cuerpo 10pt Libertinus Serif, interlineado 1.15.
+
+Así que: para tocar el formato físico, edita el `.cls`; para la paleta y el
+tema, `sty/pa-colors.sty` (no `config.yml`, pese a lo que sugiera el skill
+`/theme`); para el título, el subtítulo o el autor, `templates/book.tex`. Los
+tres son prerequisitos del PDF, igual que `config.yml`, así que `make` detecta
+cualquiera de esos cambios.
 
 ### El build falla con errores de TeX
 
@@ -315,14 +325,6 @@ Si algún día alguien "limpia" ese `-tex_math_dollars`, el síntoma será
 exactamente ese. No lo quites. Y no escribas `$` pelado en el contenido: la
 moneda se escribe siempre `US$` (para un lector latinoamericano, `$` es su
 moneda local).
-
-### `make digital` produce el mismo PDF que el de imprenta
-
-No es tu instalación. `paradigma-agentico.cls` define la opción de clase
-`digital` (activa `colorlinks` y bookmarks abiertos), pero ningún target la
-pasa: `PANDOC_OPTS` solo manda `-V classoption=twoside`. El `-V mode=digital`
-del target define una variable que el template ignora. Arreglarlo sería agregar
-`-V classoption=digital` a ese target.
 
 ### `make optimize` lista las tres secciones vacías
 

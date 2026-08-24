@@ -28,9 +28,9 @@ local patterns = {
       return word .. " " .. num
     end
   },
-  -- "Apéndice X" where X is A-D
+  -- "Apéndice X" where X is A-E
   {
-    pattern = "([Aa]péndice)%s+([A-D])",
+    pattern = "([Aa]péndice)%s+([A-E])",
     label = function(_, letter)
       return "app:" .. letter
     end,
@@ -104,7 +104,7 @@ local function process_inlines(inlines)
         if i + 2 <= #inlines and
            inlines[i+1].t == "Space" and
            inlines[i+2].t == "Str" and
-           inlines[i+2].text:match("^[A-D]") then
+           inlines[i+2].text:match("^[A-E]") then
           local letter = inlines[i+2].text:sub(1, 1)
           local label = "app:" .. letter
           local display = text .. " " .. letter

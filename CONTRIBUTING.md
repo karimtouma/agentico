@@ -22,7 +22,7 @@ página de créditos del PDF. No hace falta proponer dual-licensing ni Creative 
 | Dónde vive | `ingenieria_agentica/` | `latex-pipeline/`, `mcp-server/`, `.claude/skills/` |
 | Qué es | Markdown de capítulos y apéndices | Makefile, filtros Lua, clase LaTeX, Cloudflare Worker |
 | Quién lo revisa | Criterio editorial | Que el build siga limpio |
-| Verificación mínima | `make pdf` sin errores + revisión de las reglas de la sección 2 | `make pdf` sin errores; para el MCP, `npm run check` |
+| Verificación mínima | `make pdf` y `make check-content` sin errores + revisión de las reglas de la sección 2 | `make pdf` sin errores; para el MCP, `npm run check` |
 
 El grueso de las contribuciones es editorial. Si nunca has tocado LaTeX, no importa:
 puedes editar markdown y dejar que el pipeline haga el resto, siempre que respetes el
@@ -328,14 +328,22 @@ llaves**, así que borrarlas no rompe el build ni deja rastro visible en el pár
 hace desaparecer esa entrada del índice, en silencio. No conviertas `{.idx}` en negrita,
 cursiva ni enlace.
 
-### 4.2 Figuras: `![fig:id]`
+### 4.2 Figuras: `![](fig:id)`
+
+```markdown
+![](fig:loop-agentico)
+```
+
+La sintaxis correcta y única es `![](fig:id)`, con el id entre paréntesis. `![fig:id]`
+**no funciona**: pandoc solo construye un `Image` cuando el destino va entre paréntesis,
+así que esa variante se queda como texto literal y llega tal cual al PDF.
 
 `filters/figure-transform.lua` resuelve ese id contra
 `ingenieria_agentica/figuras/manifest.yml`, que registra 46 figuras.
 
 Estado real hoy, y conviene saberlo antes de invertir tiempo: **las 46 están en status
 `placeholder`, los directorios `figuras/tikz/` y `figuras/svg/` están vacíos, y el texto
-del libro no contiene ninguna referencia `![fig:...]`**. El sistema está construido y
+del libro no contiene ninguna referencia `![](fig:...)`**. El sistema está construido y
 funciona, pero todavía no se usa. Es infraestructura lista, no una funcionalidad activa.
 
 Ciclo de vida de una figura: `placeholder` -> `draft` -> `final`. Un placeholder se
@@ -358,8 +366,7 @@ resolver, que ahora **hace fallar el build** (sección 5).
 Trampa conocida: el patrón de apéndices es `[Aa]péndice%s+([A-D])`, es decir, **de la A a
 la D**. El apéndice E existe, `part-dividers.lua` sí emite su `\label{app:E}`, y la única
 mención de "Apéndice E" en el libro se queda sin enlazar en silencio. No es una
-referencia rota (el build no falla), es un enlace perdido. `scripts/validate.sh` arrastra
-el mismo bug con el mismo rango.
+referencia rota (el build no falla), es un enlace perdido.
 
 ---
 
@@ -374,9 +381,24 @@ cd latex-pipeline
 docker compose run --rm book make pdf
 ```
 
-Targets disponibles del Makefile: `figures`, `pdf`, `latex`, `chapter` (con `CHAP=NN`),
-`digital`, `epub`, `validate`, `logcheck`, `optimize`, `preview`, `clean`,
-`docker-build`, `help`.
+Los 14 targets del Makefile: `pdf`, `digital`, `epub`, `latex`, `chapter` (con
+`CHAP=NN`), `validate`, `check-content`, `logcheck`, `optimize`, `preview`, `clean`,
+`docker-build`, `figures`, `help`.
+
+Dos de ellos conviene conocerlos antes de usarlos:
+
+- `make digital` produce el PDF de lectura en pantalla
+  (`output/agentico-por-diseno-digital.pdf`): pasa la opción de clase `digital` además
+  de `twoside`, lo que activa `\ifpa@digital` en el `.cls` y con ello los hiperenlaces
+  coloreados. Es un fichero distinto del de imprenta, no lo sustituye.
+- `make preview` compila y luego imprime la ruta del PDF y el comando para abrirlo. No
+  intenta abrirlo él: todos los targets corren dentro del contenedor, donde no hay
+  visor.
+
+Los prerequisitos de `$(BOOK_PDF)` y `$(BOOK_TEX)` cubren los ficheros del manuscrito,
+`templates/book.tex`, el `.cls`, **todos los filtros Lua, todos los `.sty` y
+`config.yml`**. Si editas un filtro o una hoja de estilo, `make pdf` reconstruye: no
+hace falta `make clean` ni tocar un capítulo para forzarlo.
 
 Para iterar sobre un solo capítulo sin recompilar 577 páginas:
 
@@ -408,6 +430,39 @@ cd latex-pipeline
 docker compose run --rm book make pdf STRICT=0
 ```
 
+### `make check-content`: el quality gate del manuscrito
+
+Es el comando que debes correr en cualquier PR de contenido, junto con `make pdf`:
+
+```bash
+cd latex-pipeline
+docker compose run --rm book make check-content
+```
+
+Envuelve `scripts/validate.sh` y revisa, en este orden:
+
+1. Que estén los 16 ficheros de capítulo esperados (`00`, `00a`, `01` a `14`) y los 5
+   apéndices (`A` a `E`). Un fichero de capítulo con un prefijo fuera de esa lista se
+   reporta como aviso, no se ignora.
+2. Estadísticas del manuscrito: palabras totales, blockquotes, filas de tabla.
+3. Que no haya bloques de código (regla 2.2) ni marcadores de placeholder. Los bloques
+   de LaTeX crudo (los que abren con el atributo `{=latex}`) están excluidos a
+   propósito: son maquetación, no ejemplos de programación.
+4. La salida del último build, si existe: tamaño del PDF, overfull/underfull hboxes,
+   referencias sin resolver, problemas de fuentes, número de páginas.
+5. Efectividad de los filtros sobre el `.tex`: callouts convertidos, divisores de parte
+   (esperados 6), referencias cruzadas, checkboxes, iconos y separadores.
+
+Línea base actual: sale con código 0, valida los 16 capítulos y los 5 apéndices, y deja
+**1 aviso** (13 marcadores de code fence que no llevan el atributo `{=latex}`). Si tu
+cambio añade
+avisos o cualquier error, el PR no está listo. El código de salida es el número de
+errores; los avisos no lo alteran, así que léelos en la salida y no confíes solo en el
+exit code.
+
+`make validate` y `make logcheck` son otra cosa y siguen siendo útiles: el primero
+resume el `.tex` y el log, el segundo es el que aborta el build.
+
 ### Skills de calidad
 
 El repositorio trae 5 skills en `.claude/skills/<nombre>/SKILL.md` con 27 comandos.
@@ -436,18 +491,22 @@ No despliegues a mano; el workflow `.github/workflows/deploy-mcp.yml` se encarga
 
 ### Trampas del pipeline que cuestan una tarde
 
-- **`config.yml` es letra muerta salvo el bloque `book:`.** Solo `title`, `tomo`,
-  `subtitle`, `author`, `lang` y `date` llegan a pandoc vía `--metadata-file`. Las
-  claves `theme`, `page_size`, `mode`, `fonts:`, `layout:` y `features:` no las lee
-  nadie: `cls/paradigma-agentico.cls` hardcodea toda la geometría y la tipografía.
-  `fonts.size: 11pt` en ese fichero convive con un `\LoadClass[10pt,...]` en el .cls, y
-  gana el .cls. Editar `config.yml` para cambiar el diseño no tiene ningún efecto.
-  (`figure-mode`, al final del fichero, sí se usa.)
-- **`/theme` promete lo que no puede cumplir**, porque opera sobre esa misma sección
-  muerta de `config.yml`.
-- **`make digital` produce un PDF idéntico al de imprenta.** La clase declara una opción
-  `digital`, pero el target pasa `-V mode=digital`, que es una variable de pandoc y no
-  llega a `\documentclass`; `PANDOC_OPTS` fija `classoption=twoside` y nada más.
+- **`config.yml` sigue siendo casi todo decorativo.** De todo el fichero solo se
+  consumen dos valores: `book.date`, que `templates/book.tex` interpola en portada,
+  créditos y metadatos del PDF, y `figure-mode`, que lee
+  `filters/figure-transform.lua`. El resto del bloque `book:` (`title`, `tomo`,
+  `subtitle`, `author`, `lang`) se conserva como metadato descriptivo del proyecto y
+  está marcado como decorativo en el propio fichero: el título, el subtítulo y el autor
+  están escritos a mano en `templates/book.tex` y en `\pdftitle`/`\pdfauthor` del
+  `.cls`, y el idioma lo resuelve babel. La geometría, las fuentes y los colores viven
+  en `cls/paradigma-agentico.cls` y en los `.sty`. Editar `config.yml` para cambiar el
+  diseño no tiene ningún efecto. (Las claves muertas que había antes - `theme`,
+  `page_size`, `mode`, `fonts:`, `layout:`, `features:` - ya se eliminaron del fichero,
+  y su cabecera documenta dónde se cambia cada cosa de verdad.)
+- **`/theme` promete lo que no puede cumplir.** El skill dice cambiar el tema editando
+  `config.yml`, pero ahí no queda nada que leer: la paleta real está en
+  `sty/pa-colors.sty` (`\setthemecorporategray`, `\setthemewarmterracotta`). Si quieres
+  cambiar el tema, edita ese `.sty`.
 - **`MD_FORMAT` desactiva `tex_math_dollars` a propósito**
   (`markdown+autolink_bare_uris-tex_math_dollars`). Sin esa desactivación, cada `$` de
   un precio abre un span de matemáticas que se traga los separadores de fila de las
@@ -467,11 +526,12 @@ No despliegues a mano; el workflow `.github/workflows/deploy-mcp.yml` se encarga
 - **`drop-caps.lua` es un no-op.** Sigue en la cadena y su cuerpo está comentado con la
   nota "causaban problemas de layout". Editarlo no cambia nada en el PDF hasta que
   alguien lo reactive.
-- **`scripts/validate.sh` está roto** y su salida no es de fiar: itera `seq -w 0 15` y
-  reporta como error el capítulo 15, que no existe; su glob `${i}_*.md | head -1` omite
-  `00a_executive_brief.md`; y su bucle de apéndices es `for letter in A B C D`, que se
-  salta el apéndice E. No lo uses como quality gate hasta que se arregle. Los targets
-  `make validate` y `make logcheck` son otra cosa y sí funcionan.
+- **El PDF publicado no se recompila solo.** `output/agentico-por-diseno.pdf` está
+  versionado y se actualiza a mano, en un commit aparte de tipo `build` (ver sección 7);
+  nada detecta que el markdown avanzó y el PDF se quedó atrás. Y `make clean` se lo
+  lleva por delante: revisa `git status` después de correrlo.
+- **El sistema de figuras está listo pero sin usar**: 46 placeholders en el manifiesto y
+  cero referencias `![](fig:...)` en el manuscrito (ver 4.2).
 
 ---
 

@@ -19,7 +19,7 @@ Este es el **Tomo I** de la serie, enfocado en **Tecnologías de la Información
 |---------|-------|--------------|
 | Palabras | **142,097** | `cat ingenieria_agentica/capitulos/*.md ingenieria_agentica/apendices/*.md \| wc -w` |
 | Páginas del PDF | **577** | `latex-pipeline/output/agentico-por-diseno.pdf` |
-| Tamaño del PDF | ~1.9 MB (1,902,965 bytes) | commiteado a propósito, para descargar sin compilar |
+| Tamaño del PDF | ~1.9 MB (1,902,906 bytes) | commiteado a propósito, para descargar sin compilar |
 | Ficheros de capítulo | 16 | `00_prefacio`, `00a_executive_brief`, `01`..`14` |
 | Apéndices | 5 | `A_glosario` .. `E_modelos_mentales` |
 
@@ -76,7 +76,7 @@ es correcto: son front matter, no capítulos.
 |----------------------|--------------------|--------|
 | `[término]{.idx}` | `\index{término}` + el texto visible | `index-transform.lua` |
 | `[término]{.idx data-sub="padre"}` | `\index{padre!término}` + el texto visible | `index-transform.lua` |
-| `![fig:id]` | figura del manifiesto | `figure-transform.lua` |
+| `![](fig:id)` | figura del manifiesto | `figure-transform.lua` |
 
 El marcador de índice **no borra la palabra**: emite el `\index{}` y a continuación reinserta el
 contenido del span, así que el texto sigue leyéndose igual en la página.
@@ -85,8 +85,12 @@ contenido del span, así que el texto sigue leyéndose igual en la página.
   `--shell-escape`, que ya está en el Makefile.
 - **Figuras**: `ingenieria_agentica/figuras/manifest.yml` registra **46 figuras, las 46 en status
   `placeholder`**. Los directorios `figuras/tikz/`, `figuras/svg/` y `figuras/pdf/` están vacíos, y
-  el texto del libro tiene **cero** referencias `![fig:id]`. Es infraestructura lista, no una
+  el texto del libro tiene **cero** referencias `![](fig:id)`. Es infraestructura lista, no una
   funcionalidad activa. Ciclo de vida: `placeholder -> draft -> final`.
+  La sintaxis correcta y **única** es `![](fig:id)`: el destino tiene que ir entre paréntesis
+  porque pandoc solo construye un `Image` en ese caso. `![fig:id]` no funciona - se queda como
+  texto literal y el filtro nunca lo ve. La cabecera de `filters/figure-transform.lua` ya lo
+  advierte de forma explícita.
 
 ## Estructura de Archivos
 ```
@@ -97,6 +101,7 @@ book/
 │   ├── settings.json
 │   └── skills/<nombre>/SKILL.md  # 5 skills, formato directorio (invocables)
 ├── .github/workflows/deploy-mcp.yml
+├── docs/                         # arquitectura, build, pipeline-latex, figuras-e-indice
 ├── ingenieria_agentica/          # el manuscrito
 │   ├── BOOK_MASTER.md
 │   ├── capitulos/                # 00_prefacio, 00a_executive_brief, 01..14
@@ -112,7 +117,7 @@ book/
 │   │                             #   pa-diagrams, pa-tables, pa-typography
 │   ├── filters/                  # 12 filtros Lua
 │   ├── templates/                # book.tex, figure-wrapper.tex
-│   ├── scripts/                  # build-figures.sh, build.sh, validate.sh
+│   ├── scripts/                  # build-figures.sh, validate.sh
 │   ├── fonts/                    # LibertinusSerif, LibertinusSans, FiraMono
 │   ├── illustrations/            # chapter-headers/, icons/, part-dividers/ (vacíos)
 │   └── output/agentico-por-diseno.pdf
@@ -184,8 +189,34 @@ cd latex-pipeline
 docker compose run --rm book make pdf
 ```
 
-Targets del Makefile: `figures`, `pdf`, `latex`, `chapter` (con `CHAP=NN`), `digital`, `epub`,
-`validate`, `logcheck`, `optimize`, `preview`, `clean`, `docker-build`, `help`.
+Los **14 targets** del Makefile: `pdf`, `digital`, `epub`, `latex`, `chapter` (con `CHAP=NN`),
+`validate`, `check-content`, `logcheck`, `optimize`, `preview`, `clean`, `docker-build`, `figures`,
+`help`.
+
+Los prerequisitos de `$(BOOK_PDF)` y `$(BOOK_TEX)` cubren hoy **todo** lo que afecta al resultado:
+`$(ALL_FILES)`, `templates/book.tex`, el `.cls`, `$(FILTER_FILES)` (`$(wildcard filters/*.lua)`),
+`$(STY_FILES)` (`$(wildcard sty/*.sty)`) y `config.yml`. Editar un filtro Lua o un `.sty` dispara
+la reconstrucción; ya no hay que borrar el PDF a mano para que `make pdf` te haga caso.
+
+### `make digital`
+Genera `output/agentico-por-diseno-digital.pdf` con los hyperlinks en color. Funciona pasando la
+**opción de clase** `digital`: existe `PANDOC_OPTS_NOCLASS` (igual que `PANDOC_OPTS` pero sin fijar
+`classoption`) y el target añade `-V classoption=twoside -V classoption=digital`, lo que produce
+`\documentclass[twoside,digital]{paradigma-agentico}` y activa el `\ifpa@digital` del `.cls`.
+No confundir con la clave `mode:` de `config.yml`, que ya no existe y nunca hizo nada.
+
+### `make check-content`
+Es el **quality gate del manuscrito**: corre `scripts/validate.sh`, que verifica que estén los 16
+ficheros de capítulo (`00`, `00a`, `01`..`14`) y los 5 apéndices (`A`..`E`), avisa de ficheros de
+capítulo inesperados, y busca bloques de código, placeholders y demás. El chequeo de "sin código"
+excluye a propósito los bloques ` ```{=latex} `, que son LaTeX crudo de maquetación, no código
+del libro. Detecta por sí solo si corre en el host (`ingenieria_agentica/`) o dentro del contenedor
+(`/book/content`). Última corrida limpia: sale con 0, valida los 16 capítulos y los 5 apéndices y
+deja 1 warning (13 marcadores de code fence que no son `{=latex}`).
+
+### `make preview`
+Compila el PDF y luego imprime la ruta y el comando para abrirlo. No intenta ejecutar `open`:
+todos los targets corren dentro del contenedor, donde ese binario no existe.
 
 ### `make logcheck`
 `make pdf` encadena `logcheck`, que lee el log del último pase de lualatex y **falla** si hay
@@ -212,26 +243,24 @@ pase de lualatex, así que **no leas cifras de un log a medio escribir**: mídel
      del fichero son `$body$` y `$classoption$`, que las inyecta pandoc, no `config.yml`.
    - `figure-mode` - la lee `filters/figure-transform.lua` en su función `Meta` (default `all`).
 
-   Todo lo demás **no tiene ningún efecto**, incluidas claves del propio bloque `book:`:
-   `title`, `tomo`, `subtitle` y `author` están **hardcodeados** en `templates/book.tex`
-   (líneas 15-16 y las portadas), y `lang: es` es inerte porque el `.cls` carga
-   `\RequirePackage[spanish,es-tabla]{babel}` directamente. `theme`, `page_size`, `mode`,
-   `fonts:`, `layout:` y `features:` los ignora todo el pipeline: `config.yml` dice
-   `size: 11pt` y `margin_inner: 3cm`, y el `.cls` usa 10pt y 2.2cm. Gana el `.cls`.
+   El resto del bloque `book:` (`title`, `tomo`, `subtitle`, `author`, `lang`) **no tiene ningún
+   efecto**: se conserva como metadato descriptivo del proyecto y el propio fichero lo marca como
+   decorativo. `title`, `tomo`, `subtitle` y `author` están **hardcodeados** en
+   `templates/book.tex` (líneas 15-16 y las portadas) y en `\pdftitle`/`\pdfauthor` del `.cls`, y
+   `lang: es` es inerte porque el `.cls` carga `\RequirePackage[spanish,es-tabla]{babel}`
+   directamente. Las claves muertas que llegó a haber (`theme`, `page_size`, `mode`, `fonts:`,
+   `layout:`, `features:`) ya **no están en el fichero**: se eliminaron, y su cabecera explica hoy
+   qué se consume y dónde se cambia cada cosa de verdad (geometría y fuentes en el `.cls`, paleta
+   en `sty/pa-colors.sty`, modo digital vía opción de clase). No las reintroduzcas: si aparece de
+   nuevo un `page_size` o un `size: 11pt` en `config.yml`, es decorado que contradice al `.cls`.
    Para cambiar el título, el autor o la portada se edita `templates/book.tex`, no `config.yml`.
-   Esta es la trampa más cara del repo.
-2. **`/theme` no cambia nada** porque promete editar `config.yml` (ver punto 1). Los colores
-   viven en `sty/pa-colors.sty` y en el bloque de color del `.cls`.
-3. **`make digital` produce un PDF idéntico al de imprenta.** El target pasa `-V mode=digital` a
-   pandoc, pero el `.cls` espera la *opción de clase* `digital` (`\DeclareOption{digital}`), que
-   ningún target pasa. El bloque de hyperref con enlaces en color nunca se activa.
-4. **`MD_FORMAT = markdown+autolink_bare_uris-tex_math_dollars`.** Desactivar `tex_math_dollars`
+2. **`/theme` no cambia nada** porque promete editar la clave `theme:` de `config.yml` (ver punto
+   1), que ni se consume ni existe ya en el fichero. Los colores viven en `sty/pa-colors.sty` y en
+   el bloque de color del `.cls`.
+3. **`MD_FORMAT = markdown+autolink_bare_uris-tex_math_dollars`.** Desactivar `tex_math_dollars`
    es crítico: sin ello, cada `$` de un precio abre un span de matemáticas que se traga los
    separadores de fila de las tablas. Causaba 31 errores.
-5. **`latex-pipeline/scripts/validate.sh` está roto.** Itera `seq -w 0 15` (el capítulo 15 no
-   existe), omite `00a_executive_brief.md`, y su bucle de apéndices es `for letter in A B C D`
-   (falta la E). No confíes en su salida hasta que se arregle.
-6. **Las cabeceras de comentario de varios filtros Lua declaran un orden falso.** El orden real
+4. **Las cabeceras de comentario de varios filtros Lua declaran un orden falso.** El orden real
    lo define `FILTER_CHAIN` en el Makefile (ver abajo). Mienten:
    `callout-transform` (dice 2, es 7), `code-transform` (dice 2, es 3), `checkbox-transform`
    (dice 4, es 6), `crossref-transform` (dice 6, es 9), `table-transform` (dice 7, es 8),
@@ -242,7 +271,7 @@ pase de lualatex, así que **no leas cifras de un log a medio escribir**: mídel
    `index-transform` (10) y `drop-caps` (11) no declaran número; `drop-caps` sí describe bien su
    dependencia real ("runs AFTER callout-transform"). No confíes en ninguna cabecera: lee el
    Makefile.
-7. **El secret de GitHub `KV_NAMESPACE_ID` ya no se usa.** Se eliminó porque duplicaba el id que
+5. **El secret de GitHub `KV_NAMESPACE_ID` ya no se usa.** Se eliminó porque duplicaba el id que
    ya está en `wrangler.jsonc`; si divergían, la subida terminaba en verde escribiendo al
    namespace equivocado mientras el Worker servía un KV vacío devolviendo HTTP 200. Los secrets
    necesarios son `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID`.
@@ -290,7 +319,7 @@ que se normaliza); health e info en `/` y `/health`.
 - **Durable Object**: clase `BookMCP`, binding `MCP_OBJECT` (migración `v1`,
   `new_sqlite_classes`). **KV binding**: `BOOK_KV`, con el id del namespace en `wrangler.jsonc`
 - **295 entradas KV**: 21 chapters, 270 sections, 1 glossary, 1 frameworks, 1 toc, 1 search-index.
-  91 términos de glosario, 13 frameworks
+  91 términos de glosario, 12 frameworks (de los 270 sections, 65 son de apéndices)
 - **Node >= 20.11** (por `import.meta.dirname` en `prepare-content.ts`)
 - **Scripts npm**: `dev`, `typecheck`, `check`, `deploy`, `prepare-content`, `upload-kv`,
   `cf-typegen`. `typecheck` cubre `src/` (`tsconfig.json`) y `scripts/` (`tsconfig.scripts.json`)
@@ -329,8 +358,8 @@ que se normaliza); health e info en `/` y `/health`.
 
 ## Especificaciones de Formato (Estilo Editorial)
 
-> **Fuente de verdad: `latex-pipeline/cls/paradigma-agentico.cls`.** No `config.yml`, cuyos bloques
-> `fonts:` y `layout:` son letra muerta (ver trampa #1). Si esta tabla y el `.cls` discrepan, gana
+> **Fuente de verdad: `latex-pipeline/cls/paradigma-agentico.cls`.** No `config.yml`, que ya ni
+> siquiera declara geometría ni fuentes (ver trampa #1). Si esta tabla y el `.cls` discrepan, gana
 > el `.cls` y esta tabla es la que hay que corregir.
 
 El libro sigue estándares de editoriales técnicas profesionales (O'Reilly, Manning, Apress)
@@ -389,10 +418,10 @@ corregido y declara los mismos valores que la tabla de arriba (13.5cm de caja, 2
 | `CONTRIBUTING.md` | Reglas duras de contribución: em dashes, prohibición de código, no fabricar datos, convención `US$` | existe |
 | `ingenieria_agentica/BOOK_MASTER.md` | Registro editorial: rangos de páginas y palabras medidos por capítulo | existe |
 | `mcp-server/README.md` | El Worker, sus 5 tools y el despliegue | existe |
-| `docs/arquitectura.md` | Vista general de las tres piezas: manuscrito, pipeline LaTeX, MCP server | en construcción |
-| `docs/build.md` | Cómo compilar el PDF, targets del Makefile, `logcheck`, troubleshooting | en construcción |
-| `docs/pipeline-latex.md` | Los 12 filtros Lua y su orden, la clase, los paquetes `sty/`, `config.yml` | en construcción |
-| `docs/figuras-e-indice.md` | Sistema de figuras (`![fig:id]`, manifest) e índice analítico (`{.idx}`) | en construcción |
+| `docs/arquitectura.md` | Vista general de las tres piezas: manuscrito, pipeline LaTeX, MCP server | existe |
+| `docs/build.md` | Cómo compilar el PDF, los 14 targets del Makefile, `logcheck`, `check-content`, troubleshooting | existe |
+| `docs/pipeline-latex.md` | Los 12 filtros Lua y su orden, la clase, los paquetes `sty/`, `config.yml` | existe |
+| `docs/figuras-e-indice.md` | Sistema de figuras (`![](fig:id)`, manifest) e índice analítico (`{.idx}`) | existe |
 
-El directorio `docs/` todavía no existe: las cuatro últimas filas se están escribiendo. No enlaces
-a ellas desde contenido publicado hasta que estén en el repo.
+El directorio `docs/` ya está en el repo con los cuatro ficheros. Antes de citar una cifra de
+ellos, compruébala contra el repo: son documentación, no fuente de verdad.

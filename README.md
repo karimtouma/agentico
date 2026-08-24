@@ -158,6 +158,11 @@ así que sin `logcheck` un documento roto produciría un PDF y un exit code cero
 TeX, caracteres perdidos, referencias sin resolver o etiquetas duplicadas. Los overfull
 hboxes son cosméticos y no lo rompen. Escape: `make pdf STRICT=0`.
 
+Los prerequisitos de `$(BOOK_PDF)` y `$(BOOK_TEX)` cubren el manuscrito completo, el
+template, la clase, **todos los filtros Lua** (`$(FILTER_FILES)`), **todos los paquetes
+de `sty/`** (`$(STY_FILES)`) y `config.yml`. Editar un filtro o un `.sty` dispara la
+reconstrucción, así que `make pdf` no te devuelve un PDF viejo.
+
 Estado actual del build:
 
 ```
@@ -176,12 +181,13 @@ Overfull hboxes            20
 | `make pdf` | Build completo listo para imprenta, con `logcheck` al final |
 | `make latex` | Genera solo el `.tex` intermedio, para inspeccionarlo |
 | `make chapter CHAP=NN` | PDF de un solo capítulo |
-| `make digital` | PDF "digital" (ver [Trampas conocidas](#trampas-conocidas)) |
+| `make digital` | PDF digital en `output/agentico-por-diseno-digital.pdf`. Pasa `-V classoption=twoside -V classoption=digital`, que activa la opción `digital` de la clase y con ella los hyperlinks coloreados |
 | `make epub` | Exporta EPUB |
-| `make validate` | Genera el `.tex` y cuenta cross-refs, referencias sin resolver, cajas overfull/underfull y warnings sobre los logs. No invoca `scripts/validate.sh` (ver [Trampas conocidas](#trampas-conocidas)) |
+| `make check-content` | Corre `scripts/validate.sh` sobre el manuscrito: los 16 capítulos y los 5 apéndices presentes, bloques editoriales, ausencia de código y de placeholders, salud del último build y efectividad de los filtros |
+| `make validate` | Genera el `.tex` y cuenta cross-refs, referencias sin resolver, cajas overfull/underfull y warnings sobre los logs. Es el chequeo del build; el del manuscrito es `make check-content` |
 | `make logcheck` | Solo el chequeo de salud del último log |
 | `make optimize` | Build y luego listado de overfull/underfull hboxes y vboxes del log, más el total de páginas. Solo diagnostica: no modifica nada |
-| `make preview` | Build y abre el PDF |
+| `make preview` | Build y luego imprime la ruta del PDF y el comando para abrirlo desde el host (el target corre dentro del contenedor) |
 | `make clean` | Limpia `output/`. Borra también el PDF versionado; se recupera con `git checkout latex-pipeline/output/agentico-por-diseno.pdf` |
 | `make docker-build` | Reconstruye la imagen |
 | `make help` | Lista los targets |
@@ -304,7 +310,7 @@ latex-pipeline/                    el build
                                    pa-diagrams, pa-tables, pa-typography
   filters/                         12 filtros Lua de Pandoc
   templates/                       book.tex (template de pandoc), figure-wrapper.tex
-  scripts/                         build-figures.sh, build.sh, validate.sh
+  scripts/                         build-figures.sh, validate.sh (make check-content)
   fonts/                           LibertinusSerif, LibertinusSans, FiraMono
   illustrations/                   chapter-headers/, icons/, part-dividers/
   output/                          solo el PDF está versionado
@@ -414,33 +420,25 @@ Cosas que parecen funcionar y no funcionan. Vale la pena leerlas antes de tocar 
 **`latex-pipeline/config.yml` es casi todo letra muerta.** Pandoc lo carga con
 `--metadata-file`, pero de todo el fichero solo se leen dos valores: `book.date`, que
 `templates/book.tex` interpola en portada y página de créditos, y `figure-mode`, que
-consume `figure-transform.lua`. Todo lo demás - `book.title`, `book.tomo`,
-`book.subtitle`, `book.author`, `book.lang`, y las secciones `theme`, `page_size`,
-`mode`, `fonts:`, `layout:` y `features:` - no lo lee nadie: el título y el autor están
-escritos a mano dentro de `templates/book.tex`, y la clase `paradigma-agentico.cls`
-hardcodea fuentes, tamaños y márgenes. Editar esas claves no cambia el PDF. Es la
-trampa más cara del repositorio.
+consume `figure-transform.lua`. Lo demás que queda en el fichero - `book.title`,
+`book.tomo`, `book.subtitle`, `book.author`, `book.lang` - no lo lee nadie, y está
+marcado como decorativo con un comentario en cada línea: el título y el autor están
+escritos a mano dentro de `templates/book.tex`, el idioma lo resuelve babel, y la clase
+`paradigma-agentico.cls` hardcodea fuentes, tamaños y márgenes. Editar esas claves no
+cambia el PDF. La cabecera del fichero explica qué se consume y en qué archivo se
+cambia de verdad cada cosa.
 
 **`/theme` no hace nada si solo tocas `config.yml`.** El skill `book-build` manda editar
 la clave `theme:`, que es letra muerta. La ruta que sí funciona es la que el propio skill
 documenta después: añadir `\setthemecorporategray` o `\setthemewarmterracotta` al inicio
 de `sty/pa-colors.sty` y recompilar.
 
-**`make digital` produce un PDF idéntico al de imprenta.** La clase declara una opción
-`digital`, pero el target pasa `-V mode=digital` como variable de Pandoc, y el template
-`book.tex` no la usa ni la traduce a una opción de clase. La bandera nunca llega.
-
-**`scripts/validate.sh` no lo ejecuta nadie, y además está roto.** Ningún target del
-Makefile lo invoca: `make validate` hace sus propios greps sobre el `.tex` y el log. Si
-lo corres a mano, itera `seq -w 0 15` y reporta como faltante un capítulo 15 que no
-existe; se salta `00a_executive_brief.md`, que no encaja en ese patrón numérico; y su
-bucle de apéndices es `for letter in A B C D`, así que nunca revisa el Apéndice E. Su
-salida no es de fiar tal como está.
-
 **El sistema de figuras existe pero todavía no se usa.** `figuras/manifest.yml` registra
 46 figuras y las 46 están en status `placeholder`; `figuras/tikz/` y `figuras/svg/` están
-vacíos, y el texto del libro no tiene ni una referencia `![fig:id]`. Es infraestructura
-lista para usarse, no una funcionalidad activa. El ciclo de vida previsto es
+vacíos, y el texto del libro no tiene ni una referencia `![](fig:id)`. Ojo con la
+sintaxis: la única forma que funciona es `![](fig:id)`, con el destino entre paréntesis.
+`![fig:id]` no construye una imagen en Pandoc y se queda como texto literal. Es
+infraestructura lista para usarse, no una funcionalidad activa. El ciclo de vida previsto es
 `placeholder` -> `draft` -> `final`, y `figure-mode` en `config.yml` controla qué se
 renderiza (esta clave sí se lee, a diferencia del resto del fichero).
 
@@ -461,6 +459,13 @@ contenido. Requiere `--shell-escape`, que ya está en el Makefile.
 Lee [CONTRIBUTING.md](CONTRIBUTING.md) antes de abrir un PR. Las reglas duras (sin em
 dashes, sin código, sin datos inventados, `US$` para la moneda) no son preferencias de
 estilo: son criterios de aceptación.
+
+El quality gate del manuscrito es `docker compose run --rm book make check-content`
+desde `latex-pipeline/`. Comprueba que estén los 16 capítulos y los 5 apéndices, que
+cada capítulo lleve sus bloques editoriales, que no haya código ni placeholders, y de
+paso revisa la salud del último build y la efectividad de los filtros. Hoy sale limpio
+con un solo warning: 13 marcadores de code fence que no son bloques `{=latex}`.
+Córrelo antes de abrir un PR de contenido.
 
 Dónde aporta más una contribución:
 

@@ -5,7 +5,7 @@ Cómo se convierte el manuscrito en `ingenieria_agentica/` en el PDF de 577 pág
 
 Todo lo que sigue está verificado contra el repo. Las cifras corresponden al último build
 commiteado (0 errores de TeX, 0 caracteres perdidos, 0 referencias sin resolver, 0 etiquetas
-duplicadas, 20 overfull hboxes, 577 páginas, 1,902,965 bytes).
+duplicadas, 20 overfull hboxes, 577 páginas, 1,902,906 bytes).
 
 ---
 
@@ -43,6 +43,12 @@ cd latex-pipeline && docker compose run --rm book make pdf
 `cls/`, `sty/`, `filters/`, `templates/`, `scripts/`, `fonts/`, `config.yml` en `/book/...`
 (también solo lectura). Solo `output/` e `illustrations/` son escribibles. Por eso el Makefile
 usa rutas absolutas `/book/...` y no rutas relativas al repo.
+
+**Prerequisitos del build.** La regla de `$(BOOK_PDF)` - y la de `$(BOOK_TEX)` - depende del
+manuscrito completo, de `templates/book.tex`, del `.cls`, de `$(FILTER_FILES)`
+(`$(wildcard filters/*.lua)`), de `$(STY_FILES)` (`$(wildcard sty/*.sty)`) y de `config.yml`.
+Es decir: editar un filtro Lua, un `.sty` o el `config.yml` sí dispara reconstrucción. No hace
+falta borrar el PDF ni hacer `touch` a un capítulo para que `make pdf` recoja el cambio.
 
 Detalle del reader que vale más de lo que parece: `MD_FORMAT` desactiva `tex_math_dollars`.
 El libro no tiene matemáticas y sí tiene 991 apariciones de `US$`. Con `tex_math_dollars`
@@ -152,8 +158,14 @@ convertiría estos bloques en raw.
 
 #### 2 - `figure-transform.lua`
 
-Entrada: `![fig:id]` (un `Para` que contiene una sola `Image` con prefijo `fig:`).
+Entrada: `![](fig:id)` (un `Para` que contiene una sola `Image` con prefijo `fig:`).
 Salida: `\begin{figure}...\end{figure}` o un tcolorbox de placeholder.
+
+**La sintaxis es `![](fig:id)`, con el id entre paréntesis.** La forma `![fig:id]` **no
+funciona**: pandoc solo construye un nodo `Image` cuando el destino va entre paréntesis; con
+corchetes queda texto literal y el filtro nunca lo ve. La cabecera de `figure-transform.lua`
+ya documenta la forma correcta con ese aviso; la cabecera de `manifest.yml` todavía arrastra la
+forma vieja.
 
 Parsea `manifest.yml` con un parser YAML propio (no usa librería). Busca el manifiesto en tres
 rutas, en orden: `/book/content/figuras/manifest.yml`, `/book/figuras/manifest.yml`,
@@ -172,7 +184,7 @@ clave de `config.yml` fuera del bloque `book:` que sí se consume.
 
 **Estado real: infraestructura lista, funcionalidad inactiva.** `manifest.yml` registra 46
 figuras y las 46 están en `placeholder`; `figuras/tikz/` y `figuras/svg/` están vacíos; el
-manuscrito tiene 0 referencias `![fig:`. El filtro corre en cada build y no transforma nada.
+manuscrito tiene 0 referencias `![](fig:`. El filtro corre en cada build y no transforma nada.
 
 Los 10 diagramas que sí tiene el libro no pasan por aquí: son bloques ```` ```{=latex} ````
 escritos a mano en el markdown (ver `code-transform`, §1.3). Es decir, hay dos caminos para las
@@ -382,7 +394,8 @@ tiene 299 `\separator{}`.
 Basada en `memoir`, cargada como `\LoadClass[10pt,openright,final]{memoir}`.
 
 **Opciones de clase.** Declara `digital` y `print` (flag interno `\ifpa@digital`), y pasa
-cualquier otra opción a memoir. Ver §3.2: hoy nadie pasa `digital`.
+cualquier otra opción a memoir. `make pdf` pasa solo `twoside`; `make digital` pasa
+`twoside,digital` y con ello activa `\ifpa@digital` (ver §3.3).
 
 **Geometría** (líneas 141-160, valores literales del fichero):
 
@@ -455,7 +468,7 @@ Se cargan con `\input` desde `templates/book.tex`, no con `\usepackage`, y se en
 
 ---
 
-## 3. `config.yml`: la trampa más cara del repo
+## 3. `config.yml`: casi todo es decorativo
 
 ### 3.1 Solo dos claves están vivas
 
@@ -473,6 +486,13 @@ Lo que realmente se consume:
 **Todo lo demás es letra muerta**, incluidas cinco de las seis claves del bloque `book:`
 (`title`, `tomo`, `subtitle`, `author` y `lang`; solo `date` sobrevive).
 
+El fichero ya no esconde esto. Las claves que en su día prometían configuración y no configuraban
+nada (`theme`, `page_size`, `mode`, y los bloques `fonts:`, `layout:` y `features:`) fueron
+**eliminadas**: hoy `config.yml` contiene el bloque `book:` - con `date` marcado como el único
+campo vivo y `title`/`tomo`/`subtitle`/`author`/`lang` marcados en línea como decorativos - y
+`figure-mode`. La cabecera del propio fichero explica qué se consume y dónde se cambia de verdad
+cada cosa.
+
 La prueba, desde `latex-pipeline/`:
 
 ```bash
@@ -480,35 +500,25 @@ La prueba, desde `latex-pipeline/`:
 grep -o '\$[a-zA-Z][a-zA-Z0-9._-]*\$' templates/book.tex | sort -u
 #   $body$  $book.date$  $classoption$  $endfor$  $endif$  $sep$
 
-# Las claves "de configuración" no se leen en ninguna parte:
-grep -rn '\$theme\$\|\$page_size\$\|\$mode\$\|\$fonts\.\|\$layout\.\|\$features\.' \
-     templates/ cls/ sty/ filters/ Makefile
-#   (sin salida)
-
 # Ni siquiera título y autor salen del YAML:
 grep -c '\$title\$\|\$author\$\|\$lang\$' templates/book.tex
 #   0
 ```
 
-Detalles concretos de lo que **no** pasa si editas `config.yml`:
+Qué **no** pasa si editas las claves decorativas que quedan:
 
-- `theme: modern_blue` - el valor no se lee. El mecanismo de temas sí existe
-  (`\setthemecorporategray` y `\setthemewarmterracotta` en `sty/pa-colors.sty`) pero ninguna de
-  las dos macros se invoca en ninguna parte, y `modern_blue` ni siquiera es una de ellas: es la
-  paleta base del `.cls`.
-- `page_size: letter` - no se lee. El tamaño está hardcodeado en `\setstocksize` /
-  `\settrimmedsize`.
-- `mode: print` - no se lee. Ver §3.2.
-- `fonts.size: 11pt` - **el libro es 10pt**. El tamaño real está en
-  `\LoadClass[10pt,...]{memoir}`.
-- `layout.margin_inner: 3cm` - **el gutter real es 2.2cm**, en `\setlrmargins{2.2cm}`.
-  Los otros tres márgenes del bloque tampoco corresponden a nada.
-- `features.drop_caps: true` - `drop-caps.lua` es un no-op y el `.tex` tiene 0 `\lettrine`.
-- `features.illustrations: true` - las figuras se controlan con `figure-mode` y con `manifest.yml`.
 - `book.title`, `book.tomo`, `book.subtitle`, `book.author` - la plantilla los escribe a mano
-  en `\title{}`, en la portada y en los créditos. Cambiarlos en el YAML no cambia el PDF.
+  en `\title{}`, en la portada y en los créditos, y el `.cls` los repite en `\pdftitle` /
+  `\pdfauthor`. Cambiarlos en el YAML no cambia el PDF.
 - `book.lang: es` - está anidado bajo `book:`, así que pandoc **no** ve una variable `lang` de
   nivel superior. La localización del español la da `babel` en el `.cls`, no el YAML.
+
+Y lo que ya no puedes esperar encontrar ahí, porque la clave desapareció con el rediseño del
+fichero: el tema de color (vive en `sty/pa-colors.sty` y en la paleta del `.cls`), el tamaño de
+página (`\setstocksize` / `\settrimmedsize`), el modo digital (es una opción de clase, §3.3), el
+cuerpo de texto (`\LoadClass[10pt,...]{memoir}`), los márgenes (`\setlrmargins{2.2cm}` y
+compañía), las drop caps (`drop-caps.lua` es un no-op) y el interruptor de ilustraciones
+(`figure-mode` más `manifest.yml`).
 
 ### 3.2 Dónde se cambia cada cosa de verdad
 
@@ -525,21 +535,26 @@ Detalles concretos de lo que **no** pasa si editas `config.yml`:
 | Estilo de tablas | `sty/pa-tables.sty` + umbrales `NARROW_THRESHOLD` / `WIDE_THRESHOLD` en `filters/table-transform.lua` |
 | Estilo de callouts | `sty/pa-callouts.sty` + la cascada de `filters/callout-transform.lua` |
 | Modo de figuras | `config.yml` → `figure-mode` |
+| Enlaces de color (digital vs. imprenta) | opción de clase `digital`, vía `make digital` (§3.3) |
 | Mapa de Partes | `filters/part-dividers.lua`, tabla `part_by_chapnum` |
 
-### 3.3 `make digital` no produce un PDF digital
+### 3.3 `make digital` sí produce un PDF digital
 
 La clase tiene la lógica: `\ifpa@digital` (línea 400) elige entre `colorlinks=true` con enlaces
-de color y la variante de imprenta. Pero se activa con la **opción de clase** `digital`, y el
-target `digital` del Makefile pasa `-V mode=digital`, que es una **variable de pandoc** que la
-plantilla nunca usa (`grep '\$mode\$' templates/book.tex` no devuelve nada).
+de color (`linkcolor=pa-secondary`, `urlcolor=pa-secondary`) y la variante de imprenta, sin
+color. El flag se activa con la **opción de clase** `digital`, no con una variable de pandoc.
 
-Resultado: `make digital` genera `agentico-por-diseno-digital.pdf` con exactamente los mismos
-ajustes de hyperref que el de imprenta. Para arreglarlo habría que pasar
-`-V classoption=digital` junto a `twoside`.
+El Makefile lo pasa correctamente. `PANDOC_OPTS` fija `-V classoption=twoside` y por eso no
+admite añadir una segunda opción; para el target `digital` existe `PANDOC_OPTS_NOCLASS`, que es
+`PANDOC_OPTS` sin esa línea, y el target pasa `-V classoption=twoside -V classoption=digital`
+(pandoc acepta `-V classoption` repetido y los concatena). El `.tex` resultante abre con
+`\documentclass[twoside,digital]{paradigma-agentico}`, así que `agentico-por-diseno-digital.pdf`
+sale de verdad con los hipervínculos coloreados.
 
-Lo mismo aplica al comando `/theme` de la skill `book-build`: promete cambiar el tema editando
-`config.yml`, y `config.yml` no controla ningún tema.
+Lo que **no** está arreglado es el comando `/theme` de la skill `book-build`: sigue prometiendo
+cambiar el tema editando la línea `theme:` de `config.yml`, y esa clave ya ni siquiera existe en
+el fichero. La ruta real para cambiar la paleta es `sty/pa-colors.sty` (o los `\definecolor` del
+`.cls`, §2.2).
 
 ---
 
@@ -590,6 +605,10 @@ bookmarks del PDF.
 
 ## 5. `scripts/`
 
+Quedan dos ficheros: `build-figures.sh` y `validate.sh`. Hubo un tercero, `build.sh`, un
+envoltorio de Docker que duplicaba los targets del Makefile y al que no llamaba nadie; fue
+eliminado. Si encuentras una referencia a él en otro documento, está desactualizada.
+
 ### 5.1 `build-figures.sh` - útil, hoy sin trabajo que hacer
 
 Corre **dentro** del contenedor (rutas `/book/...` hardcodeadas). Compila
@@ -608,67 +627,49 @@ El target `figures` del Makefile solo lo invoca si existe al menos un `.tex` en 
 `.svg` en `svg/`. Como ambos directorios están vacíos, en cada build imprime un aviso
 `[figures] No figure sources found` y no hace nada.
 
-### 5.2 `build.sh` - sí sigue teniendo sentido
+### 5.2 `validate.sh` - el quality gate del manuscrito
 
-Es el envoltorio de Docker que el Makefile no puede ser: el Makefile corre *dentro* del
-contenedor, `build.sh` corre en el host. Verifica que Docker esté arriba, construye la imagen si
-falta, y traduce subcomandos a `docker compose run --rm book make <target>`. Usa rutas absolutas
-derivadas de `BASH_SOURCE`, así que funciona desde cualquier directorio:
+Funciona de punta a punta y tiene target propio:
 
 ```bash
-/Users/karim/Desktop/book/latex-pipeline/scripts/build.sh status
-/Users/karim/Desktop/book/latex-pipeline/scripts/build.sh chapter 07
+cd latex-pipeline && docker compose run --rm book make check-content
+# o directamente desde el host:
+bash /Users/karim/Desktop/book/latex-pipeline/scripts/validate.sh
 ```
 
-Subcomandos: `pdf` (default), `digital`, `epub`, `latex`, `chapter N`, `validate`, `optimize`,
-`clean`, `rebuild`, `status`, `help`.
+Corre entero y sale con `exit $ERRORS`, así que sirve como puerta de calidad en CI: los
+**errores** (un capítulo o un apéndice que falta) hacen fallar, los **warnings** no.
 
-Aporta dos cosas sobre el Makefile: `status` (estado de Docker, PDFs con tamaño y fecha) y
-`analyze_log` después de `pdf` (páginas, overfull, underfull, warnings).
+Funciona en las dos disposiciones. Detecta si el manuscrito está en `$PROJECT_DIR/content` (el
+bind mount de `docker-compose.yml` dentro del contenedor) o en `../ingenieria_agentica` (el
+layout del host), y aborta con código 2 si no encuentra ninguno. Por eso da igual invocarlo por
+`make check-content` o a mano.
 
-Único defecto: `show_status` imprime `theme:`, `page_size:` y `mode:` de `config.yml` como si
-fueran configuración efectiva. No lo son (§3). Es la fuente más probable de que alguien crea que
-esas claves hacen algo.
+Qué comprueba, en cuatro bloques:
 
-### 5.3 `validate.sh` - roto, no lo uses
+1. **Source Content Validation.** Que existan los 16 ficheros de capítulo de la lista explícita
+   `00 00a 01 .. 14` - incluido `00a_executive_brief.md` - y los **5** apéndices `A..E`. Además
+   avisa de cualquier fichero en `capitulos/` cuyo prefijo no esté en la lista esperada.
+2. **Content Statistics.** Palabras totales, blockquotes, filas de tabla, marcadores de valla de
+   código y placeholders (`[PLACEHOLDER]`, `[TODO]`, `[INSERT]`, `[GRÁFICO]`). El chequeo de
+   "sin código" **excluye los bloques ```` ```{=latex} ````**: son LaTeX crudo de maquetación
+   (los diagramas TikZ de §1.3), no ejemplos de programación.
+3. **Build Output Validation.** Que exista el PDF, y overfull/underfull, referencias sin
+   resolver y problemas de fuentes leídos del `.log`, más el recuento de páginas.
+4. **Filter Effectiveness.** Cuenta sobre el `.tex`: callouts, `\partdivider` (avisa si no son
+   6), cross-references, checkboxes, iconos FontAwesome y separadores.
 
-**Aborta en la primera comprobación: muere en la línea 39 de sus 208 líneas.** Verificado
-ejecutándolo:
+Estado en la última ejecución: 0 errores y **1 warning** - los 13 marcadores de valla de código
+que no son `{=latex}`. Ese 13 se descompone así: el bloque solo mira `capitulos/`, donde hay 9
+aperturas ```` ```{=latex} ```` (la décima está en el apéndice B); sus 9 cierres son ```` ``` ````
+a secas y por tanto cuentan, y a eso se suman la apertura y el cierre de los 2 bloques
+```` ```markdown ```` reales del manuscrito (§1.3). 9 + 4 = 13. Es ruido conocido, no una
+regresión.
 
-```bash
-$ bash /Users/karim/Desktop/book/latex-pipeline/scripts/validate.sh
-  ✓ Chapter 00: 00_prefacio.md
-  ... (hasta Chapter 14)
-$ echo $?
-1
-```
-
-Se detiene después del capítulo 14, sin imprimir error, sin estadísticas, sin validar el build y
-sin validar la efectividad de los filtros.
-
-Causas, en orden de gravedad:
-
-1. **`set -euo pipefail` + `ls` que falla.** El bucle hace
-   `file=$(ls "$CONTENT_DIR/capitulos/${i}_"*.md 2>/dev/null | head -1)`. Cuando no hay match,
-   `ls` sale con 1; con `pipefail`, la tubería devuelve 1; la sustitución de comandos propaga ese
-   estado; `set -e` mata el script. La rama `else` con `log_error` es inalcanzable.
-2. **`for i in $(seq -w 0 15)`.** Itera hasta el capítulo `15`, que no existe. Ese es el
-   iterador que dispara el fallo del punto 1. El último capítulo es el 14.
-3. **Omite `00a_executive_brief.md`.** El glob es `${i}_*.md`, y `00_` solo casa con
-   `00_prefacio.md`. El resumen ejecutivo nunca se valida.
-4. **`for letter in A B C D`.** Falta el apéndice `E_modelos_mentales.md`. Aunque el script
-   llegara hasta ahí, reportaría 4 de 5 apéndices.
-5. **`((WARNINGS++))` / `((ERRORS++))` bajo `set -e`.** Con el contador en 0, el post-incremento
-   devuelve 0, la expresión aritmética se evalúa como falsa y el estado de salida es 1: otro
-   punto de muerte súbita en cuanto se registre el primer warning.
-
-Nadie lo llama: el target `validate` del Makefile hace sus propios `grep` y no ejecuta este
-script. Lo que sí funciona hoy para verificar la salud del build es `make logcheck` (encadenado
-automáticamente a `make pdf`).
-
-Arreglo mínimo si alguien lo retoma: cambiar el rango a `00 00a 01..14` explícito, añadir `E` al
-bucle de apéndices, sustituir `((X++))` por `X=$((X+1))`, y envolver el `ls` en
-`|| true`.
+Convive con `make logcheck`, que es el otro gate y mira otra cosa: `logcheck` audita el `.log`
+de LaTeX y hace fallar el build (se encadena automáticamente a `make pdf`); `check-content`
+audita el manuscrito en markdown y hay que invocarlo a propósito. El target `validate` es un
+tercero, más superficial: solo hace `grep` sobre `.tex` y `.log`.
 
 ---
 
@@ -709,6 +710,17 @@ referencias sin resolver o etiquetas duplicadas. Escape: `make pdf STRICT=0`. No
 "pasar": los tres pases de lualatex corren con `> /dev/null 2>&1 || true`, así que sin
 `logcheck` un documento roto produce PDF y salida cero.
 
+Antes de compilar conviene pasar el gate del manuscrito, que es quien detecta que el fichero
+nuevo no está donde el pipeline lo espera:
+
+```bash
+cd latex-pipeline && docker compose run --rm book make check-content
+```
+
+Ojo: `validate.sh` valida contra la lista **explícita** `00 00a 01 .. 14` y `A..E` (§5.2). Un
+capítulo 15 real aparecería como `Unexpected chapter file`, no como capítulo válido, hasta que se
+añada a `EXPECTED_CHAPTERS`.
+
 Comprobaciones rápidas después del build, desde `latex-pipeline/`:
 
 ```bash
@@ -722,7 +734,7 @@ grep -c 'multiply defined' output/agentico-por-diseno.log # 0
 
 ## 7. Referencia rápida de targets
 
-Todos desde `latex-pipeline/`, prefijados con `docker compose run --rm book`.
+Todos desde `latex-pipeline/`, prefijados con `docker compose run --rm book`. Son 14:
 
 | Target | Qué hace | Nota |
 |---|---|---|
@@ -730,13 +742,14 @@ Todos desde `latex-pipeline/`, prefijados con `docker compose run --rm book`.
 | `make pdf` | Build completo + `logcheck` | Depende de `figures`. Default |
 | `make latex` | Solo el `.tex`, para inspeccionar | Rápido; la mejor herramienta para depurar filtros |
 | `make chapter CHAP=07` | PDF de un solo capítulo | Sin part dividers coherentes |
-| `make digital` | PDF "digital" | **No difiere del de imprenta**, ver §3.3 |
+| `make digital` | PDF con hipervínculos de color | Pasa `classoption=twoside,digital`; sí difiere del de imprenta (§3.3) |
 | `make epub` | EPUB | Aplica los mismos filtros, que emiten LaTeX crudo: la salida está degradada |
-| `make validate` | greps sobre `.tex` y `.log` | No ejecuta `scripts/validate.sh` |
+| `make check-content` | Ejecuta `scripts/validate.sh` | Quality gate del manuscrito; falla solo si faltan capítulos o apéndices (§5.2) |
+| `make validate` | greps sobre `.tex` y `.log` | Superficial; no es `check-content` |
 | `make logcheck` | Falla si el último build tuvo errores | `STRICT=0` lo degrada a warning |
 | `make optimize` | Overfull/underfull + páginas | Depende de `pdf` |
-| `make preview` | `pdf` + `open` | Solo macOS, y desde el host, no desde Docker |
-| `make clean` | Borra artefactos de `output/` | Incluye `.vrb`, `.idx`, `.ind`, `.ilg` |
+| `make preview` | `pdf` + ruta del PDF | Ya no invoca `open` (no existe en el contenedor): imprime el comando para abrirlo desde el host |
+| `make clean` | Borra artefactos de `output/` | Incluye `.vrb`, `.idx`, `.ind`, `.ilg`. **Y el PDF versionado** |
 | `make docker-build` | `docker compose build --no-cache` | Obligatorio tras tocar el `Dockerfile` |
 | `make help` | Lista de targets | |
 
@@ -745,7 +758,8 @@ Todos desde `latex-pipeline/`, prefijados con `docker compose run --rm book`.
 ## 8. Trampas, resumidas
 
 1. `config.yml` es decorativo salvo `book.date` y `figure-mode` (§3).
-2. `make digital` == `make pdf` en resultado; falta pasar `classoption=digital` (§3.3).
+2. El comando `/theme` de la skill `book-build` dice cambiar el tema editando `config.yml`, donde
+   ya no existe ninguna clave `theme:`. La ruta real es `sty/pa-colors.sty` (§3.3).
 3. Las cabeceras `Filter order: N` de 6 de los 12 filtros mienten (§1.1).
 4. Los `{.idx}` y las referencias `Capítulo N` dentro de tablas y callouts se pierden (§1.2).
 5. `emoji-transform` corre antes que `checkbox-transform` y **borra los 51 `☐` del manuscrito**
@@ -753,16 +767,19 @@ Todos desde `latex-pipeline/`, prefijados con `docker compose run --rm book`.
 6. `crossref-transform` no cubre `Apéndice E`, ni encabezados, y emite `\hyperref[part:...]`
    contra etiquetas que nadie define (§1.3).
 7. `drop-caps.lua` es un no-op declarado (§1.3).
-8. El sistema de figuras (`manifest.yml` + `figure-transform`) está inactivo: los 10 diagramas
-   reales del libro son bloques ```` ```{=latex} ```` con TikZ escrito a mano dentro del
-   markdown (§1.3). Además, el nombre de fichero que produce `build-figures.sh` y el que espera
-   `figure-transform.lua` solo coinciden si los fuentes se llaman `fig-<id>.tex` / `fig-<id>.svg`
-   (§5.1).
-9. Las macros de tema de `pa-colors.sty` no las invoca nadie; la paleta viva está en el `.cls`
-   (§2.2).
-10. `scripts/validate.sh` muere en la primera iteración fallida; no lo uses (§5.3).
-11. Reactivar `tex_math_dollars` rompe las tablas por culpa de los 991 `US$` (§0).
-12. Tocar el `Dockerfile` obliga a `make docker-build`: `--rm` significa contenedor nuevo cada
+8. El sistema de figuras (`manifest.yml` + `figure-transform`) está inactivo: 46 placeholders y
+   0 referencias en el manuscrito. Los 10 diagramas reales del libro son bloques
+   ```` ```{=latex} ```` con TikZ escrito a mano dentro del markdown (§1.3). Además, el nombre de
+   fichero que produce `build-figures.sh` y el que espera `figure-transform.lua` solo coinciden
+   si los fuentes se llaman `fig-<id>.tex` / `fig-<id>.svg` (§5.1).
+9. La sintaxis de figura es `![](fig:id)`. `![fig:id]` no funciona, y la cabecera de
+   `manifest.yml` todavía la anuncia (§1.3).
+10. Las macros de tema de `pa-colors.sty` no las invoca nadie; la paleta viva está en el `.cls`
+    (§2.2).
+11. El PDF compilado está versionado en el repo y hay que recompilarlo a mano después de tocar el
+    manuscrito: nada lo detecta ni lo regenera solo. Y `make clean` lo borra.
+12. Reactivar `tex_math_dollars` rompe las tablas por culpa de los 991 `US$` (§0).
+13. Tocar el `Dockerfile` obliga a `make docker-build`: `--rm` significa contenedor nuevo cada
     vez, no imagen nueva.
-13. Un `\newunicodechar` nuevo en el `.cls` no sirve de nada si su codepoint no está también en
+14. Un `\newunicodechar` nuevo en el `.cls` no sirve de nada si su codepoint no está también en
     `latex_fallback` de `emoji-transform.lua` (§1.3).

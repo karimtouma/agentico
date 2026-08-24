@@ -55,7 +55,7 @@ Reglas derivadas de 5 rondas de auditoría (28 correcciones). **Consultar antes 
 **Error corregido:** Ch13 tenía `## Checklist` seguido de `####` subcategorías (saltaba H3) → corregido a `###`.
 
 ### Em dashes
-**Regla:** NUNCA usar `—` (em dash). Usar ` - ` (guion con espacios).
+**Regla:** NUNCA usar ` - ` (em dash). Usar ` - ` (guion con espacios).
 
 ### Callouts: preferir blockquote syntax
 **Regla para contenido nuevo:** Usar `> **Título**` (blockquote), NO `::: {.callout .tipo}` (fenced div).
@@ -90,7 +90,7 @@ Los capítulos se renumeraron. El mapa vigente es:
 **Errores comunes de cross-ref (ya corregidos):**
 - Cap 5 NO es Evolución Técnica (eso es Cap 7)
 - Cap 6 NO es Ecosistema (eso es Cap 8)
-- Cap 11 NO es Gobernanza (eso es Cap 13) — error corregido en Ch06:118
+- Cap 11 NO es Gobernanza (eso es Cap 13) - error corregido en Ch06:118
 - Softmax/temperatura se discuten en Cap 13, no Cap 11
 
 ---
@@ -130,7 +130,7 @@ Estas stats aparecen en múltiples capítulos. Usar SIEMPRE la fuente canónica 
 
 ---
 
-*Fin del Capítulo X — Continúa en Capítulo Y: "Título"*
+*Fin del Capítulo X - Continúa en Capítulo Y: "Título"*
 ```
 
 **Errores corregidos:**
@@ -160,7 +160,7 @@ Antes de escribir o editar contenido, verificar:
 - [ ] Callouts usan sintaxis `> **Título**` (blockquote)
 - [ ] `> **Dato verificado:**` tiene los dos puntos
 - [ ] Headings no saltan niveles (H2→H3→H4)
-- [ ] No hay em dashes (`—`), solo ` - `
+- [ ] No hay em dashes (` - `), solo ` - `
 - [ ] Sección `**Referencias:**` existe antes del footer
 - [ ] Años de fuentes son correctos (McKinsey 2023, Octoverse 2025)
 - [ ] No se fabrican nombres de empresas, URLs, ni estudios

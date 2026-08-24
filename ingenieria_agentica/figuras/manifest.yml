@@ -16,7 +16,9 @@
 #   complexity: low | medium | high
 #   todo:       (solo placeholders) Descripcion detallada para implementacion agentica
 #
-# Sintaxis en markdown: ![fig:id]
+# Sintaxis en markdown: ![](fig:id)
+#   OJO: ![fig:id] NO funciona. Pandoc solo genera una Image cuando el destino
+#   va entre parentesis; ![fig:id] se queda como texto literal en el PDF.
 # ============================================================================
 
 figures:

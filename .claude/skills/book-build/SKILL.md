@@ -76,9 +76,9 @@ Optimizar tipografía: viudas/huérfanas, page breaks, tablas desbordadas.
 1. `cd latex-pipeline`
 2. `docker compose run --rm book make optimize`
 3. Analizar el log de LaTeX para:
-   - Overfull hboxes (contenido que excede márgenes) — reportar cuáles y en qué página
-   - Underfull hboxes (spacing excesivo) — reportar los peores
-   - Underfull vboxes (posibles viudas/huérfanas) — reportar páginas
+   - Overfull hboxes (contenido que excede márgenes) - reportar cuáles y en qué página
+   - Underfull hboxes (spacing excesivo) - reportar los peores
+   - Underfull vboxes (posibles viudas/huérfanas) - reportar páginas
 4. Para problemas graves:
    - Insertar `\pagebreak` o `\clearpage` en el markdown fuente donde sea necesario
    - Ajustar tablas anchas añadiendo `\small` o reorganizando columnas
@@ -91,21 +91,26 @@ Optimizar tipografía: viudas/huérfanas, page breaks, tablas desbordadas.
 Cambiar el tema visual del libro.
 
 **Temas disponibles:**
-- `modern_blue` (default) — Azules profesionales, ideal para tech
-- `corporate_gray` — Grises elegantes, estilo corporativo
-- `warm_terracotta` — Terracota cálido, estilo editorial premium
+- `modern_blue` (default) - Azules profesionales, ideal para tech
+- `corporate_gray` - Grises elegantes, estilo corporativo
+- `warm_terracotta` - Terracota cálido, estilo editorial premium
 
 **Proceso:**
-1. Leer `latex-pipeline/config.yml`
-2. Cambiar la línea `theme:` al tema seleccionado
-3. Rebuild: `cd latex-pipeline && docker compose run --rm book make pdf`
-4. Abrir el PDF para mostrar preview
 
-**Para activar el tema en el .cls:**
-El tema se aplica editando `sty/pa-colors.sty`. Agregar al inicio del archivo:
-- `\setthemecorporategray` para corporate_gray
-- `\setthemewarmterracotta` para warm_terracotta
-- (modern_blue es el default, no requiere comando)
+El tema NO se cambia desde `config.yml`. Esa clave se elimino porque nunca se
+consumia: la paleta vive en `latex-pipeline/sty/pa-colors.sty`.
+
+1. Editar `latex-pipeline/sty/pa-colors.sty` y anadir la invocacion **al final
+   del fichero**, despues de la definicion de los comandos (que estan en las
+   lineas 19 y 34). Invocarlos antes de definirlos falla.
+   - `\setthemecorporategray` para corporate_gray
+   - `\setthemewarmterracotta` para warm_terracotta
+   - modern_blue es el default y no requiere invocacion
+2. Rebuild: `cd latex-pipeline && docker compose run --rm book make pdf`
+3. Abrir el PDF desde el host para revisar el resultado
+
+**Limitacion conocida:** los switchers cambian la paleta primaria, no los
+colores de los callouts, que estan fijados aparte en el mismo fichero.
 
 ---
 
@@ -114,10 +119,10 @@ El tema se aplica editando `sty/pa-colors.sty`. Agregar al inicio del archivo:
 Exportar a formato alternativo.
 
 **Formatos disponibles:**
-- `pdf` (default) — PDF listo para imprenta
-- `digital` — PDF optimizado para pantalla (hyperlinks visibles azules)
-- `epub` — Formato EPUB para e-readers
-- `latex` — Archivo .tex intermedio para inspección/edición manual
+- `pdf` (default) - PDF listo para imprenta
+- `digital` - PDF optimizado para pantalla (hyperlinks visibles azules)
+- `epub` - Formato EPUB para e-readers
+- `latex` - Archivo .tex intermedio para inspección/edición manual
 
 **Proceso:**
 1. `cd latex-pipeline`

@@ -40,7 +40,7 @@ Agrega análisis de costos reales de LLMs, TCO, y vendor lock-in al capítulo.
    - Cálculo de TCO para equipo de 50 developers (licencias + API + infra + capacitación)
    - Análisis de vendor lock-in: qué pasa si cambias de herramienta, portabilidad de flujos
    - Bloque "Dato verificado" con fuentes y limitaciones
-3. NO expandir genéricamente — solo agregar contenido sobre costos
+3. NO expandir genéricamente - solo agregar contenido sobre costos
 4. Formato: tablas con datos reales, no rangos vagos
 
 **Ejemplo:** `/expand --costs 05` agrega análisis de costos al capítulo de ecosistema de herramientas
@@ -57,7 +57,7 @@ Profundiza un concepto específico que fue flaggeado como SUPERFICIAL por `/dept
    - Ejemplo real de aplicación empresarial
    - Tabla: "Cuándo usar vs cuándo NO usar"
    - Implicación para el líder: "¿Qué preguntar a tu equipo sobre [concepto]?"
-3. NO agregar snippets de código — el libro es para ejecutivos
+3. NO agregar snippets de código - el libro es para ejecutivos
 4. Apuntar a ~500-800 palabras de contenido nuevo por concepto
 
 **Ejemplo:** `/expand --depth 03 ReAct` agrega subsección sobre ReAct en el cap de IA agéntica

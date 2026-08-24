@@ -67,7 +67,7 @@ independiente y con reglas distintas.
               |                      +------------------------------+
               v                                |
    output/agentico-por-diseno.pdf              v
-   577 páginas, 1,902,965 bytes       Cloudflare KV "BOOK_KV"
+   577 páginas, 1,902,906 bytes       Cloudflare KV "BOOK_KV"
    COMMITEADO a git a propósito       21 chapters + 270 sections
    (.gitignore lo exceptúa)           + glossary + frameworks
               |                       + toc + search-index
@@ -132,7 +132,8 @@ al 20.11, el script falla con `dirname` indefinido.
 
 Fíjate en lo que el workflow **no** valida: no compara `figuras/`, no compila LaTeX, no
 verifica que el markdown siga cumpliendo los ocho bloques editoriales. Es un pipeline de
-publicación, no un quality gate de contenido.
+publicación, no un quality gate de contenido. El quality gate del manuscrito existe, pero
+es local y hay que invocarlo a mano: `make check-content` (sección 5.2).
 
 ### Manual: todo lo demás
 
@@ -143,9 +144,15 @@ cd latex-pipeline
 docker compose run --rm book make pdf
 ```
 
-Targets disponibles en el `Makefile`: `figures`, `pdf`, `latex`, `chapter` (con
-`CHAP=NN`), `digital`, `epub`, `validate`, `logcheck`, `optimize`, `preview`, `clean`,
-`docker-build`, `help`.
+Los 14 targets del `Makefile`: `figures`, `pdf`, `latex`, `chapter` (con `CHAP=NN`),
+`digital`, `epub`, `validate`, `check-content`, `logcheck`, `optimize`, `preview`,
+`clean`, `docker-build`, `help`.
+
+La regla de `$(BOOK_PDF)` depende de `$(ALL_FILES)`, `templates/book.tex`, el `.cls`,
+`$(FILTER_FILES)` (`$(wildcard filters/*.lua)`), `$(STY_FILES)` (`$(wildcard sty/*.sty)`)
+y `config.yml`. `$(BOOK_TEX)` lleva la misma lista. Es decir: tocar un filtro Lua, un
+paquete de `sty/` o el `config.yml` **sí** dispara la reconstrucción, no solo editar el
+markdown.
 
 `make pdf` encadena `figures` primero y `logcheck` al final. Los tres pases de LuaLaTeX
 corren como `lualatex ... > /dev/null 2>&1 || true`, así que por sí solos **siempre**
@@ -208,38 +215,44 @@ Lua inyectan como `RawBlock`.
 `$classoption$` y `$body$`. Todo lo demás está escrito literal en el template o
 hardcodeado en el `.cls`.
 
+Estas son todas las claves que quedan hoy en el fichero:
+
 | Clave de `config.yml` | ¿Se usa? | Quién manda de verdad |
 |---|---|---|
 | `book.date` | **Sí** | `templates/book.tex` |
 | `figure-mode` | **Sí** | `filters/figure-transform.lua` lo lee de `meta` |
 | `book.title`, `book.tomo`, `book.subtitle`, `book.author` | No | texto literal en `templates/book.tex` (portada y portadilla) |
 | `book.lang` | No | Pandoc solo reacciona a `lang` de nivel superior; el idioma se fija con babel en el `.cls` |
-| `theme` | No | la paleta base son los `\definecolor{pa-*}` del `.cls`; `sty/pa-colors.sty` define `\setthemecorporategray` y `\setthemewarmterracotta` y nadie los invoca |
-| `page_size` | No | `\setstocksize` del `.cls` |
-| `mode` | No | opción de clase `digital`/`print`, ver abajo |
-| `fonts.*` | No | `\setmainfont` / `\setsansfont` del `.cls` |
-| `layout.*` | No | `\setlrmargins` / `\setulmargins` del `.cls` |
-| `features.*` | No | nadie lo lee |
 
-Esta es la trampa más cara del repo. Cambiar `theme: warm_terracotta` o
-`layout.margin_inner: 4cm` en `config.yml` no produce ningún efecto y tampoco ningún
-error. Si quieres cambiar colores, márgenes o fuentes, se edita el `.cls`.
+Las claves que antes fingían configurar el libro (`theme`, `page_size`, `mode`, `fonts:`,
+`layout:`, `features:`) ya **no existen** en el fichero: se borraron, y la cabecera del
+`config.yml` explica hoy qué se consume y dónde se cambia cada cosa de verdad. Lo que
+queda de decorativo (`book.title`, `book.tomo`, `book.subtitle`, `book.author`,
+`book.lang`) está marcado como tal con un comentario al lado.
 
-Corolario: el comando `/theme` de la skill `book-build` empieza mandando editar la línea
-`theme:` de `config.yml`. Ese paso no hace nada. La misma skill añade después la vía que sí
-tocaría los colores, invocar `\setthemecorporategray` o `\setthemewarmterracotta`, pero
+Aun así la trampa no desaparece del todo: sigue habiendo cinco claves con pinta de
+configuración que nadie lee, y **desde `config.yml` no se puede cambiar ni la geometría,
+ni las fuentes, ni los colores**. Eso se edita en `cls/paradigma-agentico.cls` y en
+`sty/pa-colors.sty`.
+
+Corolario: el comando `/theme` de la skill `book-build` sigue mandando editar la línea
+`theme:` de `config.yml` - una clave que ya ni siquiera existe en el fichero. Ese paso no
+hace nada. La misma skill añade después la vía que sí tocaría los colores, invocar
+`\setthemecorporategray` o `\setthemewarmterracotta`, pero
 tampoco sirve tal como está escrita: manda ponerlas "al inicio" de `sty/pa-colors.sty`,
 donde todavía no existen (son `\newcommand` de ese mismo fichero), y aunque se pusieran al
 final solo redefinirían `pa-primary` .. `pa-danger`. Los colores de los callouts
 (`pa-callout-*-bg` y `pa-callout-*-border`) están escritos en hexadecimal literal y ningún
 switcher los toca. No hay un tema conmutable de verdad en este repo.
 
-Dos efectos secundarios del mismo problema:
+Sobre las opciones de clase, dos notas:
 
-- `make digital` pasa `-V mode=digital`, que es una variable de metadatos de Pandoc.
-  `book.tex` nunca la lee. La bandera real es la **opción de clase** `digital`
-  (`\DeclareOption{digital}` en el `.cls`, que activa hipervínculos coloreados), y ningún
-  target la pasa. `output/agentico-por-diseno-digital.pdf` sale idéntico al de imprenta.
+- `make digital` sí produce un PDF distinto. El `Makefile` define `PANDOC_OPTS_NOCLASS`
+  (idéntico a `PANDOC_OPTS` pero sin el `-V classoption=twoside` fijo) y el target añade
+  `-V classoption=twoside -V classoption=digital`. Pandoc acumula las dos y emite
+  `\documentclass[twoside,digital]{paradigma-agentico}`, que activa `\ifpa@digital` en el
+  `.cls` y con él los hipervínculos coloreados. La salida es
+  `output/agentico-por-diseno-digital.pdf`.
 - El `Makefile` pasa `--toc --toc-depth=3`, pero `book.tex` no tiene variable `$toc$`:
   llama a `\tableofcontents*` por su cuenta con `\setcounter{tocdepth}{1}`. Las dos
   banderas de Pandoc son inertes.
@@ -278,8 +291,9 @@ Confía en el `Makefile`, nunca en la cabecera.
 Un detalle más de esa cadena: **`drop-caps.lua` está desactivado**. Su `Pandoc(doc)`
 devuelve el documento sin tocar, bajo un comentario que dice que las capitulares causaban
 problemas de layout. Sigue listado en `FILTER_CHAIN` y sigue costando un paso de Pandoc,
-pero no hace nada, y su propia cabecera describe un comportamiento que ya no existe.
-`features.drop_caps: true` en `config.yml` tampoco lo revive: esa clave no la lee nadie.
+pero no hace nada, y su propia cabecera describe un comportamiento que ya no existe. No
+hay ninguna clave de `config.yml` que lo reactive: para revivirlo hay que editar el
+filtro.
 
 Los estilos viven en 6 paquetes bajo `sty/`: `pa-callouts`, `pa-codeblocks`, `pa-colors`,
 `pa-diagrams`, `pa-tables`, `pa-typography`. No los carga el `.cls`: los carga
@@ -304,13 +318,14 @@ Este es el acoplamiento peligroso del repo. La identidad y el orden de los capí
 determinan de forma independiente en tres sitios:
 
 **(a) `latex-pipeline/Makefile`, variable `CHAPTER_FILES`.** Lista explícita, escrita a
-mano, con las 16 rutas en el orden exacto en que se concatenan. Es también la lista de
-prerequisitos de la regla del PDF, así que `make` decide si recompilar comparando mtimes
-contra estos ficheros.
+mano, con las 16 rutas en el orden exacto en que se concatenan. Alimenta `ALL_FILES`, que
+es parte de los prerequisitos de la regla del PDF (junto con el template, el `.cls`, los
+filtros Lua, los `.sty` y `config.yml`), así que `make` decide si recompilar comparando
+mtimes contra ese conjunto.
 
 Un capítulo nuevo que no esté en `CHAPTER_FILES` simplemente **no aparece en el PDF**, sin
-error ni warning. Peor: como no es prerequisito, `make pdf` puede darte "up to date"
-después de haberlo añadido al directorio.
+error ni warning. Peor: como no es prerequisito de nada, `make pdf` puede darte "up to
+date" después de haberlo añadido al directorio.
 
 **(b) `mcp-server/scripts/prepare-content.ts`.** No tiene lista. Hace
 `readdirSync(CHAPTERS_DIR).filter(f => f.endsWith(".md")).sort()` y lo mismo con
@@ -378,29 +393,39 @@ obligatorios; sin ellos el build es incorrecto o silenciosamente incompleto):
 `mcp-server/` no requiere ningún cambio: se entera solo. Esa asimetría es exactamente la
 que hace que se olvide el resto.
 
-### 5.2 `scripts/validate.sh` está roto y nadie lo llama
+### 5.2 `make check-content`: el quality gate del manuscrito
 
 `latex-pipeline/scripts/validate.sh` no es lo que corre `make validate`; ese target del
 `Makefile` depende de `latex` y luego cuenta `\hyperref` en el `.tex` y hace greps sobre el
-`.log`. El script se menciona en `README.md`, `CONTRIBUTING.md`, `CLAUDE.md`,
-`docs/pipeline-latex.md` y `.claude/skills/book-build/SKILL.md`, pero **nada lo ejecuta**:
-ni el `Makefile`, ni el workflow de CI, ni `build.sh`.
+`.log`. El script tiene su propio target: **`make check-content`**, que lo invoca dentro
+del contenedor.
 
-Y es peor que inútil. Ejecutado hoy, esto es lo que hace (medido):
+Lo que comprueba, en tres bloques:
 
-- Imprime en verde los capítulos 00 a 14 y **muere en la iteración 15 sin decir nada**.
-  `for i in $(seq -w 0 15)` busca un `15_*.md` que no existe; el `ls` falla, y como el
-  script corre con `set -euo pipefail`, la sustitución `file=$(ls ... | head -1)` devuelve
-  estado distinto de cero y aborta antes de llegar al `if`. Nunca imprime
-  `Chapter 15: FILE MISSING`; simplemente se corta y sale con código 1.
-- Por eso nunca alcanza el bucle de apéndices, ni las estadísticas de contenido, ni el
-  análisis del `.log`, ni el resumen final. Lo que ves es un fragmento, no un informe.
-- Y si llegara, seguiría equivocándose: el glob `${i}_*.md` no empareja
-  `00a_executive_brief.md`, así que ese fichero nunca se validaría, y `for letter in
-  A B C D` omite el apéndice E por completo.
+1. **Fuentes.** Que existan los 16 capítulos (lista explícita `00 00a 01 .. 14`) y los 5
+   apéndices (`A B C D E`), y avisa de cualquier `.md` en `capitulos/` cuyo prefijo no
+   esté en esa lista. Cuenta palabras, blockquotes y filas de tabla, y busca bloques de
+   código y marcadores de placeholder. El chequeo de "sin código" excluye los bloques
+   `` ```{=latex} ``, que son LaTeX crudo de maquetación y no ejemplos de programación.
+2. **Salida del build.** Lee `output/agentico-por-diseno.log` y el PDF: overfull y
+   underfull hboxes contra umbrales, referencias sin resolver, problemas de fuentes y
+   número de páginas.
+3. **Efectividad de los filtros.** Sobre el `.tex`: entornos de callout, divisores de
+   parte (espera exactamente 6), referencias cruzadas, checkboxes, iconos FontAwesome y
+   separadores.
 
-Trátalo como código muerto con una salida de estado engañosa, no como una herramienta de
-validación.
+Detecta la disposición del repo por sí solo: dentro del contenedor el manuscrito está
+montado en `/book/content`, y en el host vive en `../ingenieria_agentica`. El script
+prueba las dos.
+
+Ejecución medida hoy: recorre entero, valida los 16 capítulos y los 5 apéndices, reporta
+142,097 palabras, 6 divisores de parte, 577 páginas, 0 referencias sin resolver, y sale
+con código 0 dejando **1 warning** (13 marcadores de code fence que no son `{=latex}`).
+Sale con `exit $ERRORS`, así que los warnings informan pero no rompen; los ficheros
+ausentes sí.
+
+Ojo con la asimetría que queda: `check-content` es **local y manual**. El workflow de CI
+no lo llama, así que un push puede desplegar el KV sin que nadie haya pasado el gate.
 
 ### 5.3 `crossref-transform.lua` no conoce el apéndice E
 
@@ -424,7 +449,10 @@ La infraestructura está completa y funciona. No se usa.
   `label`, `chapter`, `tier`, `complexity` y un `todo` descriptivo para cada una.
 - **Las 46 están en `status: placeholder`.** Ninguna en `draft`, ninguna en `final`.
 - Los directorios `figuras/tikz/` y `figuras/svg/` están **vacíos**.
-- El manuscrito tiene **cero** ocurrencias de la sintaxis `![fig:id]`. Ni una.
+- El manuscrito tiene **cero** ocurrencias de la sintaxis `![](fig:id)`. Ni una.
+  (Esa es la sintaxis correcta y la única: Pandoc solo construye una `Image` cuando el
+  destino va entre paréntesis, así que el viejo `![fig:id]` que circuló en algunos
+  comentarios de cabecera se queda como texto literal y nunca llega al filtro.)
 
 Es decir: `figure-transform.lua` (filtro #2) se ejecuta en cada build y no encuentra nada
 que transformar, y el target `figures` del `Makefile` reporta que no hay fuentes de figuras
@@ -436,12 +464,12 @@ El ciclo de vida previsto es `placeholder -> draft -> final`, y `figure-mode` en
 clave sí se lee de verdad, desde `figure-transform.lua`.
 
 Para activar el sistema hacen falta dos cosas que hoy no existen: fuentes en `tikz/` o
-`svg/`, y referencias `![fig:id]` insertadas en el markdown. Hasta entonces, es
+`svg/`, y referencias `![](fig:id)` insertadas en el markdown. Hasta entonces, es
 infraestructura lista, no una funcionalidad.
 
 Nota arquitectónica: las figuras son, hoy por hoy, exclusivas de la rama del PDF. El MCP
 server no lee `manifest.yml` ni sabe que existe. El día que el manuscrito incluya
-`![fig:id]`, esa cadena aparecerá literal en las secciones que sirve la API, igual que
+`![](fig:id)`, esa cadena aparecerá literal en las secciones que sirve la API, igual que
 ocurre ya con los spans `{.idx}`. Detalles en
 [figuras-e-indice.md](figuras-e-indice.md).
 
@@ -475,12 +503,13 @@ custom domain.
 
 Contenido en KV, medido sobre `kv-data.json`: **295 entradas** = 21 `chapters:` (16
 capítulos + 5 apéndices) + 270 `sections:` + `glossary` + `frameworks` + `toc` +
-`search-index`. El glosario tiene 91 términos y hay 13 frameworks.
+`search-index`. El glosario tiene 91 términos y hay 12 frameworks.
 
 `prepare-content.ts` parte cada fichero por encabezados `##`. Todo lo que va antes del
 primer `##` cae en una sección sintética llamada `Introduccion` con slug `intro`. El
 glosario se extrae de `A_glosario.md` buscando líneas que sean exactamente `**Término**`,
-y los frameworks de `B_frameworks_decision.md` por sus `##`.
+y los frameworks de `B_frameworks_decision.md` por sus H2 **numerados** (`/^##\s+(\d+\.\s+.+)/`),
+que es lo que los distingue de las secciones de cierre del apéndice.
 
 Consecuencia editorial: **cambiar un encabezado `##` cambia su slug**, y con él la clave
 KV `sections:<cap>:<slug>`. Cualquier cosa que hubiera guardado el slug viejo deja de
@@ -540,11 +569,9 @@ editando un README. Verificadas hoy:
 | Cabeceras de `code-transform`, `checkbox-transform`, `callout-transform`, `table-transform`, `crossref-transform`, `hr-transform` | posiciones 2, 4, 2, 7, 6, 7 | 3, 6, 7, 8, 9, 12 (sección 4) |
 | Cabecera de `part-dividers.lua` | "runs BEFORE other filters (prepended to filter chain)" | es el filtro 4 de 12 (sección 4) |
 | Cabecera de `drop-caps.lua` | describe cómo aplica capitulares `\lettrine` | el filtro está desactivado: `Pandoc(doc)` devuelve `doc` intacto (sección 4) |
-| `config.yml`: `theme`, `page_size`, `mode`, `fonts`, `layout`, `features`, `book.title`, `book.tomo`, `book.subtitle`, `book.author`, `book.lang` | configuran el libro | nadie las lee (sección 4) |
-| Target `digital` del `Makefile` | "colored hyperlinks, no crop marks" | pasa `-V mode=digital`, que nada consume; sale idéntico al de imprenta |
+| `config.yml`: `book.title`, `book.tomo`, `book.subtitle`, `book.author`, `book.lang` | describen el libro | nadie las lee; el fichero las marca ya como decorativas (sección 4) |
 | `Makefile`, `--toc --toc-depth=3` | genera el índice | `book.tex` llama a `\tableofcontents*` con `tocdepth 1`; las banderas son inertes |
-| `scripts/validate.sh` | valida el libro | roto y sin invocar (sección 5.2) |
-| Skill `book-build`, comando `/theme` | cambia el tema vía `config.yml`, o invocando un switcher "al inicio" de `pa-colors.sty` | `theme` es letra muerta, y el switcher al inicio del fichero se usaría antes de definirse; los colores de callout no los cambia ningún switcher (sección 4) |
+| Skill `book-build`, comando `/theme` | cambia el tema vía `config.yml`, o invocando un switcher "al inicio" de `pa-colors.sty` | la clave `theme` ya ni existe en `config.yml`, y el switcher al inicio del fichero se usaría antes de definirse; los colores de callout no los cambia ningún switcher (sección 4) |
 | `crossref-transform.lua` | enlaza apéndices | solo `[A-D]`; el E queda sin enlace (sección 5.3) |
 
 ---
@@ -565,12 +592,12 @@ book/
 │   ├── sty/                           6 paquetes
 │   ├── filters/                       12 filtros Lua, el orden importa
 │   ├── templates/                     book.tex, figure-wrapper.tex
-│   ├── scripts/                       build-figures.sh, build.sh, validate.sh (roto)
+│   ├── scripts/                       build-figures.sh, validate.sh (make check-content)
 │   ├── fonts/                         LibertinusSerif, LibertinusSans, FiraMono
 │   ├── illustrations/                 chapter-headers/, icons/, part-dividers/
 │   ├── output/agentico-por-diseno.pdf commiteado a propósito
 │   ├── Makefile  Dockerfile  docker-compose.yml
-│   └── config.yml                     casi todo letra muerta
+│   └── config.yml                     solo book.date y figure-mode se leen
 ├── mcp-server/                        markdown -> KV -> MCP (automático)
 │   ├── src/index.ts                   Worker + Durable Object BookMCP
 │   ├── scripts/prepare-content.ts     lee el directorio, no una lista

@@ -91,7 +91,7 @@ Excluir líneas que comiencen con `>` (blockquotes/citas textuales).
 
 ```
 ═══════════════════════════════════════════
-AUDITORÍA DE CALIDAD — [fecha]
+AUDITORÍA DE CALIDAD - [fecha]
 Alcance: [capítulo o "Libro completo"]
 ═══════════════════════════════════════════
 
@@ -165,10 +165,10 @@ Validación exhaustiva de referencias cruzadas entre TODOS los archivos del libr
 
 2. **Escanear TODAS las referencias** en todos los archivos (capitulos/ + apendices/ + BOOK_MASTER.md) con Grep:
 
-- `Capítulo \d+` — menciones generales
-- `Cap\.\s*\d+` — formato abreviado
-- `Apéndice [A-E]` — apéndices
-- `Framework #\d+` — frameworks del Apéndice B
+- `Capítulo \d+` - menciones generales
+- `Cap\.\s*\d+` - formato abreviado
+- `Apéndice [A-E]` - apéndices
+- `Framework #\d+` - frameworks del Apéndice B
 
 3. **Validar cada referencia** contra el mapa:
 - Cap 5 + contexto "evolución/técnica" = **ERROR** (Cap 5 es Sesgos, evolución es Cap 7)
@@ -189,9 +189,9 @@ Auditoría de consistencia de cifras ROI, métricas financieras y estadísticas.
 
 1. **Extraer TODAS las cifras ROI** con Grep en todos los archivos:
 
-- `ROI.*\d+[%x]|\d+[%x].*ROI` — ROI con porcentaje/multiplicador
-- `\$[\d,.]+` — cifras en dólares
-- `\d+%\s*(mejora|aumento|reducción|incremento|productividad)` — métricas de productividad
+- `ROI.*\d+[%x]|\d+[%x].*ROI` - ROI con porcentaje/multiplicador
+- `\$[\d,.]+` - cifras en dólares
+- `\d+%\s*(mejora|aumento|reducción|incremento|productividad)` - métricas de productividad
 
 2. **Construir tabla de ROI por caso de estudio.** Buscar en caps 08-12 las cifras clave: inversión, beneficio, ROI declarado.
 
@@ -255,7 +255,7 @@ Reportar archivos <70% o >130% del objetivo proporcional.
 6. **Generar reporte** en formato tabla compacta:
 
 ```
-LINT REPORT — [fecha]
+LINT REPORT - [fecha]
 
 ESTRUCTURA: [N] archivos presentes de [M] esperados
 PLACEHOLDERS: [N] encontrados
@@ -276,7 +276,7 @@ DATOS VERIFICADOS:
 
 ## /redundancy
 
-Detecta contenido repetido entre capítulos — stats, citas, y overlap temático.
+Detecta contenido repetido entre capítulos - stats, citas, y overlap temático.
 
 **Proceso:**
 
@@ -297,13 +297,13 @@ Ejemplos conocidos que deben detectarse: `46%`, `55%`, `40%.*cancel`, `126%`, `4
 3. **Overlap temático entre capítulos.** Extraer todos los H2 (`^## `) y H3 (`^### `) de cada capítulo:
 - Comparar pares de capítulos por similitud de headings (mismas palabras clave)
 - Flag: pares con >30% de headings compartiendo palabras clave
-- **Foco especial**: Prefacio (00) / Executive Brief (00a) / Cap 01 / Cap 02 / Cap 03 — zona de máxima redundancia reportada
+- **Foco especial**: Prefacio (00) / Executive Brief (00a) / Cap 01 / Cap 02 / Cap 03 - zona de máxima redundancia reportada
 - Output: `| Cap A | Cap B | Headings similares | % Overlap | Acción |`
 
 4. **Generar reporte consolidado:**
 
 ```
-ANÁLISIS DE REDUNDANCIA — [fecha]
+ANÁLISIS DE REDUNDANCIA - [fecha]
 
 ══ STATS REPETIDAS ══
 Total: [N] stats en 3+ archivos
@@ -349,7 +349,7 @@ Detecta contenido que envejecerá rápido (precios, versiones, predicciones con 
 3. **Generar reporte:**
 
 ```
-SHELF-LIFE ANALYSIS — [fecha]
+SHELF-LIFE ANALYSIS - [fecha]
 
 ══ EFÍMERO (actualizar antes de publicación) ══
 | Archivo | Línea | Contenido | Tipo | Recomendación |
@@ -404,7 +404,7 @@ prompt engineering, multi-agent, orchestration, embeddings
 4. **Generar reporte:**
 
 ```
-DEPTH CHECK — [fecha]
+DEPTH CHECK - [fecha]
 
 | Concepto | Menciones | Caps | Palabras ctxt | Subsección? | Veredicto |
 |----------|-----------|------|---------------|-------------|-----------|
@@ -443,7 +443,7 @@ Compara los casos de estudio del libro para detectar overlap temático, monoton�
 3. **Construir matriz comparativa:**
 
 ```
-CASE AUDIT — [fecha]
+CASE AUDIT - [fecha]
 
 ══ MATRIZ COMPARATIVA ══
 | Cap | Industria | Tamaño | Geo | Tema | Formato | Words |
@@ -454,7 +454,7 @@ CASE AUDIT — [fecha]
 
 4. **Detectar problemas:**
 
-- **Formato monótono**: Si >80% de los casos usan exactamente la misma estructura de H2/H3 → Flag "MONOTONÍA DE FORMATO — variar: narrativo, Q&A, postmortem, financiero"
+- **Formato monótono**: Si >80% de los casos usan exactamente la misma estructura de H2/H3 → Flag "MONOTONÍA DE FORMATO - variar: narrativo, Q&A, postmortem, financiero"
 - **Overlap industria**: 2+ casos en la misma industria → Flag "OVERLAP INDUSTRIA"
 - **Overlap tamaño**: 3+ casos del mismo tamaño de empresa → Flag "FALTA DIVERSIDAD DE TAMAÑO"
 - **Overlap temático**: Comparar H3 headings entre pares. Si >50% de headings son similares → Flag "CONSOLIDAR"

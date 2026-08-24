@@ -178,7 +178,7 @@ Frameworks de decisión del Apéndice B.
 |-----------|------|-----------|-------------|
 | `name` | string | no | Nombre o id del framework. Omitir para listar todos |
 
-Sin `name` devuelve la lista con nombre e id. Hay **13 entradas**: los 12 frameworks numerados más la sección final "Cómo Usar Estos Frameworks", que se parsea como una entrada más porque el parser corta por cada `##` del apéndice.
+Sin `name` devuelve la lista con nombre e id. Hay **12 entradas**, una por framework numerado. El parser solo acepta los `##` que empiezan por un número, así que la sección final del apéndice, "Cómo Usar Estos Frameworks", queda fuera de la lista y el conteo coincide con los 12 frameworks que documenta el libro.
 
 Los ids son el nombre completo slugificado, con el número delante:
 
@@ -195,10 +195,11 @@ Los ids son el nombre completo slugificado, con el número delante:
 10-framework-de-clasificacion-de-riesgo-por-tarea
 11-incident-response-plan-para-ia
 12-modelo-de-roi-para-adopcion-de-ia-agentica
-como-usar-estos-frameworks
 ```
 
 La búsqueda por `name` acepta id exacto o substring del nombre, así que `get_frameworks({ name: "crawl" })` funciona.
+
+Esa lista es la del repo. El servidor en producción todavía anuncia `Available frameworks (13)`, con los ids del deploy anterior, por el mismo desfase de KV que afecta a los `wordCount`: se corrige en el siguiente despliegue.
 
 ---
 
@@ -211,7 +212,7 @@ La búsqueda por `name` acepta id exacto o substring del nombre, así que `get_f
 | `chapters:<id>` | 21 | Markdown completo. 16 capítulos + 5 apéndices |
 | `sections:<id>:<slug>` | 270 | Markdown de una sección: todo lo que hay entre dos `##`, **sin** la línea del `##` propio (los `###` internos sí van dentro) |
 | `glossary` | 1 | JSON `[{term, definition}]`, 91 términos |
-| `frameworks` | 1 | JSON `[{id, name, content}]`, 13 entradas |
+| `frameworks` | 1 | JSON `[{id, name, content}]`, 12 entradas |
 | `toc` | 1 | JSON `[{id, file, title, sections[], wordCount}]`, 21 elementos |
 | `search-index` | 1 | JSON `[{chapter, section, heading, snippet}]`, 270 elementos |
 

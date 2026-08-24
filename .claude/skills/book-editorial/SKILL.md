@@ -46,9 +46,9 @@ Enriquecer un capítulo agregando elementos editoriales faltantes.
 ```
 ## Conclusiones y Takeaways
 
-1. **[Punto clave 1]** — [expansión de 1 línea]
-2. **[Punto clave 2]** — [expansión de 1 línea]
-3. **[Punto clave 3]** — [expansión de 1 línea]
+1. **[Punto clave 1]** - [expansión de 1 línea]
+2. **[Punto clave 2]** - [expansión de 1 línea]
+3. **[Punto clave 3]** - [expansión de 1 línea]
 ...
 (3-7 takeaways extraídos del contenido del capítulo)
 ```
@@ -162,7 +162,7 @@ Métricas editoriales completas del libro.
 1. **Métricas de volumen.** Usar `wc -w` en cada archivo:
 
 ```
-MÉTRICAS EDITORIALES — [fecha]
+MÉTRICAS EDITORIALES - [fecha]
 
 ══ VOLUMEN ══
 | Archivo | Palabras | Págs est. |
@@ -236,10 +236,10 @@ Verificar integridad de todos los bloques "Dato verificado" del libro.
 1. **Encontrar todos los bloques.** Buscar con Grep `Dato verificado` en todos los archivos de `capitulos/` y `apendices/`.
 
 2. **Para cada bloque**, leer las 8 líneas siguientes y verificar los 4 campos obligatorios:
-- `Fuente:` — Debe existir y no estar vacío
-- `Qué mide:` — Debe existir y no estar vacío
-- `Limitación:` — Debe existir y no estar vacío
-- `Implicación:` — Debe existir y no estar vacío
+- `Fuente:` - Debe existir y no estar vacío
+- `Qué mide:` - Debe existir y no estar vacío
+- `Limitación:` - Debe existir y no estar vacío
+- `Implicación:` - Debe existir y no estar vacío
 
 3. **Verificar fuentes verificables.** En el campo Fuente:
 - Debe contener un año entre paréntesis: `\(\d{4}\)`
@@ -251,7 +251,7 @@ Verificar integridad de todos los bloques "Dato verificado" del libro.
 5. **Generar reporte:**
 
 ```
-VERIFICACIÓN DE DATOS — [fecha]
+VERIFICACIÓN DE DATOS - [fecha]
 
 Bloques encontrados: [N] en [M] archivos
 
@@ -314,7 +314,7 @@ Excluir líneas dentro de blockquotes que sean citas textuales de terceros.
 - Contar vocabulario de riesgo: `riesgo|limitaci|fallo|fracas|problema|desventaja|cuidado|advertencia|sesgo|error|vulnerabilid`
 - Contar vocabulario de beneficio: `beneficio|ventaja|mejora|productividad|ROI|ahorro|eficiencia|ganancia|oportunidad`
 - Calcular ratio riesgo:beneficio
-- Flag: ratio <0.1 = "PURO BENEFICIO — falta contrapeso", ratio >5.0 = "PURO RIESGO"
+- Flag: ratio <0.1 = "PURO BENEFICIO - falta contrapeso", ratio >5.0 = "PURO RIESGO"
 - Reporte global: distribución del vocabulario de riesgo por capítulo. Si >70% concentrado en caps 14-16, recomendar distribuir.
 
 2. **Detectar jerga técnica sin explicar.** Primero, leer los términos definidos en `ingenieria_agentica/apendices/A_glosario.md` (buscar encabezados `## ` o `### ` para lista de términos). Luego buscar en los capítulos términos técnicos comunes:
@@ -329,7 +329,7 @@ Excluir líneas dentro de blockquotes que sean citas textuales de terceros.
 4. **Generar reporte:**
 
 ```
-TONE CHECK — [fecha]
+TONE CHECK - [fecha]
 Alcance: [capítulo o "Libro completo"]
 
 ══ LENGUAJE DE MIEDO ══
@@ -374,14 +374,14 @@ Audita diversidad de voces citadas en el libro: advocates vs. escépticos.
 3. **Generar reporte:**
 
 ```
-VOICE CHECK — [fecha]
+VOICE CHECK - [fecha]
 
 ══ PERSONAS CITADAS ══
 | Persona | Categoría | Menciones | Archivos |
 |---------|-----------|-----------|----------|
 | Satya Nadella | Advocate | 20 | 7 |
 | Dario Amodei | Advocate | 11 | 5 |
-| (ningún escéptico) | — | 0 | 0 |
+| (ningún escéptico) | - | 0 | 0 |
 
 ══ BALANCE ══
 - Advocates citados: [N] personas, [M] menciones totales
@@ -389,8 +389,8 @@ VOICE CHECK — [fecha]
 - Ratio escépticos:advocates: [ratio]
 
 ══ FLAGS ══
-⚠️ [persona] citada [N] veces (>5) — reducir o diversificar
-❌ 0 escépticos citados — ratio 0:N
+⚠️ [persona] citada [N] veces (>5) - reducir o diversificar
+❌ 0 escépticos citados - ratio 0:N
 ⚠️ Ratio escépticos:advocates = [X] (<0.2)
 
 ══ SUGERENCIAS ══
@@ -461,7 +461,7 @@ workaround → solución temporal
 4. **Generar reporte:**
 
 ```
-LANGUAGE CHECK — [fecha]
+LANGUAGE CHECK - [fecha]
 
 ══ ANGLICISMOS A REVISAR ══
 | Término | Equivalente | Ocurrencias | En Glosario? | 1ra mención explica? | Consistente? |
@@ -471,7 +471,7 @@ LANGUAGE CHECK — [fecha]
 | kill switch | interruptor de emergencia | 8 | ✅ | ✅ Cap 15 | ✅ |
 
 ══ TOP 10 ANGLICISMOS MÁS FRECUENTES SIN EXPLICAR ══
-1. [término] — [N] ocurrencias
+1. [término] - [N] ocurrencias
 ...
 
 ══ RECOMENDACIONES ══
