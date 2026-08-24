@@ -148,13 +148,13 @@ Ford no aceleró el proceso existente. **Inventó un proceso completamente nuevo
 
 ### E-commerce: Sears vs. Amazon
 
-Sears era el Amazon del siglo XIX. Su catálogo de 1894 era el marketplace más grande del mundo. Cuando llegó internet, Sears tenía todo para dominar: marca, logística, catálogo, clientes.
+Sears era el Amazon del siglo XIX - literalmente. Su catálogo de 1894 (sí, del siglo XIX: 322 páginas de productos enviados por correo a todo Estados Unidos) era el marketplace más grande del mundo. Cuando llegó internet, Sears tenía todo para dominar: marca, logística, catálogo, clientes.
 
 Sears lanzó su sitio de e-commerce en 1997. ¿Qué hizo? **Puso su catálogo online.** El mismo proceso, el mismo modelo, el mismo pensamiento, ahora con una pantalla en lugar de papel.
 
 Amazon, fundada en 1994, no tenía nada de eso. Pero tenía algo que Sears no: **diseñó desde cero.** Warehouse design optimizado para e-commerce. Motor de recomendaciones que aprendía de cada compra. Supply chain diseñado para envíos individuales, no para tiendas. Logística de última milla integrada.
 
-Sears se declaró en bancarrota en 2018. Amazon vale $2+ trillones.
+Sears se declaró en bancarrota en 2018. Amazon vale US$2+ trillones.
 
 Walmart sobrevivió, pero solo porque eventualmente **rediseñó** su operación con omnichannel (buy online, pick up in store), integrando digital y físico. No solo "puso una tienda online."
 
@@ -190,7 +190,7 @@ Para una mirada detallada a los números de ROI y TCO, ver Capítulo 9 (Impacto 
 
 ---
 
-## Anatomía de una Burbuja: Railway Mania, Dot-Com y la Pregunta de los $600 Mil Millones
+## Anatomía de una Burbuja: Railway Mania, Dot-Com y la Pregunta de los US$600 Mil Millones
 
 Pero hay otro patrón histórico igualmente importante que todo líder debe entender: el rol de las **burbujas especulativas** en las revoluciones tecnológicas. Porque en 2026, la pregunta que se hace Wall Street es inevitable: ¿estamos en una burbuja de IA?
 
@@ -232,7 +232,7 @@ Pero lo que **sobrevivió** fue transformador: más de 6,000 millas de vías fé
 
 Las empresas que sobrevivieron no eran necesariamente las que tenían más capital. Eran las que tenían **modelos operativos viables**: rutas con demanda real, operaciones eficientes, administración competente.
 
-**Paralelo con IA:** La inversión actual en infraestructura GPU (más de $200 mil millones en capex de hyperscalers solo en 2024-2025) está construyendo infraestructura computacional permanente. Cuando la especulación se corrija, esa infraestructura seguirá ahí. La pregunta para tu empresa no es si habrá corrección, sino si estarás entre los que aprovechan lo que queda.
+**Paralelo con IA:** La inversión actual en infraestructura GPU (más de US$200 mil millones en capex de hyperscalers solo en 2024-2025) está construyendo infraestructura computacional permanente. Cuando la especulación se corrija, esa infraestructura seguirá ahí. La pregunta para tu empresa no es si habrá corrección, sino si estarás entre los que aprovechan lo que queda.
 
 ### Dot-Com (1995-2001): Pets.com vs. Amazon
 
@@ -240,8 +240,8 @@ El Nasdaq subió de 1,000 puntos en 1995 a 5,048 en marzo de 2000. Luego cayó a
 
 **Lo que murió** tenía un patrón claro: eran empresas que digitalizaron procesos existentes sin rediseñar nada.
 
-- **Pets.com** ($300M quemados): Puso una tienda de mascotas online. Mismo modelo de retail, pero con envío de comida para perros a domicilio, económicamente insostenible sin rediseño logístico.
-- **Webvan** ($830M): Puso un supermercado online. Construyó warehouses gigantes sin entender la economía de entrega de última milla.
+- **Pets.com** (US$300M quemados): Puso una tienda de mascotas online. Mismo modelo de retail, pero con envío de comida para perros a domicilio, económicamente insostenible sin rediseño logístico.
+- **Webvan** (US$830M): Puso un supermercado online. Construyó warehouses gigantes sin entender la economía de entrega de última milla.
 - **eToys, Kozmo.com, Boo.com**: Todos cometieron el mismo error: creyeron que "poner X en internet" era suficiente.
 
 **Lo que sobrevivió y dominó** tenía un patrón igualmente claro: rediseñaron la cadena de valor completa.
@@ -252,9 +252,9 @@ El Nasdaq subió de 1,000 puntos en 1995 a 5,048 en marzo de 2000. Luego cayó a
 
 De las 10 empresas más valiosas del mundo en 2026, 7 no existían o eran irrelevantes antes de la burbuja dot-com. La burbuja fue brutal, pero la infraestructura que financió (fibra óptica, protocolos web, experiencia en software) creó la economía digital.
 
-### La Pregunta de los $600 Mil Millones: ¿Estamos en una Burbuja de IA?
+### La Pregunta de los US$600 Mil Millones: ¿Estamos en una Burbuja de IA?
 
-En junio de 2024, David Cahn de [Sequoia Capital]{.idx} publicó un análisis titulado "AI's $600B Question" que sacudió a Silicon Valley. Su argumento: los ingresos generados por IA (aproximadamente $12.5 mil millones, excluyendo NVIDIA) eran una fracción minúscula de la infraestructura que se estaba desplegando. La brecha era de cientos de miles de millones.
+En junio de 2024, David Cahn de [Sequoia Capital]{.idx} publicó un análisis titulado "AI's $600B Question" que sacudió a Silicon Valley. Su argumento: los ingresos generados por IA (aproximadamente US$12.5 mil millones, excluyendo NVIDIA) eran una fracción minúscula de la infraestructura que se estaba desplegando. La brecha era de cientos de miles de millones.
 
 Simultáneamente, Goldman Sachs publicó un informe provocativo: "Gen AI: Too Much Spend, Too Little Benefit?" En él, el economista del MIT Daron Acemoglu estimaba que la IA generativa produciría apenas un **0.55-0.71% de ganancia en productividad total de los factores** en la próxima década (posteriormente formalizado en "The Simple Macroeconomics of AI", *Economic Policy*, vol. 40, no. 121, pp. 13-58. DOI: 10.1093/epolic/eiae042).
 
@@ -323,7 +323,7 @@ Las startups no tienen ese problema. **Nacen sin procesos** y pueden diseñar de
 
 [Andreessen Horowitz]{.idx} (a16z) formalizó esto en 2024 con el concepto de empresas [AI-native]{.idx}: organizaciones que nacen con agentes de IA como parte integral de su operación desde el día uno. No adoptan IA; son IA.
 
-**Cursor** (fundada en 2022) es el ejemplo paradigmático. No mejoró un IDE existente. Rediseñó la experiencia completa de programación asumiendo que un agente de IA estaría presente en cada interacción. En 2025, su valuación superó los $2.5 mil millones, no porque tuviera mejor tecnología que VS Code, sino porque **diseñó una experiencia nueva**, no parchó una existente.
+**Cursor** (fundada en 2022) es el ejemplo paradigmático. No mejoró un IDE existente. Rediseñó la experiencia completa de programación asumiendo que un agente de IA estaría presente en cada interacción. En 2025, su valuación superó los US$2.5 mil millones, no porque tuviera mejor tecnología que VS Code, sino porque **diseñó una experiencia nueva**, no parchó una existente.
 
 ### Y Combinator y la Explosión AI-First
 
@@ -343,13 +343,13 @@ Algunos ejemplos de startups que no optimizan lo existente sino que **rediseñan
 
 Para los líderes en América Latina, hay una dimensión adicional de esta historia que es profundamente relevante.
 
-Según LAVCA (Latin American Venture Capital Association), el ecosistema de startups de la región creció de $4.71 mil millones en 2023, con proyecciones de alcanzar $30.2 mil millones para 2033. SoftBank ha invertido más de $3 mil millones en la región a través de su Latin America Fund.
+Según LAVCA (Latin American Venture Capital Association), el ecosistema de startups de la región creció de US$4.71 mil millones en 2023, con proyecciones de alcanzar US$30.2 mil millones para 2033. SoftBank ha invertido más de US$3 mil millones en la región a través de su Latin America Fund.
 
 Pero la oportunidad más interesante para LATAM no es construir la infraestructura de IA (eso lo están haciendo los hyperscalers con presupuestos de cientos de miles de millones). La oportunidad es **diseñar sobre infraestructura prestada**.
 
 Así como África saltó de no tener líneas telefónicas fijas directamente a mobile banking (M-Pesa), las startups latinoamericanas pueden saltar de procesos legacy directamente a operaciones AI-native, construyendo sobre APIs de OpenAI, Anthropic, y Google sin necesidad de entrenar modelos propios.
 
-> **Para el líder LATAM:** No necesitas un presupuesto de $100 millones para ser AI-native. Las APIs son infraestructura pública: se pagan por uso, no por inversión de capital. Tu ventaja competitiva no está en tener mejor tecnología que Silicon Valley. Está en **cómo rediseñas tu operación** alrededor de capacidades que ahora están disponibles para todos al mismo precio.
+> **Para el líder LATAM:** No necesitas un presupuesto de US$100 millones para ser AI-native. Las APIs son infraestructura pública: se pagan por uso, no por inversión de capital. Tu ventaja competitiva no está en tener mejor tecnología que Silicon Valley. Está en **cómo rediseñas tu operación** alrededor de capacidades que ahora están disponibles para todos al mismo precio.
 
 ### La Pregunta Incómoda para los Incumbents
 
@@ -387,6 +387,13 @@ El kaizen, mejora continua, solo funciona porque los **humanos** lo impulsan. La
 - Los agentes son buenos en: velocidad, consistencia, procesamiento de volumen, acceso simultáneo a múltiples fuentes, trabajar 24/7 sin fatiga, seguir instrucciones al pie de la letra
 - Los humanos son buenos en: juicio en situaciones ambiguas, creatividad genuina, empatía con clientes y colegas, navegación política, construcción de relaciones, intuición sobre lo que "no se siente bien"
 - El rediseño inteligente **amplifica** ambas fortalezas, no sustituye una por otra
+
+Tomemos un ejemplo que ilustra bien esta dicotomía: la **construcción de relaciones**. En cualquier organización, los equipos mantienen cientos de relaciones - con clientes, partners, proveedores, colegas de otras áreas. No todas requieren el mismo nivel de atención humana. El rediseño inteligente separa las relaciones en dos capas:
+
+- **Relaciones estratégicas** (el humano se enfoca aquí): negociaciones complejas, resolución de conflictos, confianza con clientes clave, alianzas que requieren lectura emocional y política. Estas mejoran cuando el humano tiene más tiempo para dedicarles.
+- **Relaciones operativas** (los agentes las mantienen): seguimiento de compromisos, recordatorios de check-ins, nurturing de leads, coordinación rutinaria entre equipos, actualizaciones de estado. Un agente puede mantener activas 500 relaciones simultáneamente con seguimiento consistente.
+
+El resultado: los humanos no construyen *menos* relaciones - construyen *mejores* relaciones donde realmente importa, mientras los agentes aseguran que ninguna relación operativa se enfríe por olvido o falta de capacidad.
 
 Considéralo de esta forma: un equipo de desarrollo rediseñado para la era agéntica no tiene "menos desarrolladores + más agentes." Tiene **desarrolladores que trabajan de manera fundamentalmente diferente**, enfocados en arquitectura, decisiones de compromiso, revisión de resultados de agentes y diseño de sistemas, mientras los agentes manejan implementación, testing, documentación, y tareas repetitivas.
 
@@ -538,21 +545,21 @@ El título de este libro no es accidental. *Agéntico por Diseño* es una declar
 
 **Referencias:**
 
-1. David, P.A. (1990). "The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox." *American Economic Review*, vol. 80, no. 2, pp. 355-361.
-2. Solow, R. (1987). "We'd better watch out." *New York Times Book Review*, 12 de julio, p. 36.
-3. Brynjolfsson, E. & Hitt, L.M. (2003). "Computing Productivity: Firm-Level Evidence." *Review of Economics and Statistics*, vol. 85, no. 4, pp. 793-808. DOI: 10.1162/003465303772815736.
-4. Brynjolfsson, E., Rock, D. & Syverson, C. (2021). "The Productivity J-Curve: How Intangibles Complement General Purpose Technologies." *American Economic Journal: Macroeconomics*, vol. 13, no. 1, pp. 333-372. DOI: 10.1257/mac.20180386.
-5. Perez, C. (2002). *Technological Revolutions and Financial Capital: The Dynamics of Bubbles and Golden Ages*. Edward Elgar Publishing. ISBN 978-1-84064-922-2.
-6. Acemoglu, D. (2025). "The Simple Macroeconomics of AI." *Economic Policy*, vol. 40, no. 121, pp. 13-58. DOI: 10.1093/epolic/eiae042.
-7. Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production*. Productivity Press. ISBN 978-0-915299-14-0.
-8. Thiel, P. (2014). *Zero to One: Notes on Startups, or How to Build the Future*. Crown Business. ISBN 978-0-8041-3929-8.
-9. Mollick, E. (2024). *Co-Intelligence: Living and Working with AI*. Portfolio/Penguin. ISBN 978-0-593-71671-3.
-10. Jevons, W.S. (1865). *The Coal Question: An Inquiry Concerning the Progress of the Nation, and the Probable Exhaustion of Our Coal-Mines*. Macmillan and Co.
-11. McKinsey & Company. (2025). "The State of AI: How Organizations Are Rewiring to Capture Value." Global Survey on AI.
-12. BCG Henderson Institute. (2024). "Where's the Value in AI?" Boston Consulting Group.
+1. David, P.A. (1990). "The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox." *American Economic Review*.
+2. Solow, R. (1987). "We'd better watch out." *New York Times Book Review*.
+3. Brynjolfsson, E. & Hitt, L.M. (2003). "Computing Productivity: Firm-Level Evidence." *Review of Economics and Statistics*.
+4. Brynjolfsson, E., Rock, D. & Syverson, C. (2021). "The Productivity J-Curve: How Intangibles Complement General Purpose Technologies." *American Economic Journal: Macroeconomics*.
+5. Perez, C. (2002). *Technological Revolutions and Financial Capital: The Dynamics of Bubbles and Golden Ages*. Edward Elgar Publishing.
+6. Acemoglu, D. (2025). "The Simple Macroeconomics of AI." *Economic Policy*.
+7. Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production*. Productivity Press.
+8. Thiel, P. (2014). *Zero to One: Notes on Startups, or How to Build the Future*. Crown Business.
+9. Mollick, E. (2024). *Co-Intelligence: Living and Working with AI*. Portfolio/Penguin.
+10. Jevons, W.S. (1865). *The Coal Question*. Macmillan and Co.
+11. McKinsey & Company (2025). "The State of AI: How Organizations Are Rewiring to Capture Value." Global Survey on AI.
+12. BCG Henderson Institute (2024). "Where's the Value in AI?" Boston Consulting Group.
 13. Cahn, D. (2024). "AI's $600B Question." Sequoia Capital.
-14. Goldman Sachs. (2024). "Gen AI: Too Much Spend, Too Little Benefit?" GS Research.
-15. Wilson, H.J. & Daugherty, P. (2025). "The Secret to Successful AI-Driven Process Redesign." *Harvard Business Review*, enero-febrero 2025.
+14. Goldman Sachs (2024). "Gen AI: Too Much Spend, Too Little Benefit?" GS Research.
+15. Wilson, H.J. & Daugherty, P. (2025). "The Secret to Successful AI-Driven Process Redesign." *Harvard Business Review*.
 16. Hoffman, R. & Yeh, C. (2025). "Want AI-Driven Productivity? Redesign Work." *MIT Sloan Management Review*.
 
 ---

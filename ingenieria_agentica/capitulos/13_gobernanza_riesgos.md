@@ -228,7 +228,7 @@ La Caja Negra tiene costos tangibles que raramente se calculan:
 **Costo de Incidentes Extendidos:**
 - Tiempo promedio de resolución cuando *entiendes* el sistema: 2 horas
 - Tiempo cuando *no lo entiendes*: 8-24 horas (4-12x más)
-- Con 10 incidentes/año en sistemas "caja negra" y costo de downtime de $5,000/hora: **$150,000-$500,000/año**
+- Con 10 incidentes/año en sistemas "caja negra" y costo de downtime de US$5,000/hora: **US$150,000-US$500,000/año**
 
 **Costo de Parálisis de Innovación:**
 - Equipos que tienen miedo de modificar sistemas que no entienden
@@ -781,10 +781,10 @@ Los modelos de lenguaje usados por herramientas como GitHub Copilot fueron entre
 
 | Cobertura | Qué Protege | Costo Estimado |
 |-----------|-------------|----------------|
-| **IP Infringement** | Demandas por violación de copyright/patent | $5K-50K/año según revenue |
-| **Errors & Omissions** | Daños causados por código defectuoso de IA | $10K-100K/año |
+| **IP Infringement** | Demandas por violación de copyright/patent | US$5K-50K/año según revenue |
+| **Errors & Omissions** | Daños causados por código defectuoso de IA | US$10K-100K/año |
 | **Data Breach** | Breach causado por vulnerabilidad de código de IA | Incluido en Cyber Insurance |
-| **Regulatory Fines** | Multas por non-compliance de sistemas de IA | $15K-75K/año |
+| **Regulatory Fines** | Multas por non-compliance de sistemas de IA | US$15K-75K/año |
 
 **Carriers ofreciendo productos:**
 
@@ -896,7 +896,7 @@ La [LGPD]{.idx data-sub="regulación"} (Lei Geral de Proteção de Dados) es la 
 - **Aplica a datos de ciudadanos brasileños**, independientemente de dónde se procesen
 - **Requiere base legal** para procesamiento de datos personales (consentimiento, legítimo interés, etc.)
 - **Impacto en IA agéntica:** Si tus agentes de IA procesan datos personales de usuarios brasileños (logs, código con PII, datos de clientes), necesitas compliance con LGPD
-- **Multas:** Hasta 2% de facturación en Brasil, tope de R$50M (~$10M USD) por infracción
+- **Multas:** Hasta 2% de facturación en Brasil, tope de R$50M (~US$10M) por infracción
 - **Diferencia clave con GDPR:** Enforcement menos agresivo hasta ahora, pero la ANPD (autoridad de datos) está fortaleciendo capacidad de fiscalización
 
 > **Para Tu Próxima Reunión de Liderazgo:**
@@ -1088,6 +1088,7 @@ Cuando agentes generan código que toma decisiones sobre personas, el bias tiene
 #### Estrategias de Mitigación
 
 **A nivel de modelo:**
+
 | Estrategia | Descripción | Efectividad |
 |------------|-------------|-------------|
 | **Data augmentation** | Agregar código de regiones/grupos sub-representados | Media |
@@ -1096,6 +1097,7 @@ Cuando agentes generan código que toma decisiones sobre personas, el bias tiene
 | **Multi-model ensemble** | Combinar modelos entrenados en datos diversos | Media-Alta |
 
 **A nivel de equipo:**
+
 | Estrategia | Descripción | Impacto |
 |------------|-------------|---------|
 | **Diverse hiring** | Equipos diversos diseñan prompts más inclusivos | Alto |
@@ -1170,6 +1172,7 @@ Una gobernanza efectiva de IA agéntica requiere controles en tres niveles organ
 #### AI Governance Committee
 
 **Composición recomendada:**
+
 | Rol | Responsabilidad | Tiempo Dedicado |
 |-----|-----------------|-----------------|
 | **CTO/VP Engineering** | Chair, decisiones técnicas finales | 4 hrs/trimestre |
@@ -1198,8 +1201,8 @@ Una gobernanza efectiva de IA agéntica requiere controles en tres niveles organ
 | COMITÉ GOBERNANZA | Comité responsable | "AI Governance Committee" |
 | FECHA APROBACIÓN | Fecha de aprobación | "2026-03-15" |
 | FECHA REVISIÓN | Próxima revisión | "2026-06-15" |
-| PRESUPUESTO PERSONA | Presupuesto IA por persona/año | "$2,000" |
-| COSTO USD | Costo financiero de incidente | "$15,000" |
+| PRESUPUESTO PERSONA | Presupuesto IA por persona/año | "US$2,000" |
+| COSTO USD | Costo financiero de incidente | "US$15,000" |
 
 **Pasos:**
 
@@ -1542,7 +1545,7 @@ Una vez detectado un incidente relacionado con código generado por IA (por ejem
 
 **Impacto:**
 
-- $45K en costos de incident response
+- US$45K en costos de incident response
 - 4 horas de downtime (rotación de keys)
 - Reputational risk (disclosure a regulador)
 - Re-evaluación completa de políticas de IA
@@ -1578,7 +1581,7 @@ Una vez detectado un incidente relacionado con código generado por IA (por ejem
 > - Implementa DLP ANTES de escalar uso
 > - Clasifica código por criticidad: self-hosted para financiero/médico/crítico
 > - Entrena code reviewers en patterns sospechosos de "memorization"
-> - Considera el costo de incident vs costo de self-hosted (esta fintech gastó $45K + 3 meses; self-hosted cuesta ~$20K/año)
+> - Considera el costo de incident vs costo de self-hosted (esta fintech gastó US$45K + 3 meses; self-hosted cuesta ~US$20K/año)
 
 ### 9.2. Post-Mortem: Vulnerabilidad SQL Injection (2024)
 
@@ -1609,7 +1612,7 @@ Una vez detectado un incidente relacionado con código generado por IA (por ejem
 **Impacto:**
 
 - Riesgo crítico de breach (no materializado gracias a detección temprana)
-- $120K en:
+- US$120K en:
   - Incident response
   - Forensics
   - Auditoría de todo código generado por agente (500+ files)
@@ -1684,8 +1687,8 @@ Una vez detectado un incidente relacionado con código generado por IA (por ejem
 
 **Impacto:**
 
-- $200K en revenue perdido (clientes cancelados)
-- $50K en consulting de AI ethics firm
+- US$200K en revenue perdido (clientes cancelados)
+- US$50K en consulting de AI ethics firm
 - Reputational damage significativo
 - Retraso de 2 meses en go-to-market
 - Near miss en discrimination lawsuit

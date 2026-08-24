@@ -81,7 +81,7 @@ Gartner ha emitido predicciones que toda la alta dirección técnica debería co
 > - **Limitación:** Las proyecciones de Gartner tienen un margen de error histórico significativo. Esta predicción de cancelación refleja el patrón típico del Hype Cycle
 > - **Implicación:** La dualidad es el mensaje clave: el mercado se moverá rápido, pero sin governance la mayoría fracasará. Estar en la mayoría que sobrevive requiere estrategia deliberada
 
-El mercado de IA alcanzó los **$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035: más de **$450 mil millones**[^pref5].
+El mercado de IA alcanzó los **US$391 mil millones** en 2025. En el mejor escenario de Gartner, la IA agéntica podría impulsar aproximadamente **30% de los ingresos del software empresarial de aplicaciones** para 2035: más de **US$450 mil millones**[^pref5].
 
 ### El Costo de la Inacción
 
@@ -121,7 +121,7 @@ Suena increíble, ¿verdad? Pero aquí está el matiz crítico que muchos líder
 | **Calidad del código** | Automatización de pruebas y detección temprana de errores | 48% del código generado por IA contiene vulnerabilidades de seguridad |
 | **Deuda técnica** | Refactorización asistida y documentación automática | 4x más clonación de código; riesgo de degradación arquitectónica |
 | **Confianza del equipo** | 84% de desarrolladores ya usan herramientas de IA | Solo 33% confían plenamente en los resultados; 71% no fusionan sin revisión manual |
-| **ROI organizacional** | Mercado de IA alcanzó $391B en 2025; potencial de $450B+ para 2035 | Tasa de fracaso significativa prevista por Gartner (ver timeline arriba) |
+| **ROI organizacional** | Mercado de IA alcanzó US$391B en 2025; potencial de US$450B+ para 2035 | Tasa de fracaso significativa prevista por Gartner (ver timeline arriba) |
 
 *Fuentes: GitHub (2025), Gartner (2025), GitClear (2025), Stack Overflow Developer Survey (2025)*
 

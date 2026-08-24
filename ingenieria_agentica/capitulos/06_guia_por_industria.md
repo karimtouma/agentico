@@ -24,7 +24,7 @@ Hasta este punto del libro, hemos presentado datos que pintan un cuadro optimist
 | Métrica | Con IA | Sin IA | Diferencia |
 |---------|--------|--------|------------|
 | Tiempo para completar tarea | 96 minutos | 114 minutos | -16% |
-| Mejora estimada (controlada) | -| -| **+21%** |
+| Mejora estimada (controlada) | - | -| **+21%** |
 
 Un 21% es significativo, pero está lejos del 55% que reportan los estudios financiados por vendors. La diferencia: este estudio usó tareas reales en infraestructura real de Google, no ejercicios controlados de laboratorio.
 
@@ -35,7 +35,7 @@ Un 21% es significativo, pero está lejos del 55% que reportan los estudios fina
 | Métrica | Con IA (Cursor Pro + Claude) | Sin IA | Diferencia |
 |---------|------------------------------|--------|------------|
 | Tiempo real para completar issues | **Más lento** | Más rápido | **-19%** |
-| Percepción subjetiva de velocidad | +20% más rápido | -| **Percepción inversa a realidad** |
+| Percepción subjetiva de velocidad | +20% más rápido | - | **Percepción inversa a realidad** |
 
 Leíste bien: los desarrolladores **creyeron** que eran 20% más rápidos, pero en realidad fueron 19% más lentos. Este es el Efecto Dunning-Kruger aplicado a IA que documentamos en el Capítulo 5: la herramienta se siente productiva porque genera texto rápidamente, pero el tiempo de revisión, debugging, y corrección de [alucinaciones]{.idx} en codebases complejos consume más de lo que ahorra.
 
@@ -140,7 +140,7 @@ La velocidad a la que tu organización verá retorno depende de 3 factores inter
 | **Fintech** | Alta | Media-alta | Fraud detection, compliance automation, servicio al cliente | **6-12 meses** | BCG: mayor concentración de AI leaders |
 | **Manufactura** | Alta | Baja-media | Mantenimiento predictivo, control de calidad, optimización energética | **6-12 meses** | 77% de manufacturers usan IA; -25-40% costos de mantenimiento |
 | **Banca / Seguros** | Media-alta | Alta | Servicio al cliente (18-24% del valor según BCG), proceso de claims | **9-18 meses** | Dubai Commercial Bank: 39,000 horas/año ahorradas |
-| **Healthcare / Biopharma** | Media | Muy alta | R&D (27% del valor según BCG), diagnóstico, desarrollo de dispositivos | **12-24 meses** | $3.20 retorno por cada $1 invertido en 14 meses; ~800 dispositivos AI aprobados por FDA |
+| **Healthcare / Biopharma** | Media | Muy alta | R&D (27% del valor según BCG), diagnóstico, desarrollo de dispositivos | **12-24 meses** | US$3.20 retorno por cada US$1 invertido en 14 meses; ~800 dispositivos AI aprobados por FDA |
 | **Gobierno** | Baja-media | Muy alta | Procesamiento de documentos, workforce augmentation | **18-36 meses** | Adopción incipiente; framework NIST AI RMF como guía |
 
 > **Dato verificado:**
@@ -171,7 +171,7 @@ Para organizaciones en [América Latina]{.idx}, hay factores adicionales:
 
 | Factor | Impacto en Speed-to-ROI | Detalle |
 |--------|:------------------------:|---------|
-| **Costo laboral menor** | Reduce ROI relativo de IA | Si un developer en LATAM cuesta $30-50K/año vs. $150-200K en EE.UU., el ahorro absoluto de IA es menor. Pero el ahorro relativo sigue siendo significativo |
+| **Costo laboral menor** | Reduce ROI relativo de IA | Si un developer en LATAM cuesta US$30-50K/año vs. US$150-200K en EE.UU., el ahorro absoluto de IA es menor. Pero el ahorro relativo sigue siendo significativo |
 | **Regulación ligera** | Acelera adopción | LATAM tiene menos regulación de IA que UE (AI Act) o EE.UU. (ver Cap. 13). Esto es ventana de oportunidad, no excusa para ignorar governance |
 | **Nearshoring boom** | Amplifica valor | Equipos LATAM que adopten IA compiten por contratos de [nearshoring]{.idx} ofreciendo el mismo resultado a menor costo. El diferencial de productividad es multiplicador |
 | **Talento técnico en crecimiento** | Facilita adopción | Brasil, México, Colombia producen 100K+ graduados STEM/año. Pool de talento creciente para combinar con IA |

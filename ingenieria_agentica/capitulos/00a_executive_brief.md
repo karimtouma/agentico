@@ -40,9 +40,9 @@ Si tus competidores están desarrollando 2x más rápido con el mismo equipo, ca
 
 ### Apuesta 2: La ecuación económica del talento se reestructura
 
-El mercado global de IA alcanzó $391 mil millones en 2025. Microsoft reporta más de $500M en ganancias de productividad anuales gracias a IA, con el 35% de su código nuevo generado por herramientas de IA (Judson Althoff, CCO, 2025).
+El mercado global de IA alcanzó US$391 mil millones en 2025. Microsoft reporta más de US$500M en ganancias de productividad anuales gracias a IA, con el 35% de su código nuevo generado por herramientas de IA (Judson Althoff, CCO, 2025).
 
-Para una empresa de 50 desarrolladores, la inversión real (incluyendo costos ocultos como curva de aprendizaje y code review adicional) es de ~$230K, generando un ROI mediano de **400-650%** en el primer año. Para 200 desarrolladores, ~$1.2M generan ROI de **300-500%**. Estos números son más conservadores que otros reportes de la industria porque incluyen costos que frecuentemente se omiten. Ver Capítulo 9 para metodología completa y análisis de sensibilidad.
+Para una empresa de 50 desarrolladores, la inversión real (incluyendo costos ocultos como curva de aprendizaje y code review adicional) es de ~US$230K, generando un ROI mediano de **400-650%** en el primer año. Para 200 desarrolladores, ~US$1.2M generan ROI de **300-500%**. Estos números son más conservadores que otros reportes de la industria porque incluyen costos que frecuentemente se omiten. Ver Capítulo 9 para metodología completa y análisis de sensibilidad.
 
 > **Dato verificado:**
 >
@@ -69,9 +69,9 @@ El ecosistema tiene 4 capas: interfaces de usuario (Cursor, GitHub Copilot), orq
 
 | Tipo de org | Herramienta inicial | Inversión mensual | ROI mediana | ROI outlier (P90) |
 |---|---|---|---|---|
-| Startup (<50 devs) | Cursor + Windsurf | ~$175/mes (5 devs) | 250-500% | 800%+ |
-| Mid-Market (100-1,000) | GitHub Copilot Business + Cursor | ~$8,000/mes (200 devs) | 250-450% | 650%+ |
-| Enterprise (1,000+) | Tabnine Enterprise + soluciones internas | ~$80,000/mes (2,000 devs) | 150-350% | 500%+ |
+| Startup (<50 devs) | Cursor + Windsurf | ~US$175/mes (5 devs) | 250-500% | 800%+ |
+| Mid-Market (100-1,000) | GitHub Copilot Business + Cursor | ~US$8,000/mes (200 devs) | 250-450% | 650%+ |
+| Enterprise (1,000+) | Tabnine Enterprise + soluciones internas | ~US$80,000/mes (2,000 devs) | 150-350% | 500%+ |
 
 > **Nota metodológica:** La columna "mediana" refleja resultados típicos incluyendo costos ocultos. La columna "outlier" refleja el percentil 90: organizaciones con adopción óptima, procesos maduros, y equipos receptivos. Para tu business case, usa la mediana. Ver Capítulo 9 para metodología completa.
 
@@ -116,9 +116,9 @@ No esperes a tener un incidente. Establece desde el inicio: política de uso de 
 
 | Fase | Meses | Equipos | Objetivo | Presupuesto acumulado |
 |---|---|---|---|---|
-| **CRAWL** | 0-3 | 1-2 equipos | Pilotos de bajo riesgo (docs, tests, refactoring) | $15,000 |
-| **WALK** | 4-9 | 3-5 equipos | Expansión controlada (code gen, APIs, optimización) | $115,000 |
-| **RUN** | 10-18 | Todos | Escala enterprise con governance completa | $184,000 |
+| **CRAWL** | 0-3 | 1-2 equipos | Pilotos de bajo riesgo (docs, tests, refactoring) | US$15,000 |
+| **WALK** | 4-9 | 3-5 equipos | Expansión controlada (code gen, APIs, optimización) | US$115,000 |
+| **RUN** | 10-18 | Todos | Escala enterprise con governance completa | US$184,000 |
 
 **Criterios de salida clave:**
 
@@ -126,7 +126,7 @@ No esperes a tener un incidente. Establece desde el inicio: política de uso de 
 - **Fin de WALK (decisión GO/NO-GO):** ROI >50% demostrado, NPS del equipo >+30, governance funcionando
 - **Fin de RUN:** Velocity +62%, *time-to-market* -48%, defect rate -22%
 
-**ROI total a 18 meses:** Inversión $184K → Beneficios $1.37M → **ROI = 645%**
+**ROI total a 18 meses:** Inversión US$184K → Beneficios US$1.37M → **ROI = 645%**
 
 *Profundiza en: Capítulo 12 (Estrategia de Adopción), Apéndice C (Checklist de 115 puntos)*
 

@@ -42,9 +42,9 @@ Este capítulo se enfoca en traducir el potencial técnico de la IA agéntica en
 
 ---
 
-## PARTE I: MODELOS DE ROI VERIFICADOS
+## Modelos de ROI Verificados
 
-> Para la matriz completa de priorización integrando ROI, riesgo e impacto de negocio, ver **Apéndice B, Framework #4 (ROI vs. Riesgo) y #12 (Modelo de ROI para Adopción)**.
+> Para la matriz completa de priorización integrando beneficio, complejidad e impacto de negocio, ver **Apéndice B, Framework #4 (Beneficio vs. Complejidad de Adopción) y #12 (Modelo de ROI para Adopción)**.
 
 ### 1. El Modelo Básico de ROI en IA Agéntica
 
@@ -59,16 +59,16 @@ En el contexto de IA agéntica:
 
 > **Contexto LATAM**
 >
-> Los modelos de ROI presentados en este capítulo usan salarios de referencia en USD. En LATAM, la estructura de costos tiene particularidades que pueden mejorar significativamente el ROI: el salario promedio de un senior developer en Colombia, México o Chile es $40K-$80K USD (vs. $120K-$180K en USA), pero las licencias de Copilot, Cursor y APIs se pagan en USD al mismo precio global ($19/usuario/mes para Copilot). Esto significa que el costo de la herramienta como porcentaje del salario es mayor (5-8% en LATAM vs. 2-3% en USA), pero las contrataciones evitadas siguen siendo el mayor driver de ROI, y a menor costo absoluto por developer, el breakeven es más rápido. El riesgo: la volatilidad cambiaria puede convertir un presupuesto aprobado en pesos en un sobrecosto del 15-25% si el tipo de cambio se mueve contra ti.
+> Los modelos de ROI presentados en este capítulo usan salarios de referencia en USD. En LATAM, la estructura de costos tiene particularidades que pueden mejorar significativamente el ROI: el salario promedio de un senior developer en Colombia, México o Chile es US$40K-US$80K (vs. US$120K-US$180K en USA), pero las licencias de Copilot, Cursor y APIs se pagan en USD al mismo precio global (US$19/usuario/mes para Copilot). Esto significa que el costo de la herramienta como porcentaje del salario es mayor (5-8% en LATAM vs. 2-3% en USA), pero las contrataciones evitadas siguen siendo el mayor driver de ROI, y a menor costo absoluto por developer, el breakeven es más rápido. El riesgo: la volatilidad cambiaria puede convertir un presupuesto aprobado en pesos en un sobrecosto del 15-25% si el tipo de cambio se mueve contra ti.
 
 ### 2. Caso Base: Startup Serie A (50 Developers)
 
 **Perfil de la organización:**
 
 - 50 desarrolladores
-- Salario promedio: $100,000/año
-- Costos indirectos (beneficios, equipamiento, espacio): 30% = $30,000/dev
-- **Costo total de ingeniería:** $6.5M/año
+- Salario promedio: US$100,000/año
+- Costos indirectos (beneficios, equipamiento, espacio): 30% = US$30,000/dev
+- **Costo total de ingeniería:** US$6.5M/año
 
 **Tabla 9.1. Inversión completa en IA agéntica (Year 1)**
 
@@ -77,28 +77,28 @@ En el contexto de IA agéntica:
 | Concepto | Costo | Notas |
 |----------|-------|-------|
 | **Costos directos (visibles)** | | |
-| GitHub Copilot Business (50 × $19/mes) | $11,400 | |
-| Cursor Pro para 10 seniors (10 × $20/mes) | $2,400 | |
-| Infraestructura (APIs, OpenRouter) | $6,000 | |
-| Training (2 workshops × 50 × 4h × $75/h) | $30,000 | |
-| Setup y configuración (80h × $150/h) | $12,000 | |
-| Mantenimiento anual | $5,000 | |
-| **Subtotal costos directos** | **$66,800** | *Lo que la mayoría calcula* |
+| GitHub Copilot Business (50 × US$19/mes) | US$11,400 | |
+| Cursor Pro para 10 seniors (10 × US$20/mes) | US$2,400 | |
+| Infraestructura (APIs, OpenRouter) | US$6,000 | |
+| Training (2 workshops × 50 × 4h × US$75/h) | US$30,000 | |
+| Setup y configuración (80h × US$150/h) | US$12,000 | |
+| Mantenimiento anual | US$5,000 | |
+| **Subtotal costos directos** | **US$66,800** | *Lo que la mayoría calcula* |
 | **Costos ocultos (frecuentemente ignorados)** | | |
-| [Curva de aprendizaje]{.idx data-sub="costos ocultos"}: 11 semanas × 50% productividad perdida × 50 devs | $73,000 | Peng et al., "The Impact of AI on Developer Productivity" (arXiv:2302.06590, 2023): adopción efectiva toma 8-14 semanas |
-| Code review adicional: +30% tiempo de review × año | $48,750 | Snyk: 56% de desarrolladores encuentran problemas frecuentes en código IA; requiere más supervisión |
-| Incidentes por vulnerabilidades (código IA 30-40% más vulnerable) | $25,000 | Snyk, "Secure Adoption in the GenAI Era" (2024); estimación conservadora de 2 incidentes |
-| [Deuda técnica]{.idx} por clonación 4x ([GitClear]{.idx}) | $15,000 | Tiempo de refactoring diferido[^ch9-cost1] |
-| **Subtotal costos ocultos** | **$161,750** | *Lo que pocos calculan* |
-| **TOTAL INVERSIÓN REAL YEAR 1** | **$228,550** | |
+| [Curva de aprendizaje]{.idx data-sub="costos ocultos"}: 11 semanas × 50% productividad perdida × 50 devs | US$73,000 | Peng et al., "The Impact of AI on Developer Productivity" (arXiv:2302.06590, 2023): adopción efectiva toma 8-14 semanas |
+| Code review adicional: +30% tiempo de review × año | US$48,750 | Snyk: 56% de desarrolladores encuentran problemas frecuentes en código IA; requiere más supervisión |
+| Incidentes por vulnerabilidades (código IA 30-40% más vulnerable) | US$25,000 | Snyk, "Secure Adoption in the GenAI Era" (2024); estimación conservadora de 2 incidentes |
+| [Deuda técnica]{.idx} por clonación 4x ([GitClear]{.idx}) | US$15,000 | Tiempo de refactoring diferido[^ch9-cost1] |
+| **Subtotal costos ocultos** | **US$161,750** | *Lo que pocos calculan* |
+| **TOTAL INVERSIÓN REAL YEAR 1** | **US$228,550** | |
 
 **Tabla 9.2. Ganancias medibles (Year 1)**
 
 | Métrica | Cálculo | Valor | Confianza |
 |---------|---------|-------|-----------|
-| Productividad ganada (25% neto después de costos indirectos) | 50 devs × $130K × 25% | $1,625,000 | 📊 Alta (múltiples estudios) |
-| Reducción de incorporación | 10 nuevos × 2 sem × $5K | $100,000 | 📊 Media |
-| **TOTAL GANANCIA YEAR 1** | | **$1,725,000** | |
+| Productividad ganada (25% neto después de costos indirectos) | 50 devs × US$130K × 25% | US$1,625,000 | 📊 Alta (múltiples estudios) |
+| Reducción de incorporación | 10 nuevos × 2 sem × US$5K | US$100,000 | 📊 Media |
+| **TOTAL GANANCIA YEAR 1** | | **US$1,725,000** | |
 
 > **Nota:** No duplicamos "productividad ganada" con "contrataciones evitadas"; son la misma cosa contada de forma diferente. Tampoco incluimos "*time-to-market*" porque es difícil de cuantificar sin datos específicos.
 
@@ -106,9 +106,9 @@ En el contexto de IA agéntica:
 
 | Métrica | Cálculo | Resultado |
 |---------|---------|-----------|
-| **ROI Year 1** | ($1,725K - $228K) / $228K | **655%** |
-| **Payback period** | $228K / ($1,725K / 12) | **1.6 meses** |
-| **Valor neto Year 1** | $1,725K - $228K | **$1,496,500** |
+| **ROI Year 1** | (US$1,725K - US$228K) / US$228K | **655%** |
+| **Payback period** | US$228K / (US$1,725K / 12) | **1.6 meses** |
+| **Valor neto Year 1** | US$1,725K - US$228K | **US$1,496,500** |
 
 ### Análisis de Sensibilidad: Tres Escenarios
 
@@ -118,9 +118,9 @@ El CFO preguntará: "¿Y si la productividad es menor? ¿Y si los costos ocultos
 
 | Escenario | Productividad neta | Inversión total | Ganancia | ROI | Payback |
 |-----------|:------------------:|:---------------:|:--------:|:---:|:-------:|
-| **Pesimista** | 15% | $280K | $975K | **248%** | 3.4 meses |
-| **Base** | 25% | $228K | $1.7M | **655%** | 1.6 meses |
-| **Optimista** | 35% | $200K | $2.3M | **1,050%** | 1.0 meses |
+| **Pesimista** | 15% | US$280K | US$975K | **248%** | 3.4 meses |
+| **Base** | 25% | US$228K | US$1.7M | **655%** | 1.6 meses |
+| **Optimista** | 35% | US$200K | US$2.3M | **1,050%** | 1.0 meses |
 
 **Interpretación:**
 - **Escenario pesimista:** Productividad más baja que estudios sugieren, costos ocultos 20% más altos. ROI sigue siendo 248%, fuertemente positivo.
@@ -135,28 +135,28 @@ Usa estos pasos con los números de tu organización:
 
 | Paso | Fórmula | Tu Valor |
 |------|---------|----------|
-| **A.** Número de developers | -| ___ |
-| **B.** Costo total/dev/año (salario × 1.3 costos indirectos) | -| $___ |
-| **C.** Costo total de ingeniería | A × B | $___ |
-| **D.** Licencias anuales | A × $228/año (Copilot) | $___ |
-| **E.** Training + setup (one-time) | A × $840 | $___ |
-| **F.** Costos ocultos (Año 1) | C × 3.5% | $___ |
-| **G.** **Inversión total** | D + E + F | $___ |
-| **H.** Ganancia por productividad (escenario base: 25% neto) | C × 25% | $___ |
+| **A.** Número de developers | - | ___ |
+| **B.** Costo total/dev/año (salario × 1.3 costos indirectos) | - | US$___ |
+| **C.** Costo total de ingeniería | A × B | US$___ |
+| **D.** Licencias anuales | A × US$228/año (Copilot) | US$___ |
+| **E.** Training + setup (one-time) | A × US$840 | US$___ |
+| **F.** Costos ocultos (Año 1) | C × 3.5% | US$___ |
+| **G.** **Inversión total** | D + E + F | US$___ |
+| **H.** Ganancia por productividad (escenario base: 25% neto) | C × 25% | US$___ |
 | **I.** **ROI** | (H - G) / G × 100 | ___% |
 | **J.** **Payback** | G / (H / 12) | ___ meses |
 
-**Ejemplo rápido**: 30 developers × $65K/año (LATAM, ya con costos indirectos) = $1.95M. Inversión: D($6.8K) + E($25.2K) + F($68.3K) = ~$100K. Ganancia (25%): $487K. **ROI: 386%. Payback: 2.5 meses.**
+**Ejemplo rápido**: 30 developers × US$65K/año (LATAM, ya con costos indirectos) = US$1.95M. Inversión: D(US$6.8K) + E(US$25.2K) + F(US$68.3K) = ~US$100K. Ganancia (25%): US$487K. **ROI: 386%. Payback: 2.5 meses.**
 
 > **Para Tu Próxima Reunión de Liderazgo**
 >
 > **Las 5 preguntas que el CFO hará y cómo responderlas:**
 >
 > 1. *"¿Y si la productividad real es mucho menor?"* → Ver tabla de sensibilidad: incluso al 15%, ROI es 248%
-> 2. *"¿Cuáles son los costos ocultos?"* → Training (~$30K), tiempo de setup (2-4 semanas), curva de aprendizaje. Ya incluidos en el modelo
+> 2. *"¿Cuáles son los costos ocultos?"* → Training (~US$30K), tiempo de setup (2-4 semanas), curva de aprendizaje. Ya incluidos en el modelo
 > 3. *"¿Qué pasa si la herramienta desaparece?"* → Vendor lock-in es bajo; las competencias (prompting, revisión de código IA) son transferibles entre herramientas
 > 4. *"¿Cómo medimos esto de forma confiable?"* → Métricas DORA + framework de medición de este capítulo
-> 5. *"¿Cuál es el costo de esperar 12 meses?"* → 12 meses × ganancia mensual perdida = $975K-$2.3M en costo de oportunidad (según escenario)
+> 5. *"¿Cuál es el costo de esperar 12 meses?"* → 12 meses × ganancia mensual perdida = US$975K-US$2.3M en costo de oportunidad (según escenario)
 
 ---
 
@@ -165,23 +165,23 @@ Usa estos pasos con los números de tu organización:
 **Perfil:**
 
 - 200 developers
-- Salario promedio: $110,000/año
+- Salario promedio: US$110,000/año
 - Costos indirectos: 35%
-- **Costo total de ingeniería:** $29.7M/año
+- **Costo total de ingeniería:** US$29.7M/año
 
 **Inversión en IA agéntica (Year 1):**
 
 | Concepto | Costo Anual |
 |----------|-------------|
-| GitHub Copilot Enterprise (200 seats × $39/mes) | $93,600 |
-| Cursor para 50 tech leads (50 × $20/mes) | $12,000 |
-| Claude Code pay-per-use (estimado) | $18,000 |
-| Infraestructura enterprise (Azure OpenAI, compliance) | $48,000 |
-| Training (4 sesiones × 200 personas × 6h × $80/h) | $384,000 |
-| Setup y integración (300h DevOps × $180/h) | $54,000 |
-| Governance y políticas (consultoria) | $75,000 |
-| Mantenimiento anual | $25,000 |
-| **TOTAL INVERSIÓN YEAR 1** | **$709,600** |
+| GitHub Copilot Enterprise (200 seats × US$39/mes) | US$93,600 |
+| Cursor para 50 tech leads (50 × US$20/mes) | US$12,000 |
+| Claude Code pay-per-use (estimado) | US$18,000 |
+| Infraestructura enterprise (Azure OpenAI, compliance) | US$48,000 |
+| Training (4 sesiones × 200 personas × 6h × US$80/h) | US$384,000 |
+| Setup y integración (300h DevOps × US$180/h) | US$54,000 |
+| Governance y políticas (consultoria) | US$75,000 |
+| Mantenimiento anual | US$25,000 |
+| **TOTAL INVERSIÓN YEAR 1** | **US$709,600** |
 
 **Ganancias medibles (Year 1):**
 
@@ -189,45 +189,45 @@ Asumiendo ganancia de productividad **30%** (menor por procesos más pesados, pe
 
 | Métrica | Cálculo | Valor Anual |
 |---------|---------|-------------|
-| Productividad ganada (30% de capacidad) | 200 devs × $148.5K × 30% | $8,910,000 |
-| Contrataciones evitadas (60 devs equivalentes) | 60 × $148.5K | $8,910,000 |
-| Reducción de bug fixing (15% menos bugs críticos) | 200 devs × 10% tiempo × $148.5K | $2,970,000 |
-| Aceleración de funcionalidades (8 funcionalidades mayores) | 8 × 8 semanas × $250K valor | $2,000,000 |
-| Reducción de rotación técnica (3 seniors retenidos) | 3 × $350K costo reemplazo | $1,050,000 |
-| **TOTAL GANANCIA YEAR 1** | | **$23,840,000** |
+| Productividad ganada (30% de capacidad) | 200 devs × US$148.5K × 30% | US$8,910,000 |
+| Contrataciones evitadas (60 devs equivalentes) | 60 × US$148.5K | US$8,910,000 |
+| Reducción de bug fixing (15% menos bugs críticos) | 200 devs × 10% tiempo × US$148.5K | US$2,970,000 |
+| Aceleración de funcionalidades (8 funcionalidades mayores) | 8 × 8 semanas × US$250K valor | US$2,000,000 |
+| Reducción de rotación técnica (3 seniors retenidos) | 3 × US$350K costo reemplazo | US$1,050,000 |
+| **TOTAL GANANCIA YEAR 1** | | **US$23,840,000** |
 
 **ROI Year 1:**
 
-- ROI = [($23,840,000 - $709,600) / $709,600] × 100
+- ROI = [(US$23,840,000 - US$709,600) / US$709,600] × 100
 - **ROI = 3,259%**
 
 **[Payback period]{.idx data-sub="métricas financieras"}:** **11 días**
 
-**Nota crítica:** A pesar de mayor inversión absoluta ($709K vs. $66K), el ROI sigue siendo masivo porque la base de costos de ingeniería es proporcionalmente mucho mayor.
+**Nota crítica:** A pesar de mayor inversión absoluta (US$709K vs. US$66K), el ROI sigue siendo masivo porque la base de costos de ingeniería es proporcionalmente mucho mayor.
 
 ### 4. Caso Enterprise: Fortune 500 (2,000 Developers)
 
 **Perfil:**
 
 - 2,000 developers distribuidos globalmente
-- Salario promedio: $135,000/año
+- Salario promedio: US$135,000/año
 - Costos indirectos: 40%
-- **Costo total de ingeniería:** $378M/año
+- **Costo total de ingeniería:** US$378M/año
 
 **Inversión en IA agéntica (Year 1):**
 
 | Concepto | Costo Anual |
 |----------|-------------|
-| Tabnine Enterprise self-hosted (2,000 seats × $39/mes) | $936,000 |
-| Copilot Enterprise para equipos cloud-native (500 seats) | $234,000 |
-| Agentes autónomos (licencias + infra) | $480,000 |
-| Infraestructura dedicada (self-hosted models, GPUs) | $720,000 |
-| Training extensivo (global rollout, 4 idiomas) | $1,800,000 |
-| Change management y comunicación | $650,000 |
-| Setup, integración con legacy systems | $950,000 |
-| Governance, compliance, security review | $480,000 |
-| Mantenimiento anual (equipo dedicado de 5 personas) | $850,000 |
-| **TOTAL INVERSIÓN YEAR 1** | **$7,100,000** |
+| Tabnine Enterprise self-hosted (2,000 seats × US$39/mes) | US$936,000 |
+| Copilot Enterprise para equipos cloud-native (500 seats) | US$234,000 |
+| Agentes autónomos (licencias + infra) | US$480,000 |
+| Infraestructura dedicada (self-hosted models, GPUs) | US$720,000 |
+| Training extensivo (global rollout, 4 idiomas) | US$1,800,000 |
+| Change management y comunicación | US$650,000 |
+| Setup, integración con legacy systems | US$950,000 |
+| Governance, compliance, security review | US$480,000 |
+| Mantenimiento anual (equipo dedicado de 5 personas) | US$850,000 |
+| **TOTAL INVERSIÓN YEAR 1** | **US$7,100,000** |
 
 **Ganancias medibles (Year 1):**
 
@@ -235,22 +235,22 @@ Asumiendo ganancia de productividad **25%** (menor por complejidad organizaciona
 
 | Métrica | Cálculo | Valor Anual |
 |---------|---------|-------------|
-| Productividad ganada (25% de capacidad) | 2,000 × $189K × 25% | $94,500,000 |
-| Contrataciones evitadas (500 devs) | 500 × $189K | $94,500,000 |
-| Reducción de bugs en producción (20% menos) | $12M costo anual bugs × 20% | $2,400,000 |
-| Aceleración de modernización (legacy → cloud) | 18 meses → 12 meses, valor $80M | $26,667,000 |
-| Reducción de offshore dependency (20% menos) | 400 offshore × $60K × 20% | $4,800,000 |
-| Retención de talento senior (10 key engineers) | 10 × $500K costo reemplazo | $5,000,000 |
-| **TOTAL GANANCIA YEAR 1** | | **$227,867,000** |
+| Productividad ganada (25% de capacidad) | 2,000 × US$189K × 25% | US$94,500,000 |
+| Contrataciones evitadas (500 devs) | 500 × US$189K | US$94,500,000 |
+| Reducción de bugs en producción (20% menos) | US$12M costo anual bugs × 20% | US$2,400,000 |
+| Aceleración de modernización (legacy → cloud) | 18 meses → 12 meses, valor US$80M | US$26,667,000 |
+| Reducción de offshore dependency (20% menos) | 400 offshore × US$60K × 20% | US$4,800,000 |
+| Retención de talento senior (10 key engineers) | 10 × US$500K costo reemplazo | US$5,000,000 |
+| **TOTAL GANANCIA YEAR 1** | | **US$227,867,000** |
 
 **ROI Year 1:**
 
-- ROI = [($227,867,000 - $7,100,000) / $7,100,000] × 100
+- ROI = [(US$227,867,000 - US$7,100,000) / US$7,100,000] × 100
 - **ROI = 3,109%**
 
 **Payback period:** **11.4 días**
 
-**Observación clave:** En enterprise, el ROI absoluto es gigantesco ($220M+) aunque el porcentaje sea similar a organizaciones más pequeñas.
+**Observación clave:** En enterprise, el ROI absoluto es gigantesco (US$220M+) aunque el porcentaje sea similar a organizaciones más pequeñas.
 
 ### 5. Tabla Comparativa de ROI por Tamaño de Organización
 
@@ -258,14 +258,14 @@ Asumiendo ganancia de productividad **25%** (menor por complejidad organizaciona
 
 | Tamaño Org | Devs | Inversión total Y1 | Ganancia neta Y1 | ROI % | Payback | Valor Neto |
 |------------|------|:------------------:|:----------------:|:-----:|:-------:|:----------:|
-| Startup (Seed) | 50 | $228K | $1.7M | **655%** | 1.6 meses | $1.5M |
-| Startup (Serie A/B) | 100 | $420K | $3.4M | **710%** | 1.5 meses | $3.0M |
-| Mid-Market | 200 | $1.2M | $7.2M | **500%** | 2.0 meses | $6.0M |
-| Enterprise | 2,000 | $12M | $47M | **292%** | 3.1 meses | $35M |
+| Startup (Seed) | 50 | US$228K | US$1.7M | **655%** | 1.6 meses | US$1.5M |
+| Startup (Serie A/B) | 100 | US$420K | US$3.4M | **710%** | 1.5 meses | US$3.0M |
+| Mid-Market | 200 | US$1.2M | US$7.2M | **500%** | 2.0 meses | US$6.0M |
+| Enterprise | 2,000 | US$12M | US$47M | **292%** | 3.1 meses | US$35M |
 
 **Observaciones:**
 - El ROI **disminuye** con el tamaño de la organización (más complejidad, governance, resistencia al cambio)
-- Los valores absolutos siguen siendo enormes ($35M valor neto para enterprise)
+- Los valores absolutos siguen siendo enormes (US$35M valor neto para enterprise)
 - El payback period es de **meses, no días**. Cualquier modelo que diga "payback en 9 días" está ignorando costos reales
 
 ### 6. Distribución Real de ROI: Lo que No Te Cuentan los Vendors
@@ -310,7 +310,7 @@ El [análisis de sensibilidad]{.idx data-sub="business case"} muestra qué esper
 
 ---
 
-## PARTE II: ANÁLISIS DE TCO (TOTAL COST OF OWNERSHIP)
+## Análisis de TCO (Total Cost of Ownership)
 
 ### 1. TCO Completo a 3 Años: Startup (50 Devs)
 
@@ -320,34 +320,34 @@ Muchas organizaciones cometen el error de comparar solo el costo de licencias de
 
 | Concepto | Year 1 | Year 2 | Year 3 | Total 3 Años |
 |----------|--------|--------|--------|---------------|
-| Salarios (17 × $100K) | $1,700,000 | $1,785,000 | $1,874,250 | $5,359,250 |
-| Beneficios y costos indirectos (30%) | $510,000 | $535,500 | $562,275 | $1,607,775 |
-| Recruiting (17 × $25K) | $425,000 | $0 | $0 | $425,000 |
-| Incorporación (17 × 8 weeks × $5K) | $680,000 | $0 | $0 | $680,000 |
-| Equipamiento (17 × $5K) | $85,000 | $0 | $0 | $85,000 |
-| Espacio físico (si aplica) | $51,000 | $53,550 | $56,228 | $160,778 |
-| Training continuo | $34,000 | $35,700 | $37,485 | $107,185 |
-| Rotación y reemplazo (20% anual) | $0 | $510,000 | $535,500 | $1,045,500 |
-| **TOTAL OPCIÓN A** | **$3,485,000** | **$2,919,750** | **$3,065,738** | **$9,470,488** |
+| Salarios (17 × US$100K) | US$1,700,000 | US$1,785,000 | US$1,874,250 | US$5,359,250 |
+| Beneficios y costos indirectos (30%) | US$510,000 | US$535,500 | US$562,275 | US$1,607,775 |
+| Recruiting (17 × US$25K) | US$425,000 | US$0 | US$0 | US$425,000 |
+| Incorporación (17 × 8 weeks × US$5K) | US$680,000 | US$0 | US$0 | US$680,000 |
+| Equipamiento (17 × US$5K) | US$85,000 | US$0 | US$0 | US$85,000 |
+| Espacio físico (si aplica) | US$51,000 | US$53,550 | US$56,228 | US$160,778 |
+| Training continuo | US$34,000 | US$35,700 | US$37,485 | US$107,185 |
+| Rotación y reemplazo (20% anual) | US$0 | US$510,000 | US$535,500 | US$1,045,500 |
+| **TOTAL OPCIÓN A** | **US$3,485,000** | **US$2,919,750** | **US$3,065,738** | **US$9,470,488** |
 
 **Opción B: Adoptar IA Agéntica**
 
 | Concepto | Year 1 | Year 2 | Year 3 | Total 3 Años |
 |----------|--------|--------|--------|---------------|
-| Licencias herramientas | $19,800 | $20,790 | $21,830 | $62,420 |
-| Infraestructura (APIs, cloud) | $6,000 | $7,200 | $8,640 | $21,840 |
-| Training inicial | $30,000 | $0 | $0 | $30,000 |
-| Setup | $12,000 | $0 | $0 | $12,000 |
-| Mantenimiento | $5,000 | $6,000 | $7,200 | $18,200 |
-| Training continuo (nuevas funcionalidades) | $0 | $8,000 | $8,400 | $16,400 |
-| Actualización de herramientas | $0 | $5,000 | $5,000 | $10,000 |
-| **TOTAL OPCIÓN B** | **$72,800** | **$46,990** | **$51,070** | **$170,860** |
+| Licencias herramientas | US$19,800 | US$20,790 | US$21,830 | US$62,420 |
+| Infraestructura (APIs, cloud) | US$6,000 | US$7,200 | US$8,640 | US$21,840 |
+| Training inicial | US$30,000 | US$0 | US$0 | US$30,000 |
+| Setup | US$12,000 | US$0 | US$0 | US$12,000 |
+| Mantenimiento | US$5,000 | US$6,000 | US$7,200 | US$18,200 |
+| Training continuo (nuevas funcionalidades) | US$0 | US$8,000 | US$8,400 | US$16,400 |
+| Actualización de herramientas | US$0 | US$5,000 | US$5,000 | US$10,000 |
+| **TOTAL OPCIÓN B** | **US$72,800** | **US$46,990** | **US$51,070** | **US$170,860** |
 
 **Comparación de TCO 3 Años:**
 
-- **Opción A (Contratar):** $9,470,488
-- **Opción B (IA Agéntica):** $170,860
-- **Ahorro con IA:** $9,299,628
+- **Opción A (Contratar):** US$9,470,488
+- **Opción B (IA Agéntica):** US$170,860
+- **Ahorro con IA:** US$9,299,628
 - **IA es 98.2% más económica que contratar**
 
 ### 2. TCO Completo a 3 Años: Enterprise (2,000 Devs)
@@ -356,37 +356,37 @@ Muchas organizaciones cometen el error de comparar solo el costo de licencias de
 
 | Concepto | Year 1 | Year 2 | Year 3 | Total 3 Años |
 |----------|--------|--------|--------|---------------|
-| Salarios (500 × $135K) | $67,500,000 | $70,875,000 | $74,418,750 | $212,793,750 |
-| Beneficios y costos indirectos (40%) | $27,000,000 | $28,350,000 | $29,767,500 | $85,117,500 |
-| Recruiting (500 × $35K) | $17,500,000 | $3,500,000 | $3,675,000 | $24,675,000 |
-| Incorporación (500 × 12 weeks × $6.5K) | $39,000,000 | $7,800,000 | $8,190,000 | $54,990,000 |
-| Equipamiento (500 × $8K) | $4,000,000 | $800,000 | $840,000 | $5,640,000 |
-| Espacio (si on-premise) | $3,000,000 | $3,150,000 | $3,307,500 | $9,457,500 |
-| Training continuo | $2,000,000 | $2,100,000 | $2,205,000 | $6,305,000 |
-| Sobrecarga de gestión (10 nuevos managers) | $2,500,000 | $2,625,000 | $2,756,250 | $7,881,250 |
-| Rotación y reemplazo (15% anual) | $0 | $21,262,500 | $22,325,625 | $43,588,125 |
-| **TOTAL OPCIÓN A** | **$162,500,000** | **$140,462,500** | **$147,485,625** | **$450,448,125** |
+| Salarios (500 × US$135K) | US$67,500,000 | US$70,875,000 | US$74,418,750 | US$212,793,750 |
+| Beneficios y costos indirectos (40%) | US$27,000,000 | US$28,350,000 | US$29,767,500 | US$85,117,500 |
+| Recruiting (500 × US$35K) | US$17,500,000 | US$3,500,000 | US$3,675,000 | US$24,675,000 |
+| Incorporación (500 × 12 weeks × US$6.5K) | US$39,000,000 | US$7,800,000 | US$8,190,000 | US$54,990,000 |
+| Equipamiento (500 × US$8K) | US$4,000,000 | US$800,000 | US$840,000 | US$5,640,000 |
+| Espacio (si on-premise) | US$3,000,000 | US$3,150,000 | US$3,307,500 | US$9,457,500 |
+| Training continuo | US$2,000,000 | US$2,100,000 | US$2,205,000 | US$6,305,000 |
+| Sobrecarga de gestión (10 nuevos managers) | US$2,500,000 | US$2,625,000 | US$2,756,250 | US$7,881,250 |
+| Rotación y reemplazo (15% anual) | US$0 | US$21,262,500 | US$22,325,625 | US$43,588,125 |
+| **TOTAL OPCIÓN A** | **US$162,500,000** | **US$140,462,500** | **US$147,485,625** | **US$450,448,125** |
 
 **Opción B: Adoptar IA Agéntica**
 
 | Concepto | Year 1 | Year 2 | Year 3 | Total 3 Años |
 |----------|--------|--------|--------|---------------|
-| Licencias herramientas | $1,263,600 | $1,326,780 | $1,393,119 | $3,983,499 |
-| Infraestructura | $720,000 | $864,000 | $1,036,800 | $2,620,800 |
-| Training | $1,800,000 | $360,000 | $378,000 | $2,538,000 |
-| Setup y integración | $950,000 | $0 | $0 | $950,000 |
-| Change management | $650,000 | $130,000 | $136,500 | $916,500 |
-| Governance | $480,000 | $240,000 | $252,000 | $972,000 |
-| Mantenimiento (equipo de 5) | $850,000 | $892,500 | $937,125 | $2,679,625 |
-| Actualización y optimización | $0 | $200,000 | $210,000 | $410,000 |
-| Contingencia (10%) | $751,360 | $401,328 | $434,354 | $1,587,042 |
-| **TOTAL OPCIÓN B** | **$7,464,960** | **$4,414,608** | **$4,777,898** | **$16,657,466** |
+| Licencias herramientas | US$1,263,600 | US$1,326,780 | US$1,393,119 | US$3,983,499 |
+| Infraestructura | US$720,000 | US$864,000 | US$1,036,800 | US$2,620,800 |
+| Training | US$1,800,000 | US$360,000 | US$378,000 | US$2,538,000 |
+| Setup y integración | US$950,000 | US$0 | US$0 | US$950,000 |
+| Change management | US$650,000 | US$130,000 | US$136,500 | US$916,500 |
+| Governance | US$480,000 | US$240,000 | US$252,000 | US$972,000 |
+| Mantenimiento (equipo de 5) | US$850,000 | US$892,500 | US$937,125 | US$2,679,625 |
+| Actualización y optimización | US$0 | US$200,000 | US$210,000 | US$410,000 |
+| Contingencia (10%) | US$751,360 | US$401,328 | US$434,354 | US$1,587,042 |
+| **TOTAL OPCIÓN B** | **US$7,464,960** | **US$4,414,608** | **US$4,777,898** | **US$16,657,466** |
 
 **Comparación de TCO 3 Años:**
 
-- **Opción A (Contratar):** $450,448,125
-- **Opción B (IA Agéntica):** $16,657,466
-- **Ahorro con IA:** $433,790,659
+- **Opción A (Contratar):** US$450,448,125
+- **Opción B (IA Agéntica):** US$16,657,466
+- **Ahorro con IA:** US$433,790,659
 - **IA es 96.3% más económica que contratar**
 
 ### 3. Análisis de Costos Ocultos
@@ -398,9 +398,9 @@ Muchas organizaciones olvidan costos indirectos que hacen que el TCO real de con
 | **Dilución de cultura** | Más personas = más difícil mantener cultura | 10-15% reducción en productividad |
 | **Complejidad de comunicación** | Ley de Brooks: más gente = más sobrecarga | 5-10% sobrecarga comunicación |
 | **Ramp-up time** | Nuevos devs tardan 6-12 meses en ser fully productive | 50% productividad Year 1 |
-| **Tiempo de entrevistas** | Seniors gastando 5-10h/semana en entrevistas | $200K-$500K anual en oportunidad perdida |
+| **Tiempo de entrevistas** | Seniors gastando 5-10h/semana en entrevistas | US$200K-US$500K anual en oportunidad perdida |
 | **Sobrecarga de gestión** | 1 manager por 8 devs, managers cuestan más | 15-20% sobrecarga adicional |
-| **Tooling y licencias** | Más seats de Jira, GitHub, Slack, etc. | $2K-$5K/dev/año |
+| **Tooling y licencias** | Más seats de Jira, GitHub, Slack, etc. | US$2K-US$5K/dev/año |
 | **Office politics** | Más gente = más conflictos y fricción | Intangible pero real |
 
 **Conclusión:** El TCO real de contratar puede ser 20-30% mayor que el cálculo directo de salarios + costos indirectos.
@@ -459,8 +459,8 @@ El [Integration Tax]{.idx data-sub="costos ocultos"} es el costo real de incorpo
 | Concepto | ROI Bruto (habitual) | Ajuste por Integration Tax |
 |----------|---------------------|---------------------------|
 | **Productividad** | +35% | Context gathering: -8%, Code review adicional: -5%, Tests adicionales: -7%, Mantenimiento futuro (amortizado): -10% |
-| **Productividad neta** | -| **+5-15%** (no +35%) |
-| **Contrataciones evitadas** | $500K | **$150K-$300K** (no $500K) |
+| **Productividad neta** | - | **+5-15%** (no +35%) |
+| **Contrataciones evitadas** | US$500K | **US$150K-US$300K** (no US$500K) |
 
 ::: {.callout .alerta-critica}
 **El ROI Real vs. El ROI Reportado**
@@ -536,7 +536,7 @@ Pregunta incómoda: "¿Cuántas líneas de código generamos el último quarter?
 
 ---
 
-## PARTE III: IMPACTO EN MÉTRICAS DE NEGOCIO
+## Impacto en Métricas de Negocio
 
 ### 1. Reducción de *Time-to-Market*
 
@@ -556,11 +556,11 @@ Aunque Nubank no ha publicado datos específicos de IA agéntica, fuentes intern
 
 **Impacto financiero de reducción de *time-to-market*:**
 
-Supongamos una funcionalidad que genera $500K/mes en revenue:
+Supongamos una funcionalidad que genera US$500K/mes en revenue:
 
-- Lanzar 4 semanas antes = $500K extra
-- En un año con 10 funcionalidades similares = $5M extra
-- Costo de IA para equipo de 100 devs = ~$180K/año
+- Lanzar 4 semanas antes = US$500K extra
+- En un año con 10 funcionalidades similares = US$5M extra
+- Costo de IA para equipo de 100 devs = ~US$180K/año
 - **ROI de velocidad sola: 2,678%**
 
 ### 2. Mejora en Calidad y Reducción de Bugs
@@ -581,10 +581,10 @@ Análisis de 10,000 pull requests en repositorios internos de Microsoft:
 
 Para una empresa con 200 developers:
 
-- Costo promedio de bug en producción: $15,000 (downtime + fix + reputación)
+- Costo promedio de bug en producción: US$15,000 (downtime + fix + reputación)
 - Bugs anuales sin IA: 240
 - Bugs anuales con IA: 186 (-22%)
-- **Ahorro anual: 54 bugs × $15,000 = $810,000**
+- **Ahorro anual: 54 bugs × US$15,000 = US$810,000**
 
 ### 3. Reducción de Rotación de Talento
 
@@ -604,48 +604,48 @@ Razones por las que developers consideran cambiar de empleo (impacto en [retenci
 
 | Concepto | Costo |
 |----------|-------|
-| Recruiting (headhunter, anuncios) | $25,000 |
-| Tiempo de entrevistas (6 seniors × 8h × $150/h) | $7,200 |
-| Incorporación (8 semanas × $5K/week) | $40,000 |
-| Pérdida de productividad (12 semanas ramp-up) | $30,000 |
-| Conocimiento perdido | $50,000 |
-| **TOTAL COSTO DE REEMPLAZO** | **$152,200** |
+| Recruiting (headhunter, anuncios) | US$25,000 |
+| Tiempo de entrevistas (6 seniors × 8h × US$150/h) | US$7,200 |
+| Incorporación (8 semanas × US$5K/week) | US$40,000 |
+| Pérdida de productividad (12 semanas ramp-up) | US$30,000 |
+| Conocimiento perdido | US$50,000 |
+| **TOTAL COSTO DE REEMPLAZO** | **US$152,200** |
 
-Para un senior con conocimiento crítico, puede llegar a $250K-$500K.
+Para un senior con conocimiento crítico, puede llegar a US$250K-US$500K.
 
 **Si adoptar IA retiene solo 3 seniors al año:**
 
-- Ahorro: 3 × $250K = $750,000
-- Costo de IA para equipo: ~$180K
+- Ahorro: 3 × US$250K = US$750,000
+- Costo de IA para equipo: ~US$180K
 - **ROI de retención sola: 317%**
 
 ### 4. Impacto en Revenue Growth
 
 **Caso hipotético pero realista:**
 
-Startup SaaS B2B con producto de $50K ACV (Annual Contract Value):
+Startup SaaS B2B con producto de US$50K ACV (Annual Contract Value):
 
 **Escenario A: Sin IA agéntica**
 
 - Equipo de 30 developers
 - Lanza 6 funcionalidades mayores/año
 - Cada funcionalidad aumenta conversión en 3%
-- Revenue Year 1: $5M → Year 2: $5.9M (+18%)
+- Revenue Year 1: US$5M → Year 2: US$5.9M (+18%)
 
 **Escenario B: Con IA agéntica**
 
 - Mismo equipo de 30 developers
 - Lanza 9 funcionalidades mayores/año (+50% velocity)
 - Cada funcionalidad aumenta conversión en 3%
-- Revenue Year 1: $5M → Year 2: $6.4M (+28%)
+- Revenue Year 1: US$5M → Year 2: US$6.4M (+28%)
 
-**Diferencia de revenue:** $500K
-**Costo de IA:** $90K
+**Diferencia de revenue:** US$500K
+**Costo de IA:** US$90K
 **ROI de crecimiento:** 456%
 
 ---
 
-## PARTE IV: FRAMEWORKS DE JUSTIFICACIÓN FINANCIERA
+## Frameworks de Justificación Financiera
 
 ### 1. El Business Case de 1 Página para el CFO
 
@@ -722,7 +722,7 @@ La mayoría de CFOs no tienen tiempo (ni interés) para leer 20 páginas de aná
    - Payback period
 
 5. **Slides 9-10: Casos de Éxito Comparables**
-   - Microsoft: 35% código por IA, >$500M en productividad (Althoff, 2025)
+   - Microsoft: 35% código por IA, >US$500M en productividad (Althoff, 2025)
    - Goldman Sachs: 40% reducción de tiempo en desarrollo
    - Shopify: 46% aumento de velocity
 
@@ -747,8 +747,8 @@ La mayoría de CFOs no tienen tiempo (ni interés) para leer 20 páginas de aná
 > Si tu organización es una startup o busca inversión, los inversores evalúan empresas AI-native con métricas diferentes:
 >
 > 1. **No hables de la herramienta, habla del resultado.** En lugar de "Usamos Cursor y Copilot", diga: "Nuestro revenue per employee es 3x el promedio de la industria."
-> 2. **Compara con cohorts.** "Startups que llegaron a $10M ARR tardaron 36 meses y requirieron 50 empleados. Nosotros: 20 meses y 15 empleados."
-> 3. **Muestra ROI con números duros.** "Invertimos $94K/año en IA. El equivalente en personal hubiera sido $10.5M. ROI de 112x."
+> 2. **Compara con cohorts.** "Startups que llegaron a US$10M ARR tardaron 36 meses y requirieron 50 empleados. Nosotros: 20 meses y 15 empleados."
+> 3. **Muestra ROI con números duros.** "Invertimos US$94K/año en IA. El equivalente en personal hubiera sido US$10.5M. ROI de 112x."
 > 4. **Proyecta la ventaja competitiva.** "Con Serie A, 15 ingenieros con IA tendrán la producción de 50+. Nuestra competencia necesitará contratar 50 y esperar 9 meses. Tenemos ventana de 9-12 meses."
 >
 > La clave: inversores sofisticados no preguntan "¿usan IA?" sino "¿cuánta producción generan por dólar de nómina?"
@@ -774,7 +774,7 @@ Una vez aprobado, el CFO querrá ver ROI real. Definir métricas claras ANTES de
 
 ---
 
-## PARTE V: EL COSTO DE LA INACCIÓN
+## El Costo de la Inacción
 
 ### 1. Análisis de Oportunidad Perdida
 
@@ -784,21 +784,21 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Decisión A: Adoptar IA en Q1 2026**
 
-- Inversión Q1: $120K
+- Inversión Q1: US$120K
 - Productividad aumenta 35% durante 2026
-- Valor creado: $3.6M
+- Valor creado: US$3.6M
 - Lanza 12 funcionalidades mayores en 2026
 
 **Decisión B: Esperar hasta Q1 2027**
 
-- Inversión Q1 2027: $120K (mismo costo, o quizás menos)
+- Inversión Q1 2027: US$120K (mismo costo, o quizás menos)
 - Productividad aumenta 35% durante 2027
-- Valor creado en 2026: $0
+- Valor creado en 2026: US$0
 - Lanza 8 funcionalidades mayores en 2026 (33% menos)
 
 **Costo de oportunidad de esperar:**
 
-- Valor no creado en 2026: $3.6M
+- Valor no creado en 2026: US$3.6M
 - Funcionalidades no lanzadas: 4
 - Ventaja competitiva perdida: Competidores con IA lanzan 50% más funcionalidades
 - Potencial pérdida de market share: 5-10%
@@ -806,8 +806,8 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 **Para una startup buscando Series A:**
 
 - Menor traction = valuación 20-30% menor
-- En un round de $10M → Dilución adicional de 3-5%
-- **Costo de esperar: $500K - $1M en valor de equity**
+- En un round de US$10M → Dilución adicional de 3-5%
+- **Costo de esperar: US$500K - US$1M en valor de equity**
 
 ### 2. La Brecha Competitiva se Amplía Exponencialmente
 
@@ -832,15 +832,15 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Costo de perderlo:**
 
-- Reemplazo: $200K (recruiting + incorporación + ramp-up)
-- Conocimiento perdido: $300K (sistemas críticos, relaciones con clientes)
-- Moral del equipo: $100K (otros seniors cuestionando si deberían irse)
-- **Total: $600K**
+- Reemplazo: US$200K (recruiting + incorporación + ramp-up)
+- Conocimiento perdido: US$300K (sistemas críticos, relaciones con clientes)
+- Moral del equipo: US$100K (otros seniors cuestionando si deberían irse)
+- **Total: US$600K**
 
 **Si 3 seniors se van por falta de herramientas modernas:**
 
-- Costo: $1.8M
-- vs. Costo de adoptar IA: $150K
+- Costo: US$1.8M
+- vs. Costo de adoptar IA: US$150K
 - **Ratio: 12:1**
 
 ### 4. Framework de Decisión: ¿Cuándo Esperar vs. Cuándo Actuar?
@@ -862,7 +862,7 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 ---
 
-## PARTE VI: CASOS DE ÉXITO CON DATOS PÚBLICOS
+## Casos de Éxito con Datos Públicos
 
 ### 1. GitHub (Microsoft)
 
@@ -879,9 +879,9 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Estimación de valor:**
 
-- 3,000 devs × $200K salario promedio = $600M costo anual
-- 46% ganancia = $276M valor creado
-- Costo de Copilot interno: ~$5M (desarrollo + infra)
+- 3,000 devs × US$200K salario promedio = US$600M costo anual
+- 46% ganancia = US$276M valor creado
+- Costo de Copilot interno: ~US$5M (desarrollo + infra)
 - **ROI estimado: 5,420%**
 
 ### 2. Shopify
@@ -899,9 +899,9 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Estimación de valor:**
 
-- 1,200 devs × $150K = $180M costo anual
-- 46% ganancia = $83M valor creado anualmente
-- Costo Copilot: ~$1.2M/año
+- 1,200 devs × US$150K = US$180M costo anual
+- 46% ganancia = US$83M valor creado anualmente
+- Costo Copilot: ~US$1.2M/año
 - **ROI estimado: 6,817%**
 
 ### 3. Duolingo
@@ -919,8 +919,8 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Estimación de valor:**
 
-- Reasignación de 15 personas (~$2M en salarios) a mayor valor
-- Velocidad de content: ~$1.5M en valor anual
+- Reasignación de 15 personas (~US$2M en salarios) a mayor valor
+- Velocidad de content: ~US$1.5M en valor anual
 - **ROI estimado: ~2,500%**
 
 ### 4. Goldman Sachs
@@ -937,9 +937,9 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 
 **Estimación de valor:**
 
-- 9,000 devs × $250K = $2.25B costo anual
-- 40% ganancia = $900M valor creado
-- Inversión estimada: $50M (herramientas + infra enterprise)
+- 9,000 devs × US$250K = US$2.25B costo anual
+- 40% ganancia = US$900M valor creado
+- Inversión estimada: US$50M (herramientas + infra enterprise)
 - **ROI estimado: 1,700%**
 
 > **Dato verificado:**
@@ -973,7 +973,7 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 >
 > - **Métrica clave 1**: ROI de IA agéntica entre 250-650% en el primer año con costos ocultos incluidos; payback period real de 1.5-3 meses
 > - **Métrica clave 2**: TCO real es 30-50% menor que contratar personal equivalente después del primer año; 78% de CTOs reportan que IA ayudó a evitar contrataciones (Gartner, 2024)
-> - **Métrica clave 3**: Inversión recomendada: 3-5% del costo de ingeniería para obtener 20-35% más capacidad; un equipo de 50 devs puede ahorrar $970K-$2.4M/año
+> - **Métrica clave 3**: Inversión recomendada: 3-5% del costo de ingeniería para obtener 20-35% más capacidad; un equipo de 50 devs puede ahorrar US$970K-US$2.4M/año
 > - **Framework principal**: Modelo de ROI de 3 escenarios (pesimista, base, optimista) y Análisis de TCO con costos ocultos (ver este capítulo y Apéndice B, Framework #12)
 > - **Acción inmediata**: Calcula tu costo total de ingeniería (salarios + costos indirectos + recruiting + rotación) y modela el impacto de un 35% más de capacidad al 2% de inversión adicional
 
@@ -1028,7 +1028,7 @@ Muchas organizaciones caen en la trampa de "esperemos a que madure". Analicemos 
 - Los costos de herramientas son precios de lista públicos (descuentos por volumen pueden reducirlos 15-30%)
 - Los valores de "costo de reemplazo" están basados en estudios de SHRM y LinkedIn Talent Solutions
 
-[^ch9-cost1]: La estimación de $15,000 asume que la deuda técnica por clonación se gestiona activamente con refactoring trimestral. Sin gestión activa, este costo puede escalar a $50-100K en Year 2-3. El modelo de sensibilidad (escenario pesimista) captura parcialmente este riesgo con costos ocultos +20%.
+[^ch9-cost1]: La estimación de US$15,000 asume que la deuda técnica por clonación se gestiona activamente con refactoring trimestral. Sin gestión activa, este costo puede escalar a US$50-100K en Year 2-3. El modelo de sensibilidad (escenario pesimista) captura parcialmente este riesgo con costos ocultos +20%.
 
 ---
 

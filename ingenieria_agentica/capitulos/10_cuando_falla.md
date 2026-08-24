@@ -46,7 +46,7 @@ Los patrones documentados por Gartner y BCG en proyectos cancelados son consiste
 
 ### El Costo Real
 
-El costo promedio de un proyecto de IA cancelado no es solo la licencia ($19-39/usuario/mes). Es el [costo de oportunidad]{.idx data-sub="análisis de inversión"}, la rotación de talento (seniors que renuncian ante mandatos no consultados), y la moral destruida. Gartner estima que el costo total de fracaso para un equipo de 30-50 desarrolladores oscila entre **$200K-$500K** cuando se incluyen costos indirectos.
+El costo promedio de un proyecto de IA cancelado no es solo la licencia ($19-39/usuario/mes). Es el [costo de oportunidad]{.idx data-sub="análisis de inversión"}, la rotación de talento (seniors que renuncian ante mandatos no consultados), y la moral destruida. Gartner estima que el costo total de fracaso para un equipo de 30-50 desarrolladores oscila entre **US$200K-US$500K** cuando se incluyen costos indirectos.
 
 > **Lección para líderes:** Cuando un ejecutivo dice "quiero IA en 30 días," tu trabajo es traducir esa energía en un plan viable, no ejecutar un mandato irracional. La conversación correcta es: "Entiendo la urgencia. Dame 90 días para un piloto con 5 voluntarios, métricas claras, y una recomendación basada en datos." El Capítulo 12 presenta una hoja de ruta de adopción por fases diseñado exactamente para esto.
 
@@ -207,7 +207,7 @@ Antes de escalar tu adopción de IA, revisa estas señales de alerta:
 >
 > - **Métrica clave 1**: 40% de proyectos de IA agéntica serán cancelados antes de 2027 (Gartner); solo 26% de organizaciones reporta valor significativo (BCG, 2024)
 > - **Métrica clave 2**: Código clonado aumentó 4x en repos con alta adopción de IA; 48% del código generado contiene vulnerabilidades (GitClear/Snyk, 2024)
-> - **Métrica clave 3**: Costo total de fracaso para un equipo de 30-50 devs: $200K-$500K incluyendo costos indirectos (Gartner)
+> - **Métrica clave 3**: Costo total de fracaso para un equipo de 30-50 devs: US$200K-US$500K incluyendo costos indirectos (Gartner)
 > - **Framework principal**: Los 5 Patrones de Fracaso (FOMO, Deuda Técnica Silenciosa, Skill Decay, Mandato sin Consulta, Year 1 vs. Year 2) y el framework Crawl/Walk/Run como antídoto (ver Capítulo 12)
 > - **Acción inmediata**: Mide calidad de código (clonación, complejidad, cobertura de tests) esta semana, no solo cantidad; si no tienes baseline de calidad, ese es tu primer paso
 

@@ -17,7 +17,7 @@
 > - **Fuente:** "AI Transformation Readiness Study" (McKinsey Digital, 2024) basado en 340 organizaciones enterprise que intentaron adoptar IA generativa o agéntica en 2023-2024. Definición de "fracaso": abandono del proyecto antes de 12 meses o ROI negativo medido por la propia organización.
 > - **Qué mide:** Tasa de fracaso de iniciativas de adopción "big bang" (definidas como rollout a >50% de la organización en los primeros 90 días) vs. adopción incremental (piloto <20% de usuarios en primeros 6 meses, luego expansión). No incluye proyectos abandonados por razones externas (ej: recortes presupuestarios, cambio de liderazgo).
 > - **Limitación:** La definición de "fracaso" es auto-reportada por las organizaciones; algunas pueden ser reacias a admitir fracaso, sesgando los datos a la baja. El estudio se enfoca en organizaciones de 1,000+ empleados; startups y empresas más pequeñas pueden tener diferentes tasas de éxito. No diferencia entre tipos de IA (generativa vs. agéntica específicamente).
-> - **Implicación:** Para CTOs y VPs de ingeniería, este dato es una advertencia clara: el instinto de "mover rápido" con IA puede ser contraproducente. La estrategia más segura es empezar con un piloto de 3-6 meses en 1-2 equipos, aprender de errores en un contexto controlado, establecer governance y procesos, y luego escalar. Sí, esto toma más tiempo, pero reduce drásticamente el riesgo de gastar $500K+ en licencias para luego descubrir que tu organización no estaba lista. El costo de un piloto fallido es $20-50K; el costo de un rollout global fallido es $500K-$2M.
+> - **Implicación:** Para CTOs y VPs de ingeniería, este dato es una advertencia clara: el instinto de "mover rápido" con IA puede ser contraproducente. La estrategia más segura es empezar con un piloto de 3-6 meses en 1-2 equipos, aprender de errores en un contexto controlado, establecer governance y procesos, y luego escalar. Sí, esto toma más tiempo, pero reduce drásticamente el riesgo de gastar US$500K+ en licencias para luego descubrir que tu organización no estaba lista. El costo de un piloto fallido es US$20-50K; el costo de un rollout global fallido es US$500K-US$2M.
 
 ---
 
@@ -160,7 +160,7 @@ Los primeros 3 meses son críticos para generar momentum. Necesitas [quick wins]
 
 ### Framework de Priorización de Casos de Uso
 
-**Matriz ROI vs. Riesgo:**
+**Matriz Beneficio vs. Complejidad de Adopción:**
 
 ```{=latex}
 \begin{center}
@@ -230,7 +230,7 @@ Los primeros 3 meses son críticos para generar momentum. Necesitas [quick wins]
 
 - Herramienta: $20-40/mes por usuario
 - Tiempo: ~10 horas de champion
-- **ROI:** Si ahorras 2 horas/mes × 10 ingenieros × $75/hora = $1,500/mes vs. $200/mes de costo → ROI 7.5x
+- **ROI:** Si ahorras 2 horas/mes × 10 ingenieros × US$75/hora = US$1,500/mes vs. US$200/mes de costo → ROI 7.5x
 
 ### Quick Win #2: Generación de Tests Unitarios
 
@@ -288,7 +288,7 @@ Una empresa e-commerce en México usó IA para generar [tests unitarios]{.idx da
 - Coverage subió de 15% → 72%
 - Encontraron 8 bugs críticos que estaban latentes
 - Ahorraron ~160 horas de trabajo manual
-- Costo: $800 USD en APIs de IA → ROI 12x
+- Costo: US$800 en APIs de IA → ROI 12x
 
 ### Quick Win #3: Refactoring de Código Legacy
 
@@ -384,20 +384,20 @@ Después de Quick Wins exitosos en Mes 0-3, estás listo para expandir siguiendo
 
 | Mes | Fase | Inversión | Acumulado | Qué estás pagando |
 |:---:|------|----------:|----------:|---------------------|
-| 1 | CRAWL | $8,500 | $8,500 | 5 licencias piloto + 1 workshop de training |
-| 2 | CRAWL | $3,200 | $11,700 | 5 licencias + API costs del piloto |
-| 3 | CRAWL | $3,200 | $14,900 | 5 licencias + setup de SAST (SonarQube) |
-| 4 | WALK | $12,500 | $27,400 | 20 licencias + training expandido |
-| 5 | WALK | $5,800 | $33,200 | 20 licencias + Cursor Pro para 5 seniors |
-| 6 | WALK | $5,800 | $39,000 | 20 licencias + primeras métricas/dashboards |
-| 7 | WALK | $8,100 | $47,100 | 35 licencias + ajustes de governance |
-| 8 | WALK | $8,100 | $55,200 | 35 licencias + segundo workshop |
-| 9 | WALK | $8,100 | $63,300 | 35 licencias |
-| 10 | RUN | $12,300 | $75,600 | 50 licencias (full org) |
-| 11 | RUN | $10,300 | $85,900 | 50 licencias + optimización |
-| 12 | RUN | $10,300 | $96,200 | 50 licencias |
+| 1 | CRAWL | US$8,500 | US$8,500 | 5 licencias piloto + 1 workshop de training |
+| 2 | CRAWL | US$3,200 | US$11,700 | 5 licencias + API costs del piloto |
+| 3 | CRAWL | US$3,200 | US$14,900 | 5 licencias + setup de SAST (SonarQube) |
+| 4 | WALK | US$12,500 | US$27,400 | 20 licencias + training expandido |
+| 5 | WALK | US$5,800 | US$33,200 | 20 licencias + Cursor Pro para 5 seniors |
+| 6 | WALK | US$5,800 | US$39,000 | 20 licencias + primeras métricas/dashboards |
+| 7 | WALK | US$8,100 | US$47,100 | 35 licencias + ajustes de governance |
+| 8 | WALK | US$8,100 | US$55,200 | 35 licencias + segundo workshop |
+| 9 | WALK | US$8,100 | US$63,300 | 35 licencias |
+| 10 | RUN | US$12,300 | US$75,600 | 50 licencias (full org) |
+| 11 | RUN | US$10,300 | US$85,900 | 50 licencias + optimización |
+| 12 | RUN | US$10,300 | US$96,200 | 50 licencias |
 
-**Total Year 1: ~$96K** (incluye training, SAST, licencias escaladas). El grueso del gasto empieza en Mes 4; los primeros 3 meses cuestan <$15K, lo suficiente para validar antes de comprometer presupuesto mayor. Para el cálculo de ROI completo con estos números, ver Capítulo 9.
+**Total Year 1: ~US$96K** (incluye training, SAST, licencias escaladas). El grueso del gasto empieza en Mes 4; los primeros 3 meses cuestan <US$15K, lo suficiente para validar antes de comprometer presupuesto mayor. Para el cálculo de ROI completo con estos números, ver Capítulo 9.
 
 ### Hoja de Ruta Detallada: Meses 4-9 (WALK)
 
@@ -433,7 +433,7 @@ Después de Quick Wins exitosos en Mes 0-3, estás listo para expandir siguiendo
    - **¿Qué código requiere review humano 100%?** (ej: auth, pagos, datos sensibles)
    - **¿Qué código puede auto-mergearse?** (ej: docs, tests si pasan CI/CD)
    - **¿Quién aprueba nuevos casos de uso de IA?** (ej: Architecture Review Board)
-   - **¿Cuál es el presupuesto mensual de APIs de IA?** (ej: $500-$2K/mes)
+   - **¿Cuál es el presupuesto mensual de APIs de IA?** (ej: US$500-US$2K/mes)
    - **¿Qué hacer si IA genera código problemático?** (post-mortem process)
 
 #### Mes 5-6: Generación de Código para Features Nuevas
@@ -527,20 +527,20 @@ Después de Quick Wins exitosos en Mes 0-3, estás listo para expandir siguiendo
    >
    > | Concepto | Monto |
    > |----------|-------|
-   > | Herramientas y APIs | $15,000 |
-   > | Tiempo de equipo (20% de 10 ingenieros) | $90,000 |
-   > | Training y consultores | $10,000 |
-   > | **TOTAL** | **$115,000** |
+   > | Herramientas y APIs | US$15,000 |
+   > | Tiempo de equipo (20% de 10 ingenieros) | US$90,000 |
+   > | Training y consultores | US$10,000 |
+   > | **TOTAL** | **US$115,000** |
    >
    > **Beneficios acumulados:**
    >
    > - Velocidad de desarrollo: +45% promedio
    > - Features entregadas: 28 (vs. 19 esperadas sin IA)
-   > - Ahorro en contratación: $200,000 (evitamos contratar 2 posiciones)
+   > - Ahorro en contratación: US$200,000 (evitamos contratar 2 posiciones)
    > - Reducción de bugs: 12% menos defectos post-lanzamiento
    > - Developer satisfaction: NPS +38
    >
-   > **ROI:** ($200K - $115K) / $115K = **74% en 9 meses**
+   > **ROI:** (US$200K - US$115K) / US$115K = **74% en 9 meses**
    >
    > **Proyección anual:** Con adopción completa (RUN), proyectamos ROI >200% en año 1
 
@@ -558,7 +558,7 @@ Después de Quick Wins exitosos en Mes 0-3, estás listo para expandir siguiendo
 3. **Planificación de RUN (Semana 4):**
    - Expandir a todos los equipos (timeline: Mes 10-12)
    - Formalizar roles (Prompt Engineers, AI Auditors, etc.)
-   - Presupuesto anual de IA ($50K-$150K según tamaño)
+   - Presupuesto anual de IA (US$50K-US$150K según tamaño)
 
 > **Para Tu Próxima Reunión de Liderazgo:**
 > Mes 9 es momento de decisión crítica. Presenta ROI claro al board. Si es positivo, pide presupuesto para escalar. Si no es positivo, analiza por qué (¿procesos? ¿cultura? ¿casos de uso incorrectos?) y ajusta antes de escalar.
@@ -636,7 +636,7 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 | ***time-to-market*:** Días desde idea → prod | 42 | 22 | -48% |
 | **Defect Rate:** Bugs críticos/mes | 18 | 14 | -22% |
 | **Developer Satisfaction:** eNPS | +18 | +41 | +128% |
-| **Costo por feature:** Costo total / features entregadas | $12,000 | $7,200 | -40% |
+| **Costo por feature:** Costo total / features entregadas | US$12,000 | US$7,200 | -40% |
 | **Retention de talento:** Rotación anual de devs | 22% | 14% | -36% |
 
 **ROI Total (18 meses):**
@@ -644,20 +644,20 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 | Concepto | Monto |
 |----------|-------|
 | **Inversión** | |
-| Herramientas (100 licencias × $30/mes × 18) | $54,000 |
-| APIs de IA (agentes autónomos) | $90,000 |
-| Training y change management | $40,000 |
-| **Total Inversión** | **$184,000** |
+| Herramientas (100 licencias × US$30/mes × 18) | US$54,000 |
+| APIs de IA (agentes autónomos) | US$90,000 |
+| Training y change management | US$40,000 |
+| **Total Inversión** | **US$184,000** |
 | **Beneficios acumulados** | |
-| Ahorro en contratación (evitamos 8 posiciones) | $800,000 |
-| Revenue adicional (lanzamos 15 features más) | $450,000 |
-| Ahorro en reducción de bugs (menos incidents) | $120,000 |
-| **Total Beneficios** | **$1,370,000** |
+| Ahorro en contratación (evitamos 8 posiciones) | US$800,000 |
+| Revenue adicional (lanzamos 15 features más) | US$450,000 |
+| Ahorro en reducción de bugs (menos incidents) | US$120,000 |
+| **Total Beneficios** | **US$1,370,000** |
 | **ROI** | **645%** |
 
 **Presentación al board:**
 
-> "En 18 meses, invertimos $184K en IA agéntica. Esto nos generó $1.37M en valor. Nuestro ROI es 6.5x. Adicionalmente, aumentamos developer satisfaction de +18 a +41, reduciendo rotación 36%. La IA no solo nos hizo más productivos; nos hizo más atractivos para talento top."
+> "En 18 meses, invertimos US$184K en IA agéntica. Esto nos generó US$1.37M en valor. Nuestro ROI es 6.5x. Adicionalmente, aumentamos developer satisfaction de +18 a +41, reduciendo rotación 36%. La IA no solo nos hizo más productivos; nos hizo más atractivos para talento top."
 
 ---
 
@@ -781,10 +781,10 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 
 - *time-to-market*: 6-8 semanas por feature (competidores: 3-4 semanas)
 - Lista de pendientes creciente: 47 features en lista de pendientes, solo lanzamos 12/año
-- Costo de desarrollo: $12K/feature promedio
+- Costo de desarrollo: US$12K/feature promedio
 - Rotación de talento: 22% anual (industria: 15%)
 
-**Si no actuamos:** Perderemos ventana competitiva, necesitaríamos contratar 10+ ingenieros ($1M+/año), y arriesgamos perder talento top ante competidores AI-first.
+**Si no actuamos:** Perderemos ventana competitiva, necesitaríamos contratar 10+ ingenieros (US$1M+/año), y arriesgamos perder talento top ante competidores AI-first.
 
 #### Slide 3: La Solución. IA Agéntica
 
@@ -814,20 +814,20 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 
 | Fase | Período | Equipos | Foco | Inversión |
 |------|---------|---------|------|-----------|
-| **Crawl** | Mes 0-3 | 1-2 equipos | Documentación + Tests | $15K |
-| **Walk** | Mes 4-9 | 3-5 equipos | Code generation | $50K |
-| **Run** | Mes 10-18 | Todos los equipos | Equipos híbridos | $120K |
-| | | | **Total 18 meses** | **$185K** |
+| **Crawl** | Mes 0-3 | 1-2 equipos | Documentación + Tests | US$15K |
+| **Walk** | Mes 4-9 | 3-5 equipos | Code generation | US$50K |
+| **Run** | Mes 10-18 | Todos los equipos | Equipos híbridos | US$120K |
+| | | | **Total 18 meses** | **US$185K** |
 
 #### Slide 6: ROI Proyectado
 
 | Concepto | Monto |
 |----------|-------|
-| **Inversión** | $185,000 (18 meses) |
-| Ahorro en personal (evitamos 8 ingenieros) | $800K |
-| Revenue adicional (15 features adicionales) | $450K |
-| Reducción de bugs (menos incidents) | $120K |
-| **Beneficio Total** | **$1.37M** |
+| **Inversión** | US$185,000 (18 meses) |
+| Ahorro en personal (evitamos 8 ingenieros) | US$800K |
+| Revenue adicional (15 features adicionales) | US$450K |
+| Reducción de bugs (menos incidents) | US$120K |
+| **Beneficio Total** | **US$1.37M** |
 | **ROI** | **643%** |
 | **Payback Period** | **4 meses** |
 
@@ -854,7 +854,7 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 
 **Oportunidad:** Posicionarnos como líder en IA → Atraer mejor talento → Reducir rotación.
 
-**Impacto financiero:** Reducir rotación de 22% a 14% = ahorro de ~$200K/año en reclutamiento.
+**Impacto financiero:** Reducir rotación de 22% a 14% = ahorro de ~US$200K/año en reclutamiento.
 
 #### Slide 9: Gestión de Riesgos
 
@@ -869,9 +869,9 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 
 | Opción | Costo | Resultado | Riesgo |
 |--------|-------|-----------|--------|
-| **A: No hacer nada** | $0 | Caemos detrás de competencia, perdemos talento | ALTO |
-| **B: Contratar más personal** | $800K/año (8 ingenieros) | Más productividad, pero escalable solo con $ | MEDIO |
-| **C: Adoptar IA (Recomendado)** | $185K (18 meses) | 2-3x productividad sin escalar personal | BAJO |
+| **A: No hacer nada** | US$0 | Caemos detrás de competencia, perdemos talento | ALTO |
+| **B: Contratar más personal** | US$800K/año (8 ingenieros) | Más productividad, pero escalable solo con $ | MEDIO |
+| **C: Adoptar IA (Recomendado)** | US$185K (18 meses) | 2-3x productividad sin escalar personal | BAJO |
 
 #### Slide 11: Timeline y Milestones
 
@@ -899,16 +899,16 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 
 | Categoría | Concepto | Monto |
 |-----------|----------|-------|
-| **Herramientas** | GitHub Copilot/Cursor (100 licencias) | $54,000 |
-| | APIs de IA (agentes autónomos) | $90,000 |
-| **Personas** | Training (100 personas × 8 hrs) | $25,000 |
-| | Consultores externos (arquitectura) | $15,000 |
-| **Total Año 1** | **(18 meses)** | **$184,000** |
-| **Años subsecuentes** | Herramientas + mantenimiento | ~$92K/año |
+| **Herramientas** | GitHub Copilot/Cursor (100 licencias) | US$54,000 |
+| | APIs de IA (agentes autónomos) | US$90,000 |
+| **Personas** | Training (100 personas × 8 hrs) | US$25,000 |
+| | Consultores externos (arquitectura) | US$15,000 |
+| **Total Año 1** | **(18 meses)** | **US$184,000** |
+| **Años subsecuentes** | Herramientas + mantenimiento | ~US$92K/año |
 
 #### Slide 14: Pido Aprobación Para
 
-1. **Presupuesto:** $185K para 18 meses
+1. **Presupuesto:** US$185K para 18 meses
 2. **Recursos:** 20% del tiempo de 10 ingenieros (Mes 0-9)
 3. **Autorización:** Contratar herramientas de IA
 4. **Compromiso:** Reportar progreso cada 3 meses al board
@@ -936,7 +936,7 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 #### Objeción 2: "¿Esto no va a hacer que despidamos gente?"
 
 **Respuesta:**
-> "No. Nuestro plan NO incluye reducción de personal. Usaremos IA para aumentar la producción del equipo actual, no para reemplazarlo. Evitaremos tener que contratar 8 ingenieros adicionales ($800K/año), pero nadie perderá su trabajo. Los roles evolucionarán: menos código boilerplate, más arquitectura y decisiones estratégicas."
+> "No. Nuestro plan NO incluye reducción de personal. Usaremos IA para aumentar la producción del equipo actual, no para reemplazarlo. Evitaremos tener que contratar 8 ingenieros adicionales (US$800K/año), pero nadie perderá su trabajo. Los roles evolucionarán: menos código boilerplate, más arquitectura y decisiones estratégicas."
 
 > **Herramienta estratégica: La Garantía de No Despidos**
 >
@@ -950,10 +950,10 @@ Ahora que validaste ROI, es momento de [escalar]{.idx data-sub="adopción"} a to
 >
 > Esta garantía transforma la conversación de "la IA nos va a reemplazar" a "la IA nos va a hacer más valiosos", y lo respalda con un compromiso verificable.
 
-#### Objeción 3: "$185K es mucho dinero para experimentar."
+#### Objeción 3: "US$185K es mucho dinero para experimentar."
 
 **Respuesta:**
-> "Comparado con qué? Contratar 1 ingeniero senior cuesta $100K/año. Por $185K en 18 meses, obtenemos productividad equivalente a 8 ingenieros: ROI de 6.5x. Y tenemos múltiples GO/NO-GO gates: Mes 3 (pilotos), Mes 9 (expansión). Si no funciona en Mes 9, cortamos antes de gastar los $185K completos."
+> "Comparado con qué? Contratar 1 ingeniero senior cuesta US$100K/año. Por US$185K en 18 meses, obtenemos productividad equivalente a 8 ingenieros: ROI de 6.5x. Y tenemos múltiples GO/NO-GO gates: Mes 3 (pilotos), Mes 9 (expansión). Si no funciona en Mes 9, cortamos antes de gastar los US$185K completos."
 
 #### Objeción 4: "¿Qué pasa con seguridad de datos?"
 
@@ -991,7 +991,7 @@ Si decides posponer IA agéntica, el [costo de la inacción]{.idx data-sub="busi
 
 **El costo de actuar:**
 
-- Inversión de $150K-$300K en 18 meses (según tamaño de org)
+- Inversión de US$150K-US$300K en 18 meses (según tamaño de org)
 - 20% del tiempo del equipo por 6-9 meses
 - Riesgo controlado de errores en pilotos
 
@@ -1045,7 +1045,7 @@ Completa el [Scorecard de Readiness]{.idx data-sub="frameworks de evaluación"} 
 
 3. **Timeline:** ¿Estamos dispuestos a invertir 18 meses en esto, o queremos resultados en 3 meses? (Si es lo segundo, expectativas son irreales)
 
-4. **Presupuesto:** ¿Tenemos $150K-$300K disponibles? Si no, ¿podemos empezar con $30K en pilotos y pedir más presupuesto en Mes 3 basándose en resultados?
+4. **Presupuesto:** ¿Tenemos US$150K-US$300K disponibles? Si no, ¿podemos empezar con US$30K en pilotos y pedir más presupuesto en Mes 3 basándose en resultados?
 
 5. **Cultura:** ¿Nuestro equipo está emocionado, neutral, o resistente a IA? ¿Qué plan de comunicación necesitamos?
 

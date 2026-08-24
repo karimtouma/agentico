@@ -338,9 +338,9 @@ Imagina que un desarrollador define la estructura de un "Usuario" con tres campo
 
 **Costo:**
 
-- Licencias: 2,000 × $20/mes × 12 = $480K/año
-- Training y enablement: $200K one-time
-- Total año 1: $680K
+- Licencias: 2,000 × $20/mes × 12 = US$480K/año
+- Training y enablement: US$200K one-time
+- Total año 1: US$680K
 
 **Ahorro:**
 
@@ -615,7 +615,7 @@ El siguiente modelo describe cómo un agente autónomo procesa una solicitud de 
 
 **Razón 3: Costo**
 
-- $500-1000/mes por usuario es 10-50x más caro que Copilot
+- US$500-1000/mes por usuario es 10-50x más caro que Copilot
 - ROI no está comprobado todavía a escala
 
 **Razón 4: Change management**
@@ -659,8 +659,8 @@ El siguiente modelo describe cómo un agente autónomo procesa una solicitud de 
 
 **ROI:**
 
-- Costo: 10 devs × $40/mes × 6 = $2,400
-- Valor: Lanzar MVP 2.5 meses antes = capturar mercado antes que competitor = $500K+ en revenue adelantado
+- Costo: 10 devs × $40/mes × 6 = US$2,400
+- Valor: Lanzar MVP 2.5 meses antes = capturar mercado antes que competitor = US$500K+ en revenue adelantado
 - **ROI: Incalculable (el valor de lanzar primero es mucho mayor que el ahorro de costo)**
 
 **Lecciones aprendidas:**
@@ -750,7 +750,7 @@ No todas las organizaciones deben estar en Ola 3. Usa esta guía:
 | **Tamaño de equipo** | <5 devs | 5-500 devs | 10-100 devs (early adopters) |
 | **Madurez del proceso** | Ad-hoc | Tiene CI/CD, code review | Procesos muy maduros con alta cobertura de tests |
 | **Tolerancia a riesgo** | N/A | Media | Alta |
-| **Presupuesto de tools** | $0-100/mes | $500-10K/mes | $5K-100K/mes |
+| **Presupuesto de tools** | $0-100/mes | US$500-10K/mes | US$5K-100K/mes |
 | **Velocidad es crítica** | No | Sí | Crítico (ej: startup pre-PMF) |
 | **Codebase** | Cualquiera | <1M líneas | <500K líneas (Ola 3 struggle con muy grandes) |
 | **Stack tech** | Cualquiera | Lenguajes populares (JS, Python, Java) | Idem |
@@ -854,7 +854,7 @@ Un modelo con "7 mil millones de parámetros" (7B) tiene 7 mil millones de núme
 | Llama 3 70B (self-hosted) | ~$0.50-1.00 | ~$0.50-1.00 |
 | Mistral 7B (self-hosted) | ~$0.05-0.10 | ~$0.05-0.10 |
 
-> **Para Tu Próxima Reunión de Presupuesto:** Si tu equipo de 50 developers usa un agente que procesa 100K tokens/día cada uno, eso es 5M tokens/día. Con Claude Sonnet 4.5, serían ~$15K-75K/mes. Con un modelo self-hosted, podrías reducir a $5K-15K/mes. La diferencia en calidad puede justificar el costo extra; o no, dependiendo del caso de uso.
+> **Para Tu Próxima Reunión de Presupuesto:** Si tu equipo de 50 developers usa un agente que procesa 100K tokens/día cada uno, eso es 5M tokens/día. Con Claude Sonnet 4.5, serían ~US$15K-75K/mes. Con un modelo self-hosted, podrías reducir a US$5K-15K/mes. La diferencia en calidad puede justificar el costo extra; o no, dependiendo del caso de uso.
 
 ### Context Window: Cuánto Puede "Recordar"
 
@@ -935,8 +935,15 @@ Los modelos normalmente usan números de 16 o 32 bits para cada parámetro. Quan
 | **INT8** | ~50% | <1-2% | Producción estándar |
 | **INT4** | ~75% | 2-5% | Recursos limitados, tareas simples |
 | **GGUF** (formatos) | Variable | Variable | Laptops, Macs, CPUs |
+| **MLX/Metal** | Similar a INT4/INT8 | Similar | Apple Silicon (M1-M4), optimizado para macOS |
 
-**Lo que importa para ti:** Quantización permite correr modelos potentes en hardware más barato. Un Llama 70B quantizado a INT4 puede correr en una Mac Studio en lugar de requerir un servidor con 8 GPUs.
+**Lo que importa para ti:** Quantización permite correr modelos potentes en hardware más barato. Un Llama 70B quantizado a INT4 puede correr en una Mac Studio en lugar de requerir un servidor con 8 GPUs. El formato MLX, desarrollado por Apple, está optimizado específicamente para el chip Metal de Apple Silicon y se ha convertido en el estándar para inferencia local en macOS.
+
+**Pero la pérdida de calidad no es tan simple como parece.** La tabla anterior muestra promedios, pero la degradación real es no lineal y se manifiesta de formas inesperadas:
+
+- **Alucinaciones aumentadas:** Los modelos quantizados a INT4 muestran mayor tendencia a generar información plausible pero incorrecta. En tareas simples (resumen, traducción) la diferencia es mínima. En razonamiento complejo o generación de código, las alucinaciones pueden aumentar significativamente.
+- **Propagación de errores en cadenas agénticas:** En un chat de una sola interacción, un 2-5% de degradación es tolerable. Pero en una [arquitectura agéntica]{.idx data-sub="quantización"} donde un agente toma una decisión, otro la interpreta y un tercero actúa sobre ella, los errores se propagan y amplifican. Un error sutil en el paso 1 puede convertirse en un fallo grave en el paso 5. Para flujos agénticos multi-paso, la recomendación es usar modelos de mayor precisión (FP16 o INT8) en los nodos de decisión crítica, y reservar INT4 solo para tareas de baja complejidad.
+- **Degradación asimétrica:** La pérdida de calidad no afecta todas las tareas por igual. Tareas que requieren seguir instrucciones precisas, razonamiento matemático o generación de código con lógica compleja sufren más que tareas de texto general.
 
 #### Mixture of Experts (MoE): Especialistas Colaborando
 
@@ -957,30 +964,66 @@ Los modelos normalmente usan números de 16 o 32 bits para cada parámetro. Quan
 
 **Lo que importa para ti:** MoE permite modelos mucho más capaces (más parámetros totales) sin el costo proporcional de compute. Es por esto que los modelos más avanzados de 2025-2026 usan MoE, incluyendo GPT-4 (se especula) y la mayoría de modelos *open source* líderes.
 
+**¿Por qué MoE se popularizó en China?** Esta arquitectura ganó tracción primero en laboratorios chinos (DeepSeek, Zhipu AI, Alibaba) por una razón económica simple: es más barata de entrenar. DeepSeek-V3, con 671B parámetros totales, costó aproximadamente US$5.6M de entrenamiento - una fracción del costo estimado de +US$100M para un modelo denso de capacidad equivalente. Para laboratorios que buscan competir con presupuestos menores, MoE es la arquitectura que nivela el campo de juego.
+
+**La trampa del VRAM:** Aunque MoE solo activa un subconjunto de expertos por token (eficiente en compute), para servir el modelo necesitas cargar **todos** los parámetros en memoria. Un modelo MoE de 671B parámetros requiere el VRAM suficiente para 671B, no para los 37B activos. Esto significa que la ventaja de costo en entrenamiento no se traduce directamente en ventaja de costo para inferencia - necesitas hardware con suficiente memoria para el modelo completo. Es un trade-off que todo líder técnico debe entender al evaluar modelos MoE para producción.
+
 > **Dato clave:** En 2025, los 10 modelos *open source* más capaces según evaluaciones independientes usan arquitectura MoE.
 
 ### Fine-tuning vs Prompting vs RAG: Cuándo Usar Cada Uno
 
-Una de las decisiones más comunes para líderes técnicos: ¿cómo adaptar un modelo a mis necesidades? Las opciones principales son [prompting]{.idx}, [RAG]{.idx} (Retrieval-Augmented Generation) y [fine-tuning]{.idx}.
+Una de las decisiones más comunes para líderes técnicos: ¿cómo adaptar un modelo a mis necesidades? Las opciones principales son [prompting]{.idx}, [RAG]{.idx} (Retrieval-Augmented Generation), [CAG]{.idx} (Cache-Augmented Generation) y [fine-tuning]{.idx}.
 
 | Approach | Qué Es | Cuándo Usar | Costo | Flexibilidad |
 |----------|--------|-------------|-------|--------------|
 | **Prompting** | Instruir al modelo con texto | Siempre primero | Bajo | Alta |
-| **RAG** | Darle acceso a tus documentos | Conocimiento propio/actualizado | Medio | Alta |
+| **RAG** | Darle acceso a tus documentos mediante búsqueda | Conocimiento propio/actualizado | Medio | Alta |
+| **CAG** | Pre-cargar todo el contexto relevante en la ventana | Corpus pequeño-mediano que cabe en contexto | Medio | Alta |
 | **Fine-tuning** | Re-entrenar con tus datos | Comportamiento muy específico | Alto | Baja |
 
 **Regla de oro:**
 
 1. **Empieza con prompting.** El 80% de los casos se resuelven con buenos prompts.
-2. **Escala a RAG** si necesitas conocimiento que el modelo no tiene (tu documentación, código interno, datos actualizados).
+2. **Escala a RAG o CAG** si necesitas conocimiento que el modelo no tiene. La diferencia: RAG busca fragmentos relevantes dinámicamente; CAG pre-carga todo el contexto en la ventana del modelo (más simple pero limitado al tamaño de ventana).
 3. **Fine-tuning solo como último recurso** cuando necesitas comportamiento muy específico que no se logra con prompts o RAG.
+
+#### Técnicas de Prompting: De Lo Básico a Lo Avanzado
+
+No todos los prompts son iguales. La técnica correcta depende del modelo y la tarea:
+
+- **[Zero-shot]{.idx data-sub="prompting"}:** Le pides al modelo que haga algo sin darle ejemplos. Funciona bien para tareas simples con modelos potentes. Ejemplo: "Clasifica este texto como positivo o negativo."
+- **[Few-shot]{.idx data-sub="prompting"}:** Le das 2-5 ejemplos del resultado que esperas antes de tu pregunta. Mejora significativamente la consistencia del formato y la precisión. Es la técnica más costo-efectiva para la mayoría de casos.
+- **Chain-of-thought:** Le pides al modelo que "piense paso a paso." Mejora el razonamiento en problemas complejos. En modelos con reasoning nativo (como los modos "thinking" de Claude o GPT), esto ya está incorporado.
+
+**¿Qué hace un buen prompt?** Tres principios: (1) contexto claro - el modelo necesita saber quién eres, qué quieres y en qué formato, (2) especificidad - "mejora este código" es vago; "refactoriza esta función para reducir la complejidad ciclomática" es preciso, (3) restricciones explícitas - qué NO debe hacer es tan importante como qué debe hacer.
+
+**¿Cambia el prompt según el tipo de modelo?** Sí, significativamente:
+
+- **Modelos con reasoning** (Claude Opus, GPT con o1): Funcionan mejor con objetivos claros y restricciones, no con instrucciones paso a paso. Dejar que el modelo razone produce mejores resultados que micro-gestionar su proceso.
+- **Modelos de generación de imágenes:** El prompt es descriptivo y visual. La calidad depende de especificar estilo, composición, iluminación, no de lógica.
+- **Modelos de código:** Se benefician enormemente de contexto arquitectónico (patrones del proyecto, convenciones, dependencias).
+
+**¿Se pueden compensar las limitaciones del modelo con mejor prompting?** Parcialmente. Un prompt excelente puede hacer que un modelo mediano rinda como uno bueno para tareas específicas. Pero hay un techo: si el modelo no tiene la capacidad de razonamiento necesaria, ningún prompt lo compensará. La analogía: puedes darle instrucciones perfectas a un becario talentoso, pero hay tareas que requieren un senior experimentado.
+
+#### Cómo Evaluar Modelos: Benchmarks Que Importan
+
+Cuando tu equipo técnico te presenta opciones de modelos, ¿cómo comparas? Los [benchmarks]{.idx} son evaluaciones estandarizadas. Los que deberías conocer:
+
+| Benchmark | Qué Mide | Por Qué Importa |
+|-----------|----------|-----------------|
+| **SWE-Bench Verified** | Capacidad de resolver bugs reales en repositorios open-source | El más relevante para equipos de desarrollo |
+| **HLE (Humanity's Last Exam)** | Preguntas de nivel experto en múltiples disciplinas | Indica razonamiento general avanzado |
+| **MMLU** | Conocimiento general y razonamiento | Benchmark clásico de capacidad general |
+| **Arena Elo** (Chatbot Arena) | Preferencias humanas en conversación | Refleja calidad percibida por usuarios |
+
+**Precaución:** Los benchmarks autoreportados por los laboratorios suelen ser más altos que los verificados independientemente. Siempre busca evaluaciones de terceros (Scale AI, LMSYS, etc.) antes de tomar decisiones.
 
 ::: {.callout .reunion-liderazgo}
 **Para Tu Próxima Reunión de Liderazgo**
 
 Si alguien propone fine-tuning, pregunta:
 1. "¿Probamos primero con prompting optimizado?"
-2. "¿RAG resolvería esto sin fine-tuning?"
+2. "¿RAG o CAG resolverían esto sin fine-tuning?"
 3. "¿Tenemos los datos y recursos para entrenar y mantener un modelo fine-tuned?"
 
 Fine-tuning tiene costos ocultos: necesitas datos de entrenamiento, compute, expertise, y debes re-entrenar cuando el modelo base se actualiza.
@@ -988,24 +1031,44 @@ Fine-tuning tiene costos ocultos: necesitas datos de entrenamiento, compute, exp
 
 ### Cómo Se Entrenan los LLMs (Vista Ejecutiva)
 
-Para completar tu comprensión, un vistazo rápido al proceso de entrenamiento:
+Para completar tu comprensión, necesitas entender cómo se construyen estos modelos. Y para eso, vale la pena empezar con una analogía biológica.
+
+#### El Cerebro como Punto de Partida
+
+Los LLMs son, en su base, [redes neuronales artificiales]{.idx} - una familia de modelos matemáticos inspirados (de manera simplificada) en el cerebro humano. Las neuronas biológicas se conectan entre sí, se activan con ciertos estímulos y fortalecen las conexiones que se usan con frecuencia. Las redes neuronales artificiales funcionan con la misma lógica: nodos conectados, pesos que se ajustan, patrones que se refuerzan con datos.
+
+La diferencia clave: un cerebro humano tiene ~86 mil millones de neuronas con ~100 billones de conexiones sinápticas, optimizado por millones de años de evolución. Los LLMs más grandes tienen ~1.8 billones de parámetros (GPT-4, estimado), optimizados por semanas de entrenamiento en miles de GPUs. No son cerebros - son modelos estadísticos extraordinariamente sofisticados. Pero la inspiración biológica es real y útil para entender sus capacidades y limitaciones.
+
+#### El Fenómeno de la Emergencia
+
+Uno de los descubrimientos más sorprendentes de la última década fue que las [capacidades emergentes]{.idx data-sub="modelos de lenguaje"} aparecen de forma no lineal. Cuando los investigadores escalaron modelos de 1B a 10B a 100B parámetros, ciertas capacidades - razonamiento matemático, traducción, generación de código - no mejoraban gradualmente. Eran casi inexistentes hasta cierto umbral, y luego aparecían de golpe. Como si el modelo "entendiera" repentinamente algo que antes no podía.
+
+Este fenómeno de emergencia es lo que hizo que la carrera por modelos más grandes tuviera sentido económico: más parámetros y más datos no producían mejoras lineales, sino saltos cualitativos en capacidad. También es lo que hace difícil predecir qué podrán hacer los modelos del futuro.
+
+#### Limitaciones Teóricas y Técnicas
+
+Pero la escala tiene límites, tanto teóricos como prácticos:
+
+- **Teorema de No Free Lunch (NFL):** No existe un algoritmo universalmente óptimo. Todo modelo que es excelente en un dominio tiene debilidades en otros. Los LLMs parecen "generales" porque entrenan con datos de muchos dominios, pero el teorema nos recuerda que la especialización siempre tendrá ventajas sobre la generalización para tareas específicas.
+- **Complejidad cuadrática de la atención:** El [mecanismo de atención]{.idx data-sub="transformers"} - la innovación central de los Transformers que permite al modelo "ver" todas las partes de un texto simultáneamente - tiene un costo computacional que crece cuadráticamente con la longitud del contexto. Duplicar la ventana de contexto cuadruplica el costo. Esta es la razón técnica por la que las ventanas de contexto gigantes son caras y por la que RAG sigue siendo necesario en lugar de simplemente "meter todo en el prompt."
 
 #### Pre-training: Construyendo la Base
 
 - El modelo lee billones de tokens de texto de internet
-- Aprende a predecir la siguiente palabra
-- **Costo:** GPT-2 (2019): $50K | PaLM (2022): $8M | GPT-4 (2023): ~$100M+ estimado
+- Aprende a predecir la siguiente palabra (un objetivo engañosamente simple que produce capacidades complejas)
+- **Costo:** GPT-2 (2019): US$50K | PaLM (2022): US$8M | GPT-4 (2023): ~US$100M+ estimado
 - **Implicación:** Solo empresas con recursos masivos pueden crear modelos base. Tú los usas, no los creas.
 
 #### Post-training: Haciéndolos Útiles y Seguros
 
-Después del pre-training, los modelos son buenos prediciendo texto pero no son "útiles". El post-training los hace:
+Después del pre-training, los modelos son buenos prediciendo texto pero no son "útiles." El post-training los transforma:
 
-- **[RLHF]{.idx data-sub="entrenamiento de modelos"} (Reinforcement Learning from Human Feedback):** Humanos califican respuestas, modelo aprende preferencias.
-- **DPO (Direct Preference Optimization):** Alternativa más eficiente a RLHF.
-- **Constitutional AI:** El modelo se auto-corrige basado en principios definidos.
+- **[RLHF]{.idx data-sub="entrenamiento de modelos"} (Reinforcement Learning from Human Feedback):** Humanos califican respuestas, el modelo aprende preferencias. Es el método clásico que hizo posible ChatGPT.
+- **DPO (Direct Preference Optimization):** Alternativa más eficiente a RLHF, elimina la necesidad de entrenar un modelo de recompensa separado.
+- **Constitutional AI:** El modelo se auto-corrige basado en principios definidos (usado por Anthropic para Claude).
+- **RL puro sin feedback humano:** Una frontera emergente liderada por laboratorios chinos. En lugar de depender de evaluadores humanos (caro, lento, subjetivo), algunos modelos se entrenan con ciclos de reinforcement learning donde el modelo se autoevalúa contra criterios objetivos (¿el código compila? ¿el test pasa? ¿la respuesta matemática es correcta?). DeepSeek y Zhipu han demostrado que este enfoque puede producir resultados competitivos con una fracción del costo humano.
 
-**Lo que importa para ti:** El post-training es lo que hace que Claude sea "helpful" y "harmless" en lugar de solo generar texto. Es también donde se pueden introducir sesgos o limitaciones; cada vendor tiene su propia filosofía.
+**Lo que importa para ti:** El post-training es lo que hace que Claude sea "helpful" y "harmless" en lugar de solo generar texto. Es también donde se pueden introducir sesgos o limitaciones; cada vendor tiene su propia filosofía. La tendencia hacia RL sin humanos podría reducir costos de post-training significativamente, lo que a su vez democratizaría la creación de modelos especializados.
 
 ---
 

@@ -146,7 +146,7 @@ En FORTRAN, un programador podía escribir un bucle iterativo con apenas tres in
 
 **Datos de la industria (1960-1975):**
 
-- Costo por línea de código: **$10-20 en ensamblador → $2-5 en FORTRAN/COBOL**
+- Costo por línea de código: **US$10-20 en ensamblador → US$2-5 en FORTRAN/COBOL**
 - *time-to-market* para aplicación típica de negocio: **12-18 meses → 4-6 meses**
 - Escasez de talento: Disminuyó porque más gente podía aprender FORTRAN que ensamblador
 
@@ -217,12 +217,12 @@ En FORTRAN, un programador podía escribir un bucle iterativo con apenas tres in
 
 En 1995, J.P. Morgan decidió reescribir sus sistemas críticos de trading de C a Java (OOP).
 
-**Inversión inicial:** $120 millones (3 años de desarrollo)
+**Inversión inicial:** US$120 millones (3 años de desarrollo)
 
 **Resultados a 5 años (2000-2005):**
 
 - *time-to-market* para nuevos productos financieros: **9 meses → 3 meses**
-- Costo de mantenimiento anual: **$40M → $18M**
+- Costo de mantenimiento anual: **US$40M → US$18M**
 - Defectos críticos en producción: **reducción del 60%**
 - **ROI:** La inversión se pagó en 2.5 años
 
@@ -282,8 +282,8 @@ La [programación declarativa]{.idx} dice **"qué quieres"** en vez de **"cómo 
 - Bugs en producción: 5-8 (reducción del 65%)
 - Developer productivity self-reported: +45%
 
-**Costo de migración:** $4M (12 meses de trabajo de 25 ingenieros)
-**ROI a 3 años:** Ahorro de $18M en costos de desarrollo
+**Costo de migración:** US$4M (12 meses de trabajo de 25 ingenieros)
+**ROI a 3 años:** Ahorro de US$18M en costos de desarrollo
 
 **Tabla 2.6. Comparación histórica de paradigmas: productividad, calidad y costo**
 
@@ -365,7 +365,7 @@ Cada transición paradigmática siguió el mismo patrón sociológico en la indu
 
 **Ejemplos históricos:**
 
-- COBOL hoy: Empresas pagan $150-200/hora por programadores COBOL porque es [legacy]{.idx} crítico pero nadie nuevo lo aprende
+- COBOL hoy: Empresas pagan US$150-200/hora por programadores COBOL porque es [legacy]{.idx} crítico pero nadie nuevo lo aprende
 - Assembly hoy: Solo nichos específicos (embedded systems, drivers)
 
 **Tabla 2.7. Curva de adopción de paradigmas: de la invención al dominio**
@@ -462,14 +462,14 @@ Pero hay factores que hacen esta transición única:
 - Reentrenar a todo el equipo (6-12 meses)
 - Reescribir sistemas existentes
 - Comprar nuevos servidores (JVM requería más recursos que C)
-- Costo: $500K-2M para organización mediana
+- Costo: US$500K-2M para organización mediana
 
 **Para adoptar IA agéntica en 2026:**
 
 - Comprar licencias ($20-100/dev/mes)
 - Training de 2-4 semanas
 - NO requiere reescribir nada. Solo cambia cómo escribes código nuevo
-- Costo: $10K-50K para organización mediana
+- Costo: US$10K-50K para organización mediana
 
 **Implicación:** La barrera baja significa que tus competidores pueden adoptar más rápido de lo que piensas.
 
@@ -549,7 +549,7 @@ Instrucciones: Puntúa cada factor de 1 (bajo) a 5 (alto). Multiplica por el pes
 | 3 | *time-to-market* actual supera los 6 meses para features clave | ___ | x2 | ___ |
 | 4 | Openness del equipo a experimentar con nuevas herramientas | ___ | x2 | ___ |
 | 5 | Riesgos regulatorios y de compliance son manejables (no extremos) | ___ | x1 | ___ |
-| 6 | Presupuesto disponible para herramientas ($50-200/dev/mes) | ___ | x1 | ___ |
+| 6 | Presupuesto disponible para herramientas (US$50-200/dev/mes) | ___ | x1 | ___ |
 | | | | **TOTAL:** | **___** |
 
 **Interpretación del score:**
@@ -648,8 +648,8 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 **Matemática:**
 
-- Antes: 100 devs × $100K promedio = $10M payroll, producen X features
-- Después: 80 devs × $115K promedio = $9.2M payroll, producen 1.35X features
+- Antes: 100 devs × US$100K promedio = US$10M payroll, producen X features
+- Después: 80 devs × US$115K promedio = US$9.2M payroll, producen 1.35X features
 - **Resultado: 35% más producción, 8% menos costo**
 
 ### Implicación 2: Code Review se Vuelve Más Crítico, No Menos
@@ -777,8 +777,8 @@ GitHub reportó que después de adoptar Copilot internamente:
    - ¿Cuál es el costo de oportunidad de NO experimentar en los próximos 6 meses?
 
 4. **Sobre acción:**
-   - ¿Qué nos impide hacer un piloto de 3 meses con $10-50K de inversión?
-   - Si el piloto falla, ¿cuál es el downside real? (Respuesta: perdiste $50K y aprendiste que NO funciona para ti. Eso es barato.)
+   - ¿Qué nos impide hacer un piloto de 3 meses con US$10-50K de inversión?
+   - Si el piloto falla, ¿cuál es el downside real? (Respuesta: perdiste US$50K y aprendiste que NO funciona para ti. Eso es barato.)
 
 ---
 

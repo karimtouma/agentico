@@ -74,7 +74,7 @@ Cuando quieres que un modelo de IA "sepa" cosas específicas de tu empresa (tu c
 
 - **Qué es:** Modificas los "pesos" internos del modelo con ejemplos de tu empresa
 - **Analogía:** Mandar a alguien a un curso de 6 meses sobre tu industria
-- **Costo:** Alto ($10,000-100,000+ en compute y expertise)
+- **Costo:** Alto (US$10,000-100,000+ en compute y expertise)
 - **Velocidad:** Semanas a meses
 - **Cuándo usar:** Casi nunca para la mayoría de empresas
 

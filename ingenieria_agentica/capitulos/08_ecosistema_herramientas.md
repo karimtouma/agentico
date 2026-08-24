@@ -2,17 +2,17 @@
 
 > **Resumen Ejecutivo**
 >
-> - El mercado de herramientas de IA para desarrollo creció de $1.2B en 2023 a $4.8B en 2025 (Gartner)
+> - El mercado de herramientas de IA para desarrollo creció de US$1.2B en 2023 a US$4.8B en 2025 (Gartner)
 > - Existen cuatro categorías principales: Completado de código, Generación de código, Agentes autónomos, e Infraestructura de soporte
 > - GitHub Copilot lidera con 4.7M+ suscriptores pagos, pero opciones como Cursor, Windsurf y Amazon Q compiten agresivamente
-> - La selección incorrecta de herramientas puede costar entre $150K-$500K anuales en licencias desperdiciadas y productividad perdida
+> - La selección incorrecta de herramientas puede costar entre US$150K-US$500K anuales en licencias desperdiciadas y productividad perdida
 > - El 68% de las organizaciones utiliza 3+ herramientas diferentes simultáneamente, generando fragmentación (Stack Overflow Survey 2024)
 
 > **Dato verificado:**
 >
 > - **Fuente:** Gartner "Market Guide for AI Code Assistants 2024" (October 2024)
 > - **Qué mide:** Tamaño total del mercado de herramientas de IA para desarrollo de software (incluye code completion, generation, y agent platforms), medido en ingresos anuales de licencias enterprise y developer subscriptions.
-> - **Limitación:** La cifra de $4.8B es una proyección basada en tendencias de adopción de 2023-2024. No incluye herramientas open source sin modelo de negocio directo (ej: proyectos de GitHub sin suscripciones), ni servicios de consultoría relacionados. El crecimiento real dependerá de factores económicos y velocidad de adopción enterprise.
+> - **Limitación:** La cifra de US$4.8B es una proyección basada en tendencias de adopción de 2023-2024. No incluye herramientas open source sin modelo de negocio directo (ej: proyectos de GitHub sin suscripciones), ni servicios de consultoría relacionados. El crecimiento real dependerá de factores económicos y velocidad de adopción enterprise.
 > - **Implicación:** Para líderes técnicos, esto significa que el mercado está consolidándose rápidamente: esperar 2 años más puede resultar en quedar atrás de competidores que ya optimizaron sus flujos de trabajo. Sin embargo, la proliferación de opciones también requiere una estrategia de evaluación disciplinada: no se trata de adoptar todo, sino de seleccionar las herramientas correctas para tu contexto específico.
 
 > **Sobre la vigencia de este capítulo:** Este capítulo describe el ecosistema de herramientas de IA para desarrollo tal como existía en **febrero de 2026**. En este mercado, las herramientas evolucionan, se fusionan, o desaparecen cada 6-12 meses. Lo que **no** cambiará: las categorías de herramientas (completado, generación, agentes, infraestructura), los criterios de evaluación, y los compromisos arquitectónicos. Usa este capítulo para entender el *mapa del territorio* y los *principios de selección*, no como catálogo de compras vigente.
@@ -21,7 +21,7 @@
 
 ## Introducción: El Mapa del Nuevo Territorio
 
-Cuando Brian Armstrong, CEO de Coinbase, anunció en enero de 2024 que habían consolidado todas sus herramientas de IA en una única plataforma después de desperdiciar $2.3M en licencias subutilizadas, envió una señal clara al mercado: la proliferación de herramientas puede convertirse en un problema tan grande como no adoptarlas.
+Cuando Brian Armstrong, CEO de Coinbase, anunció en enero de 2024 que habían consolidado todas sus herramientas de IA en una única plataforma después de desperdiciar US$2.3M en licencias subutilizadas, envió una señal clara al mercado: la proliferación de herramientas puede convertirse en un problema tan grande como no adoptarlas.
 
 El [ecosistema de herramientas agénticas]{.idx} para desarrollo de software ha experimentado un crecimiento explosivo. En 2020, las opciones se limitaban a experimentos académicos y el entonces naciente GitHub Copilot. Para 2025, existen más de 150 productos comerciales y 300+ proyectos *open source* compitiendo por la atención de CTOs y VPs de Ingeniería.
 
@@ -103,12 +103,12 @@ Para entender el landscape, debemos visualizar el ecosistema como una arquitectu
         \textbullet\ CrewAI\\
         \textbullet\ AutoGen};
   \node[lbox, right=0.25cm of c2a]
-        (c2b) {\boxtitle{RAG \& Memory}
+        (c2b) {\boxtitle{Contexto}
         \textbullet\ LlamaIndex\\
         \textbullet\ Chroma\\
         \textbullet\ Pinecone};
   \node[lbox, right=0.25cm of c2b]
-        (c2c) {\boxtitle{Workflow}
+        (c2c) {\boxtitle{Orquestaci\'{o}n}
         \textbullet\ n8n AI\\
         \textbullet\ Zapier Central\\
         \textbullet\ Temporal};
@@ -117,14 +117,14 @@ Para entender el landscape, debemos visualizar el ecosistema como una arquitectu
         {CAPA 3: MODELOS DE IA};
   \node[lbox, below=0.12cm of l3.south west, anchor=north west, xshift=0.3cm]
         (c3a) {\boxtitle{Propietarios}
-        \textbullet\ GPT-4o\\
+        \textbullet\ GPT-5.2\\
         \textbullet\ Claude Opus 4.6\\
-        \textbullet\ Gemini 2.5};
+        \textbullet\ Gemini 3};
   \node[lbox, right=0.25cm of c3a]
         (c3b) {\boxtitle{Open Source}
         \textbullet\ Llama 3.3\\
         \textbullet\ GLM-5 (Zhipu)\\
-        \textbullet\ Qwen 2.5 Coder};
+        \textbullet\ Qwen3 Coder};
   \node[lbox, right=0.25cm of c3b]
         (c3c) {\boxtitle{Especializados}
         \textbullet\ Codestral\\
@@ -289,13 +289,13 @@ En su blog de ingeniería (Diciembre 2023), Shopify reportó resultados de un es
 
 | Concepto | Copilot Business | Windsurf Teams | Tabnine Enterprise |
 |----------|------------------|---------------|---------------------|
-| Licencias ($) | $11,400/año | $18,000/año | $23,400/año |
-| Tiempo de setup (equivalente $) | $8,000 | $6,500 | $14,000 |
-| Training (equivalente $) | $5,000 | $3,500 | $8,000 |
-| Mantenimiento anual | $2,000 | $1,500 | $0 (self-hosted) |
-| **Total Year 1** | **$26,400** | **$29,500** | **$45,400** |
+| Licencias ($) | US$11,400/año | US$18,000/año | US$23,400/año |
+| Tiempo de setup (equivalente $) | US$8,000 | US$6,500 | US$14,000 |
+| Training (equivalente $) | US$5,000 | US$3,500 | US$8,000 |
+| Mantenimiento anual | US$2,000 | US$1,500 | US$0 (self-hosted) |
+| **Total Year 1** | **US$26,400** | **US$29,500** | **US$45,400** |
 | Productividad ganada (estimada) | +45% | +35% | +38% |
-| Valor creado (a $100K/dev) | $2.25M | $1.75M | $1.9M |
+| Valor creado (a US$100K/dev) | US$2.25M | US$1.75M | US$1.9M |
 | **ROI (bruto / ajustado)** | **8,428% / ~2,500%** | **5,832% / ~2,200%** | **4,185% / ~1,800%** |
 
 > **💭 MI ANÁLISIS: Sobre estos ROIs**
@@ -331,38 +331,38 @@ Un paso más allá del completado. Estas herramientas generan archivos completos
 | **Replit Agent** | Cloud IDE | Apps completas con despliegue incluido | $25 | Startups que priorizan velocidad |
 | **GitHub Copilot Workspace** | Web platform | Features end-to-end desde issues | $10 (requiere Copilot) | Equipos ya en GitHub |
 
-### Análisis Profundo: Cursor vs. Windsurf
+### Análisis Profundo: Cursor vs. Claude Code
 
-Estas dos herramientas representan el estado del arte en generación de código agéntico, pero con filosofías diferentes. [Cursor]{.idx data-sub="herramientas agénticas"} y [Windsurf]{.idx data-sub="herramientas agénticas"} compiten directamente.
+Estas dos herramientas representan dos filosofías fundamentalmente diferentes de cómo un agente de IA interactúa con tu código. [Cursor]{.idx data-sub="herramientas agénticas"} apuesta por la interfaz visual integrada; [Claude Code]{.idx data-sub="herramientas agénticas"} apuesta por la extensibilidad y el terminal.
 
-**Cursor (Anthropic/Anysphere):**
+**Cursor (Anysphere):**
 
-- **Modelo subyacente**: Claude Sonnet 4.5 (por defecto), GPT-4o (opcional)
-- **Contexto**: Hasta 200K tokens con @Codebase
+- **Modelos**: Multi-modelo por conversación - Claude Sonnet 4.5 (por defecto), GPT-4o, Gemini, y otros. Puedes cambiar de modelo mid-conversation según la tarea
+- **Contexto**: Hasta 200K tokens con @Codebase. Indexación RAG automática del proyecto completo
 - **Arquitectura**: Composer = agente que planifica → ejecuta → verifica cambios en múltiples archivos
-- **Fortalezas**: Razonamiento superior para refactoring complejos, excelente en proyectos grandes (>50K líneas)
-- **Debilidades**: Costo (consume tokens rápidamente), requiere curva de aprendizaje
+- **Fortalezas**: Interfaz visual rica, más "mágico" para el usuario. Gestión integrada de MCPs, subagentes y herramientas. La indexación RAG del codebase permite buscar en todo el proyecto sin configuración
+- **Debilidades**: Costo (consume tokens rápidamente), menos transparente en lo que hace internamente
 
-**Windsurf (Codeium):**
+**Claude Code (Anthropic):**
 
-- **Modelo subyacente**: Propietario basado en GPT-4 + optimizaciones locales
-- **Contexto**: 150K tokens
-- **Arquitectura**: Cascade = sistema de flujos similar a Composer
-- **Fortalezas**: Más económico, mejor rendimiento en proyectos medianos (<50K líneas)
-- **Debilidades**: Razonamiento ligeramente inferior en casos muy complejos
+- **Modelos**: Solo modelos Claude (Sonnet, Opus, Haiku), pero configurable con endpoint Anthropic para conectar otros modelos como GLM-5
+- **Contexto**: 200K tokens con búsqueda agéntica nativa del codebase
+- **Arquitectura**: Agente en terminal que lee, busca, edita y ejecuta. Disponible como plugin para VS Code o como CLI independiente
+- **Fortalezas**: Altamente extensible - skills personalizables, hooks, MCP servers. "Agentic grep/search" nativo que entiende la estructura del código (a diferencia de la indexación estática de Cursor). Transparencia total: ves exactamente qué lee, qué busca y qué ejecuta
+- **Debilidades**: Ecosistema limitado a modelos Claude, curva de aprendizaje para configurar extensiones
 
-**Caso de estudio comparativo: Migración de Express a Fastify**
+**Comparativa directa:**
 
-Una empresa de e-commerce latinoamericana (80 personas, stack Node.js) necesitaba migrar 35 endpoints de Express a Fastify para mejorar performance. Probaron ambas herramientas con equipos diferentes:
+| Capacidad | Cursor | Claude Code |
+|-----------|--------|-------------|
+| Modelos disponibles | Multi-modelo (Claude, GPT, Gemini) | Solo Claude (extensible vía endpoint) |
+| Búsqueda de código | Indexación RAG estática | Búsqueda agéntica dinámica |
+| Extensibilidad | MCPs integrados, subagentes | Skills, hooks, MCP servers, customización profunda |
+| Interfaz | IDE visual completo | Terminal + plugin VS Code |
+| Transparencia | Media (algunas decisiones opacas) | Alta (todo visible en terminal) |
+| Ideal para | Equipos que priorizan experiencia visual y multi-modelo | Equipos que priorizan control, extensibilidad y automatización |
 
-| Métrica | Equipo con Cursor | Equipo con Windsurf |
-|---------|-------------------|---------------------|
-| Tiempo total | 18 días | 22 días |
-| Bugs introducidos (primer despliegue) | 7 | 12 |
-| Costo en licencias + tokens | $680 | $340 |
-| Satisfacción del equipo (1-10) | 9.1 | 7.8 |
-
-**Conclusión del líder técnico:** "Cursor entregó más rápido y con mejor calidad, pero Windsurf tuvo un ROI superior considerando el presupuesto limitado. Para proyectos críticos usaríamos Cursor; para features estándar, Windsurf."
+**¿Cuál elegir?** Si tu equipo valora la experiencia visual, la capacidad de cambiar de modelo según la tarea y la integración out-of-the-box, Cursor es la opción natural. Si tu equipo valora el control granular, la capacidad de crear flujos personalizados y la transparencia total de lo que el agente está haciendo, Claude Code ofrece una plataforma más extensible. Muchos equipos usan ambas: Cursor para desarrollo diario y Claude Code para tareas de automatización y refactoring a gran escala.
 
 ### V0.dev y Bolt.new: La Revolución del Frontend
 
@@ -374,7 +374,7 @@ Estas plataformas web han democratizado la creación de interfaces complejas.
 - Genera código production-ready que se puede copiar directamente
 - Integración nativa con Vercel para despliegue
 
-**Uso real:** Una fintech argentina usó v0.dev para generar su design system completo (42 componentes) en 8 días de trabajo, vs. 6 semanas estimadas con desarrollo tradicional. Ahorro estimado: $45K.
+**Uso real:** Una fintech argentina usó v0.dev para generar su design system completo (42 componentes) en 8 días de trabajo, vs. 6 semanas estimadas con desarrollo tradicional. Ahorro estimado: US$45K.
 
 **Bolt.new (StackBlitz):**
 
@@ -382,7 +382,7 @@ Estas plataformas web han democratizado la creación de interfaces complejas.
 - Ejecuta todo en WebContainers (Node.js en el navegador)
 - Permite iterar con lenguaje natural: "Agrega autenticación con Google"
 
-**Uso real:** Un VP de Producto en una startup de logistics usó Bolt.new para crear 5 prototipos interactivos para validar ideas con inversores, sin involucrar al equipo de ingeniería. Tiempo: 12 horas. Resultado: $3M de funding Serie A.
+**Uso real:** Un VP de Producto en una startup de logistics usó Bolt.new para crear 5 prototipos interactivos para validar ideas con inversores, sin involucrar al equipo de ingeniería. Tiempo: 12 horas. Resultado: US$3M de funding Serie A.
 
 > **Para Tu Próxima Reunión de Liderazgo**
 >
@@ -462,15 +462,15 @@ Anthropic lanzó [Claude Code]{.idx data-sub="agentes autónomos"} en febrero 20
 | Refactoring de módulo | ~200K tokens | $2.00 | $3.50 | Incluido |
 | Feature compleja multiarchivo | ~500K tokens | $5.00 | $8.75 | Incluido |
 
-**Decisión clave para CFOs:** Un desarrollador que consume $300-800/mes en API obtiene uso equivalente por $200/mes con el plan Max: ahorro de 1.5-4x. Para equipos con uso ligero (<$50/mes por dev), el API puro sigue siendo más económico.
+**Decisión clave para CFOs:** Un desarrollador que consume US$300-800/mes en API obtiene uso equivalente por US$200/mes con el plan Max: ahorro de 1.5-4x. Para equipos con uso ligero (<US$50/mes por dev), el API puro sigue siendo más económico.
 
 > **💭 MI ANÁLISIS (basado en patrones observados)**
 >
-> Consultoras de seguridad que han adoptado Claude Code para auditorías de código reportan aceleración significativa en identificación de vulnerabilidades. Un patrón típico: equipo de 3 consultores procesando código legacy en 3 meses con costo de ~$900 en tokens.
+> Consultoras de seguridad que han adoptado Claude Code para auditorías de código reportan aceleración significativa en identificación de vulnerabilidades. Un patrón típico: equipo de 3 consultores procesando código legacy en 3 meses con costo de ~US$900 en tokens.
 >
-> **Pero cuidado con las métricas:** Algunos han comparado "ingresos facturados por servicios" ($180K) contra "costo de tokens" ($890) para obtener ROIs astronómicos. Esta comparación es engañosa; ignora el tiempo del equipo humano, curva de aprendizaje, y verificación de resultados. Un cálculo más honesto compararía el valor del tiempo ahorrado contra la inversión total (herramientas + tiempo de adopción).
+> **Pero cuidado con las métricas:** Algunos han comparado "ingresos facturados por servicios" (US$180K) contra "costo de tokens" (US$890) para obtener ROIs astronómicos. Esta comparación es engañosa; ignora el tiempo del equipo humano, curva de aprendizaje, y verificación de resultados. Un cálculo más honesto compararía el valor del tiempo ahorrado contra la inversión total (herramientas + tiempo de adopción).
 >
-> **Estimación realista:** Si Claude Code reduce el tiempo de auditoría en 40% para un equipo de 3 consultores ($150K/año c/u), el valor anual es ~$60K. Con inversión de $1,500 (tokens) + $5,000 (tiempo de adopción), el ROI es ~800%, aún excelente, pero no 20,000%.
+> **Estimación realista:** Si Claude Code reduce el tiempo de auditoría en 40% para un equipo de 3 consultores (US$150K/año c/u), el valor anual es ~US$60K. Con inversión de US$1,500 (tokens) + US$5,000 (tiempo de adopción), el ROI es ~800%, aún excelente, pero no 20,000%.
 
 ### La Técnica Ralph Wiggum: Loops Autónomos
 
@@ -482,7 +482,7 @@ La implementación es un loop de shell que ejecuta el agente indefinidamente, al
 
 **Resultados documentados:**
 
-- Un ingeniero completó un contrato de $50K USD, entregado como MVP testeado y revisado, con un costo de API de $297 USD
+- Un ingeniero completó un contrato de US$50K, entregado como MVP testeado y revisado, con un costo de API de US$297
 - Sesiones autónomas de 14+ horas para migraciones complejas (ej: React v16 a v19 sin intervención humana)
 - Hackathon de Y Combinator donde se generaron 6 repositorios funcionales overnight
 
@@ -518,23 +518,45 @@ Anthropic ha construido un ecosistema completo más allá de Claude Code:
 | **Team Premium** | $150/user/mes | Límites enhanced | Per-user | Sí |
 | **Enterprise** | ~$60/seat (custom) | Negociado | Negociado | Sí |
 
-**Decisión económica:** Un desarrollador heavy que usaría $300-800/mes en API obtiene uso equivalente por $200/mes con Max. Para equipos de 30+ personas, los planes Team ($25-$150/user) centralizan billing y agregan controles administrativos.
+**Decisión económica:** Un desarrollador heavy que usaría US$300-800/mes en API obtiene uso equivalente por $200/mes con Max. Para equipos de 30+ personas, los planes Team ($25-$150/user) centralizan billing y agregan controles administrativos.
 
-### OpenCode: La Alternativa Open Source
+### Claude para PowerPoint: IA en Productividad Empresarial
 
-[OpenCode]{.idx data-sub="herramientas agénticas"} es la respuesta *open source* a Claude Code, desarrollado por el equipo de SST (serverless). Ha acumulado más de 650,000 usuarios mensuales al momento de escribir.
+[Claude para PowerPoint]{.idx data-sub="herramientas de productividad"} es un add-in oficial disponible en Microsoft AppSource, lanzado en febrero 2026 como beta. Representa la expansión de Anthropic más allá del código hacia la productividad empresarial general.
 
-**Características:**
+**Qué hace:**
 
-- TUI interactiva construida con Bubble Tea
-- Soporta 75+ proveedores de LLM (OpenAI, Anthropic, Gemini, Bedrock, Groq, modelos locales)
+- Genera slides completos desde lenguaje natural ("crea una presentación de 10 slides sobre nuestra estrategia Q2")
+- Convierte bullet points en diagramas, charts y flujos de proceso como **objetos nativos editables** de PowerPoint (no imágenes estáticas)
+- Respeta los slide masters, fuentes y templates de marca existentes en tu organización
+- Permite editar contenido existente con instrucciones conversacionales
+
+**Disponibilidad:** Plan Claude Pro o superior. Los usuarios pueden alternar entre Sonnet 4.5 y Opus 4.6 dentro del add-in.
+
+**Por qué importa para líderes técnicos:** La creación de presentaciones consume entre 5-15 horas semanales para muchos líderes. Claude para PowerPoint no es solo una herramienta de IA para código - es señal de que los agentes están migrando hacia tareas de productividad general que afectan a toda la organización.
+
+### OpenCode: La Alternativa Open Source Más Versátil
+
+[OpenCode]{.idx data-sub="herramientas agénticas"} es la respuesta *open source* a Claude Code, desarrollado por el equipo de SST (serverless). Ha acumulado más de 650,000 usuarios mensuales al momento de escribir, posicionándose como la herramienta de coding agéntico más flexible del mercado.
+
+**Características principales:**
+
+- TUI interactiva construida con Bubble Tea (interfaz atractiva en terminal)
+- Soporta **75+ proveedores de LLM** (OpenAI, Anthropic, Gemini, Bedrock, Groq, modelos locales vía Ollama)
 - Gestión de sesiones persistentes con SQLite
 - Integración LSP para context-awareness
-- Disponible como CLI, app de escritorio, o extensión de IDE
+- Disponible como **CLI, app de escritorio** (descargable desde opencode.ai), o **extensión para VS Code y Cursor**
 
-**Instalación:** Se realiza mediante un script de una línea desde opencode.ai, o alternativamente via npm con un solo comando global.
+**Extensibilidad - la diferenciación clave:**
 
-**Ventaja estratégica:** Para organizaciones con requisitos de privacidad estrictos, OpenCode permite usar cualquier proveedor de LLM, incluyendo modelos locales, sin enviar código a terceros.
+- **Soporte completo de MCP** (Model Context Protocol) para servidores locales y remotos, permitiendo conectar herramientas externas sin escribir plugins
+- **Sistema de hooks** para automatizar acciones antes/después de cada interacción
+- **Arquitectura de plugins** para funcionalidad personalizada
+- **Modelos locales:** Capacidad de correr modelos vía Ollama, LM Studio o cualquier endpoint compatible con OpenAI, sin enviar código a servidores externos
+
+**Integración con ChatGPT:** OpenCode v1.1.11 introdujo autenticación Codex OAuth, lo que permite que suscripciones de ChatGPT Plus/Pro funcionen directamente en OpenCode mediante un comando `/connect`. Esto amplía significativamente las opciones de modelo sin costo adicional para usuarios que ya pagan por ChatGPT.
+
+**Ventaja estratégica:** Para organizaciones con requisitos de privacidad estrictos o que buscan evitar vendor lock-in, OpenCode es la opción más completa: cualquier modelo, cualquier proveedor, local o en la nube, con extensibilidad total.
 
 ### OpenClaw: El Agente Personal Viral
 
@@ -574,9 +596,57 @@ Zhipu AI (conocida como Z.ai internacionalmente) lanzó GLM-5 en febrero 2026, u
 | AIME 2025 (matemáticas) | ~96% | 94.2% | 93.8% |
 | SWE-Bench Verified | ~48% | ~50% | ~47% |
 
-**Pricing disruptivo:** ~$0.80 por millón de tokens (input), ~$2.60 por millón de tokens (output), o aproximadamente $10-20/mes para uso típico de desarrollador. Comparado con los $200/mes de Claude Max, representa una reducción de ~10-20x en costo.
+**Planes de suscripción (febrero 2026):**
+
+| Plan | Precio/mes | Incluye | Nota |
+|------|-----------|---------|------|
+| **Lite** | ~$10 | GLM-5 básico, límite de requests | Para uso individual ligero |
+| **Pro** | ~$15-$20 | GLM-5 completo, mayor throughput | Para desarrolladores activos |
+| **Max** | Custom | Acceso completo, prioridad, SLA | Para equipos enterprise |
+
+**API pay-per-token:** ~$0.80 por millón de tokens (input), ~$2.60 por millón de tokens (output). Comparado con los $200/mes de Claude Max, representa una reducción de ~10-20x en costo. **Nota:** Zhipu AI incrementó precios ~30% en febrero 2026, señalando que los precios iniciales eran insostenibles.
+
+**Soporte LATAM:** Limitado. Zhipu AI no tiene representación en la región, no responde correos en español, y la documentación está mayoritariamente en chino e inglés. Para equipos hispanohablantes, el soporte técnico es esencialmente inexistente.
 
 **Implicación estratégica:** Para organizaciones sensibles al costo o con equipos grandes, modelos como GLM-5 ofrecen una alternativa viable. La calidad ha alcanzado paridad práctica con modelos occidentales en muchas evaluaciones de código.
+
+### Qwen Coder: La Apuesta de Alibaba en Código
+
+Alibaba Cloud lanzó la familia Qwen3 Coder como su oferta especializada en generación de código, con dos modelos principales:
+
+- **qwen3-coder-plus** - modelo de alta capacidad para tareas complejas de código (refactoring, debugging, generación multi-archivo)
+- **qwen3-coder-next** - modelo más ligero para autocompletado y tareas rápidas
+
+**Pricing API:** Similar a GLM-5 en competitividad, ~$0.50-$1.50 por millón de tokens de input dependiendo del modelo. No ofrece planes de suscripción dedicados; se consume exclusivamente via API.
+
+**Diferenciador:** Qwen3 Coder destaca en benchmarks de código asiáticos y tiene buen rendimiento en SWE-Bench Verified (~45-48%). Alibaba Cloud tiene presencia real en LATAM (región São Paulo) a diferencia de Zhipu AI, lo que lo hace más viable para equipos que necesitan soporte y compliance regional.
+
+**Limitación:** El ecosistema de integraciones es menos maduro que el de OpenAI o Anthropic. Pocos IDEs tienen integración nativa con Qwen.
+
+### Antigravity: El IDE Agéntico de Google
+
+Google lanzó **Antigravity** como su apuesta directa en el espacio de IDEs agénticos, compitiendo frontalmente con Cursor y Windsurf.
+
+**Características:**
+
+- IDE de escritorio completo, no un plugin
+- Powered por Gemini 3.1 Pro como modelo principal, pero soporta también Claude y GPT
+- Integración profunda con el ecosistema Google (Firebase, Cloud Run, BigQuery)
+- Modo "agéntico" para tareas multi-archivo y refactoring a gran escala
+
+**Planes (febrero 2026):**
+
+| Plan | Precio/mes | Incluye |
+|------|-----------|---------|
+| **Preview** | $0 | Acceso limitado durante beta |
+| **Pro** | ~$20 | Uso completo de Gemini 3.1 Pro, 500 requests premium |
+| **Enterprise** | ~$40-$60 | Multi-modelo, admin centralizado, audit logs |
+
+**SWE-Bench Verified:** Con Gemini 3.1 Pro, Antigravity alcanza ~53% en la evaluación, competitivo con Claude Code (~55%) y superior a Cursor con GPT-5 (~49%).
+
+**Soporte LATAM:** Hereda la infraestructura de Google Cloud (3 regiones LATAM). Documentación disponible en español. El plan Enterprise incluye soporte en español vía Google Cloud Premier.
+
+**Consideración:** Al momento de escribir, Antigravity está en preview con disponibilidad limitada. Su viabilidad a largo plazo depende de si Google mantiene el compromiso con el producto - dado el historial de descontinuación de productos de Google, es prudente evaluar con cautela antes de hacer una apuesta organizacional fuerte.
 
 ---
 
@@ -588,13 +658,13 @@ Las herramientas anteriores necesitan ejecutarse sobre alguna infraestructura. E
 
 | Opción | Tipo | Ventajas | Desventajas | Costo Mensual (100 req/día) |
 |--------|------|----------|-------------|------------------------------|
-| **OpenAI API** | SaaS | Simplicidad, fiabilidad | Vendor lock-in, datos en USA | $50-$300 |
-| **Anthropic API** | SaaS | Mejor razonamiento, mayor contexto | Menos integraciones | $60-$350 |
-| **Azure OpenAI** | Cloud | Compliance (SOC2, HIPAA), datos en región | Requiere Azure account, complejidad | $80-$400 |
-| **AWS Bedrock** | Cloud | Múltiples modelos, integración AWS | Configuración compleja | $70-$380 |
-| **GCP Vertex AI** | Cloud | Gemini nativo, mejor vision/multimodal | Lock-in a GCP | $75-$390 |
-| **OpenRouter** | Agregador | Acceso a 100+ modelos, pricing competitivo | Intermediario adicional | $40-$250 |
-| **Together AI** | Especializado | Modelos open source rápidos, bajo costo | Menor confiabilidad que tier 1 | $30-$180 |
+| **OpenAI API** | SaaS | Simplicidad, fiabilidad | Vendor lock-in, datos en USA | US$50-$300 |
+| **Anthropic API** | SaaS | Mejor razonamiento, mayor contexto | Menos integraciones | US$60-$350 |
+| **Azure OpenAI** | Cloud | Compliance (SOC2, HIPAA), datos en región | Requiere Azure account, complejidad | US$80-$400 |
+| **AWS Bedrock** | Cloud | Múltiples modelos, integración AWS | Configuración compleja | US$70-$380 |
+| **GCP Vertex AI** | Cloud | Gemini nativo, mejor vision/multimodal | Lock-in a GCP | US$75-$390 |
+| **OpenRouter** | Agregador | Acceso a 100+ modelos, pricing competitivo | Intermediario adicional | US$40-$250 |
+| **Together AI** | Especializado | Modelos open source rápidos, bajo costo | Menor confiabilidad que tier 1 | US$30-$180 |
 | **Ollama (local)** | Self-hosted | Costo cero, privacidad total | Requiere hardware, menor performance | $0 (+ hardware) |
 
 ### Análisis de Soberanía de Datos y Compliance
@@ -626,9 +696,9 @@ Un banco regional (5,000 empleados) quería adoptar IA agéntica para sus 400 de
 
 - 28% de ganancia de productividad (menor que startups por restricciones)
 - Cero incidentes de compliance
-- Costo incremental: $180K/año vs. $45K/año si usaran soluciones SaaS directas
+- Costo incremental: US$180K/año vs. US$45K/año si usaran soluciones SaaS directas
 
-**Conclusión del CISO:** "El delta de costo es insignificante comparado con el riesgo de multas regulatorias (hasta $50M) o daño reputacional."
+**Conclusión del CISO:** "El delta de costo es insignificante comparado con el riesgo de multas regulatorias (hasta US$50M) o daño reputacional."
 
 ### Nuevos Jugadores: Vercel AI SDK, Modal, RunPod
 
@@ -647,7 +717,7 @@ El ecosistema no solo son los gigantes. Startups especializadas están ofreciend
 - Ejecutar código Python de forma serverless con GPUs bajo demanda
 - Ideal para agentes que necesitan ejecutar modelos pesados o pipelines de ML
 
-**Caso de uso:** Una startup de legal-tech corre su agente de análisis de contratos en Modal. Solo paga GPUs cuando hay requests (vs. mantener infraestructura 24/7). Ahorro: $4,200/mes.
+**Caso de uso:** Una startup de legal-tech corre su agente de análisis de contratos en Modal. Solo paga GPUs cuando hay requests (vs. mantener infraestructura 24/7). Ahorro: US$4,200/mes.
 
 **RunPod:**
 
@@ -731,18 +801,29 @@ Microsoft ha transformado su propuesta con [Azure AI Foundry]{.idx data-sub="inf
 
 [Google Cloud]{.idx data-sub="infraestructura cloud"} ha construido el stack agéntico más completo del mercado, combinando un modelo frontier propio (Gemini), el mayor catálogo de herramientas de IA, y ventajas únicas en precio/rendimiento y fundamentación con Google Search.
 
-**Fortalezas:**
-- **Gemini 3 Pro/Flash** (nativo multimodal: texto, imagen, video, audio en una sola arquitectura) con ventana de contexto de 1M tokens, líder en razonamiento
-- **200+ modelos en Model Garden**: Gemini + Claude (Anthropic) + Llama + Mistral + DeepSeek; es el **único hyperscaler** que ofrece su propio modelo frontier Y Claude en la misma plataforma
-- **Agent Development Kit (ADK)** (open source, Apache 2.0): Framework code-first para construir agentes de producción en menos de 100 líneas de código
-- **Protocolo Agent2Agent (A2A)**: Estándar abierto para comunicación entre agentes de diferentes vendors, donado a la Linux Foundation, adoptado por Microsoft y 50+ partners (Salesforce, SAP, ServiceNow, Workday)
-- **Grounding con Google Search**: Capacidad exclusiva: ningún otro hyperscaler puede fundamentar respuestas de LLM con resultados de Google Search en tiempo real con citas inline
-- **Precio/rendimiento**: TPU v6e ofrece 4x mejor rendimiento por dólar vs NVIDIA H100; GKE Inference Gateway reporta 30% menor costo y 60% menor latencia que alternativas
-- **ISO/IEC 42001:2023**: Primer hyperscaler certificado en gestión de sistemas de IA, diferenciador crítico para enterprises que despliegan agentes autónomos
-- **BigQuery + Vertex AI integrado**: Llamadas a Gemini desde SQL, experiencias agénticas incluidas en pricing existente sin add-ons
-- **3 regiones LATAM**: São Paulo, Santiago, Querétaro (México), la mayor cobertura LATAM de los tres hyperscalers
+**Modelos y catálogo:**
+
+- **Gemini 3 Pro/Flash** - nativo multimodal (texto, imagen, video, audio en una sola arquitectura) con ventana de contexto de 1M tokens, líder en razonamiento
+- **200+ modelos en Model Garden** - Gemini + Claude (Anthropic) + Llama + Mistral + DeepSeek; es el **único hyperscaler** que ofrece su propio modelo frontier Y Claude en la misma plataforma
+
+**Frameworks y estándares abiertos:**
+
+- **Agent Development Kit (ADK)** - open source (Apache 2.0), framework code-first para construir agentes de producción en menos de 100 líneas de código
+- **Protocolo Agent2Agent (A2A)** - estándar abierto para comunicación entre agentes de diferentes vendors, donado a la Linux Foundation, adoptado por Microsoft y 50+ partners (Salesforce, SAP, ServiceNow, Workday)
+
+**Diferenciadores únicos:**
+
+- **Grounding con Google Search** - ningún otro hyperscaler puede fundamentar respuestas de LLM con resultados de Google Search en tiempo real con citas inline
+- **BigQuery + Vertex AI integrado** - llamadas a Gemini desde SQL, experiencias agénticas incluidas en pricing existente sin add-ons
+
+**Infraestructura y compliance:**
+
+- **Precio/rendimiento** - TPU v6e ofrece 4x mejor rendimiento por dólar vs NVIDIA H100; GKE Inference Gateway reporta 30% menor costo y 60% menor latencia que alternativas
+- **ISO/IEC 42001:2023** - primer hyperscaler certificado en gestión de sistemas de IA, diferenciador crítico para enterprises que despliegan agentes autónomos
+- **3 regiones LATAM** - São Paulo, Santiago, Querétaro (México), la mayor cobertura LATAM de los tres hyperscalers
 
 **Debilidades:**
+
 - Tercer lugar en market share (~13% vs AWS ~30%, Azure ~20%); CIOs risk-averse pueden dudar
 - Rebranding frecuente (Agentspace → Gemini Enterprise en menos de 1 año) genera preocupaciones de estabilidad de producto
 - Curva de aprendizaje pronunciada: Model Garden, Agent Builder, ADK, Agent Engine, Gemini Enterprise pueden confundir a equipos nuevos
@@ -821,7 +902,7 @@ Los CRM son naturalmente compatibles con agentes porque gestionan interacciones 
 - Agentes pre-construidos para Service, Sales, Marketing
 - Atlas Reasoning Engine para decisiones complejas
 - Integración con Data Cloud para contexto completo del cliente
-- Pricing: $2 USD por conversación
+- Pricing: US$2 por conversación
 
 **ROI típico de Agentforce:**
 - 40% reducción en tiempo de resolución de casos
@@ -931,7 +1012,9 @@ Antes de elegir herramientas, es crítico entender los **modelos de pricing** qu
 | **Devin** | ACUs (consumo puro) | $20 + ACUs | $500/equipo | Custom |
 | **Amazon Q Developer** | Flat-rate | $19/mes | $19/user | $19/user |
 | **Gemini Code Assist** | Flat-rate | $19-$54/mes | $19-$45/user | $45-$54/user |
-| **GLM-5 (Zhipu AI)** | API pay-per-token | $10-$20/mes | - | - |
+| **GLM-5 (Zhipu AI)** | Planes + API | $10 (Lite) - $20 (Pro) | - | Max (custom) |
+| **Qwen Coder (Alibaba)** | API pay-per-token | $8-$15/mes | - | - |
+| **Antigravity (Google)** | Freemium + planes | $0 (preview) | $20/user (Pro) | $40-$60/user |
 
 ### Los Cuatro Modelos y Cuándo Conviene Cada Uno
 
@@ -939,9 +1022,9 @@ Antes de elegir herramientas, es crítico entender los **modelos de pricing** qu
 
 **2. Créditos / consumo (Cursor, Windsurf, Devin).** Flexible pero impredecible. El "headline price" puede ser engañoso: GitHub Copilot Pro+ a $39/mes incluye 1,500 "premium requests", pero cada query a Claude Sonnet consume 5 requests; son solo 300 consultas reales. Cursor Pro a $20/mes incluye un pool de créditos equivalente a ~225 consultas Sonnet. **Para CFOs:** exige al vendor un estimado de costo mensual por perfil de uso (light/medium/heavy) antes de firmar.
 
-**3. Suscripción con cap (Claude Code Max).** Lo mejor de ambos mundos para power users. El plan Max a $200/mes reemplaza consumo API típico de $300-800/mes para desarrolladores heavy: ahorro de 1.5-4x. **Breakeven vs. API:** si un desarrollador consume más de ~$200/mes en tokens, Max es mejor. Si consume menos de $50/mes, el API puro conviene.
+**3. Suscripción con cap (Claude Code Max).** Lo mejor de ambos mundos para power users. El plan Max a $200/mes reemplaza consumo API típico de US$300-800/mes para desarrolladores heavy: ahorro de 1.5-4x. **Breakeven vs. API:** si un desarrollador consume más de ~US$200/mes en tokens, Max es mejor. Si consume menos de US$50/mes, el API puro conviene.
 
-**4. API pura (Claude API, GLM-5, OpenCode).** Máxima flexibilidad, cero desperdicio. Ideal para uso esporádico (<$50/mes por dev) o para pipelines CI/CD automatizados donde el consumo varía dramáticamente semana a semana.
+**4. API pura (Claude API, GLM-5, OpenCode).** Máxima flexibilidad, cero desperdicio. Ideal para uso esporádico (<US$50/mes por dev) o para pipelines CI/CD automatizados donde el consumo varía dramáticamente semana a semana.
 
 ### El Factor China: Presión de Precios desde GLM-5
 
@@ -995,7 +1078,7 @@ No existe una combinación perfecta universal. La selección depende de:
 | Agentes | Claude Code Max ($100-200/mo para leads, Pro $20 para rest) | $20-$200 | Modelo híbrido: Max para tech leads, Pro para resto del equipo |
 | Infraestructura | Anthropic API + OpenAI | Variable | Diversificación de riesgo de proveedor |
 
-**Costo mensual total (30 devs):** ~$1,800/mes (Copilot Business para todos + Cursor Pro para 10 seniors + Claude Code Pro para 5 leads)
+**Costo mensual total (30 devs):** ~US$1,800/mes (Copilot Business para todos + Cursor Pro para 10 seniors + Claude Code Pro para 5 leads)
 **Productividad esperada:** +35-50%
 **ROI esperado (ajustado):** ~350-550%
 
@@ -1010,7 +1093,7 @@ No existe una combinación perfecta universal. La selección depende de:
 | Agentes | OpenHands o OpenCode (self-hosted) | $0 (infra) | Control de datos, sin costo por seat, código abierto |
 | Infraestructura | Azure AI Foundry o AWS Bedrock | Variable | Compliance, integración con cloud existente |
 
-**Costo mensual total (200 devs):** ~$9,500/mes (Copilot Enterprise para 200 + Cursor Teams para 30 core devs)
+**Costo mensual total (200 devs):** ~US$9,500/mes (Copilot Enterprise para 200 + Cursor Teams para 30 core devs)
 **Productividad esperada:** +28-40%
 **ROI esperado (ajustado):** ~250-400%
 
@@ -1026,11 +1109,11 @@ No existe una combinación perfecta universal. La selección depende de:
 | Agentes | Desarrollo interno o OpenHands | Infra only | IP propio, máximo control de datos |
 | Infraestructura | Azure/AWS/GCP en VPC privada | Variable | Compliance, auditoría, SLAs enterprise |
 
-**Costo mensual total (2,000 devs):** ~$60,000-$80,000/mes (depende del mix Tabnine vs. Amazon Q vs. Copilot)
+**Costo mensual total (2,000 devs):** ~US$60,000-US$80,000/mes (depende del mix Tabnine vs. Amazon Q vs. Copilot)
 **Productividad esperada:** +20-30% (menor por procesos más pesados)
 **ROI esperado (ajustado):** ~250-500%
 
-**Nota importante:** Los ROIs en enterprise son menores en porcentaje pero significativos en valor absoluto. 25% de ganancia de productividad en 2,000 devs (salario promedio $120K) = $60M de valor creado anual vs. ~$840K de costo en herramientas. El enterprise tax (2-4x el precio individual) se justifica por compliance, audit logs, SSO y soporte dedicado.
+**Nota importante:** Los ROIs en enterprise son menores en porcentaje pero significativos en valor absoluto. 25% de ganancia de productividad en 2,000 devs (salario promedio US$120K) = US$60M de valor creado anual vs. ~US$840K de costo en herramientas. El enterprise tax (2-4x el precio individual) se justifica por compliance, audit logs, SSO y soporte dedicado.
 
 ### Matriz de Decisión por Industria
 
@@ -1038,8 +1121,8 @@ No existe una combinación perfecta universal. La selección depende de:
 |-----------|---------------------|--------------------------|------------------------|
 | **Fintech / Banking** | GDPR, PCI-DSS, SOC2, regulación local | Tabnine self-hosted, Azure AI Foundry en región, Amazon Q Developer | Devin (datos salen a SaaS), GLM-5 (servidores en China), OpenAI directo |
 | **Healthtech** | HIPAA, PHI, consentimiento pacientes | AWS Bedrock con BAA, soluciones self-hosted | SaaS sin BAA, APIs internacionales sin BAA |
-| **E-commerce** | Velocidad, uptime, PII mínimo | GitHub Copilot, Cursor, Claude Code, Windsurf | Restricciones mínimas |
-| **SaaS B2B** | SOC2, tiempo de salida al mercado | GitHub Copilot, Cursor, Claude Code Max, v0.dev | Depende del segmento |
+| **E-commerce** | Velocidad, uptime, PII mínimo | GitHub Copilot, Cursor, Claude Code, Windsurf, Antigravity | Restricciones mínimas |
+| **SaaS B2B** | SOC2, tiempo de salida al mercado | GitHub Copilot, Cursor, Claude Code Max, Antigravity, v0.dev | Depende del segmento |
 | **Gobierno / Defense** | FedRAMP, clasificación, air-gapped | Tabnine self-hosted, Amazon Q (FedRAMP), modelos locales | Cualquier SaaS cloud público, GLM-5 |
 | **Manufactura / Industrial** | OT/IT separation, compliance local | Amazon Q Developer, Azure AI Foundry | Herramientas sin soporte on-premise |
 | **Gaming** | Velocidad, assets pesados, GPU | Cursor, Replit, Gemini Code Assist | Herramientas sin soporte multimodal |
@@ -1116,7 +1199,7 @@ Una fintech de 120 personas evaluó 4 herramientas: GitHub Copilot, Cursor, Tabn
 1. **Para 2026, el 75% de desarrolladores usarán asistentes de IA** (vs. 35% en 2024)
 2. **Para 2027, el 50% del código nuevo en empresas será generado por IA** con supervisión humana
 3. **Para 2028, los agentes autónomos manejarán 30% de los bugs de producción** end-to-end
-4. **El mercado crecerá de $4.8B (2025) a $24.3B (2028)** - CAGR del 71%
+4. **El mercado crecerá de US$4.8B (2025) a US$24.3B (2028)** - CAGR del 71%
 
 **McKinsey (Reporte "Developer Productivity in the Age of AI", Febrero 2025):**
 
@@ -1187,17 +1270,17 @@ Muchas organizaciones están en "modo wait-and-see", esperando que el ecosistema
 
 **Cálculo de costo de oportunidad:**
 
-Supongamos una empresa con 50 developers, salario promedio $100K/año:
+Supongamos una empresa con 50 developers, salario promedio US$100K/año:
 
-- **Costo anual de salarios:** $5M
+- **Costo anual de salarios:** US$5M
 - **Productividad ganada con IA agéntica (conservador):** 30%
-- **Valor creado anualmente:** $1.5M
-- **Costo de herramientas:** ~$30K/año
-- **Ganancia neta:** $1.47M/año
+- **Valor creado anualmente:** US$1.5M
+- **Costo de herramientas:** ~US$30K/año
+- **Ganancia neta:** US$1.47M/año
 
 **Si esperan 2 años antes de adoptar:**
 
-- Costo de oportunidad: $2.94M
+- Costo de oportunidad: US$2.94M
 - Ventaja competitiva perdida: Incalculable (competidores entregan features 30% más rápido)
 
 **Caso real - Dos startups de logistics en México:**
@@ -1205,7 +1288,7 @@ Supongamos una empresa con 50 developers, salario promedio $100K/año:
 Startup A (adoptó IA agéntica en Q1 2024):
 
 - Lanzó 7 features mayores en 12 meses
-- Levantó Serie A de $8M
+- Levantó Serie A de US$8M
 - Contrató solo 15 developers
 
 Startup B (enfoque tradicional):
@@ -1346,8 +1429,8 @@ Por otro lado, adoptar sin estrategia también tiene costos:
 
 > **Tarjeta de Referencia Rápida**
 >
-> - **Métrica clave 1**: Mercado de herramientas de IA para desarrollo creció de $1.2B (2023) a $4.8B (2025) (Gartner)
-> - **Métrica clave 2**: 68% de organizaciones usa 3+ herramientas simultáneamente, generando fragmentación (Stack Overflow, 2024); la selección incorrecta puede costar $150K-$500K/año
+> - **Métrica clave 1**: Mercado de herramientas de IA para desarrollo creció de US$1.2B (2023) a US$4.8B (2025) (Gartner)
+> - **Métrica clave 2**: 68% de organizaciones usa 3+ herramientas simultáneamente, generando fragmentación (Stack Overflow, 2024); la selección incorrecta puede costar US$150K-US$500K/año
 > - **Métrica clave 3**: Para 2027, agentes autónomos manejarán 30-40% de tareas de ingeniería en organizaciones avanzadas
 > - **Framework principal**: Las 4 Capas del Ecosistema Agéntico (Interfaces, Orquestación, Modelos, Infraestructura) y Matriz de Decisión por tipo de organización (ver este capítulo y Apéndice B)
 > - **Acción inmediata**: Haz un inventario completo de las herramientas de IA que tu equipo ya usa (formales e informales) y consolida en un stack estandarizado

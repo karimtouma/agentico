@@ -205,7 +205,7 @@ Para que un sistema sea verdaderamente "agéntico", necesita cuatro componentes 
 **Qué es:**
 
 - El [modelo de lenguaje grande]{.idx} (LLM) que hace el razonamiento
-- Ejemplos: [GPT-4]{.idx data-sub="modelos de lenguaje"}, [Claude]{.idx data-sub="modelos de lenguaje"} 3.5, [Gemini]{.idx data-sub="modelos de lenguaje"} 1.5
+- Ejemplos: [GPT-5]{.idx data-sub="modelos de lenguaje"}, [Claude Opus 4]{.idx data-sub="modelos de lenguaje"}, [Gemini 3]{.idx data-sub="modelos de lenguaje"}
 
 **Qué hace:**
 
@@ -676,12 +676,12 @@ Ejemplos de [Gartner]{.idx}:
 
 | Año | Apps empresariales con agentes IA | Mercado global (USD) | Proyectos cancelados (acumulado) | Nivel de madurez |
 |-----|-----------------------------------|----------------------|----------------------------------|------------------|
-| **2025** | <5% | $5.1 mil millones | --- | Experimentación y pilotos |
-| **2026** | 40% | $10.2 mil millones | 15% de proyectos iniciados | Adopción temprana en tareas específicas |
-| **2027** | 55% | $18.5 mil millones | 40% de proyectos iniciados | Consolidación; supervivencia de casos con ROI claro |
-| **2028** | 65% | $27.0 mil millones | Estabilización | Madurez operativa en verticales clave |
-| **2029** | 72% | $36.8 mil millones | Estabilización | Integración profunda en flujos de trabajo |
-| **2030** | 80% | $47.1 mil millones | Estabilización | Agentes como estándar en software empresarial |
+| **2025** | <5% | US$5.1 mil millones | --- | Experimentación y pilotos |
+| **2026** | 40% | US$10.2 mil millones | 15% de proyectos iniciados | Adopción temprana en tareas específicas |
+| **2027** | 55% | US$18.5 mil millones | 40% de proyectos iniciados | Consolidación; supervivencia de casos con ROI claro |
+| **2028** | 65% | US$27.0 mil millones | Estabilización | Madurez operativa en verticales clave |
+| **2029** | 72% | US$36.8 mil millones | Estabilización | Integración profunda en flujos de trabajo |
+| **2030** | 80% | US$47.1 mil millones | Estabilización | Agentes como estándar en software empresarial |
 
 > **Nota para líderes:** El crecimiento de <5% a 40% entre 2025 y 2026 representa un salto de 8x en solo 12 meses. Sin embargo, Gartner advierte que el 40% de proyectos de IA agéntica serán cancelados antes de finales de 2027, principalmente por costos escalados, ROI poco claro y controles de riesgo inadecuados. La clave está en empezar con casos de uso bien definidos y expectativas realistas.
 
@@ -720,13 +720,13 @@ Según encuestas de McKinsey, las razones principales:
 
 **Mercado global de IA agéntica:**
 
-- 2025: $5.1 mil millones (estimado)
-- 2030: $47.1 mil millones (proyección)
+- 2025: US$5.1 mil millones (estimado)
+- 2030: US$47.1 mil millones (proyección)
 - **CAGR:** 55.6% anual
 
 **Comparación:**
 
-- Mercado total de IA: $391 mil millones en 2025
+- Mercado total de IA: US$391 mil millones en 2025
 - IA agéntica es ~1.3% del mercado total
 - Pero creciendo 3x más rápido que el promedio de IA
 
@@ -770,8 +770,8 @@ Basado en casos de estudio publicados y reportes de industria, aquí los use cas
 
 - Empresa de 500 empleados, 50 nuevos hires/año
 - Ahorro: 50 × 5 horas = 250 horas/año
-- At $50/hora HR time = **$12,500/año de ahorro**
-- Costo del agente: $5,000/año (licencias + setup)
+- At US$50/hora HR time = **US$12,500/año de ahorro**
+- Costo del agente: US$5,000/año (licencias + setup)
 - **ROI: 150%**
 
 ### 2. Análisis de Datos y Business Intelligence
@@ -809,8 +809,8 @@ Basado en casos de estudio publicados y reportes de industria, aquí los use cas
 
 - Analista tiene 20 requests similares al mes
 - Ahorro: 20 × 14 horas = 280 horas/mes = 3,360 horas/año
-- At $80/hora analista time = **$268,800/año de ahorro**
-- Costo del agente: $50,000/año (licencia enterprise + setup)
+- At US$80/hora analista time = **US$268,800/año de ahorro**
+- Costo del agente: US$50,000/año (licencia enterprise + setup)
 - **ROI: 438%**
 
 **Bonus:** Decisiones más rápidas (de 2 días a 45 minutos) = ventaja competitiva
@@ -854,9 +854,9 @@ Basado en casos de estudio publicados y reportes de industria, aquí los use cas
 
 - Empresa SaaS con 500 casos de soporte nivel 2 por mes
 - Ahorro: 500 × 25 minutos = 208 horas/mes = 2,500 horas/año
-- A $40/hora por agente de soporte = **$100,000/año de ahorro**
+- A US$40/hora por agente de soporte = **US$100,000/año de ahorro**
 - Mejor satisfacción del cliente (tiempo de respuesta de 30 min → 5 min)
-- Costo del agente: $30,000/año
+- Costo del agente: US$30,000/año
 - **ROI: 233%**
 
 ### 4. Desarrollo de Software (El Caso de Uso Estrella)
@@ -921,13 +921,13 @@ Las ventanas de contexto han crecido entre 3x y 5x respecto a la generación ant
 
 - [RAG]{.idx} (Retrieval Augmented Generation) sigue siendo necesario para escenarios que exceden la ventana de contexto
 - Técnicas de indexación inteligente permiten al agente buscar solo lo relevante en lugar de cargar todo
-- El costo por token en contextos largos sigue siendo significativo: procesar 1M tokens cuesta entre $3 y $15 dependiendo del modelo
+- El costo por token en contextos largos sigue siendo significativo: procesar 1M tokens cuesta entre US$3 y US$15 dependiendo del modelo
 
-### Limitación 3: No Aprenden Permanentemente (Todavía)
+### Limitación 3: No Aprenden Permanentemente (En Evolución Rápida)
 
 **Problema:**
 
-- Los agentes actuales NO aprenden de experiencias pasadas de manera persistente
+- Los agentes actuales NO aprenden de experiencias pasadas de la misma forma que un humano
 - Cada sesión empieza "de cero" (excepto lo que guardes explícitamente en memoria)
 
 **Ejemplo:**
@@ -936,10 +936,15 @@ Las ventanas de contexto han crecido entre 3x y 5x respecto a la generación ant
 - Tú corriges el error y explicas por qué estaba mal
 - En la PRÓXIMA sesión, el agente puede cometer el mismo error (no "aprendió")
 
-**Solución temporal actual:**
+**Pero esta limitación está cambiando rápidamente.** Los agentes más recientes ya permiten crear [skills]{.idx data-sub="agentes de IA"} - patrones reutilizables basados en lo que funcionó bien. El ciclo funciona así: el agente resuelve un problema → el usuario valida que la solución es correcta → el patrón se guarda como skill → en futuras sesiones, el agente lo aplica automáticamente. No es aprendizaje biológico, pero es aprendizaje funcional.
 
-- Fine-tuning de modelos (caro, lento)
-- Guidelines y documentation claras (el agente lee pero no "internaliza")
+**Soluciones actuales (de menor a mayor complejidad):**
+
+- **Memory persistente y skills reutilizables:** Archivos de configuración donde el agente guarda contexto y patrones probados entre sesiones (disponible en Claude Code, Cursor, etc.)
+- **Contexto acumulativo:** Documentación estructurada que crece con cada interacción y que el agente consulta automáticamente
+- **Fine-tuning de modelos:** Re-entrenamiento con datos específicos de tu organización (caro, lento, pero efectivo para comportamientos muy específicos)
+
+La distinción clave: los agentes de hoy no "internalizan" como un humano, pero con el ciclo correcto de retroalimentación, pueden acumular conocimiento funcional que mejora su rendimiento sesión tras sesión.
 
 ### Riesgo 1: Security y Data Leakage
 
@@ -977,13 +982,13 @@ Las ventanas de contexto han crecido entre 3x y 5x respecto a la generación ant
 
 - Agentes iteran múltiples veces
 - Cada iteración = API call = costo
-- Un agente "stuck in a loop" puede generar $1000s en costos en horas
+- Un agente "stuck in a loop" puede generar US$1,000s en costos en horas
 
 **Ejemplo real reportado:**
 
 - Startup dio a agente de testing acceso irrestricto
 - Agente encontró un flaky test y entró en loop intentando arreglarlo
-- 2,000 iteraciones en 6 horas = $3,400 en costos de API
+- 2,000 iteraciones en 6 horas = US$3,400 en costos de API
 
 **Mitigación:**
 
@@ -1007,7 +1012,7 @@ Usa esta matriz de decisión:
 | ¿El proceso es repetitivo (>10 veces/mes)? | +2 | 0 | ___ |
 | ¿Los pasos están bien documentados? | +1 | 0 | ___ |
 | ¿Hay un humano disponible para supervisar inicialmente? | +1 | -1 | ___ |
-| ¿El costo de falla es bajo (<$1000)? | +1 | -2 | ___ |
+| ¿El costo de falla es bajo (<US$1,000)? | +1 | -2 | ___ |
 | ¿El proceso toma >30 minutos manual? | +1 | 0 | ___ |
 
 **Interpretación:**

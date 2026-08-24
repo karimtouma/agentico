@@ -13,8 +13,11 @@ No necesitas los 12 frameworks desde el inicio. Selecciona según tu situación:
 | Tu contexto | Empieza con estos 3 | Por qué |
 |-------------|---------------------|---------|
 | **Empezando** (primer piloto) | #1 Madurez + #5 Crawl/Walk/Run + #2 Readiness | Ubica tu estado actual, diseña la ruta y verifica que tienes los prerrequisitos |
-| **Escalando** (de piloto a producción) | #4 ROI vs. Riesgo + #6 Autonomía + #3 Scorecard | Prioriza casos de uso, define niveles de governance y selecciona herramientas con criterio |
+| **Escalando** (de piloto a producción) | #4 Beneficio vs. Complejidad + #6 Autonomía + #3 Scorecard | Prioriza casos de uso, define niveles de governance y selecciona herramientas con criterio |
 | **Regulados** (banca, salud, gobierno) | #7 Gobernanza en 3 Niveles + #10 Clasificación de Riesgo + #11 Incident Response | Establece controles antes de escalar; tu regulador lo exigirá |
+| **Solo Developer / Startup en blitzscaling** | #3 Scorecard de Herramientas + #5 Crawl/Walk/Run + #12 Modelo de ROI | Selecciona stack de máxima productividad individual, escala rápido sin overhead, mide ROI para tus inversionistas |
+
+**Nota para solo developers y founders técnicos:** Los frameworks de este libro no son solo para enterprises con cientos de empleados. Si eres un solo developer que quiere aprovechar la disrupción agéntica como founder, o un equipo mínimo (<5 personas) en blitzscaling, la IA agéntica es tu mayor palanca competitiva. Con las herramientas correctas, un equipo de 2-3 personas puede producir el output de un equipo de 15-20 (ver Capítulo 14, sección "El Fenómeno de la Long Tail del Software"). Los frameworks #3 (Scorecard) y #12 (ROI) te ayudan a elegir herramientas con criterio y a demostrar el impacto a inversionistas o socios.
 
 Los 12 frameworks restantes están disponibles como biblioteca de referencia conforme avances en madurez.
 
@@ -140,11 +143,13 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 ---
 
-## 4. Matriz de ROI vs. Riesgo para Priorización de Casos de Uso
+## 4. Matriz de Beneficio vs. Complejidad de Adopción
 
-**Cuándo usarlo:** Para priorizar qué casos de uso de IA agéntica implementar primero. Evita el error común de empezar por el caso más complejo.
+**Cuándo usarlo:** Para priorizar qué casos de uso de IA agéntica implementar primero. Evita el error común de empezar por el caso más complejo o de subestimar el esfuerzo organizacional de adopción.
 
 **Referencia:** Capítulo 12
+
+**¿Por qué "complejidad" y no "riesgo"?** El concepto de "riesgo" es relativo y puede subestimar lo que realmente frena la adopción. La *complejidad de adopción* captura factores más concretos: cambio cultural necesario, integración con sistemas existentes, curva de aprendizaje del equipo, y requisitos de gobernanza. Un caso puede tener bajo riesgo técnico pero alta complejidad organizacional - y eso determina si se logra implementar o no.
 
 ### Matriz de Decisión
 
@@ -160,8 +165,8 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
   % Axis labels
   \node[quadlabel, above] at (0,3.8) {BENEFICIO ALTO};
   \node[quadlabel, below] at (0,-3.8) {BENEFICIO BAJO};
-  \node[quadlabel, left] at (-4.8,0) {RIESGO ALTO};
-  \node[quadlabel, right] at (4.8,0) {RIESGO BAJO};
+  \node[quadlabel, left, text width=2.5cm, align=center] at (-5.2,0) {COMPLEJIDAD\\ALTA};
+  \node[quadlabel, right, text width=2.5cm, align=center] at (5.2,0) {COMPLEJIDAD\\BAJA};
   % Quadrant backgrounds
   \fill[pa-light, opacity=0.5] (0.05,0.05) rectangle (4.5,3.5);
   \fill[pa-callout-neutral-bg, opacity=0.5] (-4.5,0.05) rectangle (-0.05,3.5);
@@ -178,23 +183,32 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
   \node[cell] at (2.3,-1.8) {{\bfseries QUICK WINS}\\
         \textbullet\ Autocompletado de código\\
         \textbullet\ Generación de boilerplate\\
-        \textbullet\ Búsqueda};
-  \node[cell] at (-2.3,-1.8) {{\bfseries\color{pa-callout-neutral-border}EVITAR O MITIGAR}\\
+        \textbullet\ Búsqueda semántica};
+  \node[cell] at (-2.3,-1.8) {{\bfseries\color{pa-callout-neutral-border}EVITAR O POSTERGAR}\\
         \textbullet\ Despliegue autónomo\\
-        \textbullet\ Acceso a producción};
+        \textbullet\ Acceso directo a prod};
 \end{tikzpicture}
 \end{center}
 ```
 
+**¿Qué incluye "complejidad de adopción"?** Evalúa cada caso de uso en estas 4 dimensiones (1-10 cada una):
+
+| Dimensión | Qué mide | Ejemplo bajo (1-3) | Ejemplo alto (7-10) |
+|-----------|----------|---------------------|---------------------|
+| **Cambio cultural** | Cuánto cambia el flujo de trabajo | Agregar autocompletado | Delegar code review a agentes |
+| **Integración técnica** | Esfuerzo de conectar con sistemas | Plugin de IDE estándar | Integrar con ERP legacy + CI/CD |
+| **Gobernanza requerida** | Controles y aprobaciones necesarias | Ninguno (uso interno) | Audit trail, compliance, legal review |
+| **Curva de aprendizaje** | Tiempo para que el equipo sea productivo | 1-2 días | 2-3 meses + training formal |
+
 **Instrucciones de uso:**
 
 1. Lista los 10 casos de uso candidatos
-2. Para cada uno, evalúa beneficio (1-10) y riesgo (1-10)
+2. Para cada uno, evalúa beneficio (1-10) y complejidad total de adopción (promedio de las 4 dimensiones)
 3. Ubícalos en la matriz
-4. Comienza con quick wins (bajo riesgo, beneficio moderado) para generar momentum
+4. Comienza con quick wins (baja complejidad, beneficio moderado) para generar momentum
 5. Avanza hacia "Priorizar Primero" una vez que el equipo tenga experiencia
 6. "Evaluar con Cuidado" solo después de 6+ meses de madurez
-7. "Evitar" hasta tener gobernanza robusta establecida
+7. "Evitar o Postergar" hasta tener gobernanza robusta establecida
 
 ---
 
@@ -478,12 +492,12 @@ Activar detención automática del agente cuando:
 
 | Categoría | Componentes | Rango Típico (equipo de 20 devs) |
 |-----------|-------------|----------------------------------|
-| **Licencias** | Herramientas de IA, APIs, IDEs premium | $2,000-8,000/mes |
-| **Infraestructura** | GPUs (si self-hosted), APIs de modelos | $1,000-10,000/mes |
-| **Capacitación** | Talleres, tiempo de aprendizaje, materiales | $5,000-15,000 (one-time) |
-| **Implementación** | Setup, integración, configuración | $10,000-30,000 (one-time) |
+| **Licencias** | Herramientas de IA, APIs, IDEs premium | US$2,000-8,000/mes |
+| **Infraestructura** | GPUs (si self-hosted), APIs de modelos | US$1,000-10,000/mes |
+| **Capacitación** | Talleres, tiempo de aprendizaje, materiales | US$5,000-15,000 (one-time) |
+| **Implementación** | Setup, integración, configuración | US$10,000-30,000 (one-time) |
 | **Supervisión** | Tiempo adicional de review de código IA | 10-15% del tiempo de seniors |
-| **Gobernanza** | Auditorías, compliance, políticas | $2,000-5,000/mes |
+| **Gobernanza** | Auditorías, compliance, políticas | US$2,000-5,000/mes |
 
 ### Variables de Beneficio
 
@@ -503,8 +517,8 @@ Activar detención automática del agente cuando:
 
 | Concepto | Monto |
 |----------|-------|
-| Costos totales 18 meses | ~$180,000 |
-| Beneficios cuantificados | ~$1,340,000 |
+| Costos totales 18 meses | ~US$180,000 |
+| Beneficios cuantificados | ~US$1,340,000 |
 | **ROI** | **645%** |
 
 **Nota:** El ROI de 645% documentado en el Cap. 12 asume implementación bien ejecutada con el framework Crawl/Walk/Run. Implementaciones apresuradas o sin governance adecuada típicamente logran ROI del 100-200%, y en los peores casos pueden ser negativas.
@@ -524,7 +538,7 @@ Activar detención automática del agente cuando:
 
 ### Para tu Próxima Reunión de Liderazgo
 
-Imprime los frameworks #1 (Madurez), #2 (Readiness) y #4 (ROI vs Riesgo) para una sesión de diagnóstico de 90 minutos con tu equipo de liderazgo. Esto proporcionará una fotografía clara de dónde está la organización y hacia dónde debería dirigirse.
+Imprime los frameworks #1 (Madurez), #2 (Readiness) y #4 (Beneficio vs. Complejidad) para una sesión de diagnóstico de 90 minutos con tu equipo de liderazgo. Esto proporcionará una fotografía clara de dónde está la organización y hacia dónde debería dirigirse.
 
 ---
 

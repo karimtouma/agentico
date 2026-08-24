@@ -65,7 +65,7 @@ Es importante notar el lenguaje cauteloso: "tal vez", "probablemente". Nadella n
 
 No es un piloto. No es un experimento. Es producción.
 
-[Meta]{.idx} (Facebook) reporta una transformación similar. Mark Zuckerberg proyectó que "tal vez la mitad" del trabajo de ingeniería en futuros modelos Llama sería manejado por agentes de IA en el siguiente año[^ch1-3]. Meta planea invertir entre **$60-65 mil millones en 2025** para fortalecer su infraestructura de IA, lo que refleja la seriedad de esta apuesta.
+[Meta]{.idx} (Facebook) reporta una transformación similar. Mark Zuckerberg proyectó que "tal vez la mitad" del trabajo de ingeniería en futuros modelos Llama sería manejado por agentes de IA en el siguiente año[^ch1-3]. Meta planea invertir entre **US$60-65 mil millones en 2025** para fortalecer su infraestructura de IA, lo que refleja la seriedad de esta apuesta.
 
 Google, según declaraciones públicas de su CEO Sundar Pichai, también reporta que aproximadamente 30% de su nuevo código es generado por IA[^ch1-4], especialmente en lenguajes como Python.
 
@@ -166,9 +166,9 @@ Entonces, ¿por qué esto es diferente?
 
 Los números de inversión son significativos:
 
-- Meta: **$60-65 mil millones en 2025** solo en infraestructura de IA[^ch1-9]
+- Meta: **US$60-65 mil millones en 2025** solo en infraestructura de IA[^ch1-9]
 - Microsoft: Decenas de miles de millones en capacidad de GPU y desarrollo de IA
-- El mercado global de IA alcanzó **$391 mil millones en 2025**[^ch1-10]
+- El mercado global de IA alcanzó **US$391 mil millones en 2025**[^ch1-10]
 
 Esta no es inversión especulativa en moonshots. Es inversión en infraestructura de producción que ya está generando valor.
 
@@ -178,7 +178,7 @@ Según la encuesta de [Stack Overflow]{.idx} 2025[^ch1-11]:
 
 - **84% de desarrolladores ya usan herramientas de IA** en su trabajo diario
 - [GitHub Copilot]{.idx} alcanzó **20 millones de usuarios** en julio de 2025[^ch1-12]
-- El mercado de asistentes de código de IA alcanzó **$7.37 mil millones en 2025**, con proyección de **$30.1 mil millones para 2032**[^ch1-13]
+- El mercado de asistentes de código de IA alcanzó **US$7.37 mil millones en 2025**, con proyección de **US$30.1 mil millones para 2032**[^ch1-13]
 
 Esta adopción bottom-up (los desarrolladores mismos demandando estas herramientas) es un indicador mucho más confiable que el top-down hype.
 
@@ -203,7 +203,7 @@ Estos no son números de marketing. Son resultados de estudios peer-reviewed pub
 | Tiempo en codificacion y testing rutinario | Baseline | 40-70% del tiempo original | 30-60% ahorro | Index.dev (2025) |
 | Tiempo de onboarding (primer PR) | 6 semanas | 3-4 semanas | -33% a -50% | Reportes de industria (2025) |
 
-> **Para el CFO:** Si un desarrollador senior cuesta $120K/ano y gana 40% de productividad, eso equivale a $48K de valor adicional por persona, por una inversion de $600/ano en herramientas.
+> **Para el CFO:** Si un desarrollador senior cuesta US$120K/año y gana 40% de productividad, eso equivale a US$48K de valor adicional por persona, por una inversion de US$600/año en herramientas.
 
 > **Dato verificado:**
 >
@@ -235,21 +235,20 @@ Kevin Scott de Microsoft lo expresa bien: pasamos de "maestros de input a maestr
 
 **El ingeniero del pasado (pre-2020):**
 
-- Recibe spec: "Necesitamos un endpoint que devuelva lista de usuarios filtrada por fecha"
-- Escribe la lógica de la query
-- Escribe el controller
-- Escribe los tests
-- Documenta la API
+- Recibe el requerimiento funcional: "Necesitamos un endpoint - un punto de conexión donde otras aplicaciones puedan solicitar información - que devuelva una lista de usuarios filtrada por fecha"
+- Escribe la query - la instrucción que le dice a la base de datos exactamente qué información buscar y cómo filtrarla
+- Escribe el controller - el componente que recibe la solicitud del usuario, coordina la lógica y devuelve la respuesta (piensa en él como el recepcionista que toma tu pedido y lo gestiona)
+- Escribe los tests - pruebas automatizadas que verifican que todo funciona correctamente antes de que llegue a producción
+- Documenta la API - la especificación que explica a otros equipos cómo usar este nuevo punto de conexión
 - Tiempo: 2-3 días
 
 **El ingeniero del presente/futuro (2025+):**
 
-- Recibe spec: "Necesitamos un endpoint que devuelva lista de usuarios filtrada por fecha"
-- Le pide a AI agent: "Crea un endpoint REST que devuelva usuarios filtrados por fecha de creación, con paginación, siguiendo nuestros estándares de API"
-- Revisa el código generado
-- Valida que cumple estándares de seguridad y rendimiento
-- Aprueba tests generados y edge cases
-- Agrega tests para casos específicos de negocio que la IA no conoce
+- Recibe el requerimiento funcional: "Necesitamos un endpoint que devuelva lista de usuarios filtrada por fecha"
+- El agente de IA investiga automáticamente: analiza la arquitectura técnica del proyecto (cómo está organizado el código), los esquemas de la base de datos (qué tablas existen y cómo se relacionan) y las reglas de negocio existentes (qué lógica ya está implementada)
+- Con ese contexto, el agente elabora un plan técnico: propone dónde crear el endpoint, qué patrón seguir según los estándares del proyecto y qué casos especiales considerar
+- El agente genera el código: query, controller, tests y documentación - siguiendo los patrones que encontró en el proyecto
+- El ingeniero revisa el resultado: valida que cumple estándares de seguridad y rendimiento, y agrega tests para los casos de negocio que solo un humano con contexto organizacional conoce
 - Tiempo: 3-4 horas
 
 ¿Qué pasó con esas 2-3 días de diferencia?
@@ -292,7 +291,9 @@ Con ese contexto, las habilidades de tu equipo se reorganizan en tres categoría
 
 5. **Validación y revisión de código generado por IA**: La encuesta de Stack Overflow 2025 revela una tensión central: el **84% de desarrolladores** usa o planea usar herramientas de IA, pero solo el **33% confía en la precisión del resultado**[^ch1-23]. Un 45% reporta que depurar código generado por IA consume demasiado tiempo. La capacidad de leer código que tú no escribiste, identificar suposiciones ocultas y detectar errores sutiles se vuelve más valiosa que la capacidad de generar ese código. Para más contexto sobre los sesgos cognitivos que dificultan esta revisión, ver Capítulo 5.
 
-6. **Orquestación de agentes**: Diseñar flujos donde múltiples agentes de IA colaboran - uno que escribe código, otro que lo revisa, otro que genera tests - requiere una habilidad nueva que combina pensamiento de sistemas con comprensión de las capacidades y limitaciones de cada modelo. Es el equivalente a dirigir un equipo donde los miembros son muy productivos pero carecen de sentido común. Para perfiles detallados de este y otros roles emergentes, ver Capítulo 11.
+6. **[Orquestación agéntica]{.idx}**: Diseñar flujos donde múltiples agentes de IA colaboran - uno que escribe código, otro que lo revisa, otro que genera tests - requiere una habilidad nueva que combina pensamiento de sistemas con comprensión de las capacidades y limitaciones de cada modelo. Es el equivalente a dirigir un equipo donde los miembros son muy productivos pero carecen de sentido común. Pero no se trata solo de coordinar agentes; también implica diseñar las [arquitecturas de información]{.idx data-sub="orquestación agéntica"} que determinan qué contexto recibe cada agente y cuándo. Para perfiles detallados de este y otros roles emergentes, ver Capítulo 11.
+
+7. **Configuración y habilitación de herramientas de IA**: Existe una meta-capacidad emergente que va más allá de *usar* las herramientas: *configurarlas* para que sean efectivas. Esto incluye conectar agentes con herramientas externas mediante protocolos como MCP (Model Context Protocol), crear skills reutilizables que encapsulen patrones de trabajo probados, y diseñar estrategias de gestión de contexto - es decir, cómo alimentar al agente con la información correcta en el momento correcto para que sus resultados sean precisos. El ingeniero que sabe hacer esto convierte una herramienta genérica en un sistema especializado para su organización. Ver Capítulo 8 para el ecosistema completo de herramientas.
 
 **Categoría C: Habilidades que se comoditizan** (la IA las absorbe)
 
@@ -319,13 +320,14 @@ Que estas habilidades se comoditicen no significa que sean irrelevantes. Signifi
 | Validación y revisión de código IA | Medio | Alto | Alza | Competencia crítica para todos los niveles |
 | Prompt engineering aplicado | No existía | Alto | Nueva (+135.8%) | Se integra en evaluaciones técnicas |
 | Orquestación de agentes | No existía | Alto | Nueva | Roles especializados emergentes (ver Cap. 11) |
+| Configuración de herramientas IA (MCP, skills, contexto) | No existía | Alto | Nueva | Diferenciador: convierte herramientas genéricas en sistemas especializados |
 | Estrategia de testing | Medio | Alto | Alza | Diseño de estrategia > escritura de tests |
 | Memorización de sintaxis | Alto | Bajo | Baja fuerte | Irrelevante en entrevistas modernas |
 | Implementación de algoritmos estándar | Alto | Bajo | Baja fuerte | IA los implementa perfectamente |
 | Escritura de código repetitivo | Medio | Muy Bajo | Baja fuerte | Completamente delegable a IA |
 | Depuración de errores sintácticos | Medio | Bajo | Baja | IA raramente comete estos errores |
 
-> **Para Tu Próxima Reunión de Liderazgo:** Haz este ejercicio con tu equipo directivo: mapea las 7 habilidades de las Categorías A y B contra las capacidades actuales de tu equipo. ¿Cuántos de tus desarrolladores tienen fortaleza en arquitectura y conocimiento de dominio? ¿Qué porcentaje de tu presupuesto de capacitación va a habilidades de Categoría A (que se multiplican) vs. Categoría C (que se comoditizan)? Si la respuesta es "la mayoría va a cursos de nuevos lenguajes y frameworks", tienes una desalineación estratégica. Para un framework completo de riesgos por erosión de habilidades, ver Capítulo 10.
+> **Para Tu Próxima Reunión de Liderazgo:** Haz este ejercicio con tu equipo directivo: mapea las 8 habilidades de las Categorías A y B contra las capacidades actuales de tu equipo. ¿Cuántos de tus desarrolladores tienen fortaleza en arquitectura y conocimiento de dominio? ¿Qué porcentaje de tu presupuesto de capacitación va a habilidades de Categoría A (que se multiplican) vs. Categoría C (que se comoditizan)? Si la respuesta es "la mayoría va a cursos de nuevos lenguajes y frameworks", tienes una desalineación estratégica. Para un framework completo de riesgos por erosión de habilidades, ver Capítulo 10.
 
 > **Implicación para líderes de talento:** Las descripciones de puesto y las evaluaciones de desempeño deben actualizarse para reflejar esta nueva realidad. Las habilidades en la mitad superior de esta tabla deben pesar más en contratación y promociones. Un desarrollador senior que domina arquitectura, seguridad y conocimiento de dominio vale más que tres juniors que solo saben generar código con IA.
 
@@ -491,7 +493,7 @@ Si el piloto fue exitoso:
 
 *"Microsoft, Google y Meta reportan que 30% de su código ya es generado por IA, con ganancias de productividad del 55-126% en estudios controlados. Nuestros competidores están adoptando esta tecnología ahora. Si iniciamos un piloto controlado de 3 meses con 5 desarrolladores, podemos medir el impacto real en nuestra organización antes de comprometernos a una inversión mayor.*
 
-*El costo estimado es $20-30 USD/desarrollador/mes para herramientas. El potencial de ahorro en un equipo de 50 desarrolladores es de $200-400K anuales si alcanzamos aunque sea 30% de las ganancias de productividad reportadas en la industria.*
+*El costo estimado es US$20-30/desarrollador/mes para herramientas. El potencial de ahorro en un equipo de 50 desarrolladores es de US$200-400K anuales si alcanzamos aunque sea 30% de las ganancias de productividad reportadas en la industria.*
 
 *El riesgo de no experimentar es mayor que el costo del piloto."*
 
@@ -529,13 +531,13 @@ Tradicionalmente, si necesitabas aumentar capacidad de desarrollo en 30%, tenía
 
 **Opción A: Contratar más gente**
 
-- Costo: $80-150K USD por desarrollador al año (salario + beneficios + costos indirectos)
+- Costo: US$80-150K por desarrollador al año (salario + beneficios + costos indirectos)
 - Tiempo de ramp-up: 3-6 meses para productividad completa
 - Riesgo: Dificultad de contratación, turnover, gestión de equipo más grande
 
 **Opción B: Adoptar IA agéntica**
 
-- Costo: $20-100 USD por desarrollador al mes = $240-1,200 USD al año
+- Costo: US$20-100 por desarrollador al mes = US$240-1,200 al año
 - Tiempo de ramp-up: 11 semanas para productividad completa (según Microsoft Research)
 - Ganancia potencial: 30-55% de aumento en productividad según estudios
 
@@ -544,28 +546,28 @@ Hagamos la matemática para un equipo de 50 desarrolladores:
 **Escenario Conservador: 20% de ganancia de productividad**
 
 - Equivalente a: 10 desarrolladores adicionales de capacidad
-- Costo de herramientas IA: $50 USD/dev/mes × 50 devs × 12 meses = $30,000 USD/año
-- Costo de contratar 10 devs: $1,000,000+ USD/año
-- **Ahorro potencial: $970,000 USD/año**
+- Costo de herramientas IA: US$50/dev/mes × 50 devs × 12 meses = US$30,000/año
+- Costo de contratar 10 devs: US$1,000,000+/año
+- **Ahorro potencial: US$970,000/año**
 
 **Escenario Optimista: 50% de ganancia de productividad**
 
 - Equivalente a: 25 desarrolladores adicionales de capacidad
-- Costo de herramientas IA: $30,000 USD/año
-- Costo de contratar 25 devs: $2,500,000+ USD/año
-- **Ahorro potencial: $2,470,000 USD/año**
+- Costo de herramientas IA: US$30,000/año
+- Costo de contratar 25 devs: US$2,500,000+/año
+- **Ahorro potencial: US$2,470,000/año**
 
 **Análisis de Costo-Beneficio: IA Agéntica vs. Contratación por Tamaño de Equipo**
 
 | Tamaño de Equipo | Costo Anual Herramientas IA | Ganancia 30% (equiv. personal) | Ahorro vs. Contratar |
 |------------------|----------------------------|----------------------------------|----------------------|
-| 10 devs | $6,000 | 3 devs adicionales | $294,000 |
-| 25 devs | $15,000 | 7.5 devs adicionales | $735,000 |
-| 50 devs | $30,000 | 15 devs adicionales | $1,470,000 |
-| 100 devs | $60,000 | 30 devs adicionales | $2,940,000 |
-| 250 devs | $150,000 | 75 devs adicionales | $7,350,000 |
+| 10 devs | US$6,000 | 3 devs adicionales | US$294,000 |
+| 25 devs | US$15,000 | 7.5 devs adicionales | US$735,000 |
+| 50 devs | US$30,000 | 15 devs adicionales | US$1,470,000 |
+| 100 devs | US$60,000 | 30 devs adicionales | US$2,940,000 |
+| 250 devs | US$150,000 | 75 devs adicionales | US$7,350,000 |
 
-*Asumiendo $100K costo total por desarrollador al año (salario + costos indirectos)*
+*Asumiendo US$100K costo total por desarrollador al año (salario + costos indirectos)*
 
 ### El Argumento para CFOs: IA Como CapEx vs. OpEx
 
@@ -770,7 +772,7 @@ Si tu horizon de planificación es 3 años:
 
 6. **El costo de no actuar es alto**: Tus competidores están adoptando esto ahora. La pregunta no es "si", sino "cuándo" y "cómo".
 
-7. **El ROI es compelling para CFOs**: Un equipo de 50 desarrolladores puede ahorrar $970K-$2.4M al año vs. contratar para la misma capacidad.
+7. **El ROI es compelling para CFOs**: Un equipo de 50 desarrolladores puede ahorrar US$970K-US$2.4M al año vs. contratar para la misma capacidad.
 
 8. **Las métricas tradicionales son obsoletas**: Necesitas medir Code Review Effectiveness, Defect Escape Rate, y Developer Experience; no solo velocity.
 
@@ -817,7 +819,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 **Estrategia recomendada:**
 
-1. **Semanas 1-2**: Habilita IA coding tools para todos los developers (costo: ~$20-30/dev/mes)
+1. **Semanas 1-2**: Habilita IA coding tools para todos los developers (costo: ~US$20-30/dev/mes)
 2. **Semanas 3-4**: Establece "code review buddy system": todo código AI-generado revisado por al menos un peer
 3. **Semanas 5-8**: Mide velocity en tu project management tool (Jira, Linear, etc.)
 4. **Mes 3**: Evalúa si estás entregando features 30-50% más rápido. Si sí, continúa. Si no, diagnostica por qué.
@@ -864,7 +866,7 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 - **Velocity increase**: "El equipo de Product Platform incrementó velocity de 40 a 58 story points por sprint (+45%)"
 - ***time-to-market***: "Features que tomaban 3 semanas ahora toman 1.8 semanas promedio"
-- **Cost per feature**: "Costo por feature bajó de $12K a $7.5K considerando tiempo de ingeniería"
+- **Cost per feature**: "Costo por feature bajó de US$12K a US$7.5K considerando tiempo de ingeniería"
 
 **Herramientas recomendadas para medianas:**
 
@@ -1059,7 +1061,7 @@ Aquí un plan concreto de 30 días que puedes seguir:
 
 - [ ] Día 1-2: Lee este capítulo y el Cap 7 (Ecosistema de Herramientas)
 - [ ] Día 3: Encuesta informal a 10 desarrolladores: "¿Ya usas IA tools? ¿Cuáles? ¿Qué te gustaría?"
-- [ ] Día 4: Revisa presupuesto actual de herramientas de ingeniería. ¿Hay $2-5K/mes disponibles para piloto?
+- [ ] Día 4: Revisa presupuesto actual de herramientas de ingeniería. ¿Hay US$2-5K/mes disponibles para piloto?
 - [ ] Día 5: Reunión con Security/Compliance: "¿Qué restricciones tenemos para usar AI coding tools?"
 
 **Semana 2: Selección y Preparación**

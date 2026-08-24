@@ -24,7 +24,7 @@
 | # | Archivo | Título | Págs | Estado |
 |---|---------|--------|------|--------|
 | 0 | [00_prefacio.md](capitulos/00_prefacio.md) | Prefacio: Por qué los líderes deben leer esto ahora | 5 | Completado |
-| -| [00a_executive_brief.md](capitulos/00a_executive_brief.md) | Resumen Ejecutivo para el Líder | 10 | Completado |
+| - | [00a_executive_brief.md](capitulos/00a_executive_brief.md) | Resumen Ejecutivo para el Líder | 10 | Completado |
 | 1 | [01_introduccion.md](capitulos/01_introduccion.md) | El momento de inflexión en desarrollo de software | 15 | Completado |
 | 2 | [02_paradigmas.md](capitulos/02_paradigmas.md) | De los paradigmas tradicionales al paradigma agéntico | 20 | Completado |
 | 3 | [03_que_es_ia_agentica.md](capitulos/03_que_es_ia_agentica.md) | ¿Qué es la Inteligencia Artificial Agéntica? | 20 | Completado |

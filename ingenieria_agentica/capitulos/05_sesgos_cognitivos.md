@@ -466,7 +466,7 @@ Un dashboard para monitorear sesgos a nivel organizacional:
 - Tests generados por IA también fallaron en cubrir este caso
 - Automation bias en cascada: todos confiaron en que "alguien más" lo había verificado
 
-**Costo**: $45K en transferencias revertidas, 2 semanas de auditoría.
+**Costo**: US$45K en transferencias revertidas, 2 semanas de auditoría.
 
 **Lección**: Código financiero requiere "defense in depth" que no asuma que ninguna capa es infalible.
 
@@ -499,7 +499,7 @@ Un dashboard para monitorear sesgos a nivel organizacional:
 - Complacency sistemática: "si pasó tantas revisiones, debe estar bien"
 - Ningún SAST configurado para código generado por IA
 
-**Costo**: $2.3M en respuesta a incidente, notificación regulatoria, daño reputacional.
+**Costo**: US$2.3M en respuesta a incidente, notificación regulatoria, daño reputacional.
 
 **Lección**: La complacency se acumula. Sin intervención activa, la vigilancia decae hasta el incidente.
 
@@ -587,16 +587,16 @@ Responde Sí/No:
 
 **Referencias:**
 
-1. Aalto University. (2024). "When Using AI, Users Fall for the Dunning-Kruger Trap in Reverse".
-2. Stanford AI Lab. (2024). "Automation Bias in AI-Assisted Code Development".
-3. Singh, M. et al. / Microsoft Research / IIT Delhi. (2025). "Do Code Models Suffer from the Dunning-Kruger Effect?". arXiv:2510.05457.
-4. Oxford. (2024). "Bending the Automation Bias Curve".
-5. Google. (2024). "DORA Report 2024: Accelerate State of DevOps".
-6. GitClear. (2024). "AI Copilot Code Quality Report". Análisis de 153M líneas de código.
-7. Stack Overflow. (2024). "Stack Overflow Developer Survey 2024".
-8. Kahneman, D. (2011). "Thinking, Fast and Slow". Farrar, Straus and Giroux.
-9. Mollick, E. (2024). "Co-Intelligence: Living and Working with AI".
-10. OWASP. (2025). "OWASP Top 10 for Large Language Model Applications".
+1. Aalto University (2024). "When Using AI, Users Fall for the Dunning-Kruger Trap in Reverse." Aalto University Research Report.
+2. Stanford AI Lab (2024). "Automation Bias in AI-Assisted Code Development." Stanford University.
+3. Singh, M. et al. (2025). "Do Code Models Suffer from the Dunning-Kruger Effect?" Microsoft Research / IIT Delhi.
+4. University of Oxford (2024). "Bending the Automation Bias Curve." Oxford Internet Institute.
+5. Google (2024). "DORA Report 2024: Accelerate State of DevOps." Google Cloud.
+6. GitClear (2024). "AI Copilot Code Quality Report." Análisis de 153M líneas de código.
+7. Stack Overflow (2024). "Stack Overflow Developer Survey 2024."
+8. Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+9. Mollick, E. (2024). *Co-Intelligence: Living and Working with AI*. Portfolio/Penguin.
+10. OWASP (2025). "OWASP Top 10 for Large Language Model Applications."
 
 ---
 

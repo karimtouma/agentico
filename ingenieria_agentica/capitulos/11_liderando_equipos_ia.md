@@ -102,7 +102,7 @@ Los líderes técnicos ahora deben pensar como [risk managers]{.idx data-sub="li
 Los líderes técnicos efectivos establecen criterios automáticos de detención ([kill switch]{.idx data-sub="gobernanza"}) para agentes:
 
 - Si un agente modifica >200 líneas en archivo crítico → Pausar y solicitar aprobación
-- Si costo de API de un agente >$100 en 1 hora → Alertar y pausar
+- Si costo de API de un agente >US$100 en 1 hora → Alertar y pausar
 - Si tests de CI/CD fallan 3 veces consecutivas → Escalar a humano
 
 #### 3. Comunicación con Múltiples Partes Interesadas sobre IA
@@ -116,7 +116,7 @@ Los líderes técnicos deben explicar IA a audiencias muy diferentes:
 > "Con agentes de IA, podemos aumentar nuestra velocidad de desarrollo 2-3x sin contratar más personal. Esto significa que podemos lanzar esas 5 funcionalidades que estaban en la lista de pendientes desde hace meses."
 
 **Al CFO:**
-> "La inversión en herramientas de IA es de $150K/año, vs. $800K/año de contratar 2 ingenieros adicionales. Obtenemos 3x la productividad por 20% del costo."
+> "La inversión en herramientas de IA es de US$150K/año, vs. US$800K/año de contratar 2 ingenieros adicionales. Obtenemos 3x la productividad por 20% del costo."
 
 **Al board:**
 > "Nuestra adopción de IA agéntica nos da una ventaja competitiva de 12-18 meses vs. competidores que no lo han hecho. Es critical que mantengamos esta ventaja."
@@ -179,9 +179,9 @@ A medida que la IA se integra profundamente en el desarrollo de software, emerge
 
 **Banda salarial proyectada (2026-2027):**
 
-- Junior: $70K - $90K USD
-- Mid-Level: $90K - $120K USD
-- Senior: $120K - $160K USD
+- Junior: US$70K - US$90K
+- Mid-Level: US$90K - US$120K
+- Senior: US$120K - US$160K
 
 **Ejemplo de día a día:**
 
@@ -191,7 +191,7 @@ Lucía es Ingeniera de Prompts en una startup de e-commerce en México. Su seman
 - **Martes:** Diseñar nuevo prompt template con sección de "Security Checklist". Testearlo con 20 tareas históricas.
 - **Miércoles:** Entrenar a 3 ingenieros nuevos en cómo usar la librería de prompts del equipo.
 - **Jueves:** Colaborar con Arquitecto de Sistemas para diseñar prompts para nueva funcionalidad de checkout.
-- **Viernes:** Optimizar prompts de generación de documentación (reducir de 2,000 tokens a 1,200 tokens sin pérdida de calidad → $400 USD/mes de ahorro).
+- **Viernes:** Optimizar prompts de generación de documentación (reducir de 2,000 tokens a 1,200 tokens sin pérdida de calidad → US$400/mes de ahorro).
 
 ### Rol 2: Auditor de IA (AI Auditor)
 
@@ -217,9 +217,9 @@ Lucía es Ingeniera de Prompts en una startup de e-commerce en México. Su seman
 
 **Banda salarial proyectada (2026-2027):**
 
-- Mid-Level: $100K - $130K USD
-- Senior: $130K - $180K USD
-- Staff: $180K - $250K USD
+- Mid-Level: US$100K - US$130K
+- Senior: US$130K - US$180K
+- Staff: US$180K - US$250K
 
 **Caso de negocio:**
 
@@ -231,7 +231,7 @@ El Auditor estableció un proceso de **pre-merge audit** para todo código que t
 - Valida que logs no contienen PII
 - Confirma que permisos siguen principio de "least privilege"
 
-Resultado: 0 incidentes de compliance en 18 meses. El costo del Auditor ($140K/año) es marginal comparado con el costo potencial de multas regulatorias ($500K - $5M).
+Resultado: 0 incidentes de compliance en 18 meses. El costo del Auditor (US$140K/año) es marginal comparado con el costo potencial de multas regulatorias (US$500K - US$5M).
 
 ### Rol 3: Orquestador de Agentes (Agent Orchestrator)
 
@@ -258,8 +258,8 @@ Resultado: 0 incidentes de compliance en 18 meses. El costo del Auditor ($140K/a
 
 **Banda salarial proyectada (2026-2027):**
 
-- Mid-Level: $90K - $120K USD
-- Senior: $120K - $160K USD
+- Mid-Level: US$90K - US$120K
+- Senior: US$120K - US$160K
 
 **Perfil ideal:**
 
@@ -294,8 +294,8 @@ El mejor Orquestador de Agentes que he visto era un ex-Engineering Manager con:
 
 **Banda salarial proyectada (2026-2027):**
 
-- Senior: $120K - $160K USD
-- Staff: $160K - $220K USD
+- Senior: US$120K - US$160K
+- Staff: US$160K - US$220K
 
 **Tabla 11.2. Code review tradicional vs. asistido por IA**
 
@@ -330,8 +330,8 @@ El mejor Orquestador de Agentes que he visto era un ex-Engineering Manager con:
 
 **Banda salarial proyectada (2026-2027):**
 
-- Mid-Level: $110K - $140K USD
-- Senior: $140K - $190K USD
+- Mid-Level: US$110K - US$140K
+- Senior: US$140K - US$190K
 
 **¿Cuándo necesitas este rol?**
 
@@ -634,7 +634,7 @@ Resultado: 3 de los mejores ingenieros renunciaron en 2 meses. La moral del equi
 **Caso Real - Cómo SÍ hacerlo:**
 
 Una VPE en una fintech argentina convocó a su equipo y dijo:
-> "Quiero que experimentemos con IA agéntica. He reservado $20K de presupuesto y 20% del tiempo del equipo para los próximos 3 meses. Necesito voluntarios que quieran explorar esto. No hay presión. Si no funciona, no pasa nada. Si funciona, ustedes serán los expertos que entrenen al resto."
+> "Quiero que experimentemos con IA agéntica. He reservado US$20K de presupuesto y 20% del tiempo del equipo para los próximos 3 meses. Necesito voluntarios que quieran explorar esto. No hay presión. Si no funciona, no pasa nada. Si funciona, ustedes serán los expertos que entrenen al resto."
 
 6 ingenieros se ofrecieron como voluntarios. Al cabo de 3 meses, habían aumentado su productividad 2.3x y estaban emocionados de compartir lo aprendido. El resto del equipo vio el éxito y pidió acceso a las herramientas.
 
@@ -747,7 +747,7 @@ Si después de 3-6 meses alguien sigue resistiendo activamente:
 |---------|-----------|-------------|
 | Velocity | 32 story points | vs. 28 en marzo |
 | Bugs críticos | 1 | vs. 2 en marzo |
-| Costo de IA | $4,800 | vs. presupuesto $5,000 |
+| Costo de IA | US$4,800 | vs. presupuesto US$5,000 |
 
 **Fails del mes (lecciones):**
 
@@ -842,7 +842,7 @@ Mide si el ingeniero está **creciendo** en la era de IA:
 
 **Impacto de Negocio:** *Exceeds Expectations*
 
-- Lideró diseño de nueva funcionalidad de checkout → Aumentó conversión 12% (+$200K revenue/mes)
+- Lideró diseño de nueva funcionalidad de checkout → Aumentó conversión 12% (+US$200K revenue/mes)
 - Redujo *time-to-market* de funcionalidades de pagos → De 6 semanas a 3 semanas promedio
 - Resolvió 8 bugs críticos de la lista de pendientes → CSAT de clientes enterprise subió de 7.2 a 8.1
 
@@ -854,7 +854,7 @@ Mide si el ingeniero está **creciendo** en la era de IA:
 **Orquestación de IA:** *Exceeds Expectations*
 
 - Supervisó 3 agentes de IA efectivamente → Tasa de error de agentes: 8% (objetivo <15%)
-- Optimizó prompts de generación de tests → Redujo tokens usados 35% ($600/mes de ahorro)
+- Optimizó prompts de generación de tests → Redujo tokens usados 35% (US$600/mes de ahorro)
 - Code reviews de IA: Promedio 22 min/PR → Objetivo <30 min cumplido
 
 **Evolución y Aprendizaje:** *Exceeds Expectations*
@@ -928,7 +928,7 @@ Si no se gestiona, esto lleva a:
    - "Andrés detectó una vulnerabilidad en código de IA que habría causado data leak. Salvó a la empresa de un potencial incidente catastrófico."
 
 3. **Premia optimización de procesos:**
-   - "Lucía optimizó nuestros prompts y redujo costos de IA 30%. Eso es $18K ahorrados al año."
+   - "Lucía optimizó nuestros prompts y redujo costos de IA 30%. Eso es US$18K ahorrados al año."
 
 #### Pilar 2: Ownership Compartido Humano-IA
 
@@ -1076,7 +1076,7 @@ Los mejores ingenieros ven IA como **acelerador de carrera**:
 - Comprensión de cuándo usar IA vs. cuándo no
 
 **Cómo posicionarlo:**
-> "En 2 años aquí, aprenderás a trabajar con IA a nivel que te haría competitivo para roles en OpenAI, Anthropic, o cualquier startup de IA. Esa experiencia vale $50K+ en el mercado."
+> "En 2 años aquí, aprenderás a trabajar con IA a nivel que te haría competitivo para roles en OpenAI, Anthropic, o cualquier startup de IA. Esa experiencia vale US$50K+ en el mercado."
 
 **Programa sugerido:**
 
@@ -1114,12 +1114,12 @@ Los mejores ingenieros ven IA como **acelerador de carrera**:
 
 | Rol Tradicional | Banda Salarial 2025 | Rol AI-Augmented | Banda Salarial 2026 | Delta |
 |-----------------|---------------------|------------------|---------------------|-------|
-| Senior Engineer | $110K - $140K | Senior AI-Aug Engineer | $125K - $165K | +15-20% |
-| Staff Engineer | $150K - $190K | Staff Prompt Engineer | $170K - $220K | +15-20% |
-| EM (10 reports) | $160K - $200K | EM (Hybrid Team) | $180K - $230K | +12-15% |
+| Senior Engineer | US$110K - US$140K | Senior AI-Aug Engineer | US$125K - US$165K | +15-20% |
+| Staff Engineer | US$150K - US$190K | Staff Prompt Engineer | US$170K - US$220K | +15-20% |
+| EM (10 reports) | US$160K - US$200K | EM (Hybrid Team) | US$180K - US$230K | +12-15% |
 
 **Mensaje al board/CFO:**
-> "Estos roles tienen mayor impacto de negocio. Un Staff Prompt Engineer puede 10x la productividad de un equipo de 15 personas. El delta de compensación de $20K es marginal vs. el valor generado."
+> "Estos roles tienen mayor impacto de negocio. Un Staff Prompt Engineer puede 10x la productividad de un equipo de 15 personas. El delta de compensación de US$20K es marginal vs. el valor generado."
 
 #### 4. Autonomía para Experimentar con IA
 
@@ -1130,7 +1130,7 @@ Los mejores ingenieros ven IA como **acelerador de carrera**:
 
 **Práctica sugerida: "Innovation Budget"**
 
-Cada ingeniero tiene presupuesto trimestral de **$500 USD** para:
+Cada ingeniero tiene presupuesto trimestral de **US$500** para:
 
 - Probar nuevas herramientas de IA (licencias, APIs)
 - Experimentar con ideas propias
@@ -1140,7 +1140,7 @@ Cada ingeniero tiene presupuesto trimestral de **$500 USD** para:
 
 - Los ingenieros se sienten empoderados
 - La empresa se beneficia de aprendizajes (algunos experimentos generan valor inesperado)
-- Atracción de talento: "Nuestra empresa me da $500/quarter para experimentar con IA"
+- Atracción de talento: "Nuestra empresa me da US$500/quarter para experimentar con IA"
 
 #### 5. Comunidad y Pertenencia a "Cutting Edge"
 
@@ -1179,7 +1179,7 @@ Cada ingeniero tiene presupuesto trimestral de **$500 USD** para:
 Una empresa de e-commerce en Chile perdió 4 de sus mejores ingenieros en Q1 2026. Exit interviews revelaron:
 > "Pedí acceso a Claude Pro hace 6 meses. Me dijeron que 'lo evaluarían'. Mientras tanto, mi amigo en [Competidor] usa IA todos los días y ya está liderando equipos híbridos. Me voy allá."
 
-Costo de [rotación]{.idx data-sub="retención de talento"}: ~$400K USD (reclutamiento, incorporación, pérdida de productividad). Inversión en IA que habrían necesitado: ~$50K USD/año.
+Costo de [rotación]{.idx data-sub="retención de talento"}: ~US$400K (reclutamiento, incorporación, pérdida de productividad). Inversión en IA que habrían necesitado: ~US$50K/año.
 
 > **Para Tu Próxima Reunión de Liderazgo:**
 > Retención de talento en era de IA no se trata solo de compensación. Se trata de ofrecer un camino claro de crecimiento profesional que incluya dominio de IA. Si no lo haces, tus competidores sí, y perderás ingenieros ante ellos.
