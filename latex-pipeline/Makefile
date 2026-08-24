@@ -57,8 +57,14 @@ FILTER_CHAIN := --lua-filter=$(FILTERS)/meta-strip.lua \
                 --lua-filter=$(FILTERS)/drop-caps.lua \
                 --lua-filter=$(FILTERS)/hr-transform.lua
 
+# Markdown reader format (single source of truth)
+#   -tex_math_dollars: the book contains no math. Leaving it on makes every
+#   unescaped "$" in a price open an inline-math span, which swallows table
+#   row separators and corrupts the surrounding cells.
+MD_FORMAT := markdown+autolink_bare_uris-tex_math_dollars
+
 # Pandoc options
-PANDOC_OPTS := --from markdown+autolink_bare_uris \
+PANDOC_OPTS := --from $(MD_FORMAT) \
                --pdf-engine=lualatex \
                --pdf-engine-opt=--shell-escape \
                --template=$(TEMPLATES)/book.tex \
@@ -83,7 +89,7 @@ DIGITAL_PDF := $(OUTPUT)/agentico-por-diseno-digital.pdf
 # Targets
 # =============================================================================
 
-.PHONY: pdf digital epub latex chapter validate optimize preview clean docker-build figures help
+.PHONY: pdf digital epub latex chapter validate logcheck optimize preview clean docker-build figures help
 
 ## Build figures (TikZ → PDF, SVG → PDF)
 figures:
@@ -103,7 +109,7 @@ $(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls
 	@mkdir -p $(OUTPUT)
 	@echo "  [1/5] Generating LaTeX source..."
 	cd $(OUTPUT) && pandoc \
-		--from markdown+autolink_bare_uris \
+		--from $(MD_FORMAT) \
 		--template=$(TEMPLATES)/book.tex \
 		$(FILTER_CHAIN) \
 		--top-level-division=chapter \
@@ -126,6 +132,42 @@ $(BOOK_PDF): $(ALL_FILES) $(TEMPLATES)/book.tex $(CLS)/paradigma-agentico.cls
 	@echo ""
 	@echo "✓ PDF generated: $(BOOK_PDF)"
 	@echo "  Size: $$(du -h $(BOOK_PDF) | cut -f1)"
+	@$(MAKE) --no-print-directory logcheck
+
+## Fail the build if the final LuaLaTeX pass reported errors.
+##   The three lualatex passes run under --interaction=nonstopmode and their
+##   output is discarded, so a broken document still produces a PDF and a
+##   zero exit status. This target reads the log the passes leave behind and
+##   turns real TeX errors back into a build failure.
+##   Escape hatch: make pdf STRICT=0
+STRICT ?= 1
+logcheck:
+	@LOG=$(OUTPUT)/agentico-por-diseno.log; \
+	if [ ! -f "$$LOG" ]; then echo "  [logcheck] no log found - skipped"; exit 0; fi; \
+	ERRS=$$(grep -c '^!' "$$LOG" || true); \
+	MISSING=$$(grep -c 'Missing character' "$$LOG" || true); \
+	UNDEF=$$(grep -c 'undefined' "$$LOG" || true); \
+	DUP=$$(grep -c 'multiply defined' "$$LOG" || true); \
+	OVER=$$(grep -c 'Overfull \\hbox' "$$LOG" || true); \
+	echo ""; \
+	echo "  ── Build health ──────────────────────────"; \
+	printf "    %-24s %s\n" "TeX errors"        "$$ERRS"; \
+	printf "    %-24s %s\n" "Missing characters" "$$MISSING"; \
+	printf "    %-24s %s\n" "Undefined references" "$$UNDEF"; \
+	printf "    %-24s %s\n" "Multiply-defined labels" "$$DUP"; \
+	printf "    %-24s %s\n" "Overfull hboxes"    "$$OVER"; \
+	echo ""; \
+	if [ "$$ERRS" -gt 0 ] || [ "$$MISSING" -gt 0 ] || [ "$$UNDEF" -gt 0 ] || [ "$$DUP" -gt 0 ]; then \
+		echo "  ✗ Build is NOT clean. First offending lines:"; \
+		grep -n -A3 '^!' "$$LOG" | head -40; \
+		grep -n 'Missing character' "$$LOG" | head -5; \
+		if [ "$(STRICT)" = "1" ]; then \
+			echo ""; echo "  (re-run with STRICT=0 to downgrade this to a warning)"; \
+			exit 1; \
+		fi; \
+	else \
+		echo "  ✓ Build is clean (overfull boxes are cosmetic)."; \
+	fi
 
 ## Generate intermediate .tex for inspection
 latex: $(BOOK_TEX)
@@ -169,14 +211,8 @@ digital:
 epub:
 	@echo "Building EPUB..."
 	@mkdir -p $(OUTPUT)
-	pandoc --toc --toc-depth=2 \
-		--top-level-division=chapter \
-		$(FILTER_CHAIN) \
-		--metadata-file=$(CONFIG) \
-		--css=$(TEMPLATES)/epub.css \
-		-o $(BOOK_EPUB) \
-		$(ALL_FILES) 2>/dev/null || \
-	pandoc --toc --toc-depth=2 \
+	pandoc --from $(MD_FORMAT) \
+		--toc --toc-depth=2 \
 		--top-level-division=chapter \
 		$(FILTER_CHAIN) \
 		--metadata-file=$(CONFIG) \
@@ -232,6 +268,8 @@ clean:
 	rm -rf $(OUTPUT)/*.pdf $(OUTPUT)/*.tex $(OUTPUT)/*.log \
 	       $(OUTPUT)/*.aux $(OUTPUT)/*.toc $(OUTPUT)/*.out \
 	       $(OUTPUT)/*.idx $(OUTPUT)/*.ind $(OUTPUT)/*.ilg \
+	       $(OUTPUT)/*.lof $(OUTPUT)/*.lot $(OUTPUT)/*.vrb \
+	       $(OUTPUT)/*.nav $(OUTPUT)/*.snm $(OUTPUT)/*.bbl $(OUTPUT)/*.blg \
 	       $(OUTPUT)/*.fdb_latexmk $(OUTPUT)/*.fls $(OUTPUT)/*.synctex.gz
 	@echo "✓ Cleaned output/"
 
@@ -252,6 +290,7 @@ help:
 	@echo "  make latex        Generate .tex for inspection"
 	@echo "  make chapter CHAP=04  Build single chapter"
 	@echo "  make validate     Check cross-refs and warnings"
+	@echo "  make logcheck     Fail if the last build had TeX errors"
 	@echo "  make optimize     Analyze typography issues"
 	@echo "  make preview      Build + open PDF"
 	@echo "  make clean        Remove build artifacts"
