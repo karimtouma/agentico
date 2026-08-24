@@ -280,7 +280,7 @@ Anthropic lanzó Research mejorado en mayo 2025, con capacidades de investigaci�
 | **Integración workspace** | Limitada | Gmail, Drive, Chat | Jira, Confluence, 10+ |
 | **Citas/fuentes** | Sí | Sí | Sí |
 | **Análisis de archivos** | PDF, imágenes | PDF, imágenes, audio, video | PDF, código, datos |
-| **Costo** | $20-200/mes | $20/mes (Advanced) | $20-100/mes |
+| **Costo** | US$20-200/mes | US$20/mes (Advanced) | US$20-100/mes |
 | **Uso recomendado** | Research general | Research + docs internos | Research técnico |
 
 ### Cuentas de X (Twitter) Esenciales para IA Agéntica

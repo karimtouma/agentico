@@ -254,7 +254,7 @@ De las 10 empresas más valiosas del mundo en 2026, 7 no existían o eran irrele
 
 ### La Pregunta de los US$600 Mil Millones: ¿Estamos en una Burbuja de IA?
 
-En junio de 2024, David Cahn de [Sequoia Capital]{.idx} publicó un análisis titulado "AI's $600B Question" que sacudió a Silicon Valley. Su argumento: los ingresos generados por IA (aproximadamente US$12.5 mil millones, excluyendo NVIDIA) eran una fracción minúscula de la infraestructura que se estaba desplegando. La brecha era de cientos de miles de millones.
+En junio de 2024, David Cahn de [Sequoia Capital]{.idx} publicó un análisis titulado "AI's US$600B Question" que sacudió a Silicon Valley. Su argumento: los ingresos generados por IA (aproximadamente US$12.5 mil millones, excluyendo NVIDIA) eran una fracción minúscula de la infraestructura que se estaba desplegando. La brecha era de cientos de miles de millones.
 
 Simultáneamente, Goldman Sachs publicó un informe provocativo: "Gen AI: Too Much Spend, Too Little Benefit?" En él, el economista del MIT Daron Acemoglu estimaba que la IA generativa produciría apenas un **0.55-0.71% de ganancia en productividad total de los factores** en la próxima década (posteriormente formalizado en "The Simple Macroeconomics of AI", *Economic Policy*, vol. 40, no. 121, pp. 13-58. DOI: 10.1093/epolic/eiae042).
 
@@ -557,7 +557,7 @@ El título de este libro no es accidental. *Agéntico por Diseño* es una declar
 10. Jevons, W.S. (1865). *The Coal Question*. Macmillan and Co.
 11. McKinsey & Company (2025). "The State of AI: How Organizations Are Rewiring to Capture Value." Global Survey on AI.
 12. BCG Henderson Institute (2024). "Where's the Value in AI?" Boston Consulting Group.
-13. Cahn, D. (2024). "AI's $600B Question." Sequoia Capital.
+13. Cahn, D. (2024). "AI's US$600B Question." Sequoia Capital.
 14. Goldman Sachs (2024). "Gen AI: Too Much Spend, Too Little Benefit?" GS Research.
 15. Wilson, H.J. & Daugherty, P. (2025). "The Secret to Successful AI-Driven Process Redesign." *Harvard Business Review*.
 16. Hoffman, R. & Yeh, C. (2025). "Want AI-Driven Productivity? Redesign Work." *MIT Sloan Management Review*.

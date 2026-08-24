@@ -66,7 +66,7 @@ Cuando quieres que un modelo de IA "sepa" cosas específicas de tu empresa (tu c
 
 - **Qué es:** Le das acceso a una base de datos de documentos que busca automáticamente
 - **Analogía:** Darle a alguien acceso a tu wiki/Confluence/documentación
-- **Costo:** Medio ($500-5,000/mes para infraestructura)
+- **Costo:** Medio (US$500-5,000/mes para infraestructura)
 - **Velocidad:** Días a semanas de setup
 - **Cuándo usar:** Cuando tienes mucha documentación específica que cambia frecuentemente
 
@@ -159,8 +159,8 @@ Los modelos de lenguaje originalmente solo podían generar texto. Los modelos mo
 **Ejemplo:** Le preguntas a un modelo "¿cuál es el precio actual de Bitcoin?" En lugar de inventar un número (alucinación), el modelo:
 1. Reconoce que necesita datos en tiempo real
 2. Llama a una API de precios
-3. Recibe "$67,234"
-4. Responde "El precio actual de Bitcoin es $67,234"
+3. Recibe "US$67,234"
+4. Responde "El precio actual de Bitcoin es US$67,234"
 
 ### Por Qué Importa para Agentes
 
@@ -197,7 +197,7 @@ Si un agente tiene acceso de escritura a producción sin human-in-the-loop, tien
 ### Preguntas sobre Costos
 
 1. **"¿Cuál es el costo por token y cuántos tokens usamos por día?"**
-   - Por qué importa: Los costos de IA pueden escalar sin aviso. $0.01 por request × 10,000 requests/día = $100/día = $3,000/mes.
+   - Por qué importa: Los costos de IA pueden escalar sin aviso. US$0.01 por request × 10,000 requests/día = US$100/día = US$3,000/mes.
 
 2. **"¿Estamos usando el modelo correcto para cada tarea?"**
    - Por qué importa: Usar o1 para tareas que GPT-4o-mini puede hacer cuesta ~100x más sin beneficio proporcional.

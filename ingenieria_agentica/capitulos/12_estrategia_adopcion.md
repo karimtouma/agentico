@@ -228,7 +228,7 @@ Los primeros 3 meses son críticos para generar momentum. Necesitas [quick wins]
 
 **Costo:**
 
-- Herramienta: $20-40/mes por usuario
+- Herramienta: US$20-40/mes por usuario
 - Tiempo: ~10 horas de champion
 - **ROI:** Si ahorras 2 horas/mes × 10 ingenieros × US$75/hora = US$1,500/mes vs. US$200/mes de costo → ROI 7.5x
 

@@ -262,11 +262,11 @@ Esta es la puerta de entrada para la mayoría de las organizaciones. Las herrami
 
 | Herramienta | Desarrollador | Usuarios Pagos (2025) | Precio/Desarrollador/Mes | Contexto Máximo | Idiomas Soportados | Destacado |
 |-------------|---------------|------------------------|---------------------------|-----------------|---------------------|-----------|
-| **GitHub Copilot** | Microsoft/GitHub | 4.7M+ | $0 (free) / $10 (pro) / $19 (business) | 8K tokens (Copilot) / 128K (Copilot Chat) | 50+ | Integración nativa con ecosistema GitHub; tier gratuito desde 2025 |
-| **Windsurf (ex-Codeium)** | Windsurf | 700K+ | $0 (free) / $15 (pro) / $30 (teams) | 150K tokens | 70+ | Precio accesible, buen balance costo-calidad |
-| **Tabnine** | Tabnine | Enterprise only | $39-59 (enterprise) | 120K tokens | 80+ | Opción de despliegue local completo (eliminó tiers gratuito y pro en abril 2025) |
-| **Amazon Q Developer** | AWS | No divulgado | $0 (básico) / $19 (pro) | 32K tokens | 15+ | Especializado en servicios AWS |
-| **Supermaven** | Supermaven | 300K+ | $10 | 300K tokens | 30+ | Mayor ventana de contexto del mercado |
+| **GitHub Copilot** | Microsoft/GitHub | 4.7M+ | US$0 (free) / US$10 (pro) / US$19 (business) | 8K tokens (Copilot) / 128K (Copilot Chat) | 50+ | Integración nativa con ecosistema GitHub; tier gratuito desde 2025 |
+| **Windsurf (ex-Codeium)** | Windsurf | 700K+ | US$0 (free) / US$15 (pro) / US$30 (teams) | 150K tokens | 70+ | Precio accesible, buen balance costo-calidad |
+| **Tabnine** | Tabnine | Enterprise only | US$39-59 (enterprise) | 120K tokens | 80+ | Opción de despliegue local completo (eliminó tiers gratuito y pro en abril 2025) |
+| **Amazon Q Developer** | AWS | No divulgado | US$0 (básico) / US$19 (pro) | 32K tokens | 15+ | Especializado en servicios AWS |
+| **Supermaven** | Supermaven | 300K+ | US$10 | 300K tokens | 30+ | Mayor ventana de contexto del mercado |
 | **Continue.dev** | *Open source* | ~200K | Gratis (self-hosted) | Variable (según modelo) | 40+ | Máxima flexibilidad, usa cualquier LLM |
 
 **Datos de productividad verificados:**
@@ -324,12 +324,12 @@ Un paso más allá del completado. Estas herramientas generan archivos completos
 
 | Herramienta | Tipo | Capacidad Principal | Precio/Mes | Ideal Para |
 |-------------|------|---------------------|------------|------------|
-| **Cursor** | IDE completo | Editor multiarchivo con Composer | $20 | Equipos que construyen features completas |
-| **Windsurf (Codeium)** | IDE completo | Cascade (agente multiarchivo) | $15 | Equipos que priorizan costo-beneficio |
-| **v0.dev (Vercel)** | Web platform | Generación de componentes React/Next.js | $20 | Equipos frontend en ecosistema Vercel |
-| **bolt.new (StackBlitz)** | Web platform | Fullstack apps desde prompt | $20 | Prototipado rápido, demos |
-| **Replit Agent** | Cloud IDE | Apps completas con despliegue incluido | $25 | Startups que priorizan velocidad |
-| **GitHub Copilot Workspace** | Web platform | Features end-to-end desde issues | $10 (requiere Copilot) | Equipos ya en GitHub |
+| **Cursor** | IDE completo | Editor multiarchivo con Composer | US$20 | Equipos que construyen features completas |
+| **Windsurf (Codeium)** | IDE completo | Cascade (agente multiarchivo) | US$15 | Equipos que priorizan costo-beneficio |
+| **v0.dev (Vercel)** | Web platform | Generación de componentes React/Next.js | US$20 | Equipos frontend en ecosistema Vercel |
+| **bolt.new (StackBlitz)** | Web platform | Fullstack apps desde prompt | US$20 | Prototipado rápido, demos |
+| **Replit Agent** | Cloud IDE | Apps completas con despliegue incluido | US$25 | Startups que priorizan velocidad |
+| **GitHub Copilot Workspace** | Web platform | Features end-to-end desde issues | US$10 (requiere Copilot) | Equipos ya en GitHub |
 
 ### Análisis Profundo: Cursor vs. Claude Code
 
@@ -401,16 +401,16 @@ El nivel más avanzado. Estos sistemas pueden ejecutar tareas completas con supe
 
 | Agente | Tipo | Autonomía | Costo | Mejor Caso de Uso |
 |--------|------|-----------|-------|-------------------|
-| **Claude Code (Anthropic)** | CLI + IDE | Alta | $0.15-$0.80 por tarea / Plan Max $100-$200/mes | Debugging, refactoring, implementación de features |
+| **Claude Code (Anthropic)** | CLI + IDE | Alta | US$0.15-US$0.80 por tarea / Plan Max US$100-US$200/mes | Debugging, refactoring, implementación de features |
 | **OpenCode** | CLI + IDE | Alta | Gratis (costo de LLM API) | Alternativa *open source* a Claude Code, 75+ proveedores |
 | **OpenHands (ex-OpenDevin)** | *Open source* | Alta | Gratis (costo de LLM API) | Organizaciones que priorizan control total |
-| **Devin (Cognition AI)** | SaaS | Muy alta | Desde $20/mes (Core) / $500/mes (Team) | Features end-to-end en startups de alto crecimiento |
+| **Devin (Cognition AI)** | SaaS | Muy alta | Desde US$20/mes (Core) / US$500/mes (Team) | Features end-to-end en startups de alto crecimiento |
 | **Aider** | CLI | Media | Gratis (costo de LLM API) | Edición rápida con flujo de trabajo Git optimizado |
 | **SWE-Agent (Princeton)** | Experimental | Alta | Gratis (costo de LLM API) | Investigación, evaluación comparativa |
 
 ### Análisis Profundo: Devin vs. OpenHands
 
-**Devin** ha generado controversia desde su lanzamiento en marzo 2024. Cognition AI lo presenta como "el primer ingeniero de software de IA". Inicialmente cobró $500/mes por seat, pero en 2025 lanzó Devin 2.0 con un plan Core desde $20/mes basado en Agent Compute Units (ACUs), manteniendo el plan Team a $500/mes con 250 ACUs incluidas. En julio 2025, Cognition adquirió Windsurf (antes Codeium) por ~$250M tras el colapso de la adquisición de $3B por OpenAI, consolidando agente autónomo e IDE en una sola plataforma.
+**Devin** ha generado controversia desde su lanzamiento en marzo 2024. Cognition AI lo presenta como "el primer ingeniero de software de IA". Inicialmente cobró US$500/mes por seat, pero en 2025 lanzó Devin 2.0 con un plan Core desde US$20/mes basado en Agent Compute Units (ACUs), manteniendo el plan Team a US$500/mes con 250 ACUs incluidas. En julio 2025, Cognition adquirió Windsurf (antes Codeium) por ~US$250M tras el colapso de la adquisición de US$3B por OpenAI, consolidando agente autónomo e IDE en una sola plataforma.
 
 **Capacidades demostradas:**
 
@@ -453,14 +453,14 @@ Anthropic lanzó [Claude Code]{.idx data-sub="agentes autónomos"} en febrero 20
 - Modo "Agent" para tareas multi-paso
 - Transparencia total: muestra cada paso de razonamiento
 
-**Pricing:** Modelo híbrido: suscripción mensual (Pro $20, Max $100-$200/mes) **o** pay-per-use vía API. Costos típicos por tarea en modo API:
+**Pricing:** Modelo híbrido: suscripción mensual (Pro US$20, Max US$100-US$200/mes) **o** pay-per-use vía API. Costos típicos por tarea en modo API:
 
-| Tipo de Tarea | Tokens Consumidos | Costo API (Sonnet 4.5) | Costo API (Opus 4.6) | Con Max ($200/mo) |
+| Tipo de Tarea | Tokens Consumidos | Costo API (Sonnet 4.5) | Costo API (Opus 4.6) | Con Max (US$200/mo) |
 |---------------|-------------------|------------------------|----------------------|-------------------|
-| Debugging simple | ~15K tokens | $0.15 | $0.25 | Incluido |
-| Implementar feature pequeña | ~80K tokens | $0.80 | $1.40 | Incluido |
-| Refactoring de módulo | ~200K tokens | $2.00 | $3.50 | Incluido |
-| Feature compleja multiarchivo | ~500K tokens | $5.00 | $8.75 | Incluido |
+| Debugging simple | ~15K tokens | US$0.15 | US$0.25 | Incluido |
+| Implementar feature pequeña | ~80K tokens | US$0.80 | US$1.40 | Incluido |
+| Refactoring de módulo | ~200K tokens | US$2.00 | US$3.50 | Incluido |
+| Feature compleja multiarchivo | ~500K tokens | US$5.00 | US$8.75 | Incluido |
 
 **Decisión clave para CFOs:** Un desarrollador que consume US$300-800/mes en API obtiene uso equivalente por US$200/mes con el plan Max: ahorro de 1.5-4x. Para equipos con uso ligero (<US$50/mes por dev), el API puro sigue siendo más económico.
 
@@ -501,7 +501,7 @@ Anthropic ha formalizado esta técnica como plugin oficial de Claude Code, legit
 
 Anthropic ha construido un ecosistema completo más allá de Claude Code:
 
-**Claude para Chrome:** Extensión oficial de navegador que permite automatizar tareas web. Puede navegar páginas, llenar formularios, extraer datos y ejecutar flujos de trabajo multi-paso. Se integra con Claude Code: ejecuta `claude --chrome` y el agente puede controlar el navegador mientras escribe código. Disponible para usuarios Pro ($20/mes) y superiores.
+**Claude para Chrome:** Extensión oficial de navegador que permite automatizar tareas web. Puede navegar páginas, llenar formularios, extraer datos y ejecutar flujos de trabajo multi-paso. Se integra con Claude Code: ejecuta `claude --chrome` y el agente puede controlar el navegador mientras escribe código. Disponible para usuarios Pro (US$20/mes) y superiores.
 
 **Claude para Excel:** Integración directa en Microsoft Excel para análisis financiero. Claude puede leer, modificar y crear hojas de cálculo desde un panel lateral. Cada acción queda registrada con citas a nivel de celda. Casos de uso incluyen modelos financieros, análisis de 10-Ks, debugging de fórmulas, y creación de pivots y gráficos.
 
@@ -511,14 +511,14 @@ Anthropic ha construido un ecosistema completo más allá de Claude Code:
 
 | Plan | Precio | Claude Code | Uso vs. Pro | Acceso a Opus |
 |------|--------|-------------|-------------|---------------|
-| **Pro** | $20/mes | 10-40 prompts/5 horas | Baseline | No |
-| **Max 5x** | $100/mes | ~225 prompts/5 horas | 5x | Sí |
-| **Max 20x** | $200/mes | 200-800 prompts/5 horas | 20x | Sí, sin límites |
-| **Team Standard** | $25/user/mes | Equivalente a Pro | Per-user | No |
-| **Team Premium** | $150/user/mes | Límites enhanced | Per-user | Sí |
-| **Enterprise** | ~$60/seat (custom) | Negociado | Negociado | Sí |
+| **Pro** | US$20/mes | 10-40 prompts/5 horas | Baseline | No |
+| **Max 5x** | US$100/mes | ~225 prompts/5 horas | 5x | Sí |
+| **Max 20x** | US$200/mes | 200-800 prompts/5 horas | 20x | Sí, sin límites |
+| **Team Standard** | US$25/user/mes | Equivalente a Pro | Per-user | No |
+| **Team Premium** | US$150/user/mes | Límites enhanced | Per-user | Sí |
+| **Enterprise** | ~US$60/seat (custom) | Negociado | Negociado | Sí |
 
-**Decisión económica:** Un desarrollador heavy que usaría US$300-800/mes en API obtiene uso equivalente por $200/mes con Max. Para equipos de 30+ personas, los planes Team ($25-$150/user) centralizan billing y agregan controles administrativos.
+**Decisión económica:** Un desarrollador heavy que usaría US$300-800/mes en API obtiene uso equivalente por US$200/mes con Max. Para equipos de 30+ personas, los planes Team (US$25-US$150/user) centralizan billing y agregan controles administrativos.
 
 ### Claude para PowerPoint: IA en Productividad Empresarial
 
@@ -600,11 +600,11 @@ Zhipu AI (conocida como Z.ai internacionalmente) lanzó GLM-5 en febrero 2026, u
 
 | Plan | Precio/mes | Incluye | Nota |
 |------|-----------|---------|------|
-| **Lite** | ~$10 | GLM-5 básico, límite de requests | Para uso individual ligero |
-| **Pro** | ~$15-$20 | GLM-5 completo, mayor throughput | Para desarrolladores activos |
+| **Lite** | ~US$10 | GLM-5 básico, límite de requests | Para uso individual ligero |
+| **Pro** | ~US$15-US$20 | GLM-5 completo, mayor throughput | Para desarrolladores activos |
 | **Max** | Custom | Acceso completo, prioridad, SLA | Para equipos enterprise |
 
-**API pay-per-token:** ~$0.80 por millón de tokens (input), ~$2.60 por millón de tokens (output). Comparado con los $200/mes de Claude Max, representa una reducción de ~10-20x en costo. **Nota:** Zhipu AI incrementó precios ~30% en febrero 2026, señalando que los precios iniciales eran insostenibles.
+**API pay-per-token:** ~US$0.80 por millón de tokens (input), ~US$2.60 por millón de tokens (output). Comparado con los US$200/mes de Claude Max, representa una reducción de ~10-20x en costo. **Nota:** Zhipu AI incrementó precios ~30% en febrero 2026, señalando que los precios iniciales eran insostenibles.
 
 **Soporte LATAM:** Limitado. Zhipu AI no tiene representación en la región, no responde correos en español, y la documentación está mayoritariamente en chino e inglés. Para equipos hispanohablantes, el soporte técnico es esencialmente inexistente.
 
@@ -617,7 +617,7 @@ Alibaba Cloud lanzó la familia Qwen3 Coder como su oferta especializada en gene
 - **qwen3-coder-plus** - modelo de alta capacidad para tareas complejas de código (refactoring, debugging, generación multi-archivo)
 - **qwen3-coder-next** - modelo más ligero para autocompletado y tareas rápidas
 
-**Pricing API:** Similar a GLM-5 en competitividad, ~$0.50-$1.50 por millón de tokens de input dependiendo del modelo. No ofrece planes de suscripción dedicados; se consume exclusivamente via API.
+**Pricing API:** Similar a GLM-5 en competitividad, ~US$0.50-US$1.50 por millón de tokens de input dependiendo del modelo. No ofrece planes de suscripción dedicados; se consume exclusivamente via API.
 
 **Diferenciador:** Qwen3 Coder destaca en benchmarks de código asiáticos y tiene buen rendimiento en SWE-Bench Verified (~45-48%). Alibaba Cloud tiene presencia real en LATAM (región São Paulo) a diferencia de Zhipu AI, lo que lo hace más viable para equipos que necesitan soporte y compliance regional.
 
@@ -638,9 +638,9 @@ Google lanzó **Antigravity** como su apuesta directa en el espacio de IDEs agé
 
 | Plan | Precio/mes | Incluye |
 |------|-----------|---------|
-| **Preview** | $0 | Acceso limitado durante beta |
-| **Pro** | ~$20 | Uso completo de Gemini 3.1 Pro, 500 requests premium |
-| **Enterprise** | ~$40-$60 | Multi-modelo, admin centralizado, audit logs |
+| **Preview** | US$0 | Acceso limitado durante beta |
+| **Pro** | ~US$20 | Uso completo de Gemini 3.1 Pro, 500 requests premium |
+| **Enterprise** | ~US$40-US$60 | Multi-modelo, admin centralizado, audit logs |
 
 **SWE-Bench Verified:** Con Gemini 3.1 Pro, Antigravity alcanza ~53% en la evaluación, competitivo con Claude Code (~55%) y superior a Cursor con GPT-5 (~49%).
 
@@ -658,14 +658,14 @@ Las herramientas anteriores necesitan ejecutarse sobre alguna infraestructura. E
 
 | Opción | Tipo | Ventajas | Desventajas | Costo Mensual (100 req/día) |
 |--------|------|----------|-------------|------------------------------|
-| **OpenAI API** | SaaS | Simplicidad, fiabilidad | Vendor lock-in, datos en USA | US$50-$300 |
-| **Anthropic API** | SaaS | Mejor razonamiento, mayor contexto | Menos integraciones | US$60-$350 |
-| **Azure OpenAI** | Cloud | Compliance (SOC2, HIPAA), datos en región | Requiere Azure account, complejidad | US$80-$400 |
-| **AWS Bedrock** | Cloud | Múltiples modelos, integración AWS | Configuración compleja | US$70-$380 |
-| **GCP Vertex AI** | Cloud | Gemini nativo, mejor vision/multimodal | Lock-in a GCP | US$75-$390 |
-| **OpenRouter** | Agregador | Acceso a 100+ modelos, pricing competitivo | Intermediario adicional | US$40-$250 |
-| **Together AI** | Especializado | Modelos open source rápidos, bajo costo | Menor confiabilidad que tier 1 | US$30-$180 |
-| **Ollama (local)** | Self-hosted | Costo cero, privacidad total | Requiere hardware, menor performance | $0 (+ hardware) |
+| **OpenAI API** | SaaS | Simplicidad, fiabilidad | Vendor lock-in, datos en USA | US$50-US$300 |
+| **Anthropic API** | SaaS | Mejor razonamiento, mayor contexto | Menos integraciones | US$60-US$350 |
+| **Azure OpenAI** | Cloud | Compliance (SOC2, HIPAA), datos en región | Requiere Azure account, complejidad | US$80-US$400 |
+| **AWS Bedrock** | Cloud | Múltiples modelos, integración AWS | Configuración compleja | US$70-US$380 |
+| **GCP Vertex AI** | Cloud | Gemini nativo, mejor vision/multimodal | Lock-in a GCP | US$75-US$390 |
+| **OpenRouter** | Agregador | Acceso a 100+ modelos, pricing competitivo | Intermediario adicional | US$40-US$250 |
+| **Together AI** | Especializado | Modelos open source rápidos, bajo costo | Menor confiabilidad que tier 1 | US$30-US$180 |
+| **Ollama (local)** | Self-hosted | Costo cero, privacidad total | Requiere hardware, menor performance | US$0 (+ hardware) |
 
 ### Análisis de Soberanía de Datos y Compliance
 
@@ -1005,30 +1005,30 @@ Antes de elegir herramientas, es crítico entender los **modelos de pricing** qu
 
 | Herramienta | Modelo de Pricing | Individual | Equipo (por seat) | Enterprise (por seat) |
 |-------------|-------------------|-----------|-------------------|----------------------|
-| **Claude Code** | Híbrido (sub + API) | $20-$200/mes | $25-$150/user | ~$60 (custom) |
-| **GitHub Copilot** | Flat + premium requests | $10-$39/mes | $19/user | $39/user |
-| **Cursor** | Créditos (pool) | $20-$200/mes | $40/user | Custom |
-| **Windsurf** | Créditos (pool) | $15/mes | $30/user | $60/user |
-| **Devin** | ACUs (consumo puro) | $20 + ACUs | $500/equipo | Custom |
-| **Amazon Q Developer** | Flat-rate | $19/mes | $19/user | $19/user |
-| **Gemini Code Assist** | Flat-rate | $19-$54/mes | $19-$45/user | $45-$54/user |
-| **GLM-5 (Zhipu AI)** | Planes + API | $10 (Lite) - $20 (Pro) | - | Max (custom) |
-| **Qwen Coder (Alibaba)** | API pay-per-token | $8-$15/mes | - | - |
-| **Antigravity (Google)** | Freemium + planes | $0 (preview) | $20/user (Pro) | $40-$60/user |
+| **Claude Code** | Híbrido (sub + API) | US$20-US$200/mes | US$25-US$150/user | ~US$60 (custom) |
+| **GitHub Copilot** | Flat + premium requests | US$10-US$39/mes | US$19/user | US$39/user |
+| **Cursor** | Créditos (pool) | US$20-US$200/mes | US$40/user | Custom |
+| **Windsurf** | Créditos (pool) | US$15/mes | US$30/user | US$60/user |
+| **Devin** | ACUs (consumo puro) | US$20 + ACUs | US$500/equipo | Custom |
+| **Amazon Q Developer** | Flat-rate | US$19/mes | US$19/user | US$19/user |
+| **Gemini Code Assist** | Flat-rate | US$19-US$54/mes | US$19-US$45/user | US$45-US$54/user |
+| **GLM-5 (Zhipu AI)** | Planes + API | US$10 (Lite) - US$20 (Pro) | - | Max (custom) |
+| **Qwen Coder (Alibaba)** | API pay-per-token | US$8-US$15/mes | - | - |
+| **Antigravity (Google)** | Freemium + planes | US$0 (preview) | US$20/user (Pro) | US$40-US$60/user |
 
 ### Los Cuatro Modelos y Cuándo Conviene Cada Uno
 
 **1. Flat-rate por seat (GitHub Copilot, Amazon Q, Gemini Code Assist).** Predecible para CFOs: multiplica seats por precio y tienes el presupuesto anual. Ideal cuando la adopción es >80% del equipo. **Riesgo:** pagas por seats ociosos. Un equipo de 200 donde solo 120 usan la herramienta activamente desperdicia 40% del presupuesto.
 
-**2. Créditos / consumo (Cursor, Windsurf, Devin).** Flexible pero impredecible. El "headline price" puede ser engañoso: GitHub Copilot Pro+ a $39/mes incluye 1,500 "premium requests", pero cada query a Claude Sonnet consume 5 requests; son solo 300 consultas reales. Cursor Pro a $20/mes incluye un pool de créditos equivalente a ~225 consultas Sonnet. **Para CFOs:** exige al vendor un estimado de costo mensual por perfil de uso (light/medium/heavy) antes de firmar.
+**2. Créditos / consumo (Cursor, Windsurf, Devin).** Flexible pero impredecible. El "headline price" puede ser engañoso: GitHub Copilot Pro+ a US$39/mes incluye 1,500 "premium requests", pero cada query a Claude Sonnet consume 5 requests; son solo 300 consultas reales. Cursor Pro a US$20/mes incluye un pool de créditos equivalente a ~225 consultas Sonnet. **Para CFOs:** exige al vendor un estimado de costo mensual por perfil de uso (light/medium/heavy) antes de firmar.
 
-**3. Suscripción con cap (Claude Code Max).** Lo mejor de ambos mundos para power users. El plan Max a $200/mes reemplaza consumo API típico de US$300-800/mes para desarrolladores heavy: ahorro de 1.5-4x. **Breakeven vs. API:** si un desarrollador consume más de ~US$200/mes en tokens, Max es mejor. Si consume menos de US$50/mes, el API puro conviene.
+**3. Suscripción con cap (Claude Code Max).** Lo mejor de ambos mundos para power users. El plan Max a US$200/mes reemplaza consumo API típico de US$300-800/mes para desarrolladores heavy: ahorro de 1.5-4x. **Breakeven vs. API:** si un desarrollador consume más de ~US$200/mes en tokens, Max es mejor. Si consume menos de US$50/mes, el API puro conviene.
 
 **4. API pura (Claude API, GLM-5, OpenCode).** Máxima flexibilidad, cero desperdicio. Ideal para uso esporádico (<US$50/mes por dev) o para pipelines CI/CD automatizados donde el consumo varía dramáticamente semana a semana.
 
 ### El Factor China: Presión de Precios desde GLM-5
 
-Zhipu AI (Z.AI) lanzó GLM-5 en febrero 2026 (745B params, 40B activos, MoE) con rendimiento competitivo frente a Claude Opus y GPT-5 en razonamiento, coding y tareas agénticas. A nivel de API, el costo es de ~$0.80/M tokens de input vs. $3.00/M de Claude Sonnet: una **ventaja de ~4x en costo por token**.
+Zhipu AI (Z.AI) lanzó GLM-5 en febrero 2026 (745B params, 40B activos, MoE) con rendimiento competitivo frente a Claude Opus y GPT-5 en razonamiento, coding y tareas agénticas. A nivel de API, el costo es de ~US$0.80/M tokens de input vs. US$3.00/M de Claude Sonnet: una **ventaja de ~4x en costo por token**.
 
 ¿Qué significa para el mercado? Los precios de herramientas occidentales probablemente caerán 30-50% en los próximos 18 meses a medida que la presión competitiva se intensifique. **Implicación para compradores:** negocia contratos anuales con cláusulas de ajuste de precio, no te amarres a tarifas 2026 por 3 años.
 
@@ -1058,12 +1058,12 @@ No existe una combinación perfecta universal. La selección depende de:
 
 | Categoría | Herramienta Recomendada | Precio/mes | Justificación |
 |-----------|-------------------------|-----------|---------------|
-| Code Completion | Windsurf Free (25 créditos) | $0 | Autocompletado competitivo, sin costo |
-| Code Generation | Cursor Pro ($20/mes) | $20 | ROI alto en equipos pequeños, pool de créditos |
-| Prototipos | v0.dev o Bolt.new | $0-$20 | PM/Founders pueden validar sin ingeniería |
-| Alternativa low-cost | GLM-5 vía API (~$10/mes) | $10 | Para boilerplate y documentación, ~4x más barato por token |
+| Code Completion | Windsurf Free (25 créditos) | US$0 | Autocompletado competitivo, sin costo |
+| Code Generation | Cursor Pro (US$20/mes) | US$20 | ROI alto en equipos pequeños, pool de créditos |
+| Prototipos | v0.dev o Bolt.new | US$0-US$20 | PM/Founders pueden validar sin ingeniería |
+| Alternativa low-cost | GLM-5 vía API (~US$10/mes) | US$10 | Para boilerplate y documentación, ~4x más barato por token |
 
-**Costo mensual total (5 devs):** ~$130/mes (Cursor Pro para 3 devs + Windsurf free para 2 + API)
+**Costo mensual total (5 devs):** ~US$130/mes (Cursor Pro para 3 devs + Windsurf free para 2 + API)
 **Productividad esperada:** +40-60%
 **ROI esperado (ajustado):** ~400-600%
 
@@ -1073,9 +1073,9 @@ No existe una combinación perfecta universal. La selección depende de:
 
 | Categoría | Herramienta Recomendada | Precio/mes | Justificación |
 |-----------|-------------------------|-----------|---------------|
-| Code Completion | GitHub Copilot Business ($19/user) | $19/user | Integración nativa con flujos de trabajo de GitHub |
-| Code Generation | Cursor Pro + Windsurf Pro | $20 + $15/user | Cursor para seniors, Windsurf para mids |
-| Agentes | Claude Code Max ($100-200/mo para leads, Pro $20 para rest) | $20-$200 | Modelo híbrido: Max para tech leads, Pro para resto del equipo |
+| Code Completion | GitHub Copilot Business (US$19/user) | US$19/user | Integración nativa con flujos de trabajo de GitHub |
+| Code Generation | Cursor Pro + Windsurf Pro | US$20 + US$15/user | Cursor para seniors, Windsurf para mids |
+| Agentes | Claude Code Max (US$100-200/mo para leads, Pro US$20 para rest) | US$20-US$200 | Modelo híbrido: Max para tech leads, Pro para resto del equipo |
 | Infraestructura | Anthropic API + OpenAI | Variable | Diversificación de riesgo de proveedor |
 
 **Costo mensual total (30 devs):** ~US$1,800/mes (Copilot Business para todos + Cursor Pro para 10 seniors + Claude Code Pro para 5 leads)
@@ -1088,9 +1088,9 @@ No existe una combinación perfecta universal. La selección depende de:
 
 | Categoría | Herramienta Recomendada | Precio/mes | Justificación |
 |-----------|-------------------------|-----------|---------------|
-| Code Completion | GitHub Copilot Enterprise ($39/user) | $39/user | Políticas centralizadas, audit logs, IP indemnity |
-| Code Generation | Cursor Teams ($40/user, equipos core) | $40/user | Selectivo en equipos críticos, admin centralizado |
-| Agentes | OpenHands o OpenCode (self-hosted) | $0 (infra) | Control de datos, sin costo por seat, código abierto |
+| Code Completion | GitHub Copilot Enterprise (US$39/user) | US$39/user | Políticas centralizadas, audit logs, IP indemnity |
+| Code Generation | Cursor Teams (US$40/user, equipos core) | US$40/user | Selectivo en equipos críticos, admin centralizado |
+| Agentes | OpenHands o OpenCode (self-hosted) | US$0 (infra) | Control de datos, sin costo por seat, código abierto |
 | Infraestructura | Azure AI Foundry o AWS Bedrock | Variable | Compliance, integración con cloud existente |
 
 **Costo mensual total (200 devs):** ~US$9,500/mes (Copilot Enterprise para 200 + Cursor Teams para 30 core devs)
@@ -1103,9 +1103,9 @@ No existe una combinación perfecta universal. La selección depende de:
 
 | Categoría | Herramienta Recomendada | Precio/mes | Justificación |
 |-----------|-------------------------|-----------|---------------|
-| Code Completion | Tabnine Enterprise ($39/user, self-hosted) | $39/user | Control total, air-gapped si es necesario |
-| Alternativa cloud | Amazon Q Developer ($19/user) | $19/user | 2x más barato que Copilot Enterprise, integración AWS nativa |
-| Code Generation | Copilot Enterprise + soluciones internas | $39/user | Integración con herramientas enterprise existentes |
+| Code Completion | Tabnine Enterprise (US$39/user, self-hosted) | US$39/user | Control total, air-gapped si es necesario |
+| Alternativa cloud | Amazon Q Developer (US$19/user) | US$19/user | 2x más barato que Copilot Enterprise, integración AWS nativa |
+| Code Generation | Copilot Enterprise + soluciones internas | US$39/user | Integración con herramientas enterprise existentes |
 | Agentes | Desarrollo interno o OpenHands | Infra only | IP propio, máximo control de datos |
 | Infraestructura | Azure/AWS/GCP en VPC privada | Variable | Compliance, auditoría, SLAs enterprise |
 
@@ -1375,7 +1375,7 @@ Por otro lado, adoptar sin estrategia también tiene costos:
 **Solución propuesta:**
 
 - Adoptar [Herramienta] para todos los [N] developers
-- Costo total: $[X] primer año (licencias + training + infra)
+- Costo total: US$[X] primer año (licencias + training + infra)
 
 **Resultados esperados:**
 
@@ -1389,8 +1389,8 @@ Por otro lado, adoptar sin estrategia también tiene costos:
 
 | Concepto | Valor |
 |----------|-------|
-| Costo | $[X] |
-| Valor creado | $[Y] (Z desarrolladores × salario promedio $[W] × ganancia [P]%) |
+| Costo | US$[X] |
+| Valor creado | US$[Y] (Z desarrolladores × salario promedio US$[W] × ganancia [P]%) |
 | ROI | [Calculado]% |
 | Payback period | [Meses] |
 

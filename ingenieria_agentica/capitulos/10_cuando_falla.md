@@ -46,7 +46,7 @@ Los patrones documentados por Gartner y BCG en proyectos cancelados son consiste
 
 ### El Costo Real
 
-El costo promedio de un proyecto de IA cancelado no es solo la licencia ($19-39/usuario/mes). Es el [costo de oportunidad]{.idx data-sub="análisis de inversión"}, la rotación de talento (seniors que renuncian ante mandatos no consultados), y la moral destruida. Gartner estima que el costo total de fracaso para un equipo de 30-50 desarrolladores oscila entre **US$200K-US$500K** cuando se incluyen costos indirectos.
+El costo promedio de un proyecto de IA cancelado no es solo la licencia (US$19-39/usuario/mes). Es el [costo de oportunidad]{.idx data-sub="análisis de inversión"}, la rotación de talento (seniors que renuncian ante mandatos no consultados), y la moral destruida. Gartner estima que el costo total de fracaso para un equipo de 30-50 desarrolladores oscila entre **US$200K-US$500K** cuando se incluyen costos indirectos.
 
 > **Lección para líderes:** Cuando un ejecutivo dice "quiero IA en 30 días," tu trabajo es traducir esa energía en un plan viable, no ejecutar un mandato irracional. La conversación correcta es: "Entiendo la urgencia. Dame 90 días para un piloto con 5 voluntarios, métricas claras, y una recomendación basada en datos." El Capítulo 12 presenta una hoja de ruta de adopción por fases diseñado exactamente para esto.
 

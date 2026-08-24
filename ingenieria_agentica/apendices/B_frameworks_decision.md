@@ -222,9 +222,9 @@ Para cada dimensión, marque el nivel actual de su organización (0-5):
 
 | Fase | Período | Objetivo | Inversión | Equipos |
 |------|---------|----------|-----------|---------|
-| **Crawl** | Mes 0-3 | Probar y aprender | $5K-15K/mes | 1 piloto (5-8 devs) |
-| **Walk** | Mes 4-9 | Expandir lo que funciona | $15K-50K/mes | 3-5 equipos |
-| **Run** | Mes 10-18 | Escalar a toda la org | $50K-150K/mes | Toda la organización |
+| **Crawl** | Mes 0-3 | Probar y aprender | US$5K-15K/mes | 1 piloto (5-8 devs) |
+| **Walk** | Mes 4-9 | Expandir lo que funciona | US$15K-50K/mes | 3-5 equipos |
+| **Run** | Mes 10-18 | Escalar a toda la org | US$50K-150K/mes | Toda la organización |
 
 ### Detalle por Fase
 

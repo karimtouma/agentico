@@ -302,7 +302,7 @@ Con ese contexto, las habilidades de tu equipo se reorganizan en tres categoría
 9. **Código repetitivo (boilerplate)**: La IA es excelente en patrones repetitivos
 10. **Depuración de errores sintácticos**: La IA rara vez comete estos errores
 
-Que estas habilidades se comoditicen no significa que sean irrelevantes. Significa que dejan de ser diferenciadoras. Un desarrollador que solo sabe implementar algoritmos estándar compite directamente con una herramienta de $20/mes. Un desarrollador que sabe *por qué* elegir un algoritmo sobre otro y *cómo* validar que funciona en el contexto específico de tu negocio sigue siendo irremplazable.
+Que estas habilidades se comoditicen no significa que sean irrelevantes. Significa que dejan de ser diferenciadoras. Un desarrollador que solo sabe implementar algoritmos estándar compite directamente con una herramienta de US$20/mes. Un desarrollador que sabe *por qué* elegir un algoritmo sobre otro y *cómo* validar que funciona en el contexto específico de tu negocio sigue siendo irremplazable.
 
 > **Dato verificado:** Según el World Economic Forum (enero 2026), las habilidades no automatizables - juicio, colaboración, liderazgo técnico - son las que distinguen a los desarrolladores de alto rendimiento en la era de IA. "Si todos tienen acceso al mismo agente de codificación, lo que diferencia a los grandes desarrolladores es saber cuándo la IA está equivocada o produce una solución subóptima"[^ch1-27].
 >
@@ -826,8 +826,8 @@ La estrategia de adopción de IA agéntica varía significativamente según el t
 
 **Herramientas recomendadas para startups:**
 
-- GitHub Copilot ($10/dev/mes) para code completion
-- Cursor ($20/dev/mes) para code generation más complejo
+- GitHub Copilot (US$10/dev/mes) para code completion
+- Cursor (US$20/dev/mes) para code generation más complejo
 - v0.dev (pricing variable) para prototipos rápidos de UI
 
 **Red flags en startups:**
@@ -1042,14 +1042,14 @@ Para ayudarte a elegir entre las decenas de herramientas disponibles, aquí una 
 
 | Tu Escenario | Herramienta Recomendada | Alternativa | Por Qué |
 |--------------|-------------------------|-------------|---------|
-| Startup early-stage, presupuesto limitado | Cursor ($20/mes) | GitHub Copilot ($10/mes) | Mejor code generation por el precio |
+| Startup early-stage, presupuesto limitado | Cursor (US$20/mes) | GitHub Copilot (US$10/mes) | Mejor code generation por el precio |
 | Empresa mediana en Microsoft/GitHub ecosystem | GitHub Copilot Business | Cursor | Integración nativa con GitHub |
 | Corporación grande con compliance estricto | GitHub Copilot Enterprise | Sourcegraph Cody Enterprise | Enterprise support, audit trails |
 | Equipo con mono-repo gigante (>1M LOC) | Sourcegraph Cody | GitHub Copilot | Mejor para indexar codebases masivos |
 | Equipo heavy en AWS | Amazon Q Developer | GitHub Copilot | Integración con AWS services |
 | Equipo que necesita self-hosted | Sourcegraph Cody Enterprise | Tabnine Enterprise | Mejor self-hosted experience |
 | Prototipado rápido de UI/frontend | v0.dev (Vercel) | Cursor | Especializado en React/Next.js |
-| Agentes autónomos (Gen 3) | Devin (desde $20/mes) | Cursor Composer | Generación actual, madurando rápidamente |
+| Agentes autónomos (Gen 3) | Devin (desde US$20/mes) | Cursor Composer | Generación actual, madurando rápidamente |
 
 **Nota importante**: Este landscape cambia cada 3-6 meses. Valida estas recomendaciones contra reviews actualizados al momento de tu evaluación.
 

@@ -993,7 +993,7 @@ La distinción clave: los agentes de hoy no "internalizan" como un humano, pero 
 **Mitigación:**
 
 - Establece límites de iteraciones (max 10 reintentos)
-- Alertas de costo (si gasto excede $X/hora, pausar agente)
+- Alertas de costo (si gasto excede US$X/hora, pausar agente)
 - Timeouts (si agente no completa en Y minutos, abortar)
 
 ---

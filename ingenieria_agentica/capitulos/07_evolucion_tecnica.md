@@ -16,7 +16,7 @@
 Si eres CTO o VP de Ingeniería, probablemente estás recibiendo presiones:
 
 - Tu CEO pregunta: "¿Por qué no estamos usando IA para codificar más rápido?"
-- Tu CFO pregunta: "¿GitHub Copilot vale los $19/usuario/mes?"
+- Tu CFO pregunta: "¿GitHub Copilot vale los US$19/usuario/mes?"
 - Tu equipo pregunta: "¿Podemos probar Cursor/Devin?"
 
 Para tomar decisiones informadas, necesitas entender **de dónde venimos, dónde estamos, y hacia dónde vamos**.
@@ -72,7 +72,7 @@ Ahora sí, el framework detallado:
 | **Contexto** | Solo lo que le pastes | Archivo actual + algunos imports | Codebase completo + docs + APIs |
 | **Capacidad de acción** | Solo genera texto | Genera código en IDE | Ejecuta comandos, crea archivos, corre tests |
 | **Ganancia de productividad** | +10-20% | +30-55% | +100-200% (datos preliminares) |
-| **Costo típico** | Gratis - $20/mes | $10-20/usuario/mes | $20-100/usuario/mes |
+| **Costo típico** | Gratis - US$20/mes | US$10-20/usuario/mes | US$20-100/usuario/mes |
 | **Curva de aprendizaje** | Baja (2-3 días) | Media (2-3 semanas) | Alta (4-8 semanas) |
 | **Adopción empresarial 2025** | ~15% (declinando) | ~65% | ~20% (creciendo rápido) |
 
@@ -208,7 +208,7 @@ Copilot validó el mercado. Inmediatamente surgieron competidores:
 
 - Lanzado 2022
 - Integrado con AWS ecosystem
-- Gratis para uso individual (Free tier) / $19/mes (Pro)
+- Gratis para uso individual (Free tier) / US$19/mes (Pro)
 
 **Tabnine**
 
@@ -230,10 +230,10 @@ Copilot validó el mercado. Inmediatamente surgieron competidores:
 
 | Herramienta | Modelo Base | Precio | Fortaleza | Debilidad |
 |-------------|-------------|--------|-----------|-----------|
-| GitHub Copilot | GPT-4o | Gratis-$39/mes | Mejor calidad de código, mayor adopción | Premium requests limitados en tiers bajos |
-| Amazon Q Developer | Propio (Amazon) | Gratis-$19/mes | Integración con AWS, gratis para individuos | Ecosistema más limitado |
-| Tabnine | Propio | $39/user/mes (Enterprise) | Self-hosted option, privacy | Solo plan Enterprise (eliminó tier gratuito y plan Dev en 2025) |
-| Windsurf (ex-Codeium) | Propio + Claude/GPT | $15-60/mes | Precio accesible, buena integración | Créditos limitados en tier Pro |
+| GitHub Copilot | GPT-4o | Gratis-US$39/mes | Mejor calidad de código, mayor adopción | Premium requests limitados en tiers bajos |
+| Amazon Q Developer | Propio (Amazon) | Gratis-US$19/mes | Integración con AWS, gratis para individuos | Ecosistema más limitado |
+| Tabnine | Propio | US$39/user/mes (Enterprise) | Self-hosted option, privacy | Solo plan Enterprise (eliminó tier gratuito y plan Dev en 2025) |
+| Windsurf (ex-Codeium) | Propio + Claude/GPT | US$15-60/mes | Precio accesible, buena integración | Créditos limitados en tier Pro |
 
 ### Cómo Funcionaba la Ola 2: El Paradigma "Autocomplete++"
 
@@ -338,7 +338,7 @@ Imagina que un desarrollador define la estructura de un "Usuario" con tres campo
 
 **Costo:**
 
-- Licencias: 2,000 × $20/mes × 12 = US$480K/año
+- Licencias: 2,000 × US$20/mes × 12 = US$480K/año
 - Training y enablement: US$200K one-time
 - Total año 1: US$680K
 
@@ -449,8 +449,8 @@ Tú: "Implementa autenticación de 2 factores en nuestra app"
 
 **Estado actual (2026):**
 
-- Disponible públicamente con plan Core desde $20/mes (lanzado con Devin 2.0 en 2025)
-- Plan Team a $500/mes con 250 ACUs (Agent Compute Units) incluidas
+- Disponible públicamente con plan Core desde US$20/mes (lanzado con Devin 2.0 en 2025)
+- Plan Team a US$500/mes con 250 ACUs (Agent Compute Units) incluidas
 - Cada ACU equivale a ~15 minutos de trabajo activo del agente
 
 **GitHub Copilot Workspace / Agent Mode (2024-2025)**
@@ -494,7 +494,7 @@ Tú: "Implementa autenticación de 2 factores en nuestra app"
 
 - Mejor manejo de codebases grandes (>100K líneas)
 - "Cursor Tab": Like Copilot autocomplete pero con contexto de todo el proyecto
-- "$100/mes unlimited": Más barato que otras opciones agénticas
+- "US$100/mes unlimited": Más barato que otras opciones agénticas
 
 **Replit Agent (Replit) - 2024**
 
@@ -517,10 +517,10 @@ Tú: "Implementa autenticación de 2 factores en nuestra app"
 
 | Herramienta | Disponibilidad | Precio | Mejor Para | Limitación Principal |
 |-------------|----------------|--------|------------|----------------------|
-| Devin | Disponible | Desde $20/mes (Core) / $500/mes (Team) | Features complejos end-to-end | ACUs se consumen rápido en tareas grandes |
-| Copilot Agent Mode | GA (incluido en Copilot) | $10-39/mes (según tier Copilot) | Equipos ya usando Copilot y GitHub | Requiere repositorio en GitHub |
-| Cursor Composer | Disponible | $20-200/mes | Codebases grandes, individual devs | Créditos limitados según tier |
-| Replit Agent | Disponible | $25/mes (Core) | Prototyping, educación | No ideal para enterprise codebases |
+| Devin | Disponible | Desde US$20/mes (Core) / US$500/mes (Team) | Features complejos end-to-end | ACUs se consumen rápido en tareas grandes |
+| Copilot Agent Mode | GA (incluido en Copilot) | US$10-39/mes (según tier Copilot) | Equipos ya usando Copilot y GitHub | Requiere repositorio en GitHub |
+| Cursor Composer | Disponible | US$20-200/mes | Codebases grandes, individual devs | Créditos limitados según tier |
+| Replit Agent | Disponible | US$25/mes (Core) | Prototyping, educación | No ideal para enterprise codebases |
 
 ### Cómo Funcionan los Agentes Autónomos: La Arquitectura
 
@@ -659,7 +659,7 @@ El siguiente modelo describe cómo un agente autónomo procesa una solicitud de 
 
 **ROI:**
 
-- Costo: 10 devs × $40/mes × 6 = US$2,400
+- Costo: 10 devs × US$40/mes × 6 = US$2,400
 - Valor: Lanzar MVP 2.5 meses antes = capturar mercado antes que competitor = US$500K+ en revenue adelantado
 - **ROI: Incalculable (el valor de lanzar primero es mucho mayor que el ahorro de costo)**
 
@@ -750,7 +750,7 @@ No todas las organizaciones deben estar en Ola 3. Usa esta guía:
 | **Tamaño de equipo** | <5 devs | 5-500 devs | 10-100 devs (early adopters) |
 | **Madurez del proceso** | Ad-hoc | Tiene CI/CD, code review | Procesos muy maduros con alta cobertura de tests |
 | **Tolerancia a riesgo** | N/A | Media | Alta |
-| **Presupuesto de tools** | $0-100/mes | US$500-10K/mes | US$5K-100K/mes |
+| **Presupuesto de tools** | US$0-100/mes | US$500-10K/mes | US$5K-100K/mes |
 | **Velocidad es crítica** | No | Sí | Crítico (ej: startup pre-PMF) |
 | **Codebase** | Cualquiera | <1M líneas | <500K líneas (Ola 3 struggle con muy grandes) |
 | **Stack tech** | Cualquiera | Lenguajes populares (JS, Python, Java) | Idem |
@@ -825,9 +825,9 @@ Un modelo con "7 mil millones de parámetros" (7B) tiene 7 mil millones de núme
 
 | Tamaño | Ejemplos | Costo Típico | Cuándo Usar |
 |--------|----------|--------------|-------------|
-| **Pequeño** (<10B) | Mistral 7B, Phi-3, Llama 3 8B | ~$0.05/1M tokens | Autocompletado simple, tareas rutinarias, on-premise barato |
-| **Mediano** (10-100B) | Llama 3 70B, Claude Haiku 4.5 | ~$1.00/1M tokens | Balance costo/capacidad, la mayoría de tareas de código |
-| **Grande** (>100B) | GPT-4o, Claude Sonnet 4.5/Opus 4.6 | ~$2.50-15/1M tokens | Tareas complejas, razonamiento multi-paso, código crítico |
+| **Pequeño** (<10B) | Mistral 7B, Phi-3, Llama 3 8B | ~US$0.05/1M tokens | Autocompletado simple, tareas rutinarias, on-premise barato |
+| **Mediano** (10-100B) | Llama 3 70B, Claude Haiku 4.5 | ~US$1.00/1M tokens | Balance costo/capacidad, la mayoría de tareas de código |
+| **Grande** (>100B) | GPT-4o, Claude Sonnet 4.5/Opus 4.6 | ~US$2.50-15/1M tokens | Tareas complejas, razonamiento multi-paso, código crítico |
 
 > **Regla práctica:** Un modelo de 70B no es 10x mejor que uno de 7B. Pero sí es significativamente mejor en tareas que requieren razonamiento complejo, conocimiento especializado, o contexto largo.
 
@@ -847,12 +847,12 @@ Un modelo con "7 mil millones de parámetros" (7B) tiene 7 mil millones de núme
 
 | Modelo | Input (por 1M tokens) | Output (por 1M tokens) |
 |--------|----------------------|------------------------|
-| GPT-4o | $2.50 | $10.00 |
-| GPT-4o-mini | $0.15 | $0.60 |
-| Claude Sonnet 4.5 | $3.00 | $15.00 |
-| Claude Haiku 4.5 | $1.00 | $5.00 |
-| Llama 3 70B (self-hosted) | ~$0.50-1.00 | ~$0.50-1.00 |
-| Mistral 7B (self-hosted) | ~$0.05-0.10 | ~$0.05-0.10 |
+| GPT-4o | US$2.50 | US$10.00 |
+| GPT-4o-mini | US$0.15 | US$0.60 |
+| Claude Sonnet 4.5 | US$3.00 | US$15.00 |
+| Claude Haiku 4.5 | US$1.00 | US$5.00 |
+| Llama 3 70B (self-hosted) | ~US$0.50-1.00 | ~US$0.50-1.00 |
+| Mistral 7B (self-hosted) | ~US$0.05-0.10 | ~US$0.05-0.10 |
 
 > **Para Tu Próxima Reunión de Presupuesto:** Si tu equipo de 50 developers usa un agente que procesa 100K tokens/día cada uno, eso es 5M tokens/día. Con Claude Sonnet 4.5, serían ~US$15K-75K/mes. Con un modelo self-hosted, podrías reducir a US$5K-15K/mes. La diferencia en calidad puede justificar el costo extra; o no, dependiendo del caso de uso.
 

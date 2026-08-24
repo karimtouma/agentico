@@ -661,15 +661,15 @@ La mayoría de CFOs no tienen tiempo (ni interés) para leer 20 páginas de aná
 - La lista de pendientes crece más rápido de lo que podemos contratar
 - Competidores entregan funcionalidades 40% más rápido que nosotros
 
-**Solución propuesta:** Invertir $[X] en herramientas de IA agéntica para aumentar capacidad del equipo actual en 30-40% sin contratar.
+**Solución propuesta:** Invertir US$[X] en herramientas de IA agéntica para aumentar capacidad del equipo actual en 30-40% sin contratar.
 
 **Inversión requerida (Year 1):**
 
 | Concepto | Monto |
 |----------|------:|
-| Licencias de herramientas | $[X] |
-| Infraestructura | $[Y] |
-| Training del equipo | $[Z] |
+| Licencias de herramientas | US$[X] |
+| Infraestructura | US$[Y] |
+| Training del equipo | US$[Z] |
 | **TOTAL** | **$[TOTAL]** |
 
 **Retorno esperado (Year 1):**
@@ -693,9 +693,9 @@ La mayoría de CFOs no tienen tiempo (ni interés) para leer 20 páginas de aná
 
 **Alternativa (costo de no hacer nada):**
 
-- Contratar [N] devs adicionales: $[X]M/año
+- Contratar [N] devs adicionales: US$[X]M/año
 - Perder ventaja competitiva: Incalculable
-- Rotación de talento por falta de herramientas: $[Y]K/año
+- Rotación de talento por falta de herramientas: US$[Y]K/año
 
 **Aprobaciones:** ☐ CTO | ☐ VP Engineering | ☐ CFO | ☐ CISO
 
@@ -738,7 +738,7 @@ La mayoría de CFOs no tienen tiempo (ni interés) para leer 20 páginas de aná
    - Timeline de 12 semanas: Pilot → Rollout → Optimization
 
 9. **Slide 15: Ask y Next Steps**
-   - Aprobación de budget $X
+   - Aprobación de budget US$X
    - Kick-off en [fecha]
    - Reporte de resultados en Q[X]
 

@@ -466,7 +466,7 @@ Pero hay factores que hacen esta transición única:
 
 **Para adoptar IA agéntica en 2026:**
 
-- Comprar licencias ($20-100/dev/mes)
+- Comprar licencias (US$20-100/dev/mes)
 - Training de 2-4 semanas
 - NO requiere reescribir nada. Solo cambia cómo escribes código nuevo
 - Costo: US$10K-50K para organización mediana
@@ -729,7 +729,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 *Basado en el patrón histórico, estamos en el 'año 5' de esta transición. Tenemos 12-24 meses antes de que esto sea table stakes y perdamos la oportunidad de early adopter advantage.*
 
-*Propongo un piloto de 3 meses con inversión de $X (licencias + training) para medir el impacto en nuestro contexto específico. Si vemos aunque sea 20% de las ganancias que reportan Microsoft y Google, el ROI es 10:1."*
+*Propongo un piloto de 3 meses con inversión de US$X (licencias + training) para medir el impacto en nuestro contexto específico. Si vemos aunque sea 20% de las ganancias que reportan Microsoft y Google, el ROI es 10:1."*
 
 ---
 
@@ -747,7 +747,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 
 5. **No es solo tech; es estrategia de negocio:** Organizaciones que adoptaron paradigmas emergentes temprano ganaron años de ventaja competitiva.
 
-6. **La barrera de entrada es baja:** No requiere reescribir código legacy. Costo: $20-100/dev/mes. No hay excusa para no pilotar.
+6. **La barrera de entrada es baja:** No requiere reescribir código legacy. Costo: US$20-100/dev/mes. No hay excusa para no pilotar.
 
 7. **Los equipos cambian:** Menos personal, salarios más altos, code review más crítico, onboarding más rápido pero enfocado diferente.
 
@@ -760,7 +760,7 @@ GitHub reportó que después de adoptar Copilot internamente:
 > - **Métrica clave 2**: Adopción de lenguajes de alto nivel pasó de 5% a 50% en 10 años (1960-1970); IA agéntica está en ~30-35% en 2025
 > - **Métrica clave 3**: Ventana de early adopter advantage: 12-24 meses antes de que IA agéntica sea table stakes
 > - **Framework principal**: La Escalera de Abstracción y la Curva de Adopción Paradigmática (ver este capítulo)
-> - **Acción inmediata**: Evalúa en qué paradigma opera tu equipo hoy y propón un piloto de 3 meses con inversión de $20-100/dev/mes
+> - **Acción inmediata**: Evalúa en qué paradigma opera tu equipo hoy y propón un piloto de 3 meses con inversión de US$20-100/dev/mes
 
 ## Preguntas de Reflexión para Tu Equipo
 
