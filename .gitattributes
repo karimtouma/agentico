@@ -1,0 +1,25 @@
+# Line endings: normalize to LF in the repository.
+# Verified no tracked file currently uses CRLF, so this is a no-op today and a
+# guard against a future contributor on Windows.
+* text=auto eol=lf
+
+# Prose and source. Explicit diff drivers give readable hunk headers.
+*.md      text diff=markdown
+*.tex     text diff=tex
+*.cls     text diff=tex
+*.sty     text diff=tex
+*.lua     text
+*.ts      text
+*.sh      text
+Makefile  text
+
+# Binary artifacts: `binary` implies -text -diff -merge, so git will never try
+# to line-merge them. The compiled book lives in the repo for convenience;
+# on a conflict the answer is always to rebuild, never to resolve by hand.
+*.pdf     binary
+*.png     binary
+*.jpg     binary
+*.otf     binary
+*.ttf     binary
+*.woff    binary
+*.woff2   binary
