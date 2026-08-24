@@ -304,16 +304,16 @@ export class BookMCP extends McpAgent<Env> {
 
 // --- Worker entry point ---
 
+const MCP_PATH = "/mcp";
+
+// BookMCP.serve() builds a handler that matches MCP_PATH exactly. Building it
+// once at module scope (rather than per request) keeps the Durable Object
+// namespace stable across requests in the same isolate.
+const mcpHandler = BookMCP.serve(MCP_PATH);
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
-
-    if (url.pathname === "/mcp" || url.pathname === "/mcp/") {
-      // Route to MCP Durable Object
-      const id = env.MCP_OBJECT.idFromName("book");
-      const stub = env.MCP_OBJECT.get(id);
-      return stub.fetch(request);
-    }
 
     // Health check / info page
     if (url.pathname === "/" || url.pathname === "/health") {
@@ -334,6 +334,24 @@ export default {
       );
     }
 
-    return new Response("Not found. MCP endpoint is at /mcp", { status: 404 });
+    // Accept both /mcp and /mcp/. The SDK handler matches MCP_PATH exactly, so
+    // the trailing-slash form has to be rewritten before it is delegated -
+    // clients that normalize URLs by appending a slash would otherwise 404.
+    if (url.pathname === MCP_PATH || url.pathname === `${MCP_PATH}/`) {
+      const target = new URL(request.url);
+      target.pathname = MCP_PATH;
+      return mcpHandler.fetch(new Request(target, request), env, ctx);
+    }
+
+    // Anything else is genuinely not found. Delegating unknown paths to the MCP
+    // handler would answer them with a JSON-RPC error, which misleads a plain
+    // HTTP client into thinking it reached the MCP endpoint.
+    return new Response(
+      JSON.stringify({
+        error: "Not found",
+        mcp_endpoint: MCP_PATH,
+      }),
+      { status: 404, headers: { "Content-Type": "application/json" } }
+    );
   },
 };

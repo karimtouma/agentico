@@ -10,7 +10,7 @@
  */
 
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { join, basename } from "node:path";
+import { join } from "node:path";
 
 const BOOK_ROOT = join(import.meta.dirname, "../../ingenieria_agentica");
 const CHAPTERS_DIR = join(BOOK_ROOT, "capitulos");
@@ -203,7 +203,6 @@ function main() {
 
   for (const file of chapterFiles) {
     const content = readFileSync(join(CHAPTERS_DIR, file), "utf-8");
-    const id = basename(file, ".md").replace(/^\d+_/, (m) => m.replace("_", ""));
     // Extract chapter number: "00_prefacio.md" -> "00", "00a_executive_brief.md" -> "00a"
     const idMatch = file.match(/^(\d+[a-z]?)/);
     const chapterId = idMatch ? idMatch[1] : file.replace(".md", "");
@@ -265,6 +264,13 @@ function main() {
 
     const sections = splitSections(content);
     for (const section of sections) {
+      // Appendix sections are indexed for search and listed in the TOC, so
+      // read_chapter({ section }) must be able to resolve them too.
+      kvEntries.push({
+        key: `sections:${appendixId}:${section.slug}`,
+        value: section.content,
+      });
+
       searchIndex.push({
         chapter: appendixId,
         section: section.slug,

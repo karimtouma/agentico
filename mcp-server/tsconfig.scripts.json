@@ -1,0 +1,18 @@
+{
+  // Build-time Node scripts (scripts/prepare-content.ts). They run under tsx on
+  // the developer machine and in CI, not inside workerd, so they need Node types
+  // rather than @cloudflare/workers-types - which is why they cannot share
+  // tsconfig.json with src/.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["scripts/**/*.ts"]
+}

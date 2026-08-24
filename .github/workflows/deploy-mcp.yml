@@ -31,6 +31,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build Worker (dry run)
+        run: npx wrangler deploy --dry-run --outdir=dist
+
       - name: Prepare book content for KV
         run: npx tsx scripts/prepare-content.ts
 
@@ -40,7 +46,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: mcp-server
-          command: kv bulk put kv-data.json --namespace-id=${{ secrets.KV_NAMESPACE_ID }}
+          command: kv bulk put kv-data.json --binding=BOOK_KV --remote
 
       - name: Deploy Worker
         uses: cloudflare/wrangler-action@v3
